@@ -3,6 +3,17 @@
     Created on : 26.03.2024
     Author     : Matthias Ebers <feb@loma.ml>
 */
+
+/*
+body {
+	background: url(scheme/joinfriendica_dark.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: auto;
+}
+*/
+
 #topbar-first {
 	background-color: $background_color;
 }
@@ -918,4 +929,12 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
 #cboxContent {
   background: #1f2123;
   overflow: visible;
+}
+
+/* Seitenpaginierung */
+.pagination li > a, .pager li > a {
+  background-color: #aaa0;
+  color: #c2b39e;
+  border: 0px;
+  padding: 10px;
 }
