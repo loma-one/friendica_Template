@@ -320,7 +320,7 @@ Element {
   border-color: #ddd;
 }
 .panel {
-  margin-bottom: 2px;
+  margin-bottom: 8px;
   background-color: #fff;
   /*border: 1px solid transparent;*/
   border-radius: 1px;
@@ -368,4 +368,35 @@ Element {
   -moz-box-shadow: 0 0 3px #dadada;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* fügt eine farbige Linie für Kommentare ein*/
+.thread_level_1 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #84b6c48a;
+}
+
+.thread_level_2 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #d2af7f6b;
+}
+
+.thread_level_3 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #ddd;
+}
+
+.thread_level_4 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #b8a17e;
+}
+
+.thread_level_5 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #8fafb8;
 }
