@@ -412,7 +412,7 @@ figure.img-allocated-height {
 
 /* Mobile Button vergrößern & weißen Hintergrund /* Button groß mit runden Ecken */
 .btn-sm {
-	padding: 5px 20px;
+	padding: 5px 30px;
 	font-size: 12px;
     color: #969696;
     background-color: $background_color;
@@ -534,9 +534,14 @@ header #banner {
     width: 180px;
 }
 
+/* Bilder hinzufügen Buttonfarbe */
+button, input, optgroup, select, textarea {
+  color: #4f4f4f;
+}
+
 /* Modal verbreitern und Form anpassen */
 #jot-modal .modal-header a, #jot-modal .modal-header .btn-link, #profile-jot-submit-wrapper a, #profile-jot-submit-wrapper .btn-link {
-	color: #3d4244;
+	color: #999;
 }
 
 main .nav-tabs > li.active > a, main .nav-tabs > li.active > a:focus, main .nav-tabs > li.active > a:hover {
@@ -943,7 +948,7 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
 .thread_level_1 {
 	position: relative !important;
 	margin-top: 0;
-	border-left: 3px solid #84b6c48a;
+	border-left: 3px solid #51515138;
 }
 
 .thread_level_2 {
