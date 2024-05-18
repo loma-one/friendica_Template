@@ -57,12 +57,12 @@ body {
     padding: 10px;
     background-color: rgba(237, 237, 237, 0.03);
     /* Rahmen eingegegraut */
-    box-shadow: 0 0.5em 1em -0.125em rgba(255, 255, 255, 0.06),0 0px 0 1px rgba(10, 10, 10, 0);
+    box-shadow: 0 0.5em 1em -0.125em rgba(255, 255, 255, 0.06),0 0px 0 1px rgb(238, 238, 238);
     }
 
 /* Mobile Button vergrößern & weißen Hintergrund /* Button groß mit runden Ecken */
 .btn-sm {
-	padding: 5px 30px;
+	padding: 5px 23px;
 	font-size: 12px;
     color: #333;
     background-color: $background_color;
@@ -355,6 +355,21 @@ Element {
   background-color: rgb(255, 255, 255);
   border-radius: 0 0 4px 4px;
   margin-bottom: 0;
+}
+
+/* Trenner für eingebundene Video oder Link */
+.type-link, .type-video {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+}
+
+/* Brake für umzuleitende Links URL Replace */
+aside hr, section hr {
+  border-color: rgba(255, 255, 255, 0.98);
 }
 
 /* Kalendereintrag anpassen */
