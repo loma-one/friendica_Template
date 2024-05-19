@@ -367,11 +367,6 @@ Element {
   margin-top: 10px;
 }
 
-/* Brake für umzuleitende Links URL Replace */
-aside hr, section hr {
-  border-color: rgba(255, 255, 255, 0.98);
-}
-
 /* Kalendereintrag anpassen */
 #birthday-notice, #birthday-wrapper, #rfic-desc, #remote-friends-in-common, #event-notice, #event-wrapper {
   margin-bottom: 5px;
@@ -383,6 +378,21 @@ aside hr, section hr {
   -moz-box-shadow: 0 0 3px #dadada;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* Brake für umzuleitende Links URL Replace
+aside hr, section hr {
+  border-color: rgba(255, 255, 255, 0.98);
+} */
+
+/* Linkfarbe global ändern */
+.toplevel_item:hover .fakelink, .wall-item-container:hover .fakelink, .toplevel_item:hover .wall-item-container:hover .wall-item-responses a, .toplevel_item:hover .wall-item-content a, .toplevel_item:hover .wall-item-name, .wall-item-container:hover .wall-item-content a, .wall-item-container:hover .wall-item-name, .wall-item-container:hover .wall-item-location a {
+  color: #3774a4;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 /* fügt eine farbige Linie für Kommentare ein*/
