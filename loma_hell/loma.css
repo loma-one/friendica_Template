@@ -380,10 +380,10 @@ Element {
   cursor: pointer;
 }
 
-/* Brake für umzuleitende Links URL Replace
+Brake für umzuleitende Links URL Replace
 aside hr, section hr {
   border-color: rgba(255, 255, 255, 0.98);
-} */
+}
 
 /* Linkfarbe global ändern */
 .toplevel_item:hover .fakelink, .wall-item-container:hover .fakelink, .toplevel_item:hover .wall-item-container:hover .wall-item-responses a, .toplevel_item:hover .wall-item-content a, .toplevel_item:hover .wall-item-name, .wall-item-container:hover .wall-item-content a, .wall-item-container:hover .wall-item-name, .wall-item-container:hover .wall-item-location a {
@@ -424,4 +424,34 @@ aside hr, section hr {
 	position: relative !important;
 	margin-top: 0;
 	border-left: 3px solid #8fafb8;
+}
+
+.thread_level_6 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #647C64;
+}
+
+.thread_level_7 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #7F8C8D;
+}
+
+.thread_level_8 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #95A5A6;
+}
+
+.thread_level_9 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #BDC3C7;
+}
+
+.thread_level_10 {
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid #CFD8DC;
 }
