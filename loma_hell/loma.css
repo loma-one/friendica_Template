@@ -57,7 +57,7 @@ body {
     padding: 10px;
     background-color: rgba(237, 237, 237, 0.03);
     /* Rahmen eingegegraut */
-    box-shadow: 0 0.5em 1em -0.125em rgba(255, 255, 255, 0.06),0 0px 0 1px rgb(238, 238, 238);
+    box-shadow: 0 0.1em 1em -0.125em rgba(106, 106, 106, 0.11),0 0px 0 1px rgb(238, 238, 238);
     }
 
 /* Mobile Button vergrößern & weißen Hintergrund /* Button groß mit runden Ecken */
@@ -89,7 +89,7 @@ ul.tabs li {
 body {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
   color: #333;
-  font-size: 1.47rem;
+  font-size: 1.55rem;
   line-height: 22px;
   font-weight: 400;
   font-style: normal;
@@ -411,13 +411,13 @@ aside hr, section hr {
 .thread_level_3 {
 	position: relative !important;
 	margin-top: 0;
-	border-left: 3px solid #ddd;
+	border-left: 3px solid #9985666e;
 }
 
 .thread_level_4 {
 	position: relative !important;
 	margin-top: 0;
-	border-left: 3px solid #b8a17e;
+	border-left: 3px solid #b8a17ec2;
 }
 
 .thread_level_5 {
@@ -429,19 +429,19 @@ aside hr, section hr {
 .thread_level_6 {
 	position: relative !important;
 	margin-top: 0;
-	border-left: 3px solid #647C64;
+	border-left: 3px solid #647C64AB;
 }
 
 .thread_level_7 {
 	position: relative !important;
 	margin-top: 0;
-	border-left: 3px solid #7F8C8D;
+	border-left: 3px solid #7F8C8DEB;
 }
 
 .thread_level_8 {
 	position: relative !important;
 	margin-top: 0;
-	border-left: 3px solid #95A5A6;
+	border-left: 3px solid #95A5A6D6;
 }
 
 .thread_level_9 {
