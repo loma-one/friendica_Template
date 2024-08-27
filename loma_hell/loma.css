@@ -167,6 +167,7 @@ aside .widget, .nav-container .widget {
 }
 
 /* Fügt ein eigene Logo in die Seite ein */
+/*
 #logo-img {display:none;}
 header #banner {
 	position: fixed;
@@ -179,7 +180,7 @@ header #banner {
 	    background-size: 180px 50px;
     height: 50px;
     width: 180px;
-}
+} */
 
 /* Fügt ein Hintergrundbild in die Seite ein */
 /*
