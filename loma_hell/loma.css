@@ -60,7 +60,8 @@ body {
     box-shadow: 0 0.1em 1em -0.125em rgba(106, 106, 106, 0.11),0 0px 0 1px rgb(238, 238, 238);
     }
 
-/* Mobile Button vergrößern & weißen Hintergrund /* Button groß mit runden Ecken */
+/* Mobile Button vergrößern & weißen Hintergrund */
+/* Button groß mit runden Ecken */
 .btn-sm {
 	padding: 5px 23px;
 	font-size: 12px;
@@ -280,9 +281,9 @@ Element {
   box-sizing: border-box;
 }
 
-/* Suchefenster optimieren */
+/* Suchefenster optimieren
 Element {
-  padding-right: 49px;
+  padding-right: 49px; */
 }
 #topbar-first #search-box .form-search {
   height: 25px;
@@ -311,21 +312,18 @@ Element {
   -moz-box-shadow: 0 0 2px #dadada;
   border-radius: 4px;
   position: relative;
-}
-.panel {
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
   box-shadow: 0 1px 2px rgba(0,0,0,.05);
-}
-.panel-default {
-  border-color: #ddd;
-}
-.panel {
   margin-bottom: 8px;
   background-color: #fff;
   /*border: 1px solid transparent;*/
   border-radius: 1px;
   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
   box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.panel-default {
+  border-color: #ddd;
 }
 
 /* Position Suche */
