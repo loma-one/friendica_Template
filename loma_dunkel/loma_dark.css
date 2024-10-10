@@ -14,6 +14,12 @@ body {
 }
 */
 
+:root {
+    --font-family-base: 'Roboto', 'Helvetica Neue', Arial, sans-serif, Noto Color Emoji;
+    --font-color: #f5f0eb;
+    --font-color-darker: #000; /* Beispiel */
+}
+
 #topbar-first {
 	background-color: $background_color;
 }
@@ -37,7 +43,7 @@ body {
 	border-color: #3e3a35;
 }
 #topbar-second ul.tabs li {
-	border_color: #3e3a35;
+	border-color: #3e3a35;
 }
 
 .dropdown-menu,
@@ -72,7 +78,7 @@ body {
 	background-color: $nav_bg;
 	box-shadow: 0 0 3px #dadada;
 	-webkit-box-shadow: 0 0 3px #dadada;
-	border-color: #a0a0a0;
+	border-color: #2a2c2f;
 }
 
 input[type="text"],
@@ -437,56 +443,56 @@ ul.tabs li {
 
 /* Hauptbeitrag */
 body {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
-  color: #f5f0eb;
-  font-size: 1.47rem;
-  line-height: 22px;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: optimizelegibility;
-  font-feature-settings: "kern";
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
+    font-family: var(--font-family-base) !important;
+    color: var(--font-color);
+    font-size: 1.47rem;
+    line-height: 22px;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizelegibility;
+    font-feature-settings: "kern";
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
 }
 
 /* Kommentierungen auf Beiträge */
 .media .media-body {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: optimizelegibility;
-  font-feature-settings: "kern";
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
+    font-family: var(--font-family-base) !important;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizelegibility;
+    font-feature-settings: "kern";
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
 }
 
 /* Rahmen Twitter Nachrichten */
 .well {
-  background-image: -webkit-linear-gradient(top,#232526 0,#232526 100%);
-  background-image: -o-linear-gradient(top,#232526 0,#232526 100%);
-  background-image: -webkit-gradient(linear,left top,left bottom,from(#232526),to(#232526));
-  background-image: linear-gradient(to bottom,#232526 0,#232526 100%);
+  background-image: -webkit-linear-gradient(top,#232528 0,#232528 100%);
+  background-image: -o-linear-gradient(top,#232528 0,#232528 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#232528),to(#232528));
+  background-image: linear-gradient(to bottom,#232628 0,#232628 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
   background-repeat: repeat-x;
-  border-color: #3d4244;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1);
-  box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1);
+  border-color: #2a2c2f;
+  -webkit-box-shadow: inset 0 1px 3px rgb(35, 38, 40),0 1px 0 rgb(35, 38, 40);
+  box-shadow: inset 0 1px 3px rgb(35, 38, 40),0 1px 0 rgb(35, 38, 40);
 }
 
 /* Seitennavigation */
 aside .widget, .nav-container .widget {
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji !important;
-  color: #000;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  font-weight: 400;
-  font-style: normal;
-  text-rendering: optimizelegibility;
-  font-feature-settings: "kern";
-  -webkit-text-size-adjust: none;
-  -moz-text-size-adjust: none;
+    font-family: var(--font-family-base) !important;
+    color: #000;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizelegibility;
+    font-feature-settings: "kern";
+    -webkit-text-size-adjust: none;
+    -moz-text-size-adjust: none;
 }
 
 /* Seitennavigation hover Farbe */
@@ -520,7 +526,6 @@ aside .widget, .nav-container .widget {
 }
 
 /* Fügt ein eigene Logo in die Seite ein */
-/*
 #logo-img {display:none;}
 header #banner {
 	position: fixed;
@@ -533,7 +538,7 @@ header #banner {
 	    background-size: 180px 50px;
     height: 50px;
     width: 180px;
-} */
+}
 
 /* Bilder hinzufügen Buttonfarbe */
 button, input, optgroup, select, textarea {
@@ -945,16 +950,11 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
   padding: 10px;
 }
 
-/* Moderationsbereich Reports */
-.table .table {
-  background-color: #242728;
-}
-
 /* fügt eine farbige Linie für Kommentare ein*/
 .thread_level_1 {
 	position: relative !important;
 	margin-top: 0;
-	border-left: 3px solid #5151511a;
+	border-left: 3px solid #51515138;
 }
 
 .thread_level_2 {
@@ -979,34 +979,4 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
 	position: relative !important;
 	margin-top: 0;
 	border-left: 3px solid #8fafb8;
-}
-
-.thread_level_6 {
-	position: relative !important;
-	margin-top: 0;
-	border-left: 3px solid #647C64;
-}
-
-.thread_level_7 {
-	position: relative !important;
-	margin-top: 0;
-	border-left: 3px solid #7F8C8D;
-}
-
-.thread_level_8 {
-	position: relative !important;
-	margin-top: 0;
-	border-left: 3px solid #95A5A6;
-}
-
-.thread_level_9 {
-	position: relative !important;
-	margin-top: 0;
-	border-left: 3px solid #BDC3C7;
-}
-
-.thread_level_10 {
-	position: relative !important;
-	margin-top: 0;
-	border-left: 3px solid #CFD8DC;
 }
