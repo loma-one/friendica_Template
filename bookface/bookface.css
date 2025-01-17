@@ -404,9 +404,9 @@ aside .widget li:hover {
 }
 
 .contact-block-img {
-    height: 100px !important;
-    width: 100px !important;
-    border-radius: 8px !important;
+    height: 65px !important;
+    width: 65px !important;
+    border-radius: 50px !important;
     box-shadow: 0 0 1px rgba(0, 0, 0, .2);
     margin: 5px;
 }
