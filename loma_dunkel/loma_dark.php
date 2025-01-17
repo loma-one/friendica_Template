@@ -1,6 +1,6 @@
 <?php
 /*
- * Name: Loma dunkel
+ * Name: loma dunkel
  * Licence: AGPL
  * Author: Matthias Ebers <feb@loma.ml>
  * Overwrites: nav_bg, nav_icon_color, link_color, background_color, background_image, contentbg_transp

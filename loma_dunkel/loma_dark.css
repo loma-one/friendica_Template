@@ -43,7 +43,7 @@ body {
 	border-color: #3e3a35;
 }
 #topbar-second ul.tabs li {
-	border-color: #3e3a35;
+	border-color: #b6a896;
 }
 
 .dropdown-menu,
@@ -711,7 +711,7 @@ Element {
   border-color: #ddd;
 }
 .panel {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   background-color: #1f2123;
   /*border: 1px solid transparent;*/
   border-radius: 1px;
@@ -948,6 +948,18 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
   color: #c2b39e;
   border: 0px;
   padding: 10px;
+}
+
+/* Bilderecken global ändern */
+.wall-item-content img {
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+/* Videoecken global ändern */
+iframe, img, video {
+  max-width: 100%;
+  border-radius: 3px;
 }
 
 /* fügt eine farbige Linie für Kommentare ein*/
