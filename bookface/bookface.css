@@ -180,7 +180,7 @@ header #banner #logo-img, .navbar-brand #logo-img {
 
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
     color: var(--font-color) !important;
-    border-color: white !important;
+    border-color: #0866ff61 !important
 }
 
 .nav-pills .dropdown-menu li > a:hover,
