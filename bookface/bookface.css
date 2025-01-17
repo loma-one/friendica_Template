@@ -24,6 +24,7 @@ body {
   background-color: #f2f4f7 !important;
   font-size: 15px !important;
   padding-top: 125px !important;
+  font-family: var(--global-font-family);
 }
 
 #topbar-first .nav > li > a, #topbar-first .nav > li > button, nav.navbar .nav > li > a, nav.navbar .nav > li > button {

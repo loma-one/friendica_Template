@@ -7,7 +7,7 @@
  *
  * Name: Bookface
  * Licence: AGPL
- * Author: Kristi H. @kmh@friendica.world feb @feb@loma.ml
+ * Author: Kristi H. @kmh@friendica.world> feb @feb@loma.ml>
  * Overwrites: nav_bg, nav_icon_color, link_color, background_color, background_image, contentbg_transp
  * Accented: yes
  */
@@ -23,7 +23,7 @@ $background_color = '#f2f4f7';
 $background_image = '';
 $contentbg_transp = 100;
 $menu_background_hover_color = '#8080801a'; // rgba(128,128,128,.1)
-$font_color = '#65686C';
+$font_color = '#313131';
 $font_color_darker = '#333';
 $border_color = '#eee';
 ?>
