@@ -2,7 +2,7 @@
 /*
     Licence    : AGPL
     Created on : 17.01.2025
-    Author     : Kristi H. @kmh@friendica.world @feb feb@loma.ml
+    Author     : Kristi H. @kmh@friendica.world> feb @feb@loma.ml>
 */
 ?>
 
@@ -109,8 +109,8 @@ header #banner {
 header #banner #logo-img,
 .navbar-brand #logo-img {
     background-color: var(--link-color) !important;
-    height: 40px !important;
-    width: 40px !important;
+    height: 38px !important;
+    width: 38px !important;
 }
 
 .topbar ul.nav {
@@ -390,7 +390,7 @@ aside .widget li:hover {
 }
 
 .wall-item-actions button {
-    font-size: 22px !important;
+    font-size: 20px !important;
     color: var(--font-color) !important;
 }
 
