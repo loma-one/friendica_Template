@@ -7,7 +7,7 @@
  *
  * Name: Bookface
  * Licence: AGPL
- * Author: Kristi H. @kmh@friendica.world> feb @feb@loma.ml>
+ * Author: Kristi H. @kmh@friendica.world feb @feb@loma.ml
  * Overwrites: nav_bg, nav_icon_color, link_color, background_color, background_image, contentbg_transp
  * Accented: yes
  */
