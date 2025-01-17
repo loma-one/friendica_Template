@@ -344,63 +344,120 @@ aside hr, section hr {
     transition: all 0.25s ease-in-out;
 }
 
+/* Bilderecken global ändern */
+.wall-item-content img {
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+/* Videoecken global ändern */
+iframe, img, video {
+  max-width: 100%;
+  border-radius: 3px;
+}
+
 /* fügt eine farbige Linie für Kommentare ein*/
 .thread_level_1 {
     position: relative !important;
     margin-top: 0;
-    border-left: 3px solid #5151511a;
+    border-left: 2px solid #5151511a;
 }
 
 .thread_level_2 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #d2af7f6b;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_2:hover {
+    border-color: #d2af7f;
 }
 
 .thread_level_3 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #9985666e;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_3:hover {
+    border-color: #998566;
 }
 
 .thread_level_4 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #b8a17ec2;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_4:hover {
+    border-color: #b8a17e;
 }
 
 .thread_level_5 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #8fafb8;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_5:hover {
+    border-color: #8fafb8;
 }
 
 .thread_level_6 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #647C64AB;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_6:hover {
+    border-color: #647C64;
 }
 
 .thread_level_7 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #7F8C8DEB;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_7:hover {
+    border-color: #7F8C8D;
 }
 
 .thread_level_8 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #95A5A6D6;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_8:hover {
+    border-color: #95A5A6;
 }
 
 .thread_level_9 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #BDC3C7;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_9:hover {
+    border-color: #BDC3C7;
 }
 
 .thread_level_10 {
     position: relative !important;
     margin-top: 0;
     border-left: 3px solid #CFD8DC;
+    transition: border-color 0.3s ease;
+}
+
+.thread_level_10:hover {
+    border-color: #CFD8DC;
 }
