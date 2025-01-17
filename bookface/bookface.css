@@ -349,9 +349,10 @@ p.wall-item-announce,
 
 .type-link, .type-video {
     padding: 0 !important;
-    margin:  0 !important;
-    background-color: rgb(240, 242, 245) !important;
-    border: 1px solid rgb(208,211,215) !important;
+    margin: 0 !important;
+    background-color: rgb(255, 255, 255) !important;
+    border: 1px solid rgba(208, 211, 215, 0.45) !important;
+    border-radius: 10px;
 }
 
 .type-link h4, .type-link blockquote, .type-link sup,
