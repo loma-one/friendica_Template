@@ -2,7 +2,7 @@
 /*
     Licence    : AGPL
     Created on : 17.01.2025
-    Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
+    Author     : Kristi H. @kmh@friendica.world @feb feb@loma.ml
 */
 ?>
 
@@ -299,6 +299,10 @@ aside .widget,
 
 .hover-card-pic img.thumbnail {
     border-radius: 100% !important;
+}
+
+#vcard-short-photo-wrapper img, #nav-short-info .contact-wrapper img {
+  border-radius: 50px;
 }
 
 p.wall-item-announce,
