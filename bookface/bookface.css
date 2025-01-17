@@ -273,6 +273,25 @@ header #banner #logo-img, .navbar-brand #logo-img {
     margin-top: 10px;
 }
 
+Element {
+  display: block;
+}
+#back-to-top {
+  display: none;
+  cursor: pointer;
+  color: #d6d7d6;
+  position: fixed;
+  z-index: 49;
+  right: 20px;
+  bottom: 20px;
+  opacity: 1;
+  font-size: 2.9em;
+  padding: 0 12px 0 12px;
+  border-radius: 10px;
+  background-color: #7d7d7d;
+  line-height: 1.5;
+}
+
 aside .widget,
 .nav-container .widget {
     background-color: var(--background-color) !important;
