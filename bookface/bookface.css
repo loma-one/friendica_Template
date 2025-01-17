@@ -106,11 +106,10 @@ header #banner {
     right: auto !important;
 }
 
-header #banner #logo-img,
-.navbar-brand #logo-img {
-    background-color: var(--link-color) !important;
-    height: 38px !important;
-    width: 38px !important;
+header #banner #logo-img, .navbar-brand #logo-img {
+  background-color: #0866FF !important;
+  height: 38px !important;
+  width: 38px !important;
 }
 
 .topbar ul.nav {
@@ -212,17 +211,6 @@ header #banner #logo-img,
     border-bottom: 1px solid #e1e1e1;
 }
 
-header #banner #logo-img, .navbar-brand #logo-img {
-  background-color: #0866FF !important;
-  height: 40px !important;
-  width: 40px !important;
-}
-
-#topbar-first .nav > li > a.selected {
-  border-bottom: 3px solid #0866FF !important;
-  color: #0866FF !important;
-}
-
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
     border-radius: 8px !important;
@@ -273,9 +261,6 @@ header #banner #logo-img, .navbar-brand #logo-img {
     margin-top: 10px;
 }
 
-Element {
-  display: block;
-}
 #back-to-top {
   display: none;
   cursor: pointer;
