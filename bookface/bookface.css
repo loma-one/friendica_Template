@@ -212,6 +212,11 @@ header #banner #logo-img, .navbar-brand #logo-img {
     border-bottom: 1px solid #e1e1e1;
 }
 
+.btn.btn-primary {
+  background: #0866ff;
+  color: #fff;
+}
+
 .btn.btn-primary:hover,
 .btn.btn-primary:focus {
     border-radius: 8px !important;
