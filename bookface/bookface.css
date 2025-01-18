@@ -397,6 +397,13 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
 .mail-list-outside-wrapper .contact-photo-wrapper img {
     height: 70px;
     width: 70px;
+    border-radius: 50%;
+}
+
+.mail-conv-wrapper .media .contact-photo-wrapper img {
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
 }
 
 p.wall-item-announce,
