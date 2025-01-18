@@ -149,6 +149,37 @@ header #banner #logo-img, .navbar-brand #logo-img {
     top: 8px;
 }
 
+.form-control {
+  border-radius: 10px;
+  resize: vertical;
+}
+
+.media-list > li {
+  font-size: 15px;
+}
+
+.pagination .pager_next a, .pagination .pager_prev a {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+  background-color: #0866ff;
+  border-color: #0866ff;
+  border-radius: 10px;
+}
+
+.pagination li.pager_n a {
+  border-radius: 10px;
+}
+
+.pagination-sm > li:first-child > a, .pagination-sm > li:first-child, .pagination-sm > li:last-child > a, .pagination-sm > li:last-child > span {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
 #search-box .form-control.form-search {
     border-radius: 50px !important;
     background: transparent !important;
@@ -217,7 +248,7 @@ header #banner #logo-img, .navbar-brand #logo-img {
 
 .btn.btn-primary {
   background: #0866ff;
-  color: #fff;
+  color: #e6e9ec;
 }
 
 .btn.btn-primary:hover,
@@ -283,6 +314,29 @@ header #banner #logo-img, .navbar-brand #logo-img {
   border-radius: 10px;
   background-color: #7d7d7d;
   line-height: 1.5;
+}
+
+.dropzone, .dropzone .dz-default * {
+  box-sizing: border-box;
+  overflow: auto;
+  cursor: default;
+  border-radius: 10px;
+  border: 1px solid #fdfdfd;
+}
+
+.dropzone.dz-clickable {
+  cursor: pointer;
+  border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  background-color: #f5f6f9;
+  margin-bottom: 10px;
+}
+
+.dropzone:not(textarea) {
+  border: 1px solid rgb(238, 238, 238);
 }
 
 aside .widget,
