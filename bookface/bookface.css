@@ -42,16 +42,15 @@ body {
     margin-right: 10px;
 }
 
-#topbar-first .nav > li > a:hover:not(.selected) {
-    background-color: var(--menu-background-hover-color) !important;
-    border-radius: 8px !important;
+#topbar-first #nav-notifications-menu li.notif-entry .media-object a img {
+  max-height: 400px;
+  border-radius: 10px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50px;
 }
 
-.fa-lg {
-    font-size: 24px !important;
-}
-
-#topbar-first .nav > li > a:hover,
+#topbar-first .nav > li > a:hover:not(.selected),
 #topbar-first .nav > li > a:focus,
 #topbar-first .nav > li > button:not(#main-menu):hover,
 #topbar-first .nav > li > button:not(#main-menu):focus,
@@ -242,7 +241,6 @@ header #banner #logo-img, .navbar-brand #logo-img {
 
 #jotOpen {
     border-radius: 8px !important;
-    color: #0866ff !important;
     background-color: #0866FF !important;
     color: #ffffff !important;
 }
@@ -515,7 +513,7 @@ aside .widget li:hover {
     color: #65686C;
     border-top: 1px solid #eee;
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;/
+    border-bottom-right-radius: 10px;
 }
 
 /* Composer Styles */
