@@ -335,6 +335,16 @@ aside .widget,
   border-radius: 50px;
 }
 
+section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapper, .help-content-wrapper, .match-content-wrapper, .dirfind-content-wrapper, .delegation-content-wrapper, .notes-content-wrapper, .message-content-wrapper, .apps-content-wrapper, #adminpage, .delegate-content-wrapper, .uexport-content-wrapper, .dfrn_request-content-wrapper, .friendica-content-wrapper, .credits-content-wrapper, .nocircle-content-wrapper, .profperm-content-wrapper, .invite-content-wrapper, .tos-content-wrapper, .fsuggest-content-wrapper {
+  border-radius: 10px;
+  box-shadow: 0 0px 1px rgba(0,0,0,.5) !important;
+}
+
+.mail-list-outside-wrapper .contact-photo-wrapper img {
+  height: 70px;
+  width: 70px;
+}
+
 p.wall-item-announce,
 .media .time, .media .shared-time,
 .media .delivery, .media .location,
@@ -454,6 +464,10 @@ aside .widget li:hover {
     margin: 20px auto;
 }
 
+.fc .fc-month-view .fc-content .fc-title .item-desc {
+  font-size: 15px;
+}
+
 @media screen and (max-width: 1280px) {
     #search-box {
         width: 18% !important;
@@ -482,33 +496,33 @@ aside .widget li:hover {
 
 /* Modal Styles */
 .modal {
-    background-color: rgba(242, 244, 247, 0.5); /* Hintergrundfarbe des Modals mit 50% Transparenz */
-    color: #65686C; /* Textfarbe im Modal */
-    border: 1px solid #eee; /* Rahmenfarbe des Modals */
-    border-radius: 10px; /* Abgerundete Ecken */
+    background-color: rgba(242, 244, 247, 0.5);
+    color: #65686C;
+    border: 1px solid #eee;
+    border-radius: 10px;
 }
 
 .modal-header {
-    background-color: #f2f4f7; /* Hintergrundfarbe des Modal-Headers */
-    color: #65686C; /* Textfarbe im Modal-Header */
-    border-bottom: 1px solid #eee; /* Untere Rahmenfarbe des Modal-Headers */
-    border-top-left-radius: 10px; /* Abgerundete obere linke Ecke */
-    border-top-right-radius: 10px; /* Abgerundete obere rechte Ecke */
+    background-color: #f2f4f7;
+    color: #65686C;
+    border-bottom: 1px solid #eee;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .modal-footer {
-    background-color: #f2f4f7; /* Hintergrundfarbe des Modal-Footers */
-    color: #65686C; /* Textfarbe im Modal-Footer */
-    border-top: 1px solid #eee; /* Obere Rahmenfarbe des Modal-Footers */
-    border-bottom-left-radius: 10px; /* Abgerundete untere linke Ecke */
-    border-bottom-right-radius: 10px; /* Abgerundete untere rechte Ecke */
+    background-color: #f2f4f7;
+    color: #65686C;
+    border-top: 1px solid #eee;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;/
 }
 
 /* Composer Styles */
 .composer {
-    background-color: #f2f4f7; /* Hintergrundfarbe des Composers */
-    color: #65686C; /* Textfarbe im Composer */
-    border: 1px solid #eee; /* Rahmenfarbe des Composers */
+    background-color: #f2f4f7;
+    color: #65686C;
+    border: 1px solid #eee;
 }
 
 .composer-header {
