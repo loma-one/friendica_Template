@@ -193,6 +193,10 @@ header #banner #logo-img, .navbar-brand #logo-img {
     border-bottom-right-radius: 10px;
 }
 
+#topbar-first .nav > li > a:hover:not(.selected), #topbar-first .nav > li > a:focus, #topbar-first .nav > li > button:not(#main-menu):hover, #topbar-first .nav > li > button:not(#main-menu):focus, nav.navbar .nav > li > a:hover, nav.navbar .nav > li > a:focus, nav.navbar .nav > li > button:hover, nav.navbar .nav > li > button:focus {
+border-radius: 1px !important;
+}
+
 #search-box .form-control.form-search {
     border-radius: 50px !important;
     background: transparent !important;
