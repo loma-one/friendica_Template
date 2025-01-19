@@ -54,6 +54,23 @@ body {
     margin-right: 10px;
 }
 
+#topbar-first #nav-notifications-menu li {
+    border-color: transparent !important;
+    box-sizing: border-box;
+    margin: 10px;
+    border-radius: 10px !important;
+    width: 94% !important;
+}
+
+#topbar-first .notification-unseen {
+    background-color: rgba(56, 88, 152,.2) !important
+}
+
+#topbar-first #nav-notifications-menu li.notif-entry:hover{
+    background-color:rgba(176,179,184,.2) !important;
+    border-color: transparent !important;
+}
+
 #topbar-first #nav-notifications-menu li.notif-entry .media-object a img {
     max-height: 400px;
     height: 45px;
@@ -73,6 +90,7 @@ nav.navbar .nav > li > button:focus {
     background-color: rgba(255,255,255,.1) !important;
     border-radius: 8px !important;
 }
+
 
 #topbar-first .nav > li > a.selected {
     border-bottom: 3px solid #0866ff !important;
@@ -100,8 +118,13 @@ ul.tabs li {
     margin-left: 10px !important;
 }
 
+ul.tabs li.active {
+    border-color: #0866FF !important;
+}
+
 ul.tabs li a {
     margin-top: 8px;
+    color: rgb(90, 167, 255) !important;
 }
 
 ul.tabs li:hover:not(.active) {
@@ -146,6 +169,7 @@ header #banner #logo-img, .navbar-brand #logo-img {
     height: 40px !important;
     font-size: 15px;
     background-position: unset;
+    box-shadow: none !important;
 }
 
 #search-box form > div {
@@ -160,6 +184,32 @@ header #banner #logo-img, .navbar-brand #logo-img {
     left: 10px;
     top: 8px;
     background-color: #474748;
+}
+
+#search-box .form-control.form-search {
+       border-radius: 50px !important;
+       background: transparent !important;
+       width: 100% !important;
+}
+
+#search-box .form-control::placeholder {
+       color: #B0B3B8 !important;
+}
+
+#topbar-first #search-box .btn {
+       font-size: 0px !important;
+         height: 32px;
+       width: 32px;
+       top: 2px !important;
+       background-color: black !important;
+       margin-top: 2px !important;
+}
+
+#topbar-first #search-box .btn::before {
+       content: '\f061';
+       font-family: ForkAwesome;
+       font-size: 15px;
+       color: #B0B3B8;
 }
 
 .form-control {
@@ -226,8 +276,14 @@ p.wall-item-announce, .media .time, .media .shared-time, .media .delivery, .medi
     color: #B0B3B8;
 }
 
+#nav-user-menu, #nav-notifications-menu {
+    background-color: #252728 !important;
+    border: 1px solid #1C1C1D !important;
+}
+
 #nav-user-menu {
     background-color: #252728 !important;
+    min-width: 250px !important;
 }
 
 .dropdown-menu {
@@ -236,6 +292,10 @@ p.wall-item-announce, .media .time, .media .shared-time, .media .delivery, .medi
     list-style: none;
     border-radius: 10px;
     background-color: #868788;
+}
+
+.dropdown-menu li:hover {
+    border-color: transparent !important;
 }
 
 .topbar .dropdown-header {
@@ -274,10 +334,11 @@ blockquote {
 .contact-photo-wrapper .dropdown-menu li.selected a {
     color: #333 !important;
     background: #f2f2f2 !important;
+    border-radius: 8px;
 }
 
 .nav-pills .dropdown-menu li.divider, .nav-tabs .dropdown-menu li.divider, .account .dropdown-menu li.divider, .contact-photo-wrapper .dropdown-menu li.divider {
-    background-color: var(--nav-bg) !important;
+    background-color: #252728 !important;
 }
 
 #topbar-second {
@@ -290,6 +351,7 @@ blockquote {
     -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 1px 10px rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid #535252;
+    border-color: #333 !important;
 }
 
 .btn {
@@ -445,6 +507,18 @@ aside .widget li a, aside .widget li a:hover {
     text-decoration: none;
 }
 
+.wall-item-container .wall-item-content .type-link img.attachment-image, .type-link img.attachment-image, .type-video img.attachment-image {
+    border-radius: 3px;
+}
+
+figure.img-allocated-height img {
+    border-radius: 3px;
+}
+
+audio, canvas, progress, video {
+  border-radius: 3px;
+}
+
 .button-comments::after {
     content: 'Comment';
     text-decoration: none;
@@ -562,6 +636,48 @@ p.wall-item-announce,
     padding-right: 10px !important;
 }
 
+#upload-photo {
+    background-color: #0866FF !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+.hovercard {
+    background-color: #252728 !important;
+    border: 1px solid #1C1C1D !important;
+}
+.hover-card-pic img.thumbnail {
+    border-radius: 100% !important;
+    background-color: #1C1C1D !important;
+    border-color: black !important;
+}
+p.wall-item-announce,
+.media .time, .media .shared-time,
+.media .delivery, .media .location,
+.media .location a {
+    font-size: 13px !important;
+}
+.type-link, .type-video {
+    padding: 0 !important;
+    margin:  0 !important;
+    background-color: rgb(51, 51, 52) !important;
+    border: 1px solid rgb(101, 104, 108) !important;
+}
+.type-link h4, .type-link blockquote, .type-link sup,
+.type-video h4, .type-video blockquote, .type-video sup {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+#upload-photo:hover,
+#upload-photo:focus {
+ background-color: darkblue !important;
+}
+    /* hide attach file option since there is no way to manage attachments */
+    .fbswitcher [data-mode="attachment"] {
+           display: none !important;
+    }
+
 #profile-photo-wrapper {
     overflow: visible !important;
     padding: 5px;
@@ -614,6 +730,14 @@ aside hr, section hr {
 }
 
 .contact-block-img {
+    height: 100px !important;
+    width: 100px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .2);
+    margin: 5px;
+}
+
+.contact-block-img {
     height: 65px !important;
     width: 65px !important;
     border-radius: 50px !important;
@@ -628,15 +752,19 @@ aside hr, section hr {
 
 .comment-fake-form textarea {
     border-radius: 50px !important;
+    border-radius: 50px !important;
+    background-color: rgb(51, 51, 52) !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
 }
 
 .wall-item-actions button {
     font-size: 20px !important;
-    color: var(--font-color) !important;
+    color: #B0B3B8 !important;
 }
 
 .wall-item-actions button:hover {
-    color: var(--link-color) !important;
+    color: #0866FF !important;
 }
 
 .wall-item-actions .checkbox {
@@ -645,8 +773,82 @@ aside hr, section hr {
 
 .comment .media-body {
     padding: 10px;
-    background-color: var(--background-color);
+    background-color: rgb(51, 51, 52);
     border-radius: 20px;
+}
+
+.photo-album-actions .icon-padding,
+.photo-edit-link-wrap .icon-padding {
+    margin-left: 10px !important;
+}
+
+.photos-upload-link {
+    font-size: 28px;
+    color: #0866FF !important;
+    opacity: 1 !important;
+    border-radius: 8px;
+    padding: 0px 8px;
+}
+
+#photo-album-link {
+    opacity: 1 !important;
+}
+
+.photos-upload-link i,
+#photo-album-link i,
+#photo-edit-link i,
+#photo-toprofile-link i,
+#album-edit-link i,
+#album-drop-link i,
+.photos-order-link i {
+    font-size: 24px !important;
+    color: #0866FF !important;
+    opacity: 1 !important;
+    border-radius: 100% !important;
+    padding: 8px 11px !important;
+    height: 40px;
+    width:  40px;
+}
+
+#photo-edit-link i.fa-image {
+    padding: 6px 7px !important;
+}
+
+.photos-order-link {
+    margin-top: 5px !important;
+}
+
+.photos-upload-link:hover i,
+.photos-upload-link:focus i,
+#photo-album-link:hover i,
+#photo-album-link:focus i,
+#photo-edit-link:hover i,
+#photo-toprofile-link:hover i,
+#photo-toprofile-link:focus i,
+#album-edit-link:hover i,
+#album-edit-link:focus i,
+#album-drop-link:hover i,
+#album-drop-link:focus i,
+.photos-order-link:hover i,
+.photos-upload-link:hover i,
+.photos-upload-link:focus i {
+    background-color: rgba(255,255,255,.1) !important;
+}
+
+.photos-content-wrapper .photos-upload-link::before {
+    content: 'Add Photos';
+    font-size: 15px;
+    vertical-align: middle;
+    margin-top: -10px;
+    display: inline-block;
+}
+
+#photo-photo {
+    margin: 0 auto !important;
+}
+
+.img-allocated-max-width {
+    margin: 20px auto;
 }
 
 .wall-item-actions-row .wall-item-emoji {
@@ -670,6 +872,10 @@ aside hr, section hr {
 
 .breadcrumb {
   background-color: #333;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+  background-color: #464646;
 }
 
 @media screen and (max-width: 1280px) {
