@@ -406,9 +406,8 @@ aside .widget,
     content: 'Like';
     text-decoration: none;
 }
-
-.wall-item-response .thumbs-down::after {
-    content: 'Disike';
+[id^="dislike-"]::after{
+    content: 'Dislike';
     text-decoration: none;
 }
 
