@@ -632,27 +632,102 @@ aside .widget li:hover {
 }
 
 /* Modal Styles */
-.modal {
-    background-color: rgba(242, 244, 247, 0.5);
-    color: #65686C;
-    border: 1px solid #eee;
-    border-radius: 10px;
+
+#jot-modal-content,
+.wall-item-comment-wrapper {
+    background-color: #fff !important;
+    border-radius: 15px !important;
 }
 
-.modal-header {
-    background-color: #f2f4f7;
-    color: #65686C;
-    border-bottom: 1px solid #eee;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+#jot-modal-content input,
+#jot-modal-content .friendica-tagsinput {
+    background-color: #fff !important;
 }
 
-.modal-footer {
-    background-color: #f2f4f7;
-    color: #65686C;
-    border-top: 1px solid #eee;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+#jot-modal-content .fbrowser .folders button {
+    background-color: rgba(0,0,0,.1) !important;
+    color: black !important;
+    /*! box-shadow: none !important; */
+}
+
+#jot-modal-content .fbrowser .folders li:hover,
+#jot-modal-content .fbraower .folders li:focus {
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
+
+#jot-title {
+    border-radius: 50px !important;
+    background-color: #fff !important;
+}
+
+#profile-jot-text, #profile-jot-wrapper textarea,
+#jot-location,
+.wall-item-comment-wrapper textarea {
+    background-color: #fff !important;
+}
+
+#jot-text-wrap, #profile-jot-wrapper .dropzone.dz-clickable, .wall-item-comment-wrapper .dropzone.dz-clickable {
+    background-color: #f2f4f7 !important;
+}
+
+.jot-nav {
+    border: none !important;
+}
+
+.jot-nav a {
+    border: none !important;
+    border-radius: 8px !important;
+    margin-right: 5px;
+}
+
+.jot-nav a:hover, .jot-nav a:focus {
+    background-color: rgba(128,128,128,.2) !important;
+}
+
+.jot-nav .active a {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border-bottom: 3px solid #0866FF !important;
+}
+
+.jot-nav .active a:hover, .jot-nav .active a:focus {
+    background-color: transparent !important;
+}
+
+[id^="comment-edit-preview"],
+.comment-edit-preview {
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    background-color: rgba(0,0,0,.1);
+}
+
+[id^="comment-edit-preview"]:hover,
+[id^="comment-edit-preview"]:focus,
+.comment-edit-preview:hover,
+.comment-edit-preview:focus {
+    background-color: rgba(0,0,0,.2) !important;
+}
+
+#profile-jot-wrapper .wall-item-container.panel-body.preview {
+    border: 1px solid #666 !important;
+    margin-top:20px !important;
+    border-radius: 8px !important;
+}
+
+#upload-photo {
+    background-color: #0866FF !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
+#upload-photo:hover,
+#upload-photo:focus {
+    background-color: darkblue !important;
+}
+
+.fbswitcher [data-mode="attachment"] {
+    display: none !important;
 }
 
 /* Composer Styles */
