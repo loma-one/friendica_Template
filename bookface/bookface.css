@@ -28,7 +28,14 @@ body {
 }
 
 #topbar-first .nav > li > a, #topbar-first .nav > li > button, nav.navbar .nav > li > a, nav.navbar .nav > li > button {
-    color: var(--font-color) !important;
+    color: #65686C !important;
+}
+
+#topbar-first .topbar-nav .nav-segment > a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    margin-right: 10px;
 }
 
 #topbar-first, nav.navbar {
@@ -63,13 +70,13 @@ nav.navbar .nav > li > a:hover,
 nav.navbar .nav > li > a:focus,
 nav.navbar .nav > li > button:hover,
 nav.navbar .nav > li > button:focus {
-    background-color: var(--menu-background-hover-color) !important;
+    background-color: rgba(128,128,128,.1) !important;
     border-radius: 8px !important;
 }
 
 #topbar-first .nav > li > a.selected {
-    border-bottom: 3px solid var(--link-color) !important;
-    color: var(--link-color) !important;
+    border-bottom: 3px solid #0866FF !important;
+    color: #0866FF !important;
 }
 
 #topbar-first .nav > li > a.selected:hover,
@@ -102,7 +109,7 @@ ul.tabs li:hover:not(.active) {
 }
 
 ul.tabs li:hover:not(.active) a {
-    background-color: var(--menu-background-hover-color) !important;
+    background-color: rgba(128,128,128,.1) !important;
     border-radius: 8px !important;
 }
 
@@ -222,7 +229,7 @@ header #banner #logo-img, .navbar-brand #logo-img {
 }
 
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
-    color: var(--font-color) !important;
+    color: #65686C !important;
     border-color: #0866ff61 !important
 }
 
@@ -234,7 +241,7 @@ header #banner #logo-img, .navbar-brand #logo-img {
 .nav-tabs .dropdown-menu li.selected a,
 .account .dropdown-menu li.selected a,
 .contact-photo-wrapper .dropdown-menu li.selected a {
-    color: var(--font-color-darker) !important;
+    color: #333 !important;
     background: #f2f2f2 !important;
 }
 
@@ -283,7 +290,7 @@ header #banner #logo-img, .navbar-brand #logo-img {
 }
 
 #jotOpen {
-    border-radius: 20px !important;
+    border-radius: 10px !important;
     background-color: #0866FF !important;
     color: #ffffff !important;
 }
@@ -361,6 +368,59 @@ aside .widget,
 
 .wall-item-container {
     border-top: 1px solid rgb(238, 238, 238);
+}
+
+.wall-item-actions-row button,
+.wall-item-actions-right button {
+    display: block;
+    white-space: normal !important;
+    margin: 0 auto !important;
+    text-decoration: none;
+}
+
+.wall-item-actions-row button::after,
+.wall-item-actions-right button::after {
+    font-size: 9px;
+    font-family: var(--global-font-family);
+    display: block;
+    margin-top: 2px;
+    text-decoration: none;
+}
+
+.button-comments::after {
+    content: 'Comment';
+    text-decoration: none;
+}
+
+.button-announces::after {
+    content: 'Share';
+    text-decoration: none;
+}
+
+.button-votes::after {
+    content: 'Quote';
+    text-decoration: none;
+}
+
+.button-likes::after {
+    content: 'Like';
+    text-decoration: none;
+}
+
+.wall-item-response .thumbs-down::after {
+    content: 'Disike';
+    text-decoration: none;
+}
+
+.wall-item-actions-right .dropdown-toggle::after {
+    content: 'More';
+    text-decoration: none;
+}
+
+.wall-item-response span {
+    text-align: center;
+    display: block;
+    text-decoration: none;
 }
 
 .well {
