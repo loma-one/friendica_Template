@@ -909,57 +909,182 @@ aside hr, section hr {
 }
 
 /* Modal Styles */
-.modal {
-    background-color: rgba(37, 39, 40, 0.5);
-    color: #B0B3B8;
-    border: 1px solid #333;
-    border-radius: 10px;
-    color: #B0B3B8;;
+#jot-modal-content, .wall-item-comment-wrapper {
+    background-color: rgb(37,39,40) !important;
+    border-radius: 15px !important;
 }
 
-.modal-header {
-    background-color: #393939;
-    color: #B0B3B8;
-    border-bottom: 1px solid #333;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+#jot-modal-content input,
+#jot-modal-content .friendica-tagsinput {
+    background-color: #1C1C1D !important;
 }
 
-.modal-footer {
-    background-color: #252728;
-    color: #B0B3B8;
-    border-top: 1px solid #333;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+#jot-modal-content .fbrowser .folders button {
+    background-color: rgba(255,255,255,.1) !important;
+    color: black !important;
+/*! box-shadow: none !important; */
 }
 
-.modal-content {
-    background-color: #333;
-    border: 1px solid rgb(71, 71, 72);
-    border-radius: 10px;
+#jot-modal-content .fbrowser .folders li:hover,
+#jot-modal-content .fbraower .folders li:focus {
+    border-color: transparent !important;
+    background-color: transparent !important;
 }
 
-.close {
-  color: #fff;
-  text-shadow: 0 1px 0 #fff;
+#jot-title {
+    border-radius: 50px !important;
+    background-color: rgb(51,51,52) !important;
+}
 
+#profile-jot-text, #profile-jot-wrapper textarea,
+#jot-location, .wall-item-comment-wrapper textarea {
+    background-color: rgb(51, 51, 52) !important;
+}
+
+#jot-text-wrap, #profile-jot-wrapper .dropzone.dz-clickable, .wall-item-comment-wrapper .dropzone.dz-clickable {
+    background-color: #1C1C1D !important;
+}
+.jot-nav {
+    border: none !important;
+}
+
+.jot-nav a {
+    border: none !important;
+    border-radius: 8px !important;
+    margin-right: 5px;
+}
+
+.jot-nav a:hover, .jot-nav a:focus {
+    background-color: rgba(255,255,255,.2) !important;
+}
+
+.jot-nav .active a {
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border-bottom: 3px solid #0866FF !important;
+}
+
+.jot-nav .active a:hover, .jot-nav .active a:focus {
+    background-color: transparent !important;
+}
+[id^="comment-edit-preview"], .comment-edit-preview {
+    border-radius: 8px !important;
+    box-shadow: none !important;
+    background-color: rgba(255,255,255,.1);
+}
+
+[id^="comment-edit-preview"]:hover,
+[id^="comment-edit-preview"]:focus,
+.comment-edit-preview:hover,
+.comment-edit-preview:focus {
+    background-color: rgba(255,255,255,.2) !important;
+}
+
+#profile-jot-wrapper .wall-item-container.panel-body.preview {
+    border: 1px solid #666 !important;
+    margin-top:20px !important;
+    border-radius: 8px !important;
+}
+
+/* Profile */
+#profile-photo-wrapper {
+    overflow: visible !important;
+    padding: 5px;
+    background-color: #1C1C1D;
+    border-radius: 100%
+}
+
+aside .widget li {
+    margin-bottom: 8px;
+}
+
+aside .vcard img.u-photo, aside img.vcard-photo {
+    border-radius: 100% !important;
+    box-shadow: 0 0 1px rgba(0,0,0,.3);
+    border: 3px solid #1C1C1D;
+}
+
+aside .widget h3.p-name {
+    font-size: 32px !important;
+    text-align: center;
+    word-break: break-word;
+}
+
+aside .vcard .p-addr {
+    font-weight: 600;
+    text-align: center;
+    white-space: break-spaces !important;
+}
+
+aside .widget li.selected {
+    background-color:rgba(56, 88, 152,.2) !important;
+    border-color: transparent !important;
+    border-radius: 8px;
+}
+
+aside .widget li.selected a {
+    font-weight: bold;
+}
+
+aside .widget li:hover {
+    background-color:rgba(128,128,128,.2) !important;
+    border-color: transparent !important;
+    border-radius: 8px;
+}
+
+#widget-contacts {
+    background-color: rgb(37, 39, 40) !important;
+    border-radius: 8px !important;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2) !important;
+}
+.contact-block-img {
+    height: 100px !important;
+    width: 100px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .2);
+    margin: 5px;
+
+}
+.comment-fake-form {
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.comment-fake-form textarea {
+    border-radius: 50px !important;
+    background-color: rgb(51, 51, 52) !important;
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.wall-item-actions button {
+    font-size: 24px !important;
+    color: #B0B3B8 !important;
+}
+
+.wall-item-actions button:hover {
+        color: #0866FF !important;
+}
+.wall-item-actions .checkbox {
+        padding-top: 6px !important;
+}
+.comment .media-body {
+        padding: 10px;
+        background-color: rgb(51, 51, 52);
+        border-radius: 20px;
+}
+.wall-item-actions-row .wall-item-emoji {
+        font-size: 18px;
+        line-height: 40px;
+}
+.navicon {
+        font-size: 20px;
+        position: relative;
+        top: 1px;
 }
 
 #jot-modal .modal-header a, #jot-modal .modal-header .btn-link, #profile-jot-submit-wrapper a, #profile-jot-submit-wrapper .btn-link {
-  color: #d2d2d2;
-}
-
-main .nav-tabs > li.active > a, main .nav-tabs > li.active > a:focus, main .nav-tabs > li.active > a:hover {
-  background-color: rgb(8, 102, 255);
-}
-
-.nav-tabs > li > a {
-  border: 1px solid #606060;
-  border-radius: 2px 2px 0 0;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+    color: #888787;
 }
 
 /* Composer Styles */
