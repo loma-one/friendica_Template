@@ -164,6 +164,7 @@ header #banner #logo-img, .navbar-brand #logo-img {
 .form-control {
     border-radius: 10px;
     resize: vertical;
+    background-color: #ffffff8a;
 }
 
 .media-list > li {
@@ -368,6 +369,18 @@ aside .widget,
 
 .wall-item-container {
     border-top: 1px solid rgb(238, 238, 238);
+}
+
+.wall-item-container .wall-item-content .type-link img.attachment-image, .type-link img.attachment-image, .type-video img.attachment-image {
+    border-radius: 3px;
+}
+
+figure.img-allocated-height img {
+    border-radius: 3px;
+}
+
+audio, canvas, progress, video {
+  border-radius: 3px;
 }
 
 .wall-item-actions-row button,
