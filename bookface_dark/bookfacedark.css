@@ -319,6 +319,10 @@ blockquote {
     border-left: 5px solid #717171;
 }
 
+#topbar-first .nav > li > a:hover:not(.selected), #topbar-first .nav > li > a:focus, #topbar-first .nav > li > button:not(#main-menu):hover, #topbar-first .nav > li > button:not(#main-menu):focus, nav.navbar .nav > li > a:hover, nav.navbar .nav > li > a:focus, nav.navbar .nav > li > button:hover, nav.navbar .nav > li > button:focus {
+border-radius: 1px !important;
+}
+
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
     color: #B0B3B8 !important;
     border-color: #252728 !important;
