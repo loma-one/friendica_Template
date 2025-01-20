@@ -45,6 +45,7 @@ body {
     margin-right: 10px;
 }
 
+
 #topbar-first .topbar-nav .dropdown-menu {
     width: 350px;
     margin-left: -300px;
@@ -52,6 +53,10 @@ body {
 
 #topbar-first .topbar-nav .nav-segment {
     margin-right: 10px;
+}
+
+#topbar-first #nav-notifications-menu {
+       border: 1px solid #1C1C1D !important;
 }
 
 #topbar-first #nav-notifications-menu a {
@@ -70,7 +75,7 @@ body {
     background-color: rgba(56, 88, 152,.2) !important
 }
 
-#topbar-first #nav-notifications-menu li.notif-entry:hover{
+#topbar-first #nav-notifications-menu li.notif-entry:hover {
     background-color:rgba(176,179,184,.2) !important;
     border-color: transparent !important;
 }
@@ -83,6 +88,7 @@ body {
     border-bottom: 1px solid #c1c1c1;
 }
 
+#topbar-first .nav > li > a:hover,
 #topbar-first .nav > li > a:hover:not(.selected),
 #topbar-first .nav > li > a:focus,
 #topbar-first .nav > li > button:not(#main-menu):hover,
@@ -95,6 +101,9 @@ nav.navbar .nav > li > button:focus {
     border-radius: 8px !important;
 }
 
+.fa-lg {
+    font-size: 24px !important;
+}
 
 #topbar-first .nav > li > a.selected {
     border-bottom: 3px solid #0866ff !important;
@@ -187,13 +196,12 @@ header #banner #logo-img, .navbar-brand #logo-img {
     position: absolute;
     left: 10px;
     top: 8px;
-    background-color: #474748;
 }
 
 #search-box .form-control.form-search {
-       border-radius: 50px !important;
-       background: transparent !important;
-       width: 100% !important;
+    border-radius: 50px !important;
+    background: transparent !important;
+    width: 100% !important;
 }
 
 #search-box .form-control::placeholder {
@@ -201,19 +209,19 @@ header #banner #logo-img, .navbar-brand #logo-img {
 }
 
 #topbar-first #search-box .btn {
-       font-size: 0px !important;
-         height: 32px;
-       width: 32px;
-       top: 2px !important;
-       background-color: black !important;
-       margin-top: 2px !important;
+    font-size: 0px !important;
+    height: 32px;
+    width: 32px;
+    top: 2px !important;
+    background-color: black !important;
+    margin-top: 2px !important;
 }
 
 #topbar-first #search-box .btn::before {
-       content: '\f061';
-       font-family: ForkAwesome;
-       font-size: 15px;
-       color: #B0B3B8;
+    content: '\f061';
+    font-family: ForkAwesome;
+    font-size: 15px;
+    color: #B0B3B8;
 }
 
 .form-control {
@@ -231,6 +239,7 @@ p.wall-item-announce, .media .time, .media .shared-time, .media .delivery, .medi
 
 .media-list > li {
     font-size: 15px;
+    border-color: #2d2c2c;
 }
 
 .pagination .pager_next a, .pagination .pager_prev a {
@@ -291,11 +300,12 @@ p.wall-item-announce, .media .time, .media .shared-time, .media .delivery, .medi
 }
 
 .dropdown-menu {
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    border-radius: 10px;
-    background-color: #868788;
+    padding-bottom: 15px !important;
+}
+
+.dropdown-menu li {
+    width: 92% !important;
+    border-radius: 8px;
 }
 
 .dropdown-menu li:hover {
@@ -395,6 +405,8 @@ border-radius: 1px !important;
     border-radius: 10px !important;
     background-color: #0866FF !important;
     color: #ffffff !important;
+    border-color: #000 !important;
+    box-shadow: none !important;
 }
 
 #jotOpen:hover, #jotOpen:focus {
@@ -414,7 +426,23 @@ border-radius: 1px !important;
 #jotOpen .fa-pencil-square-o {
     font-size: 32px !important;
     position: relative;
+    margin-right: 10px;
+    line-height: 32px;
+    display: inline;
     top: 4px;
+}
+
+.panel-footer button[type="submit"]{
+    float: right !important;
+}
+.panel-footer::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.fbswitcher [data-mode="attachment"] {
+        display: none !important;
 }
 
 #topbar-second #nav-short-info {
@@ -485,17 +513,19 @@ aside .widget li a, aside .widget li a:hover {
 }
 
 .tread-wrapper {
-    box-shadow: 0 0px 1px rgb(4, 4, 4) !important;
+    background-color: rgb(37, 39, 40) !important;
+    box-shadow: 0 0px 1px rgba(0,0,0,.5) !important;
     border-radius: 10px !important;
 }
 
 .wall-item-container .media {
     background-color: #333 !important;
+    background-color: rgb(37, 39, 40) !important;
     border-radius: 10px !important;
 }
 
 .wall-item-container {
-    border-top: 1px solid rgb(40, 40, 40);
+    border-top: 1px solid rgb(62, 63, 64);
 }
 
 .wall-item-actions-row button,
@@ -552,9 +582,76 @@ audio, canvas, progress, video {
     text-decoration: none;
 }
 
-.wall-item-actions-right .dropdown-toggle::after {
+.wall-item-actions-right .dropdown-toggle::after
+.more-links .dropdown-toggle::after {
     content: 'More';
     text-decoration: none;
+}
+
+.vote-event:not(:has(.wall-item-response:empty)) {
+    padding-bottom: 135px;
+}
+
+.vote-event .wall-item-response {
+    position: absolute;
+    top: 63px;
+}
+
+.vote-event .wall-item-response:empty{
+    display: none;
+}
+
+.vote-event .wall-item-response:nth-of-type(1){
+    left: 15px;
+}
+
+.vote-event .wall-item-response:nth-of-type(1) .button-event::after,
+    [id^="attendyes"]::after{
+    content: 'Going';
+}
+
+.vote-event .wall-item-response:nth-of-type(2){
+    left: 105px;
+}
+
+.vote-event .wall-item-response:nth-of-type(2) .button-event::after,
+    [id^="attendno"]::after{
+    content: 'Can\'t Go';
+    position: relative;
+    height: 20px;
+    overflow: hidden; /* or skews mobile button layout */
+}
+
+.vote-event .wall-item-response:nth-of-type(3){
+    left: 204px;
+}
+
+.vote-event .wall-item-response:nth-of-type(3) .button-event::after,
+    [id^="attendmaybe"]::after{
+    content: 'Maybe';
+}
+
+.wall-item-actions-row > button span,
+.wall-item-response span {
+    position: absolute;
+    text-align: center;
+    display: block;
+    background-color: #0866FF;
+    box-shadow: -1px 1px 1px #000;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    width: fit-content;
+    padding: 0px 7px;
+    left: 55%;
+    top: 0px;
+    z-index: 1;
+}
+
+.wall-item-response {
+    position: relative;
+    padding-top: 4px;
 }
 
 .wall-item-response span {
@@ -564,15 +661,17 @@ audio, canvas, progress, video {
 }
 
 .well {
-    background-image: -webkit-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);
-    background-image: -o-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);
-    background-image: -webkit-gradient(linear,left top,left bottom,from(#e8e8e8),to(#f5f5f5));
-    background-image: linear-gradient(to bottom,#444 0,#444 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
-    background-repeat: repeat-x;
-    border-color: #444;
-    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1);
-    box-shadow: inset 0 1px 3px rgb(68, 68, 68),0 1px 0 rgb(51, 51, 52);
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border-color: #535151;
+    background-color: #333;
+    border: 1px solid #252728;
+    border-top-color: rgb(53, 53, 53);
+    border-right-color: rgb(53, 53, 53);
+    border-bottom-color: rgb(53, 53, 53);
+    border-left-color: rgb(53, 53, 53);
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom,#252728 0,#252728 100%);
 }
 
 .contact-photo,
@@ -589,10 +688,14 @@ audio, canvas, progress, video {
     border-radius: 50px;
 }
 
+.contact-wrapper .contact-action-link, .contact-wrapper .contact-action-link:hover, .textcomplete-item .contact-wrapper .contact-action-link {
+    color: #fff;
+}
+
 section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapper, .help-content-wrapper, .match-content-wrapper, .dirfind-content-wrapper, .delegation-content-wrapper, .notes-content-wrapper, .message-content-wrapper, .apps-content-wrapper, #adminpage, .delegate-content-wrapper, .uexport-content-wrapper, .dfrn_request-content-wrapper, .friendica-content-wrapper, .credits-content-wrapper, .nocircle-content-wrapper, .profperm-content-wrapper, .invite-content-wrapper, .tos-content-wrapper, .fsuggest-content-wrapper {
     border-radius: 10px;
     box-shadow: 0 0 1px rgba(255,255,255,.1) !important;
-    background-color: rgb(51,51,51);
+    background-color: rgb(37,39,40);
     color: #b0b3b8;
 }
 
@@ -633,8 +736,8 @@ p.wall-item-announce,
 .type-link, .type-video {
     padding: 0 !important;
     margin: 0 !important;
-    background-color: rgb(51, 51, 52) !important;
-    border: 1px solid rgb(83, 81, 81) !important;
+    background-color: rgb(37, 39, 40) !important;
+    border: 1px solid rgb(53, 53, 53) !important;
     border-radius: 10px;
 }
 
@@ -654,23 +757,20 @@ p.wall-item-announce,
     background-color: #252728 !important;
     border: 1px solid #1C1C1D !important;
 }
+
 .hover-card-pic img.thumbnail {
     border-radius: 100% !important;
     background-color: #1C1C1D !important;
     border-color: black !important;
 }
+
 p.wall-item-announce,
 .media .time, .media .shared-time,
 .media .delivery, .media .location,
 .media .location a {
     font-size: 13px !important;
 }
-.type-link, .type-video {
-    padding: 0 !important;
-    margin:  0 !important;
-    background-color: rgb(51, 51, 52) !important;
-    border: 1px solid rgb(101, 104, 108) !important;
-}
+
 .type-link h4, .type-link blockquote, .type-link sup,
 .type-video h4, .type-video blockquote, .type-video sup {
     padding-left: 10px !important;
@@ -681,10 +781,11 @@ p.wall-item-announce,
 #upload-photo:focus {
  background-color: darkblue !important;
 }
-    /* hide attach file option since there is no way to manage attachments */
-    .fbswitcher [data-mode="attachment"] {
-           display: none !important;
-    }
+
+
+.fbswitcher [data-mode="attachment"] {
+        display: none !important;
+}
 
 #profile-photo-wrapper {
     overflow: visible !important;
@@ -728,7 +829,7 @@ aside .widget li:hover {
 }
 
 aside hr, section hr {
-    border-color: rgb(83, 81, 81);
+    border-color: rgb(53, 53, 53);
 }
 
 #widget-contacts {
@@ -781,7 +882,7 @@ aside hr, section hr {
 
 .comment .media-body {
     padding: 10px;
-    background-color: rgb(51, 51, 52);
+    background-color: rgb(37, 39, 40);
     border-radius: 20px;
 }
 
@@ -946,7 +1047,7 @@ aside hr, section hr {
 }
 
 #jot-text-wrap, #profile-jot-wrapper .dropzone.dz-clickable, .wall-item-comment-wrapper .dropzone.dz-clickable {
-    background-color: #1C1C1D !important;
+    background-color: #2d2d2d !important;
 }
 .jot-nav {
     border: none !important;
@@ -1074,7 +1175,7 @@ aside .widget li:hover {
 }
 .comment .media-body {
         padding: 10px;
-        background-color: rgb(51, 51, 52);
+        background-color: rgb(37, 39, 40);
         border-radius: 20px;
 }
 .wall-item-actions-row .wall-item-emoji {
