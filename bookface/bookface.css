@@ -223,19 +223,13 @@ border-radius: 1px !important;
 }
 
 #nav-user-menu {
-    background-color: #fff !important;
-}
-
-.dropdown-menu {
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
-    border-radius: 10px;
+    background-color: #ffffff !important;
+    min-width: 250px !important;
 }
 
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
     color: #65686C !important;
-    border-color: #0866ff61 !important
+    border-color: white !important;
 }
 
 .nav-pills .dropdown-menu li > a:hover,
@@ -248,10 +242,11 @@ border-radius: 1px !important;
 .contact-photo-wrapper .dropdown-menu li.selected a {
     color: #333 !important;
     background: #f2f2f2 !important;
+    border-radius: 8px;
 }
 
 .nav-pills .dropdown-menu li.divider, .nav-tabs .dropdown-menu li.divider, .account .dropdown-menu li.divider, .contact-photo-wrapper .dropdown-menu li.divider {
-    background-color: var(--nav-bg) !important;
+    background-color: #ffffff !important;
 }
 
 #topbar-second {
