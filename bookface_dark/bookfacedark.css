@@ -504,7 +504,7 @@ aside .widget li a, aside .widget li a:hover {
 
 .wall-item-actions-row button::after,
 .wall-item-actions-right button::after {
-    font-size: 9px;
+    font-size: 12px;
     font-family: var(--global-font-family);
     display: block;
     margin-top: 2px;
