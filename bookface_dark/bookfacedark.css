@@ -54,6 +54,10 @@ body {
     margin-right: 10px;
 }
 
+#topbar-first #nav-notifications-menu a {
+  color: #b0b3b8
+}
+
 #topbar-first #nav-notifications-menu li {
     border-color: transparent !important;
     box-sizing: border-box;
