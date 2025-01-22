@@ -187,6 +187,12 @@ header #banner #logo-img, .navbar-brand #logo-img {
 }
 
 .pagination-sm > li:first-child > a, .pagination-sm > li:first-child, .pagination-sm > li:last-child > a, .pagination-sm > li:last-child > span {
+        border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#topbar-first .nav > li > a:hover:not(.selected), #topbar-first .nav > li > a:focus, #topbar-first .nav > li > button:not(#main-menu):hover, #topbar-first .nav > li > button:not(#main-menu):focus, nav.navbar .nav > li > a:hover, nav.navbar .nav > li > a:focus, nav.navbar .nav > li > button:hover, nav.navbar .nav > li > button:focus {
+    border-radius: 1px !important;
     border-radius: 10px;
 }
 
@@ -692,6 +698,12 @@ aside .widget li:hover {
 
 .fc .fc-month-view .fc-content .fc-title .item-desc {
     font-size: 15px;
+}
+
+.fc .fc-event {
+    background-color: #65686c26;
+    border: 1px solid #65686c1f;
+    color: #333;
 }
 
 .fancybox-image, .fancybox-spaceball {
