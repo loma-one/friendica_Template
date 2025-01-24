@@ -280,6 +280,14 @@ header #banner #logo-img,
        border-color: transparent !important;
 }
 
+#topbar-first #nav-notifications-menu li.notif-entry .media-object a img {
+       border-radius: 50%;
+}
+
+.notif-item img.notif-image {
+	border-radius: 50%;
+}
+
 #topbar-second {
        height: 60px !important;
        background-color: var(--nav-bg) !important;
@@ -849,7 +857,7 @@ aside .widget li:hover {
        line-height: 40px;
 }
 .navicon {
-       font-size: 20px;
+       font-size: 16px;
        position: relative;
        top: 1px;
 }

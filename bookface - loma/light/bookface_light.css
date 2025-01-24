@@ -54,6 +54,14 @@ nav.navbar .nav > li > button{
 	background-color: #f2f4f7;
 }
 
+#topbar-first #nav-notifications-menu li.notif-entry .media-object a img {
+	border-radius: 50%;
+}
+
+.notif-item img.notif-image {
+	border-radius: 50%;
+}
+
 .fa-lg {
 	font-size: 24px !important;
 }
@@ -210,6 +218,10 @@ width: 40px !important;
 #nav-user-menu {
 	background-color: #ffffff !important;
 	min-width: 250px !important;
+}
+
+.btn {
+  border-radius: 10px;
 }
 
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
@@ -776,9 +788,9 @@ aside .widget li:hover {
 }
 
 .navicon {
-	font-size: 20px;
-	position: relative;
-	top: 1px;
+  font-size: 16px;
+  position: relative;
+  top: 1px;
 }
 
 .contact-photo,
