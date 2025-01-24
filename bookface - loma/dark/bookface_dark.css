@@ -60,7 +60,7 @@ nav.navbar .nav > li > a:focus,
 nav.navbar .nav > li > button:hover,
 nav.navbar .nav > li > button:focus {
        background-color: rgba(255,255,255,.1) !important;
-       border-radius: 8px !important;
+       border-radius: 0px !important;
 }
 
 #topbar-first .nav > li > a.selected {
@@ -911,6 +911,10 @@ audio, canvas, progress, video {
 
 .img-allocated-max-width {
     margin: 20px auto;
+}
+
+#photo-photo {
+	margin: 20px auto;
 }
 
 @media screen and (max-width: 1280px) {
