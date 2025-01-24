@@ -20,7 +20,10 @@ into /friendica/view/theme/frio/scheme/
 
 NOTES:
 
-This is a further development of the style template by Kristi H. @kmh@friendica.world which has been adapted to the needs of Node ['loma]. Some unfinished things in the original have been completed and the colour scheme in threads has been adapted. This template can also be used on other Friendica nodes.
+This is a further development of the style template by Kristi H. @kmh@friendica.world which
+has been adapted to the needs of Node ['loma]. Some unfinished things in the original have
+been completed and the colour scheme in threads has been adapted. This template can also be
+used on other Friendica nodes.
 
 Contributors:
 Kristi H. @kmh@friendica.world
