@@ -934,6 +934,13 @@ audio, canvas, progress, video {
         margin-right: 42px;
     }
 }
+
+@media (max-width: 991px) {
+	.topbar ul.nav > li > a, .topbar ul.nav > li > button {
+		padding: 15px 5px;
+	}
+}
+
 @media screen and (max-width: 768px){
     #topbar-first .navbar-toggle[data-target="#search-mobile"]{
         position: fixed !important;

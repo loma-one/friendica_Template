@@ -75,7 +75,7 @@ nav.navbar .nav > li > a:focus,
 nav.navbar .nav > li > button:hover,
 nav.navbar .nav > li > button:focus {
 	background-color: rgba(128,128,128,.1) !important;
-	border-radius: 8px !important;
+	border-radius: 0px !important;
 }
 
 #topbar-first .nav > li > a.selected {
@@ -138,8 +138,8 @@ header #banner {
 header #banner #logo-img,
 .navbar-brand #logo-img {
 	background-color: var(--link-color) !important;
-height: 40px !important;
-width: 40px !important;
+	height: 40px !important;
+	width: 40px !important;
 }
 
 .topbar ul.nav {
@@ -674,7 +674,7 @@ border: 1px solid #fdfdfd;
 }
 
 #profile-jot-wrapper .wall-item-container.panel-body.preview {
-	border: 1px solid #666 !important;
+	border: 0px solid #ccc;
 	margin-top:20px !important;
 	border-radius: 8px !important;
 }
@@ -892,6 +892,10 @@ p.wall-item-announce,
     border-radius: 5px;
 }
 
+#photo-photo {
+	margin: 20px auto;
+}
+
 @media screen and (max-width: 1280px) {
 	#search-box {
 		width: 18% !important;
@@ -909,6 +913,13 @@ p.wall-item-announce,
 		margin-right: 42px;
 	}
 }
+
+@media (max-width: 991px) {
+	.topbar ul.nav > li > a, .topbar ul.nav > li > button {
+		padding: 15px 5px;
+	}
+}
+
 @media screen and (max-width: 768px){
 	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
 		position: fixed !important;
