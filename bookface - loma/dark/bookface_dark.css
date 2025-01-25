@@ -913,6 +913,24 @@ audio, canvas, progress, video {
     margin: 20px auto;
 }
 
+iframe, img, video {
+	border-radius: 2px;
+}
+
+.custom-iframe {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 625 / 350 !important;
+}
+
+@media (max-width: 768px) {
+    .custom-iframe {
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 425 / 350 !important;
+    }
+}
+
 #photo-photo {
 	margin: 20px auto;
 }
