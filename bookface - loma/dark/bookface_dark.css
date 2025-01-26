@@ -255,6 +255,10 @@ header #banner #logo-img,
     background-color: #575757;
 }
 
+.btn-group-xs > .btn, .btn-xs {
+	font-size: 17px;
+}
+
 #topbar-first #nav-notifications-menu {
        border: 1px solid var(--background-color) !important;
 }
@@ -422,10 +426,6 @@ button[type="submit"]:focus{
 #upload-photo:hover,
 #upload-photo:focus {
        background-color: darkblue !important;
-}
-
-.fbswitcher [data-mode="attachment"] {
-       display: none !important;
 }
 
 #mention-link {

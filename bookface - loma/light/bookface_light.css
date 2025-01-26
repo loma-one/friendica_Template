@@ -224,6 +224,10 @@ header #banner #logo-img,
 	border-radius: 10px;
 }
 
+.btn-group-xs > .btn, .btn-xs {
+	font-size: 17px;
+}
+
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
 	color: #65686C !important;
 	border-color: white !important;
@@ -689,10 +693,6 @@ p.wall-item-announce,
 #upload-photo:hover,
 #upload-photo:focus {
 	background-color: darkblue !important;
-}
-
-.fbswitcher [data-mode="attachment"] {
-	display: none !important;
 }
 
 #profile-photo-wrapper {
