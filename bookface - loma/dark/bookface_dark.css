@@ -897,6 +897,10 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
        border-radius: 3px;
 }
 
+.wall-item-container {
+       border-top: 1px solid rgb(28, 28, 29);
+}
+
 figure.img-allocated-height img {
        border-radius: 3px;
 }
@@ -913,21 +917,29 @@ audio, canvas, progress, video {
     margin: 20px auto;
 }
 
+audio, canvas, progress, video {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16/9;
+	margin: 0 auto;
+}
+
 iframe, img, video {
 	border-radius: 2px;
 }
 
-.custom-iframe {
-    width: 100% !important;
-    height: auto !important;
-    aspect-ratio: 625 / 350 !important;
+iframe {
+       width: 100% !important;
+       height: auto !important;
+       aspect-ratio: 16/9 !important;
+       display: block; /* for positioning */
+       margin: 0 auto; /* centers block */
+       background-color: #000; /* optional fill */
 }
 
-@media (max-width: 768px) {
-    .custom-iframe {
-        width: 100% !important;
-        height: auto !important;
-        aspect-ratio: 425 / 350 !important;
+@media (width: 768px){
+       iframe{
+              aspect-ratio: 5/4 !important;
     }
 }
 
