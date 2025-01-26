@@ -218,6 +218,7 @@ header #banner #logo-img,
 #nav-user-menu {
 	background-color: #ffffff !important;
 	min-width: 250px !important;
+	border-radius:10px;
 }
 
 .btn {
@@ -879,7 +880,7 @@ p.wall-item-announce,
 }
 
 .fc .fc-month-view .fc-content .fc-title .item-desc {
-	font-size: 15px;
+	font-size: 11px;
 }
 
 .fc .fc-event {
