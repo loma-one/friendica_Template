@@ -925,6 +925,12 @@ audio, canvas, progress, video {
 	margin: 0 auto;
 }
 
+button, input, select, textarea {
+       border-radius: 10px;
+       background-color: #333;
+       border-color: #333;
+}
+
 iframe, img, video {
 	border-radius: 2px;
 }
