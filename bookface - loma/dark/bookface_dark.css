@@ -906,7 +906,7 @@ figure.img-allocated-height img {
        border-radius: 3px;
 }
 
-audio, canvas, progress, video {
+audio, progress, video {
        border-radius: 3px;
 }
 

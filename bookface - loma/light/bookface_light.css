@@ -897,7 +897,7 @@ p.wall-item-announce,
 	margin: 20px auto;
 }
 
-audio, canvas, progress, video {
+audio, progress, video {
 	display: block;
 	width: 100%;
 	aspect-ratio: 16/9;
