@@ -10,14 +10,14 @@
  * Author: Kristi H. @kmh@friendica.world feb @feb@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
  * Accented: Yes
- * Version: 1.0
+ * Version: 1.2
  */
 
 require_once 'view/theme/frio/php/PHPColors/Color.php';
 
 $accentColor = new Color($scheme_accent);
 
-$menu_background_hover_color = '#' . $accentColor->darken(45);
+$menu_background_hover_color = '#' . $accentColor->darken(20);
 $nav_bg = '#252728';
 $link_color = '#' . $accentColor->lighten(10);
 	// override ugly blue accent color

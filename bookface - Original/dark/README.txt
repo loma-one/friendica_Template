@@ -27,6 +27,24 @@ NOTES:
 * This scheme was adapted from a user stylesheet for use in browsers on the client-side.
 
 CHANGELOG:
+1.2
+* "Save" buttons for "Remote Servers" settings normalized to right.
+* "Close" button and open "Compose" button restyled, "Close" enlarged for better touch target.
+* Open Compose Page button styled to match roundy buttons.
+* "Save Search" buttons styles to match "Compose" and "Mention" buttons.
+* Dark version Settings container background color fixed.
+* Comment Box background fixed.
+* Compose/Comment text style buttons enlarged for better touch targets, styled to match on Compose Modal, Compose Page, and Comment below post.
+* Aside Selected Menu item now adopts color scheme.
+* All Modal File browsers now styled the same.
+* IFRAME container positioned and styled (usually used for embedded video)
+* Fixed "Like/Dislike" on photos showing label twice.
+* TopBar Second vcard short photo made round.
+
+1.1
+* Fixes long lists of tags/mentions spilling out of post or profile container, forces them to wrap to multiple rows as necessary.
+* Adds spacing to left of multiple settings buttons floated to right.
+
 1.0
 * Initial release of server-side version
 * Accent colors now work (server-side version only)
