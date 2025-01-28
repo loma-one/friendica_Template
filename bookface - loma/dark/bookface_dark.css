@@ -42,6 +42,11 @@ nav.navbar .nav > li > button{
        margin-right: 10px;
 }
 
+#topbar-first .topbar-nav .dropdown-menu {
+  width: 350px;
+  margin-left: -238px;
+}
+
 #topbar-first .nav > li > a:hover:not(.selected) {
        background-color: rgba(255,255,255,.1) !important;
        border-radius: 8px !important;
@@ -138,8 +143,8 @@ header #banner {
 header #banner #logo-img,
 .navbar-brand #logo-img {
        background-color: var(--link-color) !important;
-       height: 40px !important;
-       width: 40px !important;
+       height: 38px !important;
+       width: 38px !important;
 }
 
 .topbar ul.nav {
@@ -915,14 +920,14 @@ audio, progress, video {
 }
 
 .img-allocated-max-width {
-    margin: 20px auto;
+       margin: 20px auto;
 }
 
 audio, canvas, progress, video {
-	display: block;
-	width: 100%;
-	aspect-ratio: 16/9;
-	margin: 0 auto;
+       display: block;
+       width: 100%;
+       aspect-ratio: 16/9;
+       margin: 0 auto;
 }
 
 button, input, select, textarea {
@@ -931,8 +936,12 @@ button, input, select, textarea {
        border-color: #333;
 }
 
+blockquote {
+       border-left: 5px solid #b0b3b8;
+}
+
 iframe, img, video {
-	border-radius: 2px;
+       border-radius: 2px;
 }
 
 iframe {

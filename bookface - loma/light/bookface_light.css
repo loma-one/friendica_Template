@@ -44,6 +44,11 @@ nav.navbar .nav > li > button{
 	margin-right: 10px;
 }
 
+#topbar-first .topbar-nav .dropdown-menu {
+  width: 350px;
+  margin-left: -238px;
+}
+
 #topbar-first .nav > li > a:hover:not(.selected) {
 	background-color: rgba(128,128,128,.1) !important;
 	border-radius: 8px !important;
@@ -138,8 +143,8 @@ header #banner {
 header #banner #logo-img,
 .navbar-brand #logo-img {
 	background-color: var(--link-color) !important;
-	height: 40px !important;
-	width: 40px !important;
+	height: 38px !important;
+	width: 38px !important;
 }
 
 .topbar ul.nav {
