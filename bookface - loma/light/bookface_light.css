@@ -102,6 +102,7 @@ ul.tabs li {
 
 ul.tabs li a {
 	margin-top: 8px;
+	color: var(--link-color) !important;
 }
 
 ul.tabs li:hover:not(.active) {
@@ -900,6 +901,10 @@ p.wall-item-announce,
 
 #photo-photo {
 	margin: 20px auto;
+}
+
+.shared_header > .avatar > img {
+	border-radius: 50%;
 }
 
 audio, progress, video {

@@ -948,6 +948,14 @@ iframe, img, video {
        border-radius: 2px;
 }
 
+code {
+       background-color: #b0b3b8;
+}
+
+.shared_header > .avatar > img {
+	border-radius: 50%;
+}
+
 iframe {
        width: 100% !important;
        height: auto !important;
