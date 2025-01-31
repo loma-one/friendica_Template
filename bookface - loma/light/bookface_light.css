@@ -240,6 +240,13 @@ header #banner #logo-img,
 	border-color: white !important;
 }
 
+.account .dropdown-menu li a i {
+	margin-right: 10px;
+	font-size: 18px;
+	display: inline-block;
+	width: 14px;
+}
+
 .nav-pills .dropdown-menu li > a:hover,
 .nav-tabs .dropdown-menu li > a:hover,
 .account .dropdown-menu li > a:hover,
