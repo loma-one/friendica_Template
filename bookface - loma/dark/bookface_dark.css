@@ -256,6 +256,13 @@ header #banner #logo-img,
        background-color: var(--nav-bg) !important;
 }
 
+.account .dropdown-menu li a i {
+       margin-right: 10px;
+       font-size: 18px;
+       display: inline-block;
+       width: 14px;
+}
+
 .contact-entry-desc {
        color: #b0b3b8;
 }
@@ -844,6 +851,10 @@ aside .widget li:hover {
        background-color: rgb(51, 51, 52) !important;
        box-shadow: none !important;
        -webkit-box-shadow: none !important;
+}
+
+.comment-fake-form, .wall-item-comment-wrapper {
+       border-top: 1px solid rgb(37, 39, 40);
 }
 
 .wall-item-actions button {
