@@ -118,6 +118,7 @@ ul.tabs li:hover:not(.active) a {
 	padding-bottom: 15px !important;
 	background-color: var(--nav-bg) !important;
 	border: 1px solid var(--background-color) !important;
+	border-radius: 10px;
 }
 
 .dropdown-menu li {
@@ -338,10 +339,9 @@ header #banner #logo-img,
 	margin-top: 10px;
 }
 
-.settings-submit,
-button[type="submit"]{
-	background-color: var(--link-color) !important;
-	color: white !important;
+.settings-submit, button[type="submit"] {
+	background-color: #f2f2f2 !important;
+	color: var(--font-color) !important;
 	border-radius: 8px !important;
 }
 
