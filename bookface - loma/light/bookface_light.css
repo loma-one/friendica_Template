@@ -342,7 +342,7 @@ header #banner #logo-img,
 .settings-submit, button[type="submit"] {
 	background-color: #f2f2f2 !important;
 	color: var(--font-color) !important;
-	border-radius: 8px !important;
+	border-radius: 10px !important;
 }
 
 .settings-submit.form-button-search,
