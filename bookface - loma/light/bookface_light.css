@@ -923,6 +923,7 @@ audio, progress, video {
 	width: 100%;
 	aspect-ratio: 16/9;
 	margin: 0 auto;
+    border-radius: 3px;
 }
 
 iframe, img, video {

@@ -928,7 +928,11 @@ figure.img-allocated-height img {
 }
 
 audio, progress, video {
-       border-radius: 3px;
+	display: block;
+	width: 100%;
+	aspect-ratio: 16/9;
+	margin: 0 auto;
+    border-radius: 3px;
 }
 
 .breadcrumb {
@@ -937,13 +941,6 @@ audio, progress, video {
 
 .img-allocated-max-width {
        margin: 20px auto;
-}
-
-audio, canvas, progress, video {
-       display: block;
-       width: 100%;
-       aspect-ratio: 16/9;
-       margin: 0 auto;
 }
 
 button, input, select, textarea {
