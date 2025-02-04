@@ -1,9 +1,9 @@
 /*
 	Name	   : Bookface Dark
 	Version    : 1.0
-    Licence    : AGPL
-    Created on : 19.01.2025
-    Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
+	Licence    : AGPL
+	Created on : 19.01.2025
+	Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
 */
 
 :root {
@@ -888,7 +888,7 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
        background-color: #252728;
        color: #b0b3b8;
        box-shadow: 0 0 3px #dadada;
-       -webkit-box-shadow: 0 0 3px #2d2d2d;
+       -webkit-box-shadow: 0 0 1px #111;
        -moz-box-shadow: 0 0 3px #dadada;
        border-radius: 10px;
 }

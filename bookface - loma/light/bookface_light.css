@@ -914,6 +914,10 @@ p.wall-item-announce,
 	border-radius: 50%;
 }
 
+#cboxWrapper {
+	border-radius: 10px;
+}
+
 audio, progress, video {
 	display: block;
 	width: 100%;
