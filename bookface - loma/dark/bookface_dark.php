@@ -1,4 +1,4 @@
- <?php
+<?php
 /*
  * Copyright (C) 2010-2025, the Friendica project
  * SPDX-FileCopyrightText: 2010-2025 the Friendica project
