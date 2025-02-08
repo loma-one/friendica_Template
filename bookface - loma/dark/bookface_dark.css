@@ -127,6 +127,7 @@ ul.tabs li:hover:not(.active) a {
 .form-control {
        background: var(--nav-bg);
        color: #fff;
+       border: 1px solid #5b5b5b;
        border-radius: 10px;
 }
 
@@ -689,7 +690,7 @@ p.wall-item-announce,
 
 #jot-modal-content input,
 #jot-modal-content .friendica-tagsinput {
-       background-color: var(--background-color) !important;
+       background-color: #333334 !important;
 }
 #jot-modal-content .fbrowser .folders button {
   background-color: rgb(51, 51, 51) !important;
@@ -935,6 +936,14 @@ audio, progress, video {
     border-radius: 3px;
 }
 
+.table > tbody > tr.info > td {
+       background-color: #1c1c1d;
+}
+
+.table > tbody > tr > td {
+       border-top: 1px solid #1c1c1d;
+}
+
 .breadcrumb {
        background-color: #333;
 }
@@ -947,6 +956,11 @@ button, input, select, textarea {
        border-radius: 10px;
        background-color: #333;
        border-color: #333;
+}
+
+.settings-block {
+       padding: 1px 15px;
+       -webkit-box-shadow: 0 0 3px #252728;
 }
 
 blockquote {
