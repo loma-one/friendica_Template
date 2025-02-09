@@ -6,7 +6,6 @@
 	Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
 */
 
-
 :root {
 	--global-font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif, Noto Color Emoji;
 	--nav-bg: $nav_bg;
@@ -19,7 +18,7 @@
 	--background-image: $background_image;
 	--menu-background-hover-color: $menu_background_hover_color;
 	--border-color: $border_color;
-	}
+}
 
 body {
 	background-color: var(--background-color) !important;
@@ -31,9 +30,9 @@ body {
 #topbar-first .nav > li > a,
 #topbar-first .nav > li > button,
 nav.navbar .nav > li > a,
-nav.navbar .nav > li > button{
+nav.navbar .nav > li > button {
 	color: #65686C !important;
-	}
+}
 
 #topbar-first, nav.navbar {
 	background-color: var(--nav-bg) !important;
@@ -303,8 +302,8 @@ header #banner #logo-img,
 	margin-right: 10px !important;
 }
 
-	#dropdownMenuTools:hover,
-	#dropdownMenuTools:focus {
+#dropdownMenuTools:hover,
+#dropdownMenuTools:focus {
 	background-color: rgba(0,0,0,.1) !important;
 }
 
@@ -696,7 +695,6 @@ p.wall-item-announce,
 	margin-top:20px !important;
 	border-radius: 8px !important;
 }
-
 
 #upload-photo {
 	background-color: var(--link-color) !important;
