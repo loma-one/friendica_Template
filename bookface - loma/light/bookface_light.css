@@ -985,4 +985,7 @@ iframe {
 		left: 10% !important;
 		margin-left: 0!important;
 	}
+	#topbar-first .topbar-nav .nav-segment {
+               margin-right: 0px;
+        }
 }

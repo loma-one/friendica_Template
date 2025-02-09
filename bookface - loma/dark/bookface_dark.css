@@ -1043,13 +1043,16 @@ iframe {
     }
 }
 
-@media screen and (max-width: 480px) {
-    #topbar-first .navbar-toggle[data-target="#search-mobile"] {
-        left: 10%;
-    }
-    .topbar ul.nav {
-        position: relative !important;
-        left: 10% !important;
-        margin-left: 0 !important;
-    }
+@media screen and (max-width: 480px){
+	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
+		left: 10%;
+	}
+	.topbar ul.nav {
+		position: relative !important;
+		left: 10% !important;
+		margin-left: 0!important;
+	}
+	#topbar-first .topbar-nav .nav-segment {
+               margin-right: 0px;
+        }
 }
