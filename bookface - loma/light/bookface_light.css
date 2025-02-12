@@ -370,6 +370,31 @@ header #banner #logo-img::before {
 	margin-top: 10px;
 }
 
+.popover.hovercard {
+	border: 1px solid var(--nav-bg) !important;
+}
+
+.hover-card-footer {
+	border-color: #ccc;
+	background-color: var(--nav-bg);
+}
+
+.hovercard.top > .arrow::after {
+	border-top-color: var(--nav-bg);
+}
+
+.hovercard.right > .arrow::after {
+	border-right-color: var(--nav-bg);
+}
+
+.hovercard.bottom > .arrow::after {
+	border-bottom-color: var(--nav-bg);
+}
+
+.hovercard.left > .arrow::after {
+	border-left-color: var(--nav-bg);
+}
+
 .settings-submit, button[type="submit"] {
 	background-color: #f2f2f2 !important;
 	color: var(--font-color) !important;

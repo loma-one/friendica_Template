@@ -262,6 +262,34 @@ header #banner #logo-img::before {
     min-width: 250px !important;
 }
 
+.popover.hovercard {
+    border: 1px solid var(--nav-bg) !important;
+    -webkit-box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25);
+    -moz-box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25);
+}
+
+.hover-card-footer {
+    border-color: #333;
+    background-color: var(--nav-bg);
+}
+
+.hovercard.top > .arrow::after {
+    border-top-color: var(--nav-bg);
+}
+
+.hovercard.right > .arrow::after {
+    border-right-color: var(--nav-bg);
+}
+
+.hovercard.bottom > .arrow::after {
+    border-bottom-color: var(--nav-bg);
+}
+
+.hovercard.left > .arrow::after {
+    border-left-color: var(--nav-bg);
+}
+
 .nav-pills .dropdown-menu li a,
 .nav-pills .dropdown-menu li .btn-link,
 .nav-tabs .dropdown-menu li a,
