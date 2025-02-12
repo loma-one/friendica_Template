@@ -995,6 +995,10 @@ p.wall-item-announce,
 	background-color: #1f91ca;
 }
 
+.form-group.field.input.color {
+    display: none;
+}
+
 audio, progress, video {
 	display: block;
 	width: 100%;

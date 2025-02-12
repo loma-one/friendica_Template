@@ -1051,25 +1051,29 @@ code {
 }
 
 .panel-success>.panel-heading {
-	background-image:linear-gradient(to bottom,#2bb84a 0,#2bb84a 100%);
+    background-image:linear-gradient(to bottom,#2bb84a 0,#2bb84a 100%);
 }
 
 .panel-success>.panel-heading {
-	color:#f2f2f2;
-	background-color:#2bb84a;
-	border-color:#2bb84a;
+    color:#f2f2f2;
+    background-color:#2bb84a;
+    border-color:#2bb84a;
 }
 
 .panel-info>.panel-heading {
-	background-image:linear-gradient(to bottom,#1f91ca 0,#1f91ca 100%);
+    background-image:linear-gradient(to bottom,#1f91ca 0,#1f91ca 100%);
 }
 
 .panel-info>.panel-heading {
-	color:#f2f2f2;
+    color:#f2f2f2;
 }
 
 .label-primary {
 	background-color: #1f91ca;
+}
+
+.form-group.field.input.color {
+    display: none;
 }
 
 iframe {

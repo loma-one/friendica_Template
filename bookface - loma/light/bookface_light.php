@@ -31,5 +31,3 @@ $menu_background_hover_color = '#8080801a'; // rgba(128,128,128,.1)
 $font_color = '#313131';
 $font_color_darker = '#333';
 $border_color = '#eee';
-
-
