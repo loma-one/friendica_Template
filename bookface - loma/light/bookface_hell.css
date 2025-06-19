@@ -856,6 +856,86 @@ aside .widget li:hover {
 	line-height: 40px;
 }
 
+/* WALL ITEM RESPONSES */
+.wall-item-responses > div {
+position: relative;
+}
+.wall-item-responses > div > p:first-of-type::before,
+.hide-comments::before, .hide-comments-total::before {
+display: inline-block;
+margin-right: 3px;
+font-family: ForkAwesome;
+font-weight: lighter;
+font-size: 12px;
+text-align: center;
+color: white;
+width: 20px;
+height:20px;
+padding: 2px;
+line-height: 16px;
+border-radius: 100%;
+}
+.wall-item-responses .wall-item-like > p:first-of-type::before {
+content: '\f164';
+background-color: #0066FF;
+}
+.wall-item-responses .wall-item-dislike > p:first-of-type::before {
+content: '\f165';
+background-color: red;
+}
+.wall-item-responses .wall-item-announce > p:first-of-type::before{
+content: '\f079';
+background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendyes > p:first-of-type::before{
+content: '\f00c';
+background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendno > p:first-of-type::before{
+content: '\f00d';
+background-color: red;
+}
+.wall-item-responses .wall-item-attendmaybe > p:first-of-type::before{
+content: '\f128';
+background-color: orange;
+}
+.wall-item-responses div p[class*="-expanded"] {
+background-color: rgb(255, 255, 255, 0.91);
+position: absolute;
+bottom: 100%;
+padding: 10px;
+margin-left: 23px;
+border-radius: 8px;
+width: 200px;
+max-height: 415px;
+font-size: 0px;
+color: transparent;
+overflow: hidden;
+box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+z-index: 10;
+}
+.wall-item-responses div p[class*="-expanded"]:hover,
+.wall-item-responses div p[class*="-expanded"]:focus {
+	overflow-y: auto;
+}
+.wall-item-responses div p[class*="-expanded"] a {
+	color: var (--link-color) !important;
+	display: block;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	overflow: hidden;
+	text-decoration: none;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74){
+	overflow: visible;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74)::after {
+	content: 'and others...';
+	display: block;
+}
+
 .navicon {
 	font-size: 16px;
 	position: relative;
@@ -2057,6 +2137,15 @@ body.mod-home {
 			line-height: 32px;
 		}
 	}
+
+/* Problemumgehung iOS Sichtbarkeit Profilbild */
+body.mod-profile #profile-photo-wrapper {
+    top: 100px !important; /* Oder ein anderer sichtbarer Wert */
+    opacity: 1 !important;
+    visibility: visible !important;
+    /* Falls transform verwendet wird und stört */
+    transform: none !important;
+}
 
 /* fügt eine farbige Linie für Kommentare ein*/
 
