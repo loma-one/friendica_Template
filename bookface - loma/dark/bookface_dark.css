@@ -803,6 +803,10 @@ p.wall-item-announce,
     background-color: var(--background-color) !important;
 }
 
+.dropzone.dz-clickable {
+	border-radius: 10px;
+}
+
 .jot-nav {
     border: none !important;
 }
@@ -950,6 +954,86 @@ aside .widget li:hover {
     line-height: 40px;
 }
 
+/* WALL ITEM RESPONSES */
+.wall-item-responses > div {
+position: relative;
+}
+.wall-item-responses > div > p:first-of-type::before,
+.hide-comments::before, .hide-comments-total::before {
+display: inline-block;
+margin-right: 3px;
+font-family: ForkAwesome;
+font-weight: lighter;
+font-size: 12px;
+text-align: center;
+color: white;
+width: 20px;
+height:20px;
+padding: 2px;
+line-height: 16px;
+border-radius: 100%;
+}
+.wall-item-responses .wall-item-like > p:first-of-type::before {
+content: '\f164';
+background-color: #0066FF;
+}
+.wall-item-responses .wall-item-dislike > p:first-of-type::before {
+content: '\f165';
+background-color: red;
+}
+.wall-item-responses .wall-item-announce > p:first-of-type::before{
+content: '\f079';
+background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendyes > p:first-of-type::before{
+content: '\f00c';
+background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendno > p:first-of-type::before{
+content: '\f00d';
+background-color: red;
+}
+.wall-item-responses .wall-item-attendmaybe > p:first-of-type::before{
+content: '\f128';
+background-color: orange;
+}
+.wall-item-responses div p[class*="-expanded"] {
+background-color: rgba(0,0,0,.8);
+position: absolute;
+bottom: 100%;
+padding: 10px;
+margin-left: 23px;
+border-radius: 8px;
+width: 200px;
+max-height: 415px;
+font-size: 0px;
+color: transparent;
+overflow: hidden;
+box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+z-index: 10;
+}
+.wall-item-responses div p[class*="-expanded"]:hover,
+.wall-item-responses div p[class*="-expanded"]:focus {
+	overflow-y: auto;
+}
+.wall-item-responses div p[class*="-expanded"] a {
+	color: var (--link-color) !important;
+	display: block;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	overflow: hidden;
+	text-decoration: none;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74){
+	overflow: visible;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74)::after {
+	content: 'and others...';
+	display: block;
+}
+
 .navicon {
     font-size: 16px;
     position: relative;
@@ -963,6 +1047,10 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
     -webkit-box-shadow: 0 0 1px #111;
     -moz-box-shadow: 0 0 3px #dadada;
     border-radius: 10px;
+}
+
+aside hr, section hr {
+  border-color: rgb(53, 53, 53);
 }
 
 .fc-unthemed td.fc-today {
@@ -995,6 +1083,12 @@ section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapp
     border-top: 1px solid rgb(28, 28, 29);
 }
 
+.wall-item-content img {
+	object-fit: contain;
+	border-radius: 2px;
+	position: relative;
+}
+
 figure.img-allocated-height img {
     border-radius: 3px;
 }
@@ -1002,7 +1096,7 @@ figure.img-allocated-height img {
 audio, progress, video {
     display: block;
     width: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: auto;
     margin: 0 auto;
     border-radius: 3px;
 }
@@ -1083,6 +1177,11 @@ iframe {
     display: block; /* for positioning */
     margin: 0 auto; /* centers block */
     background-color: #000; /* optional fill */
+}
+
+/* Chance Picture */
+#change-profile-picture {
+	border-radius: 50%;
 }
 
 /*	Greater than Full-HD Width
@@ -2090,7 +2189,7 @@ iframe {
 			top: 0px;
 		}
 }
-}
+
 /* LOGIN AND INFO SCREENS */
 body.mod-home {
 	padding-top: 10px !important;
@@ -2122,3 +2221,12 @@ body.mod-home {
 			line-height: 32px;
 		}
 	}
+
+/* Problemumgehung iOS Sichtbarkeit Profilbild */
+body.mod-profile #profile-photo-wrapper {
+    top: 100px !important; /* Oder ein anderer sichtbarer Wert */
+    opacity: 1 !important;
+    visibility: visible !important;
+    /* Falls transform verwendet wird und stört */
+    transform: none !important;
+}
