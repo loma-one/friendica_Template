@@ -82,8 +82,12 @@ nav.navbar .nav > li > button {
 }
 
 #topbar-first .topbar-nav .dropdown-menu {
-  width: 350px;
-  margin-left: -238px;
+	width: 350px;
+	margin-left: -238px;
+}
+
+.dropdown-menu > li > a {
+	border-radius: 4px;
 }
 
 #topbar-first .nav > li > a:hover:not(.selected) {
@@ -175,9 +179,9 @@ ul.tabs li:hover:not(.active) a {
 }
 
 header #banner {
-       left: 0 !important;
-       right: auto !important;
-       margin-top: 10px;
+	left: 0 !important;
+	right: auto !important;
+	margin-top: 10px;
 }
 .navbar-brand #logo-img {
 	margin-top: 20px;
@@ -219,9 +223,9 @@ header #banner #logo-img::before {
 }
 
 .topbar ul.nav {
-       left: 50% !important;
-       margin-left: -25% !important;
-       position: relative;
+	left: 50% !important;
+	margin-left: -25% !important;
+	position: relative;
 }
 
 #topbar-first .nav > .account img {
@@ -298,7 +302,12 @@ header #banner #logo-img::before {
 }
 
 .btn {
-	border-radius: 10px;
+	border-radius: 5px;
+}
+
+.template-icon {
+	width: 30px;
+	height: 30px;
 }
 
 .btn-group-xs > .btn, .btn-xs {
@@ -308,6 +317,10 @@ header #banner #logo-img::before {
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
 	color: #65686C !important;
 	border-color: white !important;
+}
+
+.dropdown-menu li .btn-link, .dropdown-menu li a, .tabs .dropdown-menu li a {
+	padding: 3px 20px;
 }
 
 .account .dropdown-menu li a i {
@@ -377,10 +390,17 @@ header #banner #logo-img::before {
 	background-color: rgba(0,0,0,.1) !important;
 }
 
+/* Position New Post Button */
 #jotOpen {
 	border-radius: 8px !important;
 	background-color: var(--link-color) !important;
 	color: #ffffff !important;
+	margin-top: 3px;
+/* Position New Post Button
+	float: right;
+	position: fixed;
+	bottom: 885px;
+	right: 1370px; */
 }
 
 #jotOpen:hover, #jotOpen:focus {
@@ -527,6 +547,7 @@ aside .widget,
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
+	margin-bottom: 5px;
 }
 
 .tread-wrapper {
@@ -564,7 +585,7 @@ p.wall-item-announce,
 	margin:  0 !important;
 	background-color: rgb(255, 255, 255) !important;
 	border: 1px solid rgb(234,235,237) !important;
-	border-radius: 10px;
+	border-radius: 5px;
 }
 
 .type-link h4, .type-link blockquote, .type-link sup,
@@ -896,61 +917,61 @@ aside .widget li:hover {
 
 /* WALL ITEM RESPONSES */
 .wall-item-responses > div {
-position: relative;
+	position: relative;
 }
 .wall-item-responses > div > p:first-of-type::before,
 .hide-comments::before, .hide-comments-total::before {
-display: inline-block;
-margin-right: 3px;
-font-family: ForkAwesome;
-font-weight: lighter;
-font-size: 12px;
-text-align: center;
-color: white;
-width: 20px;
-height:20px;
-padding: 2px;
-line-height: 16px;
-border-radius: 100%;
+	display: inline-block;
+	margin-right: 3px;
+	font-family: ForkAwesome;
+	font-weight: lighter;
+	font-size: 12px;
+	text-align: center;
+	color: white;
+	width: 20px;
+	height:20px;
+	padding: 2px;
+	line-height: 16px;
+	border-radius: 100%;
 }
 .wall-item-responses .wall-item-like > p:first-of-type::before {
-content: '\f164';
-background-color: #0066FF;
+	content: '\f164';
+	background-color: #0066FF;
 }
 .wall-item-responses .wall-item-dislike > p:first-of-type::before {
-content: '\f165';
-background-color: red;
+	content: '\f165';
+	background-color: red;
 }
 .wall-item-responses .wall-item-announce > p:first-of-type::before{
-content: '\f079';
-background-color: #00c100;
+	content: '\f079';
+	background-color: #00c100;
 }
 .wall-item-responses .wall-item-attendyes > p:first-of-type::before{
-content: '\f00c';
-background-color: #00c100;
+	content: '\f00c';
+	background-color: #00c100;
 }
 .wall-item-responses .wall-item-attendno > p:first-of-type::before{
-content: '\f00d';
-background-color: red;
+	content: '\f00d';
+	background-color: red;
 }
 .wall-item-responses .wall-item-attendmaybe > p:first-of-type::before{
-content: '\f128';
-background-color: orange;
+	content: '\f128';
+	background-color: orange;
 }
 .wall-item-responses div p[class*="-expanded"] {
-background-color: rgb(255, 255, 255, 0.91);
-position: absolute;
-bottom: 100%;
-padding: 10px;
-margin-left: 23px;
-border-radius: 8px;
-width: 200px;
-max-height: 415px;
-font-size: 0px;
-color: transparent;
-overflow: hidden;
-box-shadow: 0px 5px 5px rgba(0,0,0,.3);
-z-index: 10;
+	background-color: rgb(255, 255, 255, 0.91);
+	position: absolute;
+	bottom: 100%;
+	padding: 10px;
+	margin-left: 23px;
+	border-radius: 8px;
+	width: 200px;
+	max-height: 415px;
+	font-size: 0px;
+	color: transparent;
+	overflow: hidden;
+	box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+	z-index: 10;
 }
 .wall-item-responses div p[class*="-expanded"]:hover,
 .wall-item-responses div p[class*="-expanded"]:focus {
@@ -1031,14 +1052,6 @@ p.wall-item-announce,
 .media .delivery, .media .location,
 .media .location a {
 	font-size: 13px !important;
-}
-
-.type-link, .type-video {
-	padding: 0 !important;
-	margin: 0 !important;
-	background-color: rgb(255, 255, 255) !important;
-	border: 1px solid rgba(208, 211, 215, 0.45) !important;
-	border-radius: 10px;
 }
 
 .type-link h4, .type-link blockquote, .type-link sup,
@@ -1143,6 +1156,230 @@ iframe {
 #change-profile-picture {
 	border-radius: 50%;
 }
+
+/* TAGS, CATEGORIES, MENTIONS BUTTONS
+   ==================================
+   Restyled to be less obnoxious and tiny
+   now sized and spaced like they are on Mastodon
+*/
+a.tag.label,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label {
+	border-radius: 4px !important;
+  	display: inline-flex !important;
+  	font-size: 11px !important;
+  	font-weight: 500 !important;
+  	padding: 4px 6px !important;
+  	-webkit-text-decoration: none !important;
+  	text-decoration: none !important;
+  	margin: 1px !important;
+  	background-image: none !important;
+  	background-color: transparent !important;
+  	box-shadow: none !important;
+  	color: #65686c !important;
+  	border: 1px solid #65686c;
+	text-shadow: none !important;
+}
+
+	.wall-item-bottom .label {
+		color: inherit;
+	}
+
+	.wall-item-bottom .label a {
+		color: inherit;
+	}
+
+		/* hide lightning bolt and person icons
+		   pretty sure people know what "#" and "@" mean now
+		*/
+		a.tag.label .fa-bolt::before,
+		.wall-item-bottom .label .fa-bolt::before {
+			content: '';
+		}
+
+		.wall-item-bottom .label .fa-user::before{
+			content: '';
+		}
+	/* undo hover for entire container*/
+	.wall-item-container:hover .wall-item-bottom .wall-item-tags span.label {
+		filter: grayscale(0.5);
+		opacity: 0.8;
+		-webkit-transition: 0s;
+		-moz-transition: 0s;
+		-ms-transition: 0s;
+		transition: 0s;
+	}
+
+	/* replace with hover for individual tag */
+	.wall-item-container .wall-item-bottom .wall-item-tags span.label:hover,
+	.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus,
+	.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus-within {
+		filter: grayscale(0) !important;
+		opacity: 1 !important;
+		/* probably don't need vendor prefixed anymore but whatever...*/
+		-webkit-transition: all 0.25s ease-in-out !important;
+		-moz-transtion: all 0.25s ease-in-out !important;
+		-ms-transition: all 0.25s ease-in-out !important;
+		transition: all 0.25s ease-in-out !important;
+	}
+
+	/* Hashtag Buttons */
+	a.tag.label.btn-info,
+	.wall-item-bottom .wall-item-tags .tag.label.btn-info {
+		/* inherits everything from above */
+	}
+
+		a.tag.label.btn-info:hover, a.tag.label.btn-info:focus,
+		.wall-item-bottom .wall-item-tags .tag.label.btn-info:hover,
+		.wall-item-bottom .wall-item-tags .tag.label.btn-info:focus {
+			background-color: #65686c !important;
+			color: white!important;
+		}
+
+	/* Category Buttons */
+	.wall-item-bottom .wall-item-tags .category.label.btn-success {
+		border-color: limegreen !important;
+		color: limegreen !important;
+		font-size: 12px;
+	}
+
+		/* replace (x) remove with icon button */
+		.wall-item-bottom .wall-item-tags .category.label.btn-success a:first-of-type {
+			margin-right: 4px;
+		}
+
+		.wall-item-bottom .wall-item-tags .category.label.btn-success a:last-of-type {
+			font-size: 0px;
+		}
+
+		.wall-item-bottom .wall-item-tags .category.label.btn-success a:last-of-type::after {
+			content: '\f00d';
+			font-family: ForkAwesome;
+			font-size: 12px;
+		}
+
+		.wall-item-bottom .wall-item-tags .category.label.btn-success:hover,
+		.wall-item-bottom .wall-item-tags .category.label.btn-success:focus {
+			background-color: limegreen !important;
+			color: black !important;
+		}
+
+		/* when a category is removed need to visually indicate it */
+		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success){
+			border-color: #ccc !important;
+			color: #ccc !important;
+		}
+
+		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:first-of-type{
+			font-size: 12px;
+			text-decoration: line-through;
+			margin-right: 4px;
+		}
+
+		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:last-of-type {
+			font-size: 0px;
+		}
+
+		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:last-of-type::after {
+			content: '\f00d';
+			font-family: ForkAwesome;
+			font-size: 12px;
+			text-decoration: line-through;
+		}
+
+		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):hover,
+		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):focus {
+			background-color: red !important;
+			color: #ccc !important;
+		}
+
+		/* overrides for Saved File page where buttons structure is different */
+		body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success {
+			font-size: 12px !important;
+		}
+
+			body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success a {
+				font-size: 0px !important;
+				margin: 0px;
+			}
+
+			body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success a::after {
+				margin-left: 0px;
+			}
+
+			body.mod-filed .wall-item-bottom .wall-item-tags .category.label:not(.btn-success){
+				font-size: 12px !important;
+				text-decoration: line-through !important;
+			}
+
+				body.mod-filed .wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a {
+					font-size: 0px !important;
+				}
+
+				body.mod-filed .wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a::after {
+					content: '\f00d';
+					font-family: ForkAwesome;
+					font-size: 12px;
+					text-decoration: line-through;
+				}
+
+	/* Folder Buttons */
+	.wall-item-bottom .wall-item-tags .folder.label.btn-danger {
+		border-color: red !important;
+		color: red !important;
+	}
+
+		/* replace (x) remove with icon button */
+		.wall-item-bottom .wall-item-tags .folder.label.btn-danger a:first-of-type{
+			font-size: 0px;
+		}
+
+		.wall-item-bottom .wall-item-tags .folder.label.btn-danger a:last-of-type::after {
+			content: '\f00d';
+			font-family: ForkAwesome;
+			font-size: 12px;
+		}
+
+		.wall-item-bottom .wall-item-tags .folder.label.btn-danger:hover,
+		.wall-item-bottom .wall-item-tags .folder.label.btn-danger:focus {
+			background-color: red !important;
+			color: white !important;
+		}
+
+		/* when a category is removed need to visually indicate it */
+		.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger){
+			border-color: #ccc !important;
+			color: #ccc !important;
+			text-decoration: line-through !important;
+		}
+
+			.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger) a:first-of-type{
+				font-size: 0px;
+			}
+
+			.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger) a:last-of-type::after {
+				content: '\f00d';
+				font-family: ForkAwesome;
+				font-size: 12px;
+			}
+
+			.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger):hover,
+			.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger):focus{
+				background-color: black !important;
+				color: white !important;
+			}
+
+	/* @ Mention Buttons */
+	.wall-item-bottom .wall-item-tags .mention.label.btn-warning {
+		border-color: darkgoldenrod !important;
+		color: darkgoldenrod !important;
+	}
+
+		.wall-item-bottom .wall-item-tags .mention.label.btn-warning:hover,
+		.wall-item-bottom .wall-item-tags .mention.label.btn-warning:focus {
+			background-color: goldenrod !important;
+			border-color: goldenrod !important;
+			color: white !important;
+		}
 
 /*	Greater than Full-HD Width
 	===========================
