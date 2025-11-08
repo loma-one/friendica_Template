@@ -82,12 +82,8 @@ nav.navbar .nav > li > button {
 }
 
 #topbar-first .topbar-nav .dropdown-menu {
-	width: 350px;
-	margin-left: -238px;
-}
-
-.dropdown-menu > li > a {
-	border-radius: 4px;
+  width: 350px;
+  margin-left: -238px;
 }
 
 #topbar-first .nav > li > a:hover:not(.selected) {
@@ -179,9 +175,9 @@ ul.tabs li:hover:not(.active) a {
 }
 
 header #banner {
-	left: 0 !important;
-	right: auto !important;
-	margin-top: 10px;
+       left: 0 !important;
+       right: auto !important;
+       margin-top: 10px;
 }
 .navbar-brand #logo-img {
 	margin-top: 20px;
@@ -223,9 +219,9 @@ header #banner #logo-img::before {
 }
 
 .topbar ul.nav {
-	left: 50% !important;
-	margin-left: -25% !important;
-	position: relative;
+       left: 50% !important;
+       margin-left: -25% !important;
+       position: relative;
 }
 
 #topbar-first .nav > .account img {
@@ -235,9 +231,11 @@ header #banner #logo-img::before {
 	width: 40px !important;
 }
 
+/* Position Searchbox korrigiert: margin-top: 4px; */
 #search-box {
 	position: fixed !important;
 	left: 100px;
+	margin-top: 4px;
 }
 
 #topbar-first #search-box .form-search {
@@ -251,13 +249,14 @@ header #banner #logo-img::before {
 	border-radius: 50px;
 }
 
-#search-box form > div::before {
+/* Anzeige eines Icon vor Eingabe // nicht mehr relevant */
+/*search-box form > div::before {
 	content: '\f002';
 	font-family: ForkAwesome;
 	position: absolute;
 	left: 10px;
 	top: 8px;
-}
+}*/
 
 #search-box .form-control::placeholder {
 	color: #666 !important;
@@ -319,10 +318,6 @@ header #banner #logo-img::before {
 	border-color: white !important;
 }
 
-.dropdown-menu li .btn-link, .dropdown-menu li a, .tabs .dropdown-menu li a {
-	padding: 3px 20px;
-}
-
 .account .dropdown-menu li a i {
 	margin-right: 10px;
 	font-size: 18px;
@@ -341,6 +336,10 @@ header #banner #logo-img::before {
 	color: #333 !important;
 	background: #f2f2f2 !important;
 	border-radius: 8px;
+}
+
+.dropdown-menu li .btn-link, .dropdown-menu li a, .tabs .dropdown-menu li a {
+	padding: 3px 20px;
 }
 
 .nav-pills .dropdown-menu li.divider, .nav-tabs .dropdown-menu li.divider, .account .dropdown-menu li.divider, .contact-photo-wrapper .dropdown-menu li.divider {
@@ -390,38 +389,21 @@ header #banner #logo-img::before {
 	background-color: rgba(0,0,0,.1) !important;
 }
 
-/* Position New Post Button */
 #jotOpen {
-	border-radius: 8px !important;
+	border-radius: 25px !important;
 	background-color: var(--link-color) !important;
 	color: #ffffff !important;
-	margin-top: 3px;
-/* Position New Post Button
-	float: right;
-	position: fixed;
-	bottom: 885px;
-	right: 1370px; */
 }
 
 #jotOpen:hover, #jotOpen:focus {
 	box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
 }
 
-#jotOpen::before {
-	content: 'New Post';
-	font-size: 15px;
-	margin-right: 20px;
-	line-height: 32px;
-	position: relative;
-	display: inline;
-	top: -4.5px;
-	right: -7px;
-}
-
-#jotOpen .fa-pencil-square-o {
-	font-size: 32px !important;
-	position: relative;
-	top: 4px;
+.action-button {
+	align-items: center;
+	display: flex;
+	padding-block: 14px;
+	padding-top: 14px;
 }
 
 #topbar-second #nav-short-info {
@@ -451,12 +433,6 @@ header #banner #logo-img::before {
 
 .hovercard.left > .arrow::after {
 	border-left-color: var(--nav-bg);
-}
-
-.settings-submit, button[type="submit"] {
-	background-color: #f2f2f2 !important;
-	color: var(--font-color) !important;
-	border-radius: 10px !important;
 }
 
 .settings-submit.form-button-search,
@@ -503,8 +479,9 @@ button[type="submit"]:focus{
 #mention-link {
 	background-color: var(--link-color) !important;
 	color: white !important;;
-	border-radius: 8px !important;;
-	padding: 0 16px !important;
+	border-radius: 25px !important;
+	padding: 8 16px !important;
+	height: 40px !important;
 }
 
 #mention-link:hover,
@@ -547,7 +524,7 @@ aside .widget,
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
-	margin-bottom: 5px;
+	margin-bottom: 1px;
 }
 
 .tread-wrapper {
@@ -585,7 +562,7 @@ p.wall-item-announce,
 	margin:  0 !important;
 	background-color: rgb(255, 255, 255) !important;
 	border: 1px solid rgb(234,235,237) !important;
-	border-radius: 5px;
+	border-radius: 10px;
 }
 
 .type-link h4, .type-link blockquote, .type-link sup,
@@ -826,8 +803,17 @@ p.wall-item-announce,
 #profile-photo-wrapper {
 	overflow: visible !important;
 	padding: 5px;
-	background-color: #ffffff;
-	border-radius: 100%
+		border-radius: 100%
+	/*background-color: #ffffff;*/
+}
+
+#vcard-short-photo-wrapper img,
+#nav-short-info .contact-wrapper img {
+	border-radius: 100%;
+}
+
+.intro-photo-wrapper img.intro-photo {
+	border-radius: 100px;
 }
 
 aside .widget li {
@@ -904,10 +890,21 @@ aside .widget li:hover {
 	padding-top: 6px !important;
 }
 
-.comment .media-body {
+/* Kommentar hell */
+/*.comment .media-body {
 	padding: 10px;
 	background-color: #fff;
 	border-radius: 20px;
+}*/
+
+/* Kommentare hervorgehoben */
+.comment .media-body {
+    padding: 10px;
+    background-color: #f6f6f6;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .wall-item-actions-row .wall-item-emoji {
@@ -917,61 +914,61 @@ aside .widget li:hover {
 
 /* WALL ITEM RESPONSES */
 .wall-item-responses > div {
-	position: relative;
+position: relative;
 }
 .wall-item-responses > div > p:first-of-type::before,
 .hide-comments::before, .hide-comments-total::before {
-	display: inline-block;
-	margin-right: 3px;
-	font-family: ForkAwesome;
-	font-weight: lighter;
-	font-size: 12px;
-	text-align: center;
-	color: white;
-	width: 20px;
-	height:20px;
-	padding: 2px;
-	line-height: 16px;
-	border-radius: 100%;
+display: inline-block;
+margin-right: 3px;
+font-family: ForkAwesome;
+font-weight: lighter;
+font-size: 12px;
+text-align: center;
+color: white;
+width: 20px;
+height:20px;
+padding: 2px;
+line-height: 16px;
+border-radius: 100%;
 }
 .wall-item-responses .wall-item-like > p:first-of-type::before {
-	content: '\f164';
-	background-color: #0066FF;
+content: '\f164';
+background-color: #0066FF;
 }
 .wall-item-responses .wall-item-dislike > p:first-of-type::before {
-	content: '\f165';
-	background-color: red;
+content: '\f165';
+background-color: red;
 }
 .wall-item-responses .wall-item-announce > p:first-of-type::before{
-	content: '\f079';
-	background-color: #00c100;
+content: '\f079';
+background-color: #00c100;
 }
 .wall-item-responses .wall-item-attendyes > p:first-of-type::before{
-	content: '\f00c';
-	background-color: #00c100;
+content: '\f00c';
+background-color: #00c100;
 }
 .wall-item-responses .wall-item-attendno > p:first-of-type::before{
-	content: '\f00d';
-	background-color: red;
+content: '\f00d';
+background-color: red;
 }
 .wall-item-responses .wall-item-attendmaybe > p:first-of-type::before{
-	content: '\f128';
-	background-color: orange;
+content: '\f128';
+background-color: orange;
 }
 .wall-item-responses div p[class*="-expanded"] {
-	background-color: rgb(255, 255, 255, 0.91);
-	position: absolute;
-	bottom: 100%;
-	padding: 10px;
-	margin-left: 23px;
-	border-radius: 8px;
-	width: 200px;
-	max-height: 415px;
-	font-size: 0px;
-	color: transparent;
-	overflow: hidden;
-	box-shadow: 0px 5px 5px rgba(0,0,0,.3);
-	z-index: 10;
+background-color: rgb(255, 255, 255, 0.91);
+position: absolute;
+bottom: 100%;
+padding: 10px;
+margin-left: 23px;
+border-radius: 8px;
+width: 200px;
+max-height: 415px;
+font-size: 0px;
+color: transparent;
+overflow: hidden;
+box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+z-index: 10;
 }
 .wall-item-responses div p[class*="-expanded"]:hover,
 .wall-item-responses div p[class*="-expanded"]:focus {
@@ -1026,10 +1023,6 @@ aside .widget li:hover {
 	border-bottom-right-radius: 10px;
 }
 
-#vcard-short-photo-wrapper img, #nav-short-info .contact-wrapper img {
-	border-radius: 50px;
-}
-
 section > .generic-page-wrapper, .videos-content-wrapper, .suggest-content-wrapper, .help-content-wrapper, .match-content-wrapper, .dirfind-content-wrapper, .delegation-content-wrapper, .notes-content-wrapper, .message-content-wrapper, .apps-content-wrapper, #adminpage, .delegate-content-wrapper, .uexport-content-wrapper, .dfrn_request-content-wrapper, .friendica-content-wrapper, .credits-content-wrapper, .nocircle-content-wrapper, .profperm-content-wrapper, .invite-content-wrapper, .tos-content-wrapper, .fsuggest-content-wrapper {
 	border-radius: 10px;
 	box-shadow: 0 0px 1px rgba(0,0,0,.5) !important;
@@ -1052,6 +1045,14 @@ p.wall-item-announce,
 .media .delivery, .media .location,
 .media .location a {
 	font-size: 13px !important;
+}
+
+.type-link, .type-video {
+	padding: 0 !important;
+	margin: 0 !important;
+	background-color: rgb(255, 255, 255) !important;
+	border: 1px solid rgba(208, 211, 215, 0.45) !important;
+	border-radius: 10px;
 }
 
 .type-link h4, .type-link blockquote, .type-link sup,
@@ -1132,11 +1133,8 @@ p.wall-item-announce,
 }
 
 audio, progress, video {
-	display: block;
-	width: 100%;
-	aspect-ratio: auto;
-	margin: 0 auto;
-    border-radius: 3px;
+	display: inline-block;
+	vertical-align: baseline;
 }
 
 iframe, img, video {
@@ -1157,11 +1155,28 @@ iframe {
 	border-radius: 50%;
 }
 
+/* Position, Farbe und Transparenz ALT-Tag */
+a:has(img.has-alt-description)::after {
+	content: "ALT";
+	background: rgba(0, 0, 0, 0.68);
+	color: #fff;
+	font-weight: bold;
+	padding: 3px 5px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	border: 0;
+	border-radius: 4px;
+	font-size: 12px;
+	line-height: 20px;
+}
+
 /* TAGS, CATEGORIES, MENTIONS BUTTONS
    ==================================
    Restyled to be less obnoxious and tiny
    now sized and spaced like they are on Mastodon
 */
+
 a.tag.label,
 .wall-item-container .wall-item-bottom .wall-item-tags span.label {
 	border-radius: 4px !important;
@@ -1179,15 +1194,12 @@ a.tag.label,
   	border: 1px solid #65686c;
 	text-shadow: none !important;
 }
-
 	.wall-item-bottom .label {
 		color: inherit;
 	}
-
 	.wall-item-bottom .label a {
 		color: inherit;
 	}
-
 		/* hide lightning bolt and person icons
 		   pretty sure people know what "#" and "@" mean now
 		*/
@@ -1195,7 +1207,6 @@ a.tag.label,
 		.wall-item-bottom .label .fa-bolt::before {
 			content: '';
 		}
-
 		.wall-item-bottom .label .fa-user::before{
 			content: '';
 		}
@@ -1208,7 +1219,6 @@ a.tag.label,
 		-ms-transition: 0s;
 		transition: 0s;
 	}
-
 	/* replace with hover for individual tag */
 	.wall-item-container .wall-item-bottom .wall-item-tags span.label:hover,
 	.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus,
@@ -1221,42 +1231,35 @@ a.tag.label,
 		-ms-transition: all 0.25s ease-in-out !important;
 		transition: all 0.25s ease-in-out !important;
 	}
-
 	/* Hashtag Buttons */
 	a.tag.label.btn-info,
 	.wall-item-bottom .wall-item-tags .tag.label.btn-info {
 		/* inherits everything from above */
 	}
-
 		a.tag.label.btn-info:hover, a.tag.label.btn-info:focus,
 		.wall-item-bottom .wall-item-tags .tag.label.btn-info:hover,
 		.wall-item-bottom .wall-item-tags .tag.label.btn-info:focus {
 			background-color: #65686c !important;
 			color: white!important;
 		}
-
 	/* Category Buttons */
 	.wall-item-bottom .wall-item-tags .category.label.btn-success {
 		border-color: limegreen !important;
 		color: limegreen !important;
 		font-size: 12px;
 	}
-
 		/* replace (x) remove with icon button */
 		.wall-item-bottom .wall-item-tags .category.label.btn-success a:first-of-type {
 			margin-right: 4px;
 		}
-
 		.wall-item-bottom .wall-item-tags .category.label.btn-success a:last-of-type {
 			font-size: 0px;
 		}
-
 		.wall-item-bottom .wall-item-tags .category.label.btn-success a:last-of-type::after {
 			content: '\f00d';
 			font-family: ForkAwesome;
 			font-size: 12px;
 		}
-
 		.wall-item-bottom .wall-item-tags .category.label.btn-success:hover,
 		.wall-item-bottom .wall-item-tags .category.label.btn-success:focus {
 			background-color: limegreen !important;
@@ -1264,47 +1267,48 @@ a.tag.label,
 		}
 
 		/* when a category is removed need to visually indicate it */
+
 		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success){
 			border-color: #ccc !important;
 			color: #ccc !important;
 		}
 
-		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:first-of-type{
-			font-size: 12px;
-			text-decoration: line-through;
-			margin-right: 4px;
-		}
-
-		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:last-of-type {
-			font-size: 0px;
-		}
-
-		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:last-of-type::after {
-			content: '\f00d';
-			font-family: ForkAwesome;
-			font-size: 12px;
-			text-decoration: line-through;
-		}
-
-		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):hover,
-		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):focus {
-			background-color: red !important;
-			color: #ccc !important;
-		}
-
-		/* overrides for Saved File page where buttons structure is different */
-		body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success {
-			font-size: 12px !important;
-		}
-
-			body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success a {
-				font-size: 0px !important;
-				margin: 0px;
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:first-of-type{
+				font-size: 12px;
+				text-decoration: line-through;
+				margin-right: 4px;
 			}
 
-			body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success a::after {
-				margin-left: 0px;
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:last-of-type {
+				font-size: 0px;
 			}
+
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:last-of-type::after {
+				content: '\f00d';
+				font-family: ForkAwesome;
+				font-size: 12px;
+				text-decoration: line-through;
+			}
+
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):hover,
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):focus {
+				background-color: red !important;
+				color: #ccc !important;
+			}
+
+			/* overrides for Saved File page where buttons structure is different */
+			body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success {
+				font-size: 12px !important;
+			}
+
+				body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success a {
+					font-size: 0px !important;
+					margin: 0px;
+				}
+
+				body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success a::after {
+					margin-left: 0px;
+				}
 
 			body.mod-filed .wall-item-bottom .wall-item-tags .category.label:not(.btn-success){
 				font-size: 12px !important;
@@ -1369,6 +1373,7 @@ a.tag.label,
 			}
 
 	/* @ Mention Buttons */
+
 	.wall-item-bottom .wall-item-tags .mention.label.btn-warning {
 		border-color: darkgoldenrod !important;
 		color: darkgoldenrod !important;
@@ -1380,6 +1385,28 @@ a.tag.label,
 			border-color: goldenrod !important;
 			color: white !important;
 		}
+
+
+/*	Post-Button auf die linke Seite legen
+	===========================
+
+@media (min-width: 1200px) {
+  .col-lg-2 {
+    width: 16.66666667%;
+    margin-top: 3px;
+    right: 950px;
+  }
+}
+*/
+
+/*	Fensterbreite erhöhen
+	===========================
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1270px;
+  }
+}*/
 
 /*	Greater than Full-HD Width
 	===========================
@@ -1473,9 +1500,6 @@ a.tag.label,
     #jotOpen::before {
         content: '';
         margin: 0;
-    }
-    #mention-link {
-    	padding: 0 8px !important;
     }
     #mention-link span:last-of-type {
         display: none;
@@ -2431,6 +2455,59 @@ body.mod-profile #profile-photo-wrapper {
 /* fügt eine farbige Linie für Kommentare ein*/
 Element {
 }
+
+/* Widgets mit einem Icon versehen */
+/* Gemeinsame Basisregeln für alle Sidebar-Icons */
+#circle-sidebar-inflated .fakelink h3::before,
+#circle-sidebar .fakelink h3::before,
+#saved-search-list-inflated .fakelink h3::before,
+#saved-search-list .fakelink h3::before,
+#group-list-sidebar-inflated .fakelink h3::before,
+#group-list-sidebar .fakelink h3::before,
+#nets-sidebar-inflated .fakelink h3::before,
+#nets-sidebar .fakelink h3::before,
+#trending-tags-sidebar-inflated .fakelink h3::before,
+#trending-tags-sidebar .fakelink h3::before,
+#datebrowse-sidebar-inflated .fakelink h3::before,
+#datebrowse-sidebar .fakelink h3::before,
+#file-sidebar-inflated .fakelink h3::before,
+#file-sidebar .fakelink h3::before,
+#channel-sidebar-inflated .fakelink h3::before,
+#channel-sidebar .fakelink h3::before,
+#accounttype-sidebar-inflated .fakelink h3::before,
+#accounttype-sidebar .fakelink h3::before,
+#sidebar-community-no-sharer-inflated .fakelink h3::before,
+#sidebar-community-no-sharer .fakelink h3::before
+#rel-sidebar-inflated .fakelink h3::before,
+#rel-sidebar .fakelink h3::before {
+    font-family: "FontAwesome";
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* Individuelle Icons */
+#circle-sidebar-inflated .fakelink h3::before,
+#circle-sidebar .fakelink h3::before { content: "\f2bd"; } /* user-circle */
+#saved-search-list-inflated .fakelink h3::before,
+#saved-search-list .fakelink h3::before { content: "\f002"; } /* search */
+#group-list-sidebar-inflated .fakelink h3::before,
+#group-list-sidebar .fakelink h3::before { content: "\f0c0"; } /* users */
+#nets-sidebar-inflated .fakelink h3::before,
+#nets-sidebar .fakelink h3::before { content: "\f233"; } /* server */
+#trending-tags-sidebar-inflated .fakelink h3::before,
+#trending-tags-sidebar .fakelink h3::before { content: "\f02b"; } /* tag */
+#datebrowse-sidebar-inflated .fakelink h3::before,
+#datebrowse-sidebar .fakelink h3::before { content: "\f187"; } /* archive */
+#file-sidebar-inflated .fakelink h3::before,
+#file-sidebar .fakelink h3::before { content: "\f07b"; } /* folder */
+#channel-sidebar-inflated .fakelink h3::before,
+#channel-sidebar .fakelink h3::before { content: "\f009"; } /* th-large */
+#accounttype-sidebar-inflated .fakelink h3::before,
+#accounttype-sidebar .fakelink h3::before { content: "\f2b5"; } /* handshake-o */
+#sidebar-community-no-sharer-inflated .fakelink h3::before,
+#sidebar-community-no-sharer .fakelink h3::before { content: "\f2c0"; } /* user-o */
+#rel-sidebar-inflated .fakelink h3::before,
+#rel-sidebar .fakelink h3::before { content: "\f007"; } /* user-o */
 
 .wall-item-container.thread_level_3, .wall-item-container.thread_level_4, .wall-item-container.thread_level_5, .wall-item-container.thread_level_6, .wall-item-container.thread_level_7, .wall-item-container.thread_level_8, .wall-item-container.thread_level_9, .wall-item-container.thread_level_10 {
     margin-left: 4px;
