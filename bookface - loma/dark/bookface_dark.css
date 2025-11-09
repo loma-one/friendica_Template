@@ -532,23 +532,8 @@ button[type="submit"]:focus {
     box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
 }
 
-#mention-link span:first-of-type {
-    float: right;
-    font-size: 32px;
-    line-height: 45px;
-    top: 4px;
-}
-
 #mention-link span:first-of-type .fa-2x {
     font-size: inherit !important;
-}
-
-#mention-link span:last-of-type {
-    font-size: 15px;
-    margin-right: 10px;
-    line-height: 32px;
-    top: 6px;
-    position: relative;
 }
 
 #contact-edit-status-wrapper {
