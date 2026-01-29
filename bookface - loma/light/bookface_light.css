@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.0
+	Version    : 1.1
 	Licence    : AGPL
-	Created on : 19.01.2025
+	Created on : 26.01.26
 	Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
 */
 
@@ -36,26 +36,6 @@
 	--thread-level-8-hover-color: #d5d5d5; /* Mittleres Grau */
 	--thread-level-9-color: #e5e5e5; /* Mittleres Grau */
 	--thread-level-9-hover-color: #c9c9c9; /* Dunkelgrau */
-	/* grautöne
-	 * --thread-level-1-color: #fff;
-	--thread-level-1-hover-color: #e0e0e0;
-	--thread-level-2-color: #fafafb;
-	--thread-level-2-hover-color: #f0f0f0;
-	--thread-level-3-color: #f5f5f5;
-	--thread-level-3-hover-color: #e5e5e5;
-	--thread-level-4-color: #f0f0f0;
-	--thread-level-4-hover-color: #d5d5d5;
-	--thread-level-5-color: #e5e5e5;
-	--thread-level-5-hover-color: #c9c9c9;
-	--thread-level-6-color: #d5d5d5;
-	--thread-level-6-hover-color: #b0b0b0;
-	--thread-level-7-color: #c9c9c9;
-	--thread-level-7-hover-color: #a0a0a0;
-	--thread-level-8-color: #b0b0b0;
-	--thread-level-8-hover-color: #909090;
-	--thread-level-9-color: #a0a0a0;
-	--thread-level-9-hover-color: #808080;
-	*/
 }
 
 body {
@@ -69,7 +49,7 @@ body {
 #topbar-first .nav > li > button,
 nav.navbar .nav > li > a,
 nav.navbar .nav > li > button {
-	color: #65686C !important;
+	color: var(--nav-icon-color) !important;
 }
 
 #topbar-first, nav.navbar {
@@ -225,7 +205,7 @@ header #banner #logo-img::before {
 }
 
 #topbar-first .nav > .account img {
-	border-radius: 100% !important;
+	border-radius: 50% !important;
 	box-shadow: 0 0 1px rgba(255,255,255,.1) !important;
 	height: 40px !important;
 	width: 40px !important;
@@ -273,7 +253,7 @@ header #banner #logo-img::before {
 	height: 32px;
 	width: 32px;
 	top: 2px !important;
-	background-color: white !important;
+	background-color: var(--nav-bg) !important;
 	margin-top: 2px !important;
 }
 
@@ -301,7 +281,7 @@ header #banner #logo-img::before {
 }
 
 .btn {
-	border-radius: 5px;
+	border-radius: 25px;
 }
 
 .template-icon {
@@ -314,7 +294,7 @@ header #banner #logo-img::before {
 }
 
 .nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
-	color: #65686C !important;
+	color: var(--nav-icon-color) !important;
 	border-color: white !important;
 }
 
@@ -366,20 +346,20 @@ header #banner #logo-img::before {
 .btn.btn-primary:focus {
 	background: var(--link-color);
 	color: #f4f4f4;
-	border-radius: 10px;
+	border-radius: 25px;
 }
 
 .btn.btn-primary {
 	background: var(--link-color);
 	color: #fff;
-	border-radius: 10px;
+	border-radius: 25px;
 }
 
 #dropdownMenuTools {
 	height: 40px;
 	width: 40px;
 	background-color: rgba(128,128,128,.1) !important;
-	border-radius: 100% !important;
+	border-radius: 50% !important;
 	margin-top: 5px !important;
 	margin-right: 10px !important;
 }
@@ -393,10 +373,11 @@ header #banner #logo-img::before {
 	border-radius: 25px !important;
 	background-color: var(--link-color) !important;
 	color: #ffffff !important;
+}
 
 #jotOpen:hover, #jotOpen:focus {
 	box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
-}}
+}
 
 .action-button {
 	padding-block: 14px;
@@ -405,6 +386,14 @@ header #banner #logo-img::before {
 
 #topbar-second #nav-short-info {
 	margin-top: 10px;
+}
+
+#fc-header .dropdown-menu li button {
+	border-radius: 25px;
+}
+
+#event-calendar-views {
+	border-radius: 25px;
 }
 
 .popover.hovercard {
@@ -475,9 +464,9 @@ button[type="submit"]:focus{
 /* Other people profiles */
 #mention-link {
 	background-color: var(--link-color) !important;
-	color: white !important;;
+	color: white !important;
 	border-radius: 25px !important;
-	padding: 8 16px !important;
+	padding: 8px 16px !important;
 	height: 40px !important;
 }
 
@@ -496,7 +485,7 @@ button[type="submit"]:focus{
 }
 
 #profile-extra-links .btn {
-	border-radius: 8px !important;
+	border-radius: 25px !important;
 	margin-bottom: 10px !important;
 }
 
@@ -515,7 +504,7 @@ aside .widget,
 }
 
 .wall-item-container .media {
-	background-color: #ffffff !important;
+	background-color: var(--nav-bg) !important;
 	border-radius: 10px !important;
 }
 
@@ -525,11 +514,12 @@ aside .widget,
 
 .contact-photo,
 .contact-photo-xs {
-	border-radius: 100% !important;
-	border: 1px solid #eee !important;
+	border-radius: 50% !important;
+	border: 1px solid var(--border-color) !important;
 }
+
 .hover-card-pic img.thumbnail {
-	border-radius: 100% !important;
+	border-radius: 50% !important;
 }
 
 p.wall-item-announce,
@@ -667,13 +657,13 @@ p.wall-item-announce,
 /* Compose and Reply */
 #jot-modal-content,
 .wall-item-comment-wrapper {
-	background-color: #fff !important;
+	background-color: var(--nav-bg) !important;
 	border-radius: 15px !important;
 }
 
 #jot-modal-content input,
 #jot-modal-content .friendica-tagsinput {
-	background-color: #fff !important;
+	background-color: var(--nav-bg) !important;
 }
 
 #jot-modal-content .fbrowser .folders button {
@@ -698,13 +688,13 @@ p.wall-item-announce,
 }
 
 #jot-title {
-	background-color: #fff !important;
+	background-color: var(--nav-bg) !important;
 }
 
 #profile-jot-text, #profile-jot-wrapper textarea,
 #jot-location,
 .wall-item-comment-wrapper textarea {
-	background-color: #fff !important;
+	background-color: var(--nav-bg) !important;
 }
 
 #jot-text-wrap, #profile-jot-wrapper .dropzone.dz-clickable,
@@ -753,7 +743,7 @@ p.wall-item-announce,
 }
 [id^="comment-edit-preview"],
 .comment-edit-preview {
-	border-radius: 8px !important;
+	border-radius: 25px !important;
 	box-shadow: none !important;
 	background-color: rgba(0,0,0,.1);
 }
@@ -785,13 +775,13 @@ p.wall-item-announce,
 #profile-photo-wrapper {
 	overflow: visible !important;
 	padding: 5px;
-		border-radius: 100%
+		border-radius: 50%;
 	/*background-color: #ffffff;*/
 }
 
 #vcard-short-photo-wrapper img,
 #nav-short-info .contact-wrapper img {
-	border-radius: 100%;
+	border-radius: 50%;
 }
 
 .intro-photo-wrapper img.intro-photo {
@@ -803,7 +793,7 @@ aside .widget li {
 }
 
 aside .vcard img.u-photo, aside img.vcard-photo {
-	border-radius: 100% !important;
+	border-radius: 50% !important;
 	box-shadow: 0 0 1px rgba(0,0,0,.3);
 	border: 3px solid white;
 }
@@ -837,7 +827,7 @@ aside .widget li:hover {
 }
 
 #widget-contacts {
-	background-color: #ffffff !important;
+	background-color: var(--nav-bg) !important;
 	border-radius: 8px !important;
 	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2) !important;
 }
@@ -861,7 +851,7 @@ aside .widget li:hover {
 
 .wall-item-actions button {
 	font-size: 20px !important;
-	color: #65686C !important;
+	color: var(--nav-icon-color) !important;
 }
 
 .wall-item-actions button:hover {
@@ -911,7 +901,7 @@ width: 20px;
 height:20px;
 padding: 2px;
 line-height: 16px;
-border-radius: 100%;
+border-radius: 50%;
 }
 .wall-item-responses .wall-item-like > p:first-of-type::before {
 content: '\f164';
@@ -957,7 +947,7 @@ z-index: 10;
 	overflow-y: auto;
 }
 .wall-item-responses div p[class*="-expanded"] a {
-	color: var (--link-color) !important;
+	color: var(--link-color) !important;
 	display: block;
 	max-width: 100%;
 	white-space: nowrap;
@@ -978,12 +968,6 @@ z-index: 10;
 	font-size: 16px;
 	position: relative;
 	top: 1px;
-}
-
-.contact-photo,
-.contact-photo-xs {
-	border-radius: 100% !important;
-	border: 1px solid var(--border-color) !important;
 }
 
 .pagination .pager_next a, .pagination .pager_prev a {
@@ -1029,13 +1013,13 @@ p.wall-item-announce,
 	font-size: 13px !important;
 }
 
-.type-link, .type-video {
+/*.type-link, .type-video {
 	padding: 0 !important;
 	margin: 0 !important;
 	background-color: rgb(255, 255, 255) !important;
 	border: 1px solid rgba(208, 211, 215, 0.45) !important;
 	border-radius: 10px;
-}
+}*/
 
 .type-link h4, .type-link blockquote, .type-link sup,
 .type-video h4, .type-video blockquote, .type-video sup {
@@ -1153,6 +1137,66 @@ a:has(img.has-alt-description)::after {
 	line-height: 20px;
 }
 
+/* Verhindert Unterstriche Kommentare */
+.wall-item-actions-row button:hover,
+.wall-item-actions-row button:focus,
+.wall-item-actions-row button::after,
+.wall-item-actions-right button:hover,
+.wall-item-actions-right button::after {
+	text-decoration: none !important;
+}
+
+body a {
+	text-decoration: none !important;
+}
+
+/* Farbe Tabelle */
+td, th {
+  border: thin solid #eaeaea;
+}
+
+.alert-info {
+	background-image: linear-gradient(to bottom,#fff 0,#fff 100%);
+	background-color: var(--background-color);
+	border-color: var(--border-color);
+	color: #65686c;
+}
+
+.alert {
+	border-color:#ccc;
+	border-radius: 10px;
+}
+
+#circle-update-wrapper .viewcontact_wrapper .contact-circle-link {
+	opacity: 0.8;
+	font-size: 30px;
+}
+
+.btn-group > .btn:not(.dropdown-toggle),
+.btn-group > .dropdown-toggle:not(:first-child) {
+	font-size: 20px;
+}
+
+.modal-content {
+	border-radius:15px;
+}
+
+#conversejs .converse-chatboxes {
+    z-index: 9999 !important;
+    position: fixed !important;
+    bottom: 0;
+}
+
+/* Beiträge werden mit einen kleinen Schatten versehen */
+.tread-wrapper {
+    transition: box-shadow 0.2s ease;
+}
+
+.tread-wrapper:hover {
+    transform: none !important; /* Keine Bewegung */
+    box-shadow: 0 0 8px rgba(0,0,0,0.1) !important; /* Nur sanftes Leuchten nach außen */
+}
+
 /* TAGS, CATEGORIES, MENTIONS BUTTONS
    ==================================
    Restyled to be less obnoxious and tiny
@@ -1172,7 +1216,7 @@ a.tag.label,
   	background-image: none !important;
   	background-color: transparent !important;
   	box-shadow: none !important;
-  	color: #65686c !important;
+  	color: var(--nav-icon-color) !important;
   	border: 1px solid #65686c;
 	text-shadow: none !important;
 }
@@ -1368,6 +1412,10 @@ a.tag.label,
 			color: white !important;
 		}
 
+/* Post published alert - toast notification style */
+#post-published-alert {
+	border-radius: 25px;
+}
 
 /*	Post-Button auf die linke Seite legen
 	===========================
@@ -1402,14 +1450,15 @@ a.tag.label,
 		border-bottom-left-radius:  10px;
 	}
 }
+
 /*	Small Laptop Screens
 	Some tablets in Landscape Orientation
 	=====================================
 */
 @media screen and (max-width: 1280px) {
-    #search-box {
-        width: 18% !important;
-    }
+	#search-box {
+		width: 18% !important;
+	}
 	#search-save {
 		width: 140px !important;
 	}
@@ -1430,6 +1479,25 @@ a.tag.label,
 	=====================================
 */
 @media screen and (max-width: 991px){
+	#jotOpen {
+	font-size: 0 !important;      /* Killt alle Text-Überreste wie das "N" */
+	overflow: hidden !important;   /* Versteckt alles, was aus dem Kreis ragt */
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	}
+
+	/* Damit das Icon (der Stift) nicht auch verschwindet: */
+	#jotOpen i {
+	font-size: 20px !important;    /* Stellt die Größe des Icons separat wieder her */
+	margin: 0 !important;
+	}
+
+	/* Das Text-Span explizit auf unsichtbar setzen */
+	#jotOpen span {
+	display: none !important;
+	}
+
 	/* Friendica icon upper left */
 	#banner {
 		display: block !important;
@@ -1479,13 +1547,13 @@ a.tag.label,
 	#topbar-first .nav > .account {
 		right: 24px;
 	}
-    #jotOpen::before {
-        content: '';
-        margin: 0;
-    }
-    #mention-link span:last-of-type {
-        display: none;
-    }
+	#jotOpen::before {
+		content: '';
+		margin: 0;
+	}
+	#mention-link span:last-of-type {
+		display: none;
+	}
 	aside {
 		background-color: var(--background-color);
 	}
@@ -1684,6 +1752,7 @@ a.tag.label,
 			overflow-y: auto;
 		}
 }
+
 /*	Most Phones in Portrait Orientation
 	Large Screen Phones in Landscape Orientation
 	Some Small tablets in Portrait Orientation
@@ -1837,13 +1906,16 @@ a.tag.label,
 				background-color: var(--link-color);
 				color: white;
 				font-size: 24px;
-				border-radius: 100%;
+				border-radius: 50%;
 				line-height: 40px;
 				text-align: center;
 				display: block;
 			}
 	#offcanvasUsermenu {
 		background-color: var(--nav-bg) !important;
+	}
+	#offcanvasUsermenu a {
+	padding: 1px 15px;
 	}
 	#offcanvasUsermenu ul.list-group {
 		-webkit-box-shadow: none !important;
@@ -1855,7 +1927,7 @@ a.tag.label,
 			max-height: unset  !important;
 			height: 40px  !important;
 			width:  40px  !important;
-			border-radius: 100% !important;
+			border-radius: 50% !important;
 		}
 			#offcanvasUsermenu li.divider {
 				display: none !important;
@@ -1946,7 +2018,7 @@ a.tag.label,
 			position: fixed;
 			bottom: 65px;
 			right: 10px;
-			border-radius: 100% !important;
+			border-radius: 50% !important;
 			height: 50px;
 			width: 50px !important;
 			line-height: 50px;
@@ -2052,7 +2124,7 @@ a.tag.label,
 		line-height: 50px;
 		font-size: 24px;
 		text-align: center;
-		border-radius: 100%;
+		border-radius: 50%;
 		display: block;
 		color: white;
 		padding: 0;
@@ -2063,14 +2135,8 @@ a.tag.label,
 			#message-new:hover a,
 			#message-new:focus a {
 				box-shadow: inset 0 0 100px rgba(255,255,255,.2);
-				border-radius: 100%;
+				border-radius: 50%;
 			}
-	.justified-gallery > a,
-	.justified-gallery > div,
-	.justified-gallery > figure{
-    	height: 25vw !important;
-    	width:  25vw !important;
-	}
 	/* Contact Notification Action Buttons */
 	.intro-actions {
 		position: relative;
@@ -2246,7 +2312,7 @@ a.tag.label,
 				color: white;
 				height: 50px;
 				width:  50px;
-				border-radius: 100%;
+				border-radius: 50%;
 				line-height: 32px;
 			}
 			#topbar-first .navbar-toggle[data-target="#search-mobile"],
@@ -2260,7 +2326,7 @@ a.tag.label,
 				color: white;
 				height: 50px;
 				width:  50px;
-				border-radius: 100%;
+				border-radius: 50%;
 				line-height: 32px;
 			}
 			#topbar-first .navbar-toggle[data-target="#search-mobile"]:hover,
@@ -2281,21 +2347,21 @@ a.tag.label,
 			}
 			#main-menu img {
 				border: 5px solid var(--link-color);
-				border-radius: 100%;
+				border-radius: 50%;
 				box-sizing: unset;
 			}
 		#search-mobile {
-        	top: 40% !important;
-        	border: 10px solid var(--link-color);
-        	border-radius: 8px;
-        	left: 50%;
-        	width: 80%;
-        	margin-left: -40%;
-        	box-shadow: 0 0 50px rgba(0,0,0,.75);
-    	}
-    		#search-mobile .col-xs-12 {
-    			background-color: var(--nav-bg);
-    		}
+			top: 40% !important;
+			border: 10px solid var(--link-color);
+			border-radius: 8px;
+			left: 50%;
+			width: 80%;
+			margin-left: -40%;
+			box-shadow: 0 0 50px rgba(0,0,0,.75);
+		}
+			#search-mobile .col-xs-12 {
+				background-color: var(--nav-bg);
+			}
 		#topbar-second {
 			transition-duration: .5s;
 			transition-property: top;
@@ -2312,12 +2378,12 @@ a.tag.label,
 		nav.navbar .nav > li > button:hover,
 		nav.navbar .nav > li > button:focus {
 		  background-color: var(--link-color) !important;
-		  border-radius: 100% !important;
+		  border-radius: 50% !important;
 		  box-shadow: inset 0 0 100px rgba(0,0,0,.2);
 		}
 		#topbar-first button.navbar-toggle.offcanvas-right-toggle:hover,
 		#topbar-first button.navbar-toggle.offcanvas-right-toggle:focus {
-			border-radius: 100% !important;
+			border-radius: 50% !important;
 		}
 		#topbar-first .topbar-actions {
 			z-index: 1070;
@@ -2397,74 +2463,50 @@ a.tag.label,
 body.mod-home {
 	padding-top: 10px !important;
 }
+
 .mod-home .navbar,
 .mod-home #topbar-second{
 	background-color: transparent !important;
 }
+
 .mod-home #nav-about {
 	background-color: var(--link-color);
 	height: 50px;
 	width: 50px;
 	color: white !important;
-	border-radius: 100% !important;
+	border-radius: 50% !important;
 	right: 15px;
 }
+
  .mod-home #nav-about:hover,
 .mod-home #nav-about:focus {
 	background-color: var(--link-color) !important;
 	box-shadow: inset 0 0 100px rgba(0,0,0,.1);
 }
+
 .mod-home #nav-about .fa-info {
 	line-height: 24px;
 	width: auto;
 	display: block;
 }
-	@media screen and (max-width: 768px){
-		.mod-home #nav-about .fa-info {
-			line-height: 32px;
-		}
+
+@media screen and (max-width: 768px){
+	.mod-home #nav-about .fa-info {
+		line-height: 32px;
 	}
+}
 
 /* Problemumgehung iOS Sichtbarkeit Profilbild */
 body.mod-profile #profile-photo-wrapper {
-    top: 100px !important; /* Oder ein anderer sichtbarer Wert */
-    opacity: 1 !important;
-    visibility: visible !important;
-    /* Falls transform verwendet wird und stört */
-    transform: none !important;
+	top: 100px !important; /* Oder ein anderer sichtbarer Wert */
+	opacity: 1 !important;
+	visibility: visible !important;
+	/* Falls transform verwendet wird und stört */
+	transform: none !important;
 }
 
 /* fügt eine farbige Linie für Kommentare ein*/
 Element {
-}
-
-/* Widgets mit einem Icon versehen */
-/* Gemeinsame Basisregeln für alle Sidebar-Icons */
-#circle-sidebar-inflated .fakelink h3::before,
-#circle-sidebar .fakelink h3::before,
-#saved-search-list-inflated .fakelink h3::before,
-#saved-search-list .fakelink h3::before,
-#group-list-sidebar-inflated .fakelink h3::before,
-#group-list-sidebar .fakelink h3::before,
-#nets-sidebar-inflated .fakelink h3::before,
-#nets-sidebar .fakelink h3::before,
-#trending-tags-sidebar-inflated .fakelink h3::before,
-#trending-tags-sidebar .fakelink h3::before,
-#datebrowse-sidebar-inflated .fakelink h3::before,
-#datebrowse-sidebar .fakelink h3::before,
-#file-sidebar-inflated .fakelink h3::before,
-#file-sidebar .fakelink h3::before,
-#channel-sidebar-inflated .fakelink h3::before,
-#channel-sidebar .fakelink h3::before,
-#accounttype-sidebar-inflated .fakelink h3::before,
-#accounttype-sidebar .fakelink h3::before,
-#sidebar-community-no-sharer-inflated .fakelink h3::before,
-#sidebar-community-no-sharer .fakelink h3::before
-#rel-sidebar-inflated .fakelink h3::before,
-#rel-sidebar .fakelink h3::before {
-    font-family: "FontAwesome";
-    margin-right: 8px;
-    font-size: 14px;
 }
 
 /* Individuelle Icons */
@@ -2490,98 +2532,117 @@ Element {
 #sidebar-community-no-sharer .fakelink h3::before { content: "\f2c0"; } /* user-o */
 #rel-sidebar-inflated .fakelink h3::before,
 #rel-sidebar .fakelink h3::before { content: "\f007"; } /* user-o */
+	font-family: "FontAwesome";
+	margin-right: 8px;
+	font-size: 14px;
+}
 
-.wall-item-container.thread_level_3, .wall-item-container.thread_level_4, .wall-item-container.thread_level_5, .wall-item-container.thread_level_6, .wall-item-container.thread_level_7, .wall-item-container.thread_level_8, .wall-item-container.thread_level_9, .wall-item-container.thread_level_10 {
-    margin-left: 4px;
+.wall-item-container.thread_level_3,
+.wall-item-container.thread_level_4,
+.wall-item-container.thread_level_5,
+.wall-item-container.thread_level_6,
+.wall-item-container.thread_level_7,
+.wall-item-container.thread_level_8,
+.wall-item-container.thread_level_9 {
+	margin-left: 5px !important;
 }
 
 /* Definition der Klassen mit zentralen Farben */
 .thread_level_1 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 0px solid var(--thread-level-1-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 0px solid var(--thread-level-1-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_1:hover {
-    border-left-color: var(--thread-level-1-hover-color);
+	border-left-color: var(--thread-level-1-hover-color);
 }
 
 .thread_level_2 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-2-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-2-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_2:hover {
-    border-left-color: var(--thread-level-2-hover-color);
+	border-left-color: var(--thread-level-2-hover-color);
 }
 
 .thread_level_3 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-3-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-3-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_3:hover {
-    border-left-color: var(--thread-level-3-hover-color);
+	border-left-color: var(--thread-level-3-hover-color);
 }
 
 .thread_level_4 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-4-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-4-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_4:hover {
-    border-left-color: var(--thread-level-4-hover-color);
+	border-left-color: var(--thread-level-4-hover-color);
 }
 
 .thread_level_5 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-5-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-5-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_5:hover {
-    border-left-color: var(--thread-level-5-hover-color);
+	border-left-color: var(--thread-level-5-hover-color);
 }
 
 .thread_level_6 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-6-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-6-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_6:hover {
-    border-left-color: var(--thread-level-6-hover-color);
+	border-left-color: var(--thread-level-6-hover-color);
 }
 
 .thread_level_7 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-7-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-7-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_7:hover {
-    border-left-color: var(--thread-level-7-hover-color);
+	border-left-color: var(--thread-level-7-hover-color);
 }
 
 .thread_level_8 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-8-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-8-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_8:hover {
-    border-left-color: var(--thread-level-8-hover-color);
+	border-left-color: var(--thread-level-8-hover-color);
 }
 
 .thread_level_9 {
-    position: relative !important;
-    margin-top: 0;
-    border-left: 3px solid var(--thread-level-9-color);
-    transition: border-color 0.3s ease;
+	position: relative !important;
+	margin-top: 0;
+	border-left: 3px solid var(--thread-level-9-color);
+	transition: border-color 0.3s ease;
+	margin-left: 5px !important;
 }
 .thread_level_9:hover {
-    border-left-color: var(--thread-level-9-hover-color);
+	border-left-color: var(--thread-level-9-hover-color);
 }

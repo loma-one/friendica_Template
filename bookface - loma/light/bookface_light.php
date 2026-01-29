@@ -18,7 +18,7 @@ require_once 'view/theme/frio/php/PHPColors/Color.php';
 $accentColor = new Color($scheme_accent);
 
 $nav_bg = '#ffffff';
-$nav_icon_color = '#606637';
+$nav_icon_color = '#65686c';
 $link_color = '#' . $accentColor->lighten(10);
 	// overrid ugly blue accent color
 	if ( $link_color == "#33a2e0" ){
