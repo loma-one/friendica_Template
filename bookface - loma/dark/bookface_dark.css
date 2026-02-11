@@ -1599,13 +1599,13 @@ body.mod-filed
 /*	Greater than Full-HD Width
 	===========================
 */
-@media screen and (min-width: 1921px) {
+@media screen and (min-width: 1921px){
 	.coverphoto {
 		max-width: 1920px;
 		left: 50% !important;
 		margin-left: -960px;
 		border-bottom-right-radius: 10px;
-		border-bottom-left-radius: 10px;
+		border-bottom-left-radius:  10px;
 	}
 }
 /*	Small Laptop Screens
@@ -1616,13 +1616,15 @@ body.mod-filed
 	#search-box {
 		width: 18% !important;
 	}
+		#search-box:focus-within {
+			width: auto !important;
+		}
 	#search-save {
 		width: 140px !important;
 	}
 }
-
 /* Frio breakpoints for smaller profile pic */
-@media screen and (min-width: 991px) and (max-width: 1199px) {
+@media screen and (min-width:991px) and (max-width:1199px){
 	.contact-block-img {
 		height: 75px !important;
 		width: 75px !important;
@@ -1632,326 +1634,296 @@ body.mod-filed
 		position: relative;
 		float: none !important;
 	}
+	#nav-user-linkmenu.open .user-title {
+		display: block !important;
+	}
 }
-
 /*	Large Tablets in Portrait Orientation
 	=====================================
 */
-@media screen and (max-width: 991px) {
-	#jotOpen {
-		font-size: 0 !important; /* Killt alle Text-Überreste wie das "N" */
-		overflow: hidden !important; /* Versteckt alles, was aus dem Kreis ragt */
-		display: flex !important;
-		justify-content: center !important;
-		align-items: center !important;
-	}
-
-	/* Damit das Icon (der Stift) nicht auch verschwindet: */
-	#jotOpen i {
-		font-size: 20px !important; /* Stellt die Größe des Icons separat wieder her */
-		margin: 0 !important;
-	}
-
-	/* Das Text-Span explizit auf unsichtbar setzen */
-	#jotOpen span {
-		display: none !important;
-	}
-
+@media screen and (max-width: 990px){
 	/* Friendica icon upper left */
 	#banner {
 		display: block !important;
 		padding: 0 !important;
 		margin: 8px 10px;
 	}
-	#friendica-logo-mask {
-		display: block !important;
-	}
-
+		#friendica-logo-mask {
+			display: block !important;
+		}
 	/* hide search box - no room */
-	#search-box {
-		display: none;
-	}
-
-	/* show mobile search toggle */
-	#topbar-first .navbar-toggle[data-target="#search-mobile"] {
-		display: block !important;
-		position: fixed !important;
-		left: 100px;
-		top: 6px;
-	}
-	/* force display of mobile search box */
-	#search-mobile {
-		top: 110px !important;
-		border-color: black;
-	}
-	#search-mobile .col-xs-12 {
-		background-color: var(--nav-bg);
-	}
-	#search-mobile.collapse.in,
-	#search-mobile.collapse.in * {
-		display: block !important;
-	}
-	#topbar-first .navbar-toggle[data-target="aside"] {
-		position: fixed;
-		top: 6px;
-		left: 50px;
-	}
-
-	/* change aside toggle icon */
-	.navbar-toggle .fa-ellipsis-v::before,
-	#topbar-first
-		.navbar-toggle[data-target="aside"]
-		.fa-angle-double-right::before {
-		content: "\f152";
-	}
-	body.aside-out .navbar-toggle .fa-ellipsis-v::before,
-	body.aside-out
-		#topbar-first
-		.navbar-toggle[data-target="aside"]
-		.fa-angle-double-right::before {
-		content: "\f191";
-	}
+    #search-box {
+        display: none;
+    }
+    	/* show mobile search toggle */
+    	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
+    		display: block !important;
+    		position: fixed !important;
+    		left: 115px;
+    		top:    0px;
+    		z-index: 10;
+    	}
+    	/* force display of mobile search box */
+    	#search-mobile {
+    		top: 115px !important;
+    		border-color: var(--border-color);
+    	}
+    		#search-mobile .navbar-form {
+    			padding: 10px;
+    		}
+    			#search-mobile input {
+    				width: 100%;
+    			}
+    			#search-mobile .form-button-search {
+    				border-radius: 50px !important;
+    			}
+    		#search-mobile .col-xs-12 {
+    			background-color: var(--nav-bg);
+    		}
+    			#search-mobile.collapse.in,
+    			#search-mobile.collapse.in * {
+    				display: block !important;
+    			}
+		#topbar-first .navbar-toggle[data-target="aside"] {
+			position: fixed;
+			top: 0px;
+			left: 55px;
+			z-index: 10;
+		}
+		/* change aside toggle icon */
+		.navbar-toggle .fa-ellipsis-v::before,
+		#topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+			content: "\f152";
+		}
+		body.aside-out .navbar-toggle .fa-ellipsis-v::before,
+		body.aside-out #topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+			content: "\f191";
+		}
 	#topbar-first .nav > .account {
 		right: 24px;
 	}
-	#jotOpen::before {
-		content: "";
-		margin: 0;
+	#nav-user-linkmenu.open .user-title {
+		display: block !important;
 	}
-	#mention-link {
-		padding: 0 8px !important;
+	/* navbar labels will not fit for tablets in portrait */
+	#topbar-first .nav > li > a::after,
+	#topbar-first .topbar-nav #nav-notification::after{
+		display: none !important;
 	}
-	#mention-link span:last-of-type {
-		display: none;
-	}
-	aside {
-		background-color: var(--background-color);
-	}
-	.offcanvas-right-overlay,
-	aside::before {
-		background-color: rgba(0, 0, 0, 0.4);
-	}
+    #jotOpen span,
+    #search-save span,
+    #mention-link span {
+        display: none;
+    }
+    	#jotOpen i,
+    	#search-save i,
+    	#mention-link i {
+    		width: 100%;
+    		text-align: center;
+    	}
+    #mention-link {
+    	padding: 0 8px !important;
+    }
+    #mention-link span:last-of-type {
+        display: none;
+    }
+    .offcanvas-right-overlay,
+    aside::before {
+    	background-color: rgba(255, 255, 255, 0.4);
+    }
 	/* Profile Aside Mobile */
-	body.mod-contact #content,
-	body.mod-profile #content,
-	body.mod-photos #content {
+	body.mod-contact .row:has(.coverphoto) #content,
+	body.mod-profile .row:has(.coverphoto) #content,
+	body.mod-photos  .row:has(.coverphoto) #content {
 		margin-top: 350px;
 	}
-	/* only seen on your own Recent Photos page */
-	body.mod-profile #sidebar-photos-albums::before {
-		content: "\f083";
-		font-family: ForkAwesome;
-		font-size: 150px;
-		position: fixed;
-		top: 175px;
-		left: 0;
-		right: 0;
-		text-align: center;
-		color: var(--nav-icon-color);
-		opacity: 0.5;
-		z-index: -1;
-		transition-duration: 0.5s;
-		transition-property: left;
-	}
-	body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
-	body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
-		left: 50%;
-	}
-	/* hide camera icon on other profile Recent Photos pages */
-	body.mod-profile .vcard + #sidebar-photos-albums::before {
-		content: "";
-	}
-
-	/* This is for old browsers that do not understand either @supports or :has() */
-	body.mod-contact aside,
-	body.mod-photos aside,
-	body.mod-profile aside {
-		position: absolute !important;
-	}
-	/* only seen on your own Contacts Page */
-	@supports not selector(:has(*)) {
-		body.mod-contact #peoplefind-sidebar::before {
-			content: "\f0c0";
-			font-family: ForkAwesome;
-			font-size: 150px;
-			position: fixed;
-			top: 175px;
-			left: 0;
-			right: 0;
-			text-align: center;
-			color: var(--nav-icon-color);
-			opacity: 0.5;
-			z-index: -1;
-			transition-duration: 0.5s;
-			transition-property: left;
-		}
-		body.mod-contact aside.canvas-sliding #peoplefind-sidebar::before,
-		body.mod-contact aside.canvas-slid #peoplefind-sidebar::before {
-			left: 50%;
-		}
-	}
-	@supports selector(:has(*)) {
-		/* for browsers that DO understand both @supports and :has() */
+		/* This is for old browsers that do not understand either @supports or :has() */
 		body.mod-contact aside,
-		body.mod-photos aside,
+		body.mod-photos  aside,
 		body.mod-profile aside {
-			position: fixed !important;
+			position: absolute !important;
 		}
-		body.mod-contact aside:has(#peoplefind-sidebar) + #content {
-			margin-top: 0;
+		/* only seen on your own Contacts Page */
+		@supports not selector(:has(*)){
+			body.mod-contact #peoplefind-sidebar::before {
+				content: '\f0c0';
+				font-family: ForkAwesome;
+				font-size: 150px;
+				position: fixed;
+				top: 175px;
+				left: 0;
+				right: 0;
+				text-align: center;
+				color: var(--nav-icon-color);
+				opacity: .5;
+				z-index: -1;
+				transition-duration: .5s;
+				transition-property: left;
+			}
+				body.mod-contact aside.canvas-sliding #peoplefind-sidebar::before,
+				body.mod-contact aside.canvas-slid #peoplefind-sidebar::before {
+					left: 50%;
+				}
 		}
-		/* Fix Scheduled Posts Page spacing
-		Note: aside not :empty because of whitespace,
-		:blank works but is poorly supported,
-		:not(has(*)) works but not in old browsers
-	*/
-		@supports not (background: -webkit-named-image(i)) {
-			body.mod-profile aside:not(:has(*)) + #content {
+		@supports selector(:has(*)){
+			/* for browsers that DO understand both @supports and :has() */
+			body.mod-contact aside,
+			body.mod-photos  aside,
+			body.mod-profile aside {
+				position: fixed !important;
+			}
+			body.mod-contact aside:has(#peoplefind-sidebar) + #content {
 				margin-top: 0;
 			}
+			/* Fix Scheduled Posts Page spacing
+				Note: aside not :empty because of whitespace,
+				:blank works but is poorly supported,
+				:not(has(*)) works but not in old browsers
+			*/
+			@supports not (background: -webkit-named-image(i)) {
+				body.mod-profile aside:not(:has(*)) + #content {
+					margin-top: 0;
+				}
+			}
 		}
-	}
 	body.mod-contact aside,
-	body.mod-photos aside,
+	body.mod-photos  aside,
 	body.mod-profile aside {
 		margin-top: 0px !important;
 		left: -300px !important;
 		right: auto !important;
 		display: block !important;
 		padding-top: 120px;
-		transition-duration: 0.5s !important;
+		transition-duration: .5s !important;
 		z-index: auto;
 	}
-	body.mod-contact aside.canvas-slid,
-	body.mod-photos aside.canvas-slid,
-	body.mod-profile aside.canvas-slid {
-		left: 0px !important;
-		right: auto !important;
-		z-index: 20;
-	}
-	body.mod-contact aside #profile-photo-wrapper,
-	body.mod-photos aside #profile-photo-wrapper,
-	body.mod-profile aside #profile-photo-wrapper {
-		position: fixed;
-		top: 150px;
-		left: 50%;
-		height: 150px;
-		width: 150px;
-		margin-left: -75px;
-		transition-timing-function: ease-in-out;
-		transition-duration: 0.3s;
-		transition-property: all;
-	}
-	body.mod-contact .profile-header h3.p-name,
-	body.mod-photos .profile-header h3.p-name,
-	body.mod-profile .profile-header h3.p-name {
-		position: fixed;
-		width: 100%;
-		top: 300px;
-		left: 50%;
-		margin-left: -50%;
-		transition-timing-function: ease-in-out;
-		transition-duration: 0.3s;
-		transition-property: all;
-	}
-	body.mod-contact .profile-header .p-addr,
-	body.mod-photos .profile-header .p-addr,
-	body.mod-profile .profile-header .p-addr {
-		position: fixed;
-		width: 50%;
-		top: 400px;
-		left: 50%;
-		margin-left: -25%;
-		transition-timing-function: ease-in-out;
-		transition-duration: 0.3s;
-		transition-property: all;
-	}
-	/* bounce effect */
-	body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
-	body.mod-photos aside.canvas-sliding #profile-photo-wrapper,
-	body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
-		margin-left: -150px;
-	}
-	body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
-	body.mod-photos aside.canvas-sliding .profile-header h3.p-name,
-	body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
-		margin-left: calc(-50% - 75px);
-	}
-	body.mod-contact aside.canvas-sliding .profile-header .p-addr,
-	body.mod-photos aside.canvas-sliding .profile-header .p-addr,
-	body.mod-profile aside.canvas-sliding .profile-header .p-addr {
-		margin-left: -300px;
-	}
-	/* centered in right-hand side */
-	body.mod-contact aside.canvas-slid #profile-photo-wrapper,
-	body.mod-photos aside.canvas-slid #profile-photo-wrapper,
-	body.mod-profile aside.canvas-slid #profile-photo-wrapper {
-		margin-left: -225px;
-	}
-	body.mod-contact aside.canvas-slid .profile-header h3.p-name,
-	body.mod-photos aside.canvas-slid .profile-header h3.p-name,
-	body.mod-profile aside.canvas-slid .profile-header h3.p-name {
-		margin-left: calc(-50% - 150px);
-	}
-	body.mod-contact aside.canvas-slid .profile-header .p-addr,
-	body.mod-photos aside.canvas-slid .profile-header .p-addr,
-	body.mod-profile aside.canvas-slid .profile-header .p-addr {
-		margin-left: calc(-25% - 150px);
-	}
-	/* Cover Photo Mobile */
-	.coverphoto.canvas-sliding,
-	.coverphoto.canvas-slid {
-		left: 0px !important;
-		right: 0px !important;
-		bottom: 0px;
-		background-color: var(--background-color);
-		overflow: visible;
-	}
-	.coverphoto.canvas-slid::after {
-		content: "";
-		position: absolute;
-		top: 500px;
-		left: 0px;
-		width: 100%;
-		height: 500%;
-		display: block;
-		background-color: var(--background-color);
-	}
-	.wall-item-responses div p[class*="-expanded"] {
-		overflow-y: auto;
-	}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+			right: auto !important;
+			z-index: 20;
+		}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			position: fixed;
+			top: 150px;
+			left: 50%;
+			height: 150px;
+			width:  150px;
+			margin-left: -75px;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			position: fixed;
+			width: 100%;
+			top: 300px;
+			left: 50%;
+			margin-left: -50%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			position: fixed;
+			width: 50%;
+			top: 400px;
+			left: 50%;
+			margin-left: -25%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+			/* bounce effect */
+			body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+				margin-left: -150px;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+				margin-left: calc(-50% - 75px);
+			}
+			body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+			body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+			body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+				margin-left: -300px;
+			}
+			/* centered in right-hand side */
+			body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-slid #profile-photo-wrapper,
+			body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+				margin-left: -225px;
+			}
+			body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-slid .profile-header h3.p-name,
+			body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+				margin-left: calc(-50% - 150px);
+			}
+			body.mod-contact aside.canvas-slid .profile-header .p-addr,
+			body.mod-photos  aside.canvas-slid .profile-header .p-addr,
+			body.mod-profile aside.canvas-slid .profile-header .p-addr {
+				margin-left: calc(-25% - 150px);
+			}
+		/* Cover Photo Mobile */
+		.coverphoto.canvas-sliding,
+    	.coverphoto.canvas-slid{
+    		left: 0px !important;
+    		right: 0px !important;
+    		bottom: 0px;
+    		background-color: var(--background-color);
+    		overflow: visible;
+    	}
+    		.coverphoto.canvas-slid::after {
+    			content: '';
+    			position: absolute;
+    			top: 500px;
+    			left: 0px;
+    			width: 100%;
+    			height: 500%;
+    			display: block;
+    			background-color: var(--background-color);
+    		}
+		.wall-item-responses div p[class*="-expanded"] {
+			overflow-y: auto;
+		}
 }
 /*	Most Phones in Portrait Orientation
 	Large Screen Phones in Landscape Orientation
 	Some Small tablets in Portrait Orientation
 	======================================
 */
-@media screen and (max-width: 768px),
-	(max-height: 480px) and (max-width: 960px) and (orientation: landscape) {
-	#topbar-first .navbar-toggle[data-target="#search-mobile"] {
+@media screen and (max-width: 768px), (max-height: 480px) and (max-width: 960px) and (orientation: landscape) {
+	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
 		left: 10%;
 	}
-	.topbar ul.nav {
-		position: relative !important;
-		left: 10% !important;
-		margin-left: 0 !important;
-	}
+		.topbar ul.nav li.sr-only {
+			display: none;	/* mobile UI does not need keyboard nav support I guess? */
+		}
 	#search-save {
 		width: 100px !important;
 	}
-	#search-save .fa-plus::after {
-		content: var(--follow-button-text);
-	}
-	#search-save .fa-floppy-o::after {
-		content: var(--save-button-text);
-	}
-	a.wall-item-name-link,
-	span.fakelink {
+		#search-save .fa-plus::after {
+			content: var(--follow-button-text);
+		}
+		#search-save .fa-floppy-o::after {
+			content: var(--save-button-text);
+		}
+	a.wall-item-name-link, span.fakelink {
 		font-weight: bold;
 	}
-	.wall-item-container iframe {
-		aspect-ratio: 5/4;
-	}
+    .wall-item-container iframe {
+    	aspect-ratio: 5/4;
+    }
 	/* new mobile layout */
 	body {
 		padding-top: 65px !important;
@@ -1964,151 +1936,158 @@ body.mod-filed
 		padding: 0 !important;
 		margin: 8px 10px !important;
 	}
-	#friendica-logo-mask {
-		display: block !important;
-	}
+		#friendica-logo-mask {
+			display: block !important;
+		}
 	#topbar-first {
 		top: auto;
 		bottom: 0;
-		box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+		box-shadow: 2px 0px 5px var(--shadowglow);
 	}
-	#topbar-first .topbar-nav .arrow {
-		display: none;
+		#topbar-first .topbar-nav .arrow {
+			display: none;
+		}
+		/* re-reveal the user profile toggle */
+		#topbar-first .nav > .account {
+			position: fixed;
+			display: block !important;
+			top: 0;
+			right: 8px;
+		}
+			#topbar-first .nav > .account img {
+				margin: 0;
+			}
+			#topbar-first .nav > .account span.caret {
+				display: none;
+			}
+		/* overlay mobile nav toggle invisibly */
+		#topbar-first .offcanvas-right-toggle {
+			position: fixed;
+			top: -3px;
+			right: 7px;
+			color: transparent;
+			z-index: 10000;
+		}
+		/* move sidebar toggle to bottom bar */
+		#topbar-first .navbar-toggle[data-target="aside"]{
+			position: fixed;
+			top: auto;
+			left: auto;
+			bottom: 5px;
+		}
+			/* change icon */
+			.navbar-toggle .fa-ellipsis-v::before,
+			#topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+				content: "\f152";
+			}
+			body.aside-out .navbar-toggle .fa-ellipsis-v::before,
+			body.aside-out #topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+				content: "\f191";
+			}
+		/* move search button right */
+		#topbar-first .navbar-toggle[data-target="#search-mobile"] {
+			position: relative !important;
+			display: block !important; /* show in landscape on phones */
+			top: 0;
+			left: auto;
+			right: auto;
+			margin: 0;
+		}
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed){
+				color: var(--link-color);
+				border-bottom: 3px solid var(--link-color);
+				background-color: transparent !important;
+				border-radius: 0 !important;
+				margin-top: 0px;
+			}
+				#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) .fa-search::before {
+					content: '\f00e';
+				}
+	/* navbar labels will work again for mobile */
+	#topbar-first .nav > li > a::after,
+	#topbar-first .topbar-nav #nav-notification::after{
+		display: var(--show-navbar-labels) !important;
 	}
-	/* re-reveal the user profile toggle */
-	#topbar-first .nav > .account {
-		position: fixed;
-		display: block !important;
-		top: 0;
-		right: 8px;
-	}
-	#topbar-first .nav > .account span.caret {
-		display: none;
-	}
-	/* overlay mobile nav toggle invisibly */
-	#topbar-first .offcanvas-right-toggle {
-		position: fixed;
-		top: -3px;
-		right: 7px;
-		color: transparent;
-		z-index: 10000;
-	}
-	/* move sidebar toggle to bottom bar */
-	#topbar-first .navbar-toggle[data-target="aside"] {
-		position: fixed;
-		top: auto;
-		left: auto;
-		bottom: 5px;
-	}
-	/* change icon */
-	.navbar-toggle .fa-ellipsis-v::before,
-	#topbar-first
-		.navbar-toggle[data-target="aside"]
-		.fa-angle-double-right::before {
-		content: "\f152";
-	}
-	body.aside-out .navbar-toggle .fa-ellipsis-v::before,
-	body.aside-out
-		#topbar-first
-		.navbar-toggle[data-target="aside"]
-		.fa-angle-double-right::before {
-		content: "\f191";
-	}
-	/* move search button right */
-	#topbar-first .navbar-toggle[data-target="#search-mobile"] {
-		position: relative !important;
-		display: block !important; /* show in landscape on phones */
-		top: 0;
-		left: auto;
-		right: auto;
-		margin: 0;
-	}
-	#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) {
-		color: var(--link-color);
-		border-bottom: 3px solid var(--link-color);
-		background-color: transparent !important;
-		border-radius: 0 !important;
-		margin-top: 0px;
-	}
-	#topbar-first
-		.navbar-toggle[data-target="#search-mobile"]:not(.collapsed)
-		.fa-search::before {
-		content: "\f00e";
-	}
-	/* fix spacing of icons */
-	.topbar ul.nav {
-		position: absolute !important;
-		left: 50px !important;
-		right: 50px !important;
-		display: flex;
-		justify-content: space-between;
-	}
-	#topbar-first .topbar-nav .nav-segment {
-		margin: 0px;
-	}
-	#search-mobile {
-		top: 60px !important;
-	}
-	/* always show on phones in landscape */
-	#search-mobile.collapse.in,
-	#search-mobile.collapse.in * {
-		display: block !important;
-	}
-	/* app-style notification menu */
-	#nav-notifications-menu {
-		position: fixed;
-		top: 60px;
-		bottom: 51px;
-		left: 0;
-		right: 0;
-		width: 100% !important;
-		min-width: unset;
-		max-width: unset;
-		min-height: unset;
-		max-height: unset !important;
-		margin: 0 !important;
-		box-shadow: none;
-	}
-	#nav-notifications-menu::before {
-		content: "\f00d";
-		font-family: ForkAwesome;
-		position: absolute;
-		top: 8px;
-		right: 12px;
-		height: 40px;
-		width: 40px;
-		background-color: var(--link-color);
-		color: white;
-		font-size: 24px;
-		border-radius: 100%;
-		line-height: 40px;
-		text-align: center;
-		display: block;
-	}
+		/* fix spacing of icons */
+		.topbar ul.nav {
+			position: absolute !important;
+			left: 50px !important;
+			right: 50px !important;
+			display: flex;
+			justify-content: space-between;
+			margin: 0 !important;
+			width: auto;
+		}
+		#topbar-first .topbar-nav .nav-segment {
+			position: relative !important;
+			top: auto;
+			right: auto;
+			margin: 0px;
+		}
+		#search-mobile {
+			top: 60px !important;
+		}
+			/* always show on phones in landscape */
+			#search-mobile.collapse.in,
+			#search-mobile.collapse.in * {
+				display: block !important;
+			}
+		/* app-style notification menu */
+		#nav-notifications-menu {
+			position: fixed;
+			top: 60px;
+			bottom: 51px;
+			left: 0;
+			right: 0;
+			width: 100% !important;
+			min-width: unset;
+			max-width: unset;
+			min-height: unset;
+			max-height: unset !important;
+			margin: 0 !important;
+			box-shadow: none;
+		}
+			#nav-notifications-menu::before {
+				content: '\f00d';
+				font-family: ForkAwesome;
+				position: absolute;
+				top: 8px;
+				right: 12px;
+				height: 40px;
+				width:  40px;
+				background-color: var(--link-color);
+				color: white;
+				font-size: 24px;
+				border-radius: 100%;
+				line-height: 40px;
+				text-align: center;
+				display: block;
+			}
 	#offcanvasUsermenu {
 		background-color: var(--nav-bg) !important;
 	}
 	#offcanvasUsermenu ul.list-group {
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
 		box-shadow: none !important;
 	}
-	#offcanvasUsermenu ul.list-group li:first-of-type img {
-		max-width: unset !important;
-		max-height: unset !important;
-		height: 40px !important;
-		width: 40px !important;
-		border-radius: 100% !important;
-	}
-	#offcanvasUsermenu li.divider {
-		display: none !important;
-	}
-	#offcanvasUsermenu li.list-group-item,
-	#offcanvasUsermenu li.list-group-item a {
-		border: transparent !important;
-		background-color: transparent !important;
-		color: var(--nav-icon-color) !important;
-		width: 90% !important;
-		margin: 0 auto;
-	}
+		#offcanvasUsermenu ul.list-group li:first-of-type img {
+			max-width: unset  !important;
+			max-height: unset  !important;
+			height: 40px  !important;
+			width:  40px  !important;
+			border-radius: 100% !important;
+		}
+			#offcanvasUsermenu li.divider {
+				display: none !important;
+			}
+			#offcanvasUsermenu li.list-group-item,
+	    #offcanvasUsermenu li.list-group-item a {
+				border: transparent !important;
+				background-color: transparent !important;
+				color: var(--nav-icon-color) !important;
+				margin: 0 auto;
+			}
 	#offcanvasUsermenu li.list-group-item:hover {
 		background-color: #333 !important;
 		border-radius: 8px !important;
@@ -2119,10 +2098,10 @@ body.mod-filed
 	#offcanvasUsermenu li.list-group-item:first-of-type:hover {
 		background-color: revert !important;
 	}
-	/* force mobile search in landscape on phones */
-	#search-box {
-		display: none !important;
-	}
+		/* force mobile search in landscape on phones */
+		#search-box {
+			display: none !important;
+		}
 	/* position delete button */
 	#item-delete-selected {
 		top: 60px;
@@ -2133,164 +2112,165 @@ body.mod-filed
 		top: 0px;
 		padding: 0;
 	}
-	#topbar-second div.container {
-		position: absolute;
-		left: 55px;
-		right: 55px;
-	}
-	#topbar-second #tabmenu {
-		width: 100%;
-	}
-	/* override and show mobile tabs  in landscape */
-	#topbar-second #tabmenu ul.tabbar.hidden-xs {
-		display: none !important;
-	}
-	#topbar-second #tabmenu ul.tabbar.visible-xs {
-		display: block !important;
-	}
-	#topbar-second ul.tabbar {
-		text-align: center;
-		max-width: 100%;
-	}
-	#topbar-second ul.tabbar > li:first-of-type {
-		max-width: 75%;
-		overflow: hidden;
-		margin-right: 50px;
-	}
-	#topbar-second ul.tabbar li:first-of-type ul.tabs {
-		max-width: 100%;
-	}
-	#topbar-second ul.tabbar li:first-of-type ul.tabs li {
-		width: 100%;
-		height: 100%;
-	}
-	#topbar-second ul.tabbar li:first-of-type ul.tabs li a {
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-	/* prevent dropdown being pushed off toolbar */
-	#topbar-second ul.tabbar > li:last-of-type {
-		margin-left: -50px;
-		border-bottom: 4px solid var(--link-color);
-	}
-	#topbar-second ul.tabbar > li:last-of-type li.dropdown {
-		margin-left: 0px !important;
-	}
-	#dropdownMenuTools-xs {
-		height: 60px;
-	}
-	ul.tabs-extended .dropdown.open .fa-chevron-down::before {
-		content: "\f077";
-	}
-	#jotOpen,
-	#search-save,
-	#mention-link {
-		position: fixed;
-		bottom: 65px;
-		right: 10px;
-		border-radius: 100% !important;
-		height: 50px;
-		width: 50px !important;
-		line-height: 50px;
-		border: none !important;
-		box-shadow: none !important;
-	}
-	#mention-link span:last-of-type {
-		display: none;
-	}
-	#mention-link span:first-of-type {
-		float: none;
-		position: relative;
-		top: 2px;
-	}
-	#search-save .fa-plus::after,
-	#search-save .fa-floppy-o::after {
-		display: none;
-	}
-	#search-save .fa-plus::before,
-	#search-save .fa-floppy-o::before {
-		content: "\f0c7" !important;
-	}
-	.fa-edit::before,
-	.fa-pencil-square-o::before {
-		content: "\f040";
-	}
-	.dropdown-mobile-jot > .dropdown-toggle.btn-primary {
-		background-color: transparent;
-		color: var(--link-color);
-		border-radius: 8px;
-	}
-	.dropdown-mobile-jot > .dropdown-toggle.btn-primary:hover,
-	.dropdown-mobile-jot > .dropdown-toggle.btn-primary:focus {
-		background-color: rgba(255, 255, 255, 0.1);
-	}
-	.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
-		background-color: var(--link-color);
-		color: white;
-		border-radius: 8px;
-	}
-	.dropdown-mobile-jot .dropdown-menu li {
-		margin: 3px auto;
-	}
-	.dropdown-mobile-jot .dropdown-menu .btn-link {
-		min-width: 90%;
-	}
-	/* drop-down mobile style*/
-	#topbar-second .dropdown-menu {
-		position: fixed;
-		top: 58px;
-		left: 0px;
-		right: 0px;
-		bottom: 50px;
-		width: 100% !important;
-		overflow: auto !important;
-		overflow-x: hidden !important;
-	}
-	#topbar-second .dropdown-menu li {
-		height: auto !important;
-	}
-	#topbar-second .dropdown-menu li a,
-	.tabs .dropdown-menu li a {
-		font-size: 18px !important;
-	}
-	.topbar .dropdown-header {
-		font-size: 18px !important;
-	}
-	.topbar .dropdown-header .dropdown-header-link .btn-link {
-		font-size: 18px !important;
-		margin-right: 40px;
-	}
-	aside.offcanvas-xs {
-		padding-top: 60px;
-		padding-bottom: 60px;
-	}
-	body.mod-profile #sidebar-photos-albums::before {
-		top: 125px;
-	}
-	body.mod-contact aside #profile-photo-wrapper,
-	body.mod-photos aside #profile-photo-wrapper,
-	body.mod-profile aside #profile-photo-wrapper {
-		top: 100px;
-	}
-	body.mod-contact .profile-header h3.p-name,
-	body.mod-photos .profile-header h3.p-name,
-	body.mod-profile .profile-header h3.p-name {
-		top: 255px;
-	}
-	body.mod-contact .profile-header .p-addr,
-	body.mod-photos .profile-header .p-addr,
-	body.mod-profile .profile-header .p-addr {
-		top: 345px;
-	}
-	.coverphoto,
-	.coverphoto.canvas-sliding,
-	.coverphoto.canvas-slid {
-		top: 55px;
-	}
+		#topbar-second div.container{
+			position: absolute;
+			left: 55px;
+			right: 55px;
+		}
+		#topbar-second #tabmenu {
+			width: 100%;
+		}
+			/* override and show mobile tabs  in landscape */
+			#topbar-second #tabmenu ul.tabbar.hidden-xs {
+				display: none !important;
+			}
+			#topbar-second #tabmenu ul.tabbar.visible-xs {
+				display: block !important;
+			}
+		#topbar-second ul.tabbar {
+			text-align: center;
+			max-width: 100%;
+		}
+			#topbar-second ul.tabbar > li:first-of-type {
+				max-width: 75%;
+				overflow: hidden;
+				margin-right: 50px;
+			}
+				#topbar-second ul.tabbar li:first-of-type ul.tabs {
+					max-width: 100%;
+				}
+					#topbar-second ul.tabbar li:first-of-type ul.tabs li {
+						width: 100%;
+						height: 100%;
+					}
+						#topbar-second ul.tabbar li:first-of-type ul.tabs li a {
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+			/* prevent dropdown being pushed off toolbar */
+			#topbar-second ul.tabbar > li:last-of-type {
+				margin-left: -50px;
+				border-bottom: 4px solid var(--link-color);
+			}
+				#topbar-second ul.tabbar > li:last-of-type li.dropdown {
+					margin-left: 0px !important;
+				}
+			#dropdownMenuTools-xs {
+				height: 60px;
+			}
+				ul.tabs-extended .dropdown.open .fa-chevron-down::before{
+					content: '\f077';
+				}
+		#jotOpen, #search-save, #mention-link {
+			position: fixed;
+			bottom: 65px;
+			right: 10px;
+			border-radius: 100% !important;
+			height: 50px;
+			width: 50px !important;
+			line-height: 50px;
+			border: none !important;
+    		box-shadow: none !important;
+		}
+			#mention-link span:last-of-type {
+				display: none;
+			}
+			#mention-link span:first-of-type {
+				float: none;
+				position: relative;
+				top: 2px;
+			}
+			#search-save .fa-plus::after,
+			#search-save .fa-floppy-o::after {
+				display: none;
+			}
+			#search-save .fa-plus::before,
+			#search-save .fa-floppy-o::before {
+				content: '\f0c7' !important;
+			}
+			.fa-edit::before,
+			.fa-pencil-square-o::before {
+				content: "\f040";
+			}
+		.dropdown-mobile-jot > .dropdown-toggle.btn-primary {
+			background-color: transparent;
+			color: var(--link-color);
+			border-radius: 8px;
+		}
+			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:hover,
+			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:focus {
+				background-color: var(--dimbright);
+			}
+			.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
+				background-color: var(--link-color);
+				color: white;
+				border-radius: 8px;
+			}
+			.dropdown-mobile-jot ul.dropdown-menu li {
+				margin: 3px auto;
+			}
+			.dropdown-mobile-jot ul.dropdown-menu .btn-link {
+				min-width: 90%;
+			}
+		/* drop-down mobile style*/
+		#topbar-second ul.dropdown-menu {
+			position: fixed;
+			top: 58px;
+			left: 0px;
+			right: 0px;
+			bottom: 50px;
+			width: 100% !important;
+			overflow: auto !important;
+			overflow-x: hidden !important;
+		}
+			#topbar-second ul.dropdown-menu li {
+				height: auto !important;
+			}
+				#topbar-second ul.dropdown-menu li a,
+				.tabs ul.dropdown-menu li a {
+					font-size: 18px !important;
+				}
+				.topbar .dropdown-header {
+					font-size: 18px !important;
+				}
+				.topbar .dropdown-header .dropdown-header-link .btn-link {
+					font-size: 18px !important;
+					margin-right: 40px;
+				}
+		aside.offcanvas-xs {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+		body.mod-community #jotOpen {
+			line-height: 30px;
+		}
+		body.mod-profile #sidebar-photos-albums::before {
+			top: 125px;
+		}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 100px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 255px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 345px;
+		}
+		.coverphoto,
+		.coverphoto.canvas-sliding,
+		.coverphoto.canvas-slid {
+			top: 55px;
+		}
 	#message-new a {
 		height: 50px;
-		width: 50px;
+		width:  50px;
 		background-color: var(--link-color);
 		line-height: 50px;
 		font-size: 24px;
@@ -2301,12 +2281,18 @@ body.mod-filed
 		padding: 0;
 	}
 	#message-new a::after {
-		content: "";
+		content: '';
 	}
-	#message-new:hover a,
-	#message-new:focus a {
-		box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.2);
-		border-radius: 100%;
+			#message-new:hover a,
+			#message-new:focus a {
+				box-shadow: inset 0 0 100px var(--dimbright);
+				border-radius: 100%;
+			}
+	.justified-gallery > a,
+	.justified-gallery > div,
+	.justified-gallery > figure{
+    	height: 25vw !important;
+    	width:  25vw !important;
 	}
 	/* Contact Notification Action Buttons */
 	.intro-actions {
@@ -2317,108 +2303,151 @@ body.mod-filed
 	#profile-jot-plugin-wrapper {
 		width: 100%;
 	}
+	#photo-edit-link-wrap.pull-right a {
+		font-size: 0px;
+		border-radius: 100% !important;
+		height: 40px;
+		width:  40px;
+		text-align: center;
+		padding: 7px 0 0 0;
+		line-height: 40px;
+	}
+		#photo-edit-link-wrap.pull-right a i {
+			font-size: 24px;
+		}
+	/* prevent action button drop-downs from being inaccessible
+	   when viewing a single/last post on mobile devices
+	*/
+	body {
+		padding-bottom: 300px !important;
+	}
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
 */
 @media screen and (max-width: 600px) and (orientation: portrait) {
-	body.mod-contact aside,
-	body.mod-photos aside,
-	body.mod-profile aside {
-		left: -100% !important;
-		right: 0% !important;
-		max-width: 100% !important;
-		width: 100% !important;
-		padding-top: 60px;
-		background-color: var(--background-color) !important;
-	}
-	/* only seen on your own Recent Photos page */
-	body.mod-profile #sidebar-photos-albums::before {
-		transition-property: top;
-	}
-	body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
-	body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
-		left: 0px;
-		top: 150%;
-	}
-	body.mod-contact aside.canvas-slid,
-	body.mod-photos aside.canvas-slid,
-	body.mod-profile aside.canvas-slid {
-		left: 0px !important;
-	}
-	body.mod-contact aside.canvas-slid::before,
-	body.mod-photos aside.canvas-slid::before,
-	body.mod-profile aside.canvas-slid::before {
-		opacity: 0;
-	}
-	body.mod-contact aside #profile-photo-wrapper,
-	body.mod-photos aside #profile-photo-wrapper,
-	body.mod-profile aside #profile-photo-wrapper {
-		top: 100px;
-	}
-	body.mod-contact .profile-header h3.p-name,
-	body.mod-photos .profile-header h3.p-name,
-	body.mod-profile .profile-header h3.p-name {
-		top: 255px;
-	}
-	body.mod-contact .profile-header .p-addr,
-	body.mod-photos .profile-header .p-addr,
-	body.mod-profile .profile-header .p-addr {
-		top: 345px;
-		width: 80%;
-		margin-left: -40%;
-	}
-	/* bounce effect */
-	body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
-	body.mod-photos aside.canvas-sliding #profile-photo-wrapper,
-	body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
-		margin-left: -75px;
-		top: 150% !important;
-	}
-	body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
-	body.mod-photos aside.canvas-sliding .profile-header h3.p-name,
-	body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
-		margin-left: -50%;
-		top: 150% !important;
-	}
-	body.mod-contact aside.canvas-sliding .profile-header .p-addr,
-	body.mod-photos aside.canvas-sliding .profile-header .p-addr,
-	body.mod-profile aside.canvas-sliding .profile-header .p-addr {
-		margin-left: -25%;
-		top: 150% !important;
-	}
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			left: -100% !important;
+			right: 0% !important;
+			max-width: 100% !important;
+			width: 100% !important;
+			padding-top: 60px;
+			background-color: var(--background-color) !important;
+		}
+		/* only seen on your own Recent Photos page */
+		body.mod-profile #sidebar-photos-albums::before {
+			transition-property: top;
+		}
+			body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
+			body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
+				left: 0px;
+				top: 150%;
+			}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+		}
+			body.mod-contact aside.canvas-slid::before,
+			body.mod-photos  aside.canvas-slid::before,
+			body.mod-profile aside.canvas-slid::before {
+				opacity: 0;
+			}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 100px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 255px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 345px;
+			width: 80%;
+			margin-left: -40%;
+		}
+			/* bounce effect */
+			body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+				margin-left: -75px;
+				top: 150% !important;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+				margin-left: -50%;
+				top: 150% !important;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+			body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+			body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+				margin-left: -25%;
+				top: 150% !important;
+			}
 
-	body.mod-contact aside.canvas-slid #profile-photo-wrapper,
-	body.mod-photo aside.canvas-slid #profile-photo-wrapper,
-	body.mod-profile aside.canvas-slid #profile-photo-wrapper {
-		margin-left: -75px;
-		top: 150% !important;
+		body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+		body.mod-photo   aside.canvas-slid #profile-photo-wrapper,
+		body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+			margin-left: -75px;
+			top: 150% !important;
+		}
+		body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+		body.mod-photo   aside.canvas-slid .profile-header h3.p-name,
+		body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+			margin-left: -50%;
+			top: 150% !important;
+		}
+		body.mod-contact aside.canvas-slid .profile-header .p-addr,
+		body.mod-photo   aside.canvas-slid .profile-header .p-addr,
+		body.mod-profile aside.canvas-slid .profile-header .p-addr {
+			margin-left: -25%;
+			top: 150% !important;
+		}
+		.coverphoto {
+			transition-duration: .5s;
+			transition-property: top;
+		}
+		body.mod-contact.aside-out .coverphoto,
+		body.mod-photo.aside-out .coverphoto,
+		body.mod-profile.aside-out .coverphoto,
+		body.mod-contact aside.canvas-slid .coverphoto,
+		body.mod-photo   aside.canvas-slid .coverphoto,
+		body.mod-profile aside.canvas-slid .coverphoto {
+			top: 150% !important;
+			left: 0px;
+			right: 0px;
+		}
+	/* truncate navbar labels if necessary */
+	#topbar-first .nav > li > a::after,
+	#topbar-first .topbar-nav #nav-notification::after {
+		width: 50px;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
-	body.mod-contact aside.canvas-slid .profile-header h3.p-name,
-	body.mod-photo aside.canvas-slid .profile-header h3.p-name,
-	body.mod-profile aside.canvas-slid .profile-header h3.p-name {
-		margin-left: -50%;
-		top: 150% !important;
-	}
-	body.mod-contact aside.canvas-slid .profile-header .p-addr,
-	body.mod-photo aside.canvas-slid .profile-header .p-addr,
-	body.mod-profile aside.canvas-slid .profile-header .p-addr {
-		margin-left: -25%;
-		top: 150% !important;
-	}
-	.coverphoto {
-		transition-duration: 0.5s;
-		transition-property: top;
-	}
-	body.mod-contact.aside-out .coverphoto,
-	body.mod-photo.aside-out .coverphoto,
-	body.mod-profile.aside-out .coverphoto,
-	body.mod-contact aside.canvas-slid .coverphoto,
-	body.mod-photo aside.canvas-slid .coverphoto,
-	body.mod-profile aside.canvas-slid .coverphoto {
-		top: 150% !important;
-		left: 0px;
-		right: 0px;
+}
+ /* new */
+/*	Narrow Screen Phones in Either Orienation
+	============================================
+*/
+@media screen and (max-width: 400px) {
+	@supports (display: grid){
+		.wall-item-responses > div > p:first-of-type::before {
+			display: block;
+			margin: 0 auto;
+		}
+		.wall-item-responses > div p:first-of-type {
+			text-align: center !important;
+		}
+		.wall-item-responses > div p:only-child a {
+			text-align: left !important;
+		}
 	}
 }
 /*	Narrow Screen Phones in Portrait Orientation
@@ -2427,7 +2456,7 @@ body.mod-filed
 @media screen and (max-width: 400px) and (orientation: portrait) {
 	/* remove action button labels if screen is too narrow */
 	.wall-item-actions-row button::after {
-		content: ".";
+		content: '.';
 		color: transparent;
 	}
 	/* NOTE: cannot simply empty or display none or button alignment gets messed up! */
@@ -2445,16 +2474,16 @@ body.mod-filed
 		border: 1px solid var(--link-color) !important;
 		border-radius: 8px !important;
 	}
-	ul.nav-tabs li:not(.active) a:hover,
+	 ul.nav-tabs li:not(.active) a:hover,
 	ul.nav-tabs li:not(.active) a:focus {
-		background-color: rgba(255, 255, 255, 0.2);
+		background-color: var(--dimbright);
 	}
 	ul.nav-tabs li.active {
 		border: none !important;
 	}
 	ul.nav-tabs li.active a {
 		background-color: var(--link-color) !important;
-		color: #000 !important;
+		color: #fff !important;
 	}
 	.hovercard {
 		max-width: 100%;
@@ -2464,171 +2493,171 @@ body.mod-filed
 	==============================================
 */
 @media screen and (max-height: 400px) and (orientation: landscape) {
-	#topbar-first {
-		transition-duration: 0.5s;
-		transition-property: bottom;
-		bottom: -55px;
+		#topbar-first {
+			transition-duration: .5s;
+			transition-property: bottom;
+			bottom: -55px;
+		}
+			header #banner {
+				background-color: var(--nav-bg);
+				border-radius: 8px;
+				z-index: 1030;
+			}
+			#topbar-first .navbar-toggle[data-target="aside"] {
+				position: fixed !important;
+				left: 10px;
+				bottom: 10px;
+				transition-duration: .5s;
+				background-color: var(--link-color);
+				color: white;
+				height: 50px;
+				width:  50px;
+				border-radius: 100%;
+				line-height: 32px;
+			}
+			#topbar-first .navbar-toggle[data-target="#search-mobile"],
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) {
+				position: fixed !important;
+				top: auto;
+				bottom: 10px;
+				right: 10px;
+				transition-duration: .5s;
+				background-color: var(--link-color) !important;
+				color: white;
+				height: 50px;
+				width:  50px;
+				border-radius: 100% !important;
+				line-height: 32px;
+			}
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:hover,
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:focus {
+				box-shadow: inset 0 0 100px var(--dimbright);
+			}
+			.fa-fw {
+				width: auto;
+			}
+			#topbar-first .offcanvas-right-toggle {
+				top: -2px;
+				right: 10px;
+				padding: 0 !important;
+			}
+			#topbar-first .nav > .account {
+				top: 0px;
+				right: 5px;
+			}
+			#main-menu img {
+				border: 5px solid var(--link-color);
+				border-radius: 100%;
+				box-sizing: unset;
+			}
+		#search-mobile {
+        	top: 40% !important;
+        	border: 10px solid var(--link-color);
+        	border-radius: 8px;
+        	left: 50%;
+        	width: 80%;
+        	margin-left: -40%;
+        	box-shadow: 0 0 50px var(--shadowglow);
+    	}
+    		#search-mobile .col-xs-12 {
+    			background-color: var(--nav-bg);
+    		}
+		#topbar-second {
+			transition-duration: .5s;
+			transition-property: top;
+			top: -60px;
+		}
+		#topbar-first .nav > li > a:hover,
+		#topbar-first .nav > li > a:focus,
+		#topbar-first .nav > li > button:not(#main-menu):hover,
+		#topbar-first .nav > li > button:not(#main-menu):focus,
+		#topbar-first button.navbar-toggle:not(.offcanvas-right-toggle):hover,
+		#topbar-first button.navbar-toggle:not(.offcanvas-right-toggle):focus,
+		nav.navbar .nav > li > a:hover,
+		nav.navbar .nav > li > a:focus,
+		nav.navbar .nav > li > button:hover,
+		nav.navbar .nav > li > button:focus {
+		  background-color: var(--link-color) !important;
+		  border-radius: 100% !important;
+		  box-shadow: inset 0 0 100px var(--dimbright);
+		}
+		#topbar-first button.navbar-toggle.offcanvas-right-toggle:hover,
+		#topbar-first button.navbar-toggle.offcanvas-right-toggle:focus {
+			border-radius: 100% !important;
+		}
+		#topbar-first .topbar-actions {
+			z-index: 1070;
+		}
+		/* if notifications is left open when phone is rotated */
+		#nav-notifications-menu {
+			top: 0;
+			bottom: 0;
+			z-index: 10000;
+		}
+		#offcanvasUsermenu {
+			top: 0px;
+		}
+			#offcanvasUsermenu li:first-of-type img {
+				display: none;
+			}
+			#offcanvasUsermenu li:first-of-type {
+				font-weight: 700;
+			}
+		.offcanvas-right-overlay {
+ 			top: 0px;
+ 		}
+		/* Profile Pages */
+		body.mod-contact #content,
+		body.mod-profile #content,
+		body.mod-photos  #content {
+			margin-top: 200px !important;
+		}
+		body.mod-profile #sidebar-photos-albums::before {
+			top: 25px;
+		}
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+			right: auto !important;
+			max-width: 300px !important;
+			background-color: transparent !important;
+			z-index: 20;
+		}
+			body.mod-contact aside.canvas-slid::before,
+			body.mod-photos  aside.canvas-slid::before,
+			body.mod-profile aside.canvas-slid::before {
+				opacity: 1;
+			}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 10px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 155px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 205px;
+			width: 50%;
+			margin-left: -25%;
+		}
+		.coverphoto.canvas-sliding,
+		.coverphoto.canvas-slid,
+ 		.coverphoto {
+			top: 0px;
+		}
 	}
-	header #banner {
-		background-color: var(--nav-bg);
-		border-radius: 8px;
-		z-index: 1030;
-	}
-	#topbar-first .navbar-toggle[data-target="aside"] {
-		position: fixed !important;
-		left: 10px;
-		bottom: 10px;
-		transition-duration: 0.5s;
-		background-color: var(--link-color);
-		color: white;
-		height: 50px;
-		width: 50px;
-		border-radius: 100%;
-		line-height: 32px;
-	}
-	#topbar-first .navbar-toggle[data-target="#search-mobile"],
-	#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) {
-		position: fixed !important;
-		top: auto;
-		bottom: 10px;
-		right: 10px;
-		transition-duration: 0.5s;
-		background-color: var(--link-color);
-		color: white;
-		height: 50px;
-		width: 50px;
-		border-radius: 100%;
-		line-height: 32px;
-	}
-	#topbar-first .navbar-toggle[data-target="#search-mobile"]:hover,
-	#topbar-first .navbar-toggle[data-target="#search-mobile"]:focus {
-		box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
-	}
-	.fa-fw {
-		width: auto;
-	}
-	#topbar-first .offcanvas-right-toggle {
-		top: 3px;
-		right: 13px;
-		padding: 0 !important;
-	}
-	#topbar-first .nav > .account {
-		top: 0px;
-		right: 5px;
-	}
-	#main-menu img {
-		border: 5px solid var(--link-color);
-		border-radius: 100%;
-		box-sizing: unset;
-	}
-	#search-mobile {
-		top: 40% !important;
-		border: 10px solid var(--link-color);
-		border-radius: 8px;
-		left: 50%;
-		width: 80%;
-		margin-left: -40%;
-		box-shadow: 0 0 50px rgba(0, 0, 0, 0.75);
-	}
-	#search-mobile .col-xs-12 {
-		background-color: var(--nav-bg);
-	}
-	#topbar-second {
-		transition-duration: 0.5s;
-		transition-property: top;
-		top: -60px;
-	}
-	#topbar-first .nav > li > a:hover,
-	#topbar-first .nav > li > a:focus,
-	#topbar-first .nav > li > button:not(#main-menu):hover,
-	#topbar-first .nav > li > button:not(#main-menu):focus,
-	#topbar-first button.navbar-toggle:not(.offcanvas-right-toggle):hover,
-	#topbar-first button.navbar-toggle:not(.offcanvas-right-toggle):focus,
-	nav.navbar .nav > li > a:hover,
-	nav.navbar .nav > li > a:focus,
-	nav.navbar .nav > li > button:hover,
-	nav.navbar .nav > li > button:focus {
-		background-color: var(--link-color) !important;
-		border-radius: 100% !important;
-		box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
-	}
-	#topbar-first button.navbar-toggle.offcanvas-right-toggle:hover,
-	#topbar-first button.navbar-toggle.offcanvas-right-toggle:focus {
-		border-radius: 100% !important;
-	}
-	#topbar-first .topbar-actions {
-		z-index: 1070;
-	}
-	/* if notifications is left open when phone is rotated */
-	#nav-notifications-menu {
-		top: 0;
-		bottom: 0;
-		z-index: 10000;
-	}
-	#offcanvasUsermenu {
-		top: 0px;
-	}
-	#offcanvasUsermenu li:first-of-type img {
-		display: none;
-	}
-	#offcanvasUsermenu li:first-of-type {
-		font-weight: 700;
-	}
-	.offcanvas-right-overlay {
-		top: 0px;
-	}
-	/* Profile Pages */
-	body.mod-contact #content,
-	body.mod-profile #content,
-	body.mod-photos #content {
-		margin-top: 200px !important;
-	}
-	body.mod-profile #sidebar-photos-albums::before {
-		top: 25px;
-	}
-	body.mod-contact aside,
-	body.mod-photos aside,
-	body.mod-profile aside {
-		padding-top: 50px;
-		padding-bottom: 50px;
-	}
-	body.mod-contact aside.canvas-slid,
-	body.mod-photos aside.canvas-slid,
-	body.mod-profile aside.canvas-slid {
-		left: 0px !important;
-		right: auto !important;
-		max-width: 300px !important;
-		background-color: transparent !important;
-		z-index: 20;
-	}
-	body.mod-contact aside.canvas-slid::before,
-	body.mod-photos aside.canvas-slid::before,
-	body.mod-profile aside.canvas-slid::before {
-		opacity: 1;
-	}
-	body.mod-contact aside #profile-photo-wrapper,
-	body.mod-photos aside #profile-photo-wrapper,
-	body.mod-profile aside #profile-photo-wrapper {
-		top: 10px;
-	}
-	body.mod-contact .profile-header h3.p-name,
-	body.mod-photos .profile-header h3.p-name,
-	body.mod-profile .profile-header h3.p-name {
-		top: 155px;
-	}
-	body.mod-contact .profile-header .p-addr,
-	body.mod-photos .profile-header .p-addr,
-	body.mod-profile .profile-header .p-addr {
-		top: 205px;
-		width: 50%;
-		margin-left: -25%;
-	}
-	.coverphoto.canvas-sliding,
-	.coverphoto.canvas-slid,
-	.coverphoto {
-		top: 0px;
-	}
-}
 
 /* LOGIN AND INFO SCREENS */
 body.mod-home {
