@@ -213,7 +213,7 @@ header #banner #logo-img::before {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-}}
+}
 
 #topbar-first .nav > .account img {
 	border-radius: 50% !important;
@@ -222,7 +222,7 @@ header #banner #logo-img::before {
 	width: 40px !important;
 }
 
-/* Position Searchbox korrigiert: margin-top: 4px; */
+
 #search-box {
 	position: fixed !important;
 	left: 100px;
@@ -237,63 +237,81 @@ header #banner #logo-img::before {
 	top: 8px;
 }
 
-#search-box .form-control.form-search {
-	border-radius: 50px !important;
-	background: var(--background-color) !important;
-	width: 100% !important;
+body #search-box .form-control.form-search {
+	border-radius: 50px;
+	background: var(--background-color);
+	width: 100%; /* Kein !important hier! */
 	padding-left: 30px;
+	transition: width 0.3s ease; /* Transition hier für das Zurückgleiten */
 }
 
-#search-box .form-control::placeholder {
-	color: var(--nav-icon-color) !important;
+/* Standardbreite im Ruhemodus */
+body #nav-search-input-field {
+    width: 250px;
+    transition: width 0.3s ease-in-out;
 }
 
-#nav-search-input-field {
-	padding-right: 12px !important;
-	transition-duration: .3s;
-	transition-property: width;
+/* Expansion, wenn das Feld ODER ein Element darin (der Button) aktiv ist */
+body #search-box:focus-within #nav-search-input-field {
+    width: 320px !important;
 }
 
-	#search-box #nav-search-input-field:focus {
-		width: 350px !important;
-	}
+/* Optional: Damit das Feld auch beim Anklicken des Buttons offen bleibt */
+body #search-box:focus-within {
+    width: 320px;
+}
 
-#topbar-first #search-box .form-search {
-	height: 40px !important;
+body #search-box button,
+body #search-box .search-submit {
+	cursor: pointer;
+	z-index: 10;
+}
+
+body #search-box .form-control::placeholder {
+	color: var(--nav-icon-color);
+}
+
+body #topbar-first #search-box .form-search {
+	height: 40px;
 	font-size: 15px;
 	background-position: unset;
-	box-shadow: none !important;
 }
 
 #search-box form > div {
-	background-color: #333334;
+    background-color: #333334;
+    border-radius: 50px;
+    position: relative; /* Stellt sicher, dass 'right' am Rand des Suchfelds klebt */
+    display: flex;
+    align-items: center;
+}
+
+body #search-box .form-control::placeholder {
+	color: var(--nav-icon-color);
+}
+
+body #search-box .form-control.form-search {
 	border-radius: 50px;
+	background: transparent;
+	width: 100%;
 }
 
-#search-box .form-control.form-search {
-	border-radius: 50px !important;
-	background: transparent !important;
-	width: 100% !important;
-}
-
-#search-box .form-control::placeholder {
-	color: #b0b3b8 !important;
-}
-
-#topbar-first #search-box .btn {
-	font-size: 0px !important;
-	height: 32px;
-	width: 32px;
-	top: 2px !important;
-	background-color: black !important;
-	margin-top: 2px !important;
+body #topbar-first #search-box .btn {
+    position: absolute; /* Löst den Button vom Textfluss */
+    right: 4px;        /* Schiebt den Button ganz nach rechts */
+    top: 4px;          /* Zentriert ihn vertikal (bei 40px Gesamthöhe) */
+    font-size: 0px;
+    height: 32px;
+    width: 32px;
+    background-color: var(--nav-bg);
+    margin-top: 0px;   /* Margin entfernt für exakte Positionierung */
+    border-radius: 50%; /* Optional: Macht den Button-Hintergrund rund */
 }
 
 #topbar-first #search-box .btn::before {
 	content: "\f061";
 	font-family: ForkAwesome;
 	font-size: 15px;
-	color: #b0b3b8;
+	color: var(--nav-icon-color);
 }
 
 #nav-user-linkmenu {
@@ -570,7 +588,7 @@ button[type="submit"]:focus {
 }
 
 .list-group-item {
-	background-color: var(--backround-color);
+	background-color: var(--background-color);
 	border: 1px solid #5b5b5b;
 }
 
@@ -650,12 +668,12 @@ aside .widget,
 	border-color: #535151;
 	background-color: #333;
 	border: 1px solid #252728;
-	border-top-color: rgb(53, 53, 53, 0);
-	border-right-color: rgb(53, 53, 53, 0);
-	border-bottom-color: rgb(53, 53, 53, 0);
-	border-left-color: rgb(53, 53, 53, 0);
+	border-top-color: rgb(53, 53, 53);
+	border-right-color: rgb(53, 53, 53);
+	border-bottom-color: rgb(53, 53, 53);
+	border-left-color: rgb(53, 53, 53);
 	border-radius: 10px;
-	background-image: linear-gradient(to bottom, #252728 0, #252728 100%);
+	background-image: linear-gradient(to bottom,#252728 0,#252728 100%);
 }
 
 .contact-photo,
@@ -949,7 +967,15 @@ aside .widget li a:hover {
 	color: #b0b3b8;
 }
 
-aside .vcard img.u-photo,
+body aside .vcard img.u-photo {
+	border-radius: 50%;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+	border: 3px solid var(--background-color);
+	aspect-ratio: 1 / 1;     /* Erzwingt ein quadratisches Verhältnis */
+	object-fit: cover;       /* Sorgt dafür, dass das Bild nicht verzerrt wird */
+	width: 100%;             /* Optional: Stellt sicher, dass es die Breite ausfüllt */
+}
+
 aside img.vcard-photo {
 	border-radius: 100% !important;
 	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
@@ -2082,11 +2108,12 @@ body.mod-filed
 				display: none !important;
 			}
 			#offcanvasUsermenu li.list-group-item,
-	    #offcanvasUsermenu li.list-group-item a {
+			#offcanvasUsermenu li.list-group-item a {
 				border: transparent !important;
 				background-color: transparent !important;
 				color: var(--nav-icon-color) !important;
 				margin: 0 auto;
+				padding: 5px 15px;
 			}
 	#offcanvasUsermenu li.list-group-item:hover {
 		background-color: #333 !important;
@@ -2964,3 +2991,4 @@ font-size: 14px;
 .thread_level_9:hover {
 	border-left-color: var(--thread-level-9-hover-color);
 }
+
