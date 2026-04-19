@@ -46,6 +46,23 @@ html body {
     font-family: var(--global-font-family);
 }
 
+/* Überschrift Proportionen angleichen */
+h1 { font-size: 31.5px; }
+h2 { font-size: 24.5px; }
+h3 { font-size: 20.5px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16.5px; }
+h6 { font-size: 14.95px; }
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 5px 0;
+	font-weight: normal;
+	line-height: normal;
+	text-rendering: optimizeLegibility;
+	font-family: inherit;
+	color: inherit;
+}
+
 #topbar-first .nav > li > a,
 #topbar-first .nav > li > button,
 nav.navbar .nav > li > a,
@@ -578,13 +595,23 @@ aside .widget,
 }
 
 .wall-item-container {
-	border-top: 1px solid rgb(240, 240, 240, 0.8);
+	/*border-top: 1px solid rgb(240, 240, 240, 0.8);*/
+	border-top: 0px solid rgba(255, 255, 255, 0.8);
 }
 
-.contact-photo,
+.contact-photo {
+	border-radius: 100% !important;
+	border: 1px solid #eee !important;
+}
+
 .contact-photo-xs {
 	border-radius: 50% !important;
-	border: 1px solid var(--border-color) !important;
+	object-position: left 50% top 50%;
+	height: 25px;
+	width: 25px;
+	object-fit: cover;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
 }
 
 .hover-card-pic img.thumbnail {
@@ -1217,6 +1244,10 @@ p.wall-item-announce,
 	display: none;
 }
 
+.form-group-search .form-button-search {
+	top: 4px;
+}
+
 audio,
 progress,
 video {
@@ -1242,22 +1273,6 @@ iframe {
 /* Chance Picture */
 #change-profile-picture {
 	border-radius: 50%;
-}
-
-/* Position, Farbe und Transparenz ALT-Tag */
-a:has(img.has-alt-description)::after {
-	content: "ALT";
-	background: rgba(0, 0, 0, 0.68);
-	color: #fff;
-	font-weight: bold;
-	padding: 3px 5px;
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
-	border: 0;
-	border-radius: 4px;
-	font-size: 12px;
-	line-height: 20px;
 }
 
 /* Verhindert Unterstriche Kommentare */
@@ -1314,6 +1329,29 @@ th {
 .tread-wrapper:hover {
 	transform: none !important; /* Keine Bewegung */
 	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important; /* Nur sanftes Leuchten nach außen */
+}
+
+#aprofile-homepage span::after, .homepage-url span::after {
+	content: '\f132';
+	font-family: ForkAwesome;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+
+#aprofile-homepage span, .homepage-url span {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: transparent;
+	border-radius: 100%;
+	background-color: var(--link-color);
 }
 
 /* TAGS, CATEGORIES, MENTIONS BUTTONS
@@ -1567,6 +1605,10 @@ body.mod-filed
 	border-radius: 25px;
 }
 
+.shared-wrapper {
+	border-radius: 10px;
+}
+
 /*	Post-Button auf die linke Seite legen
 	===========================
 
@@ -1640,6 +1682,12 @@ body.mod-filed
 		padding: 0 !important;
 		margin: 8px 10px;
 	}
+	.contact-photo-xs {
+	border-radius: 100% !important;
+	border: 1px solid #eee !important;
+	height: 38px;
+	width: 38px;
+}
 		#friendica-logo-mask {
 			display: block !important;
 		}
@@ -2751,6 +2799,7 @@ font-family: "FontAwesome";
 margin-right: 8px;
 font-size: 14px;
 
+/*
 .wall-item-container.thread_level_3,
 .wall-item-container.thread_level_4,
 .wall-item-container.thread_level_5,
@@ -2759,10 +2808,10 @@ font-size: 14px;
 .wall-item-container.thread_level_8,
 .wall-item-container.thread_level_9 {
 	margin-left: 5px !important;
-}
+}*/
 
 /* Definition der Klassen mit zentralen Farben */
-.thread_level_1 {
+/*.thread_level_1 {
 	position: relative !important;
 	margin-top: 0;
 	border-left: 0px solid var(--thread-level-1-color);
@@ -2859,4 +2908,80 @@ font-size: 14px;
 }
 .thread_level_9:hover {
 	border-left-color: var(--thread-level-9-hover-color);
+}*/
+
+/* Thread mit einem durchgehenden Faden, der die Profilbilder verbindet */
+.wall-item-container.thread_level_1,
+.wall-item-container.thread_level_2,
+.wall-item-container.thread_level_3,
+.wall-item-container.thread_level_4,
+.wall-item-container.thread_level_5,
+.wall-item-container.thread_level_6,
+.wall-item-container.thread_level_7,
+.wall-item-container.thread_level_8,
+.wall-item-container.thread_level_9 {
+    margin-left: 0;
 }
+
+[class*="thread_level_"]:not(.thread_level_1) {
+	position: relative;
+	border-left: 5px solid transparent;
+}
+
+.thread_level_1 {
+	position: relative;
+	border-left: 0;
+}
+
+[class*="thread_level_"]::before {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: 60px;
+	bottom: 15px;
+	width: 3px;
+	z-index: 1;
+	background-color: inherit;
+}
+
+.contact-photo-image-wrapper,
+.wwto .contact-photo {
+    z-index: 1;
+}
+
+[class*="thread_level_"]::after {
+	content: "";
+	position: absolute;
+	top: 45px;
+	left: -8px;
+	width: 26px;
+	height: 1px;
+	background-color: inherit;
+	z-index: 1;
+}
+
+.thread_level_1::before { background-color: transparent; }
+
+.thread_level_2::before { background-color: var(--thread-level-2-color); }
+.thread_level_2:hover::before { background-color: var(--thread-level-2-hover-color); }
+
+.thread_level_3::before { background-color: var(--thread-level-3-color); }
+.thread_level_3:hover::before { background-color: var(--thread-level-3-hover-color); }
+
+.thread_level_4::before { background-color: var(--thread-level-4-color); }
+.thread_level_4:hover::before { background-color: var(--thread-level-4-hover-color); }
+
+.thread_level_5::before { background-color: var(--thread-level-5-color); }
+.thread_level_5:hover::before { background-color: var(--thread-level-5-hover-color); }
+
+.thread_level_6::before { background-color: var(--thread-level-6-color); }
+.thread_level_6:hover::before { background-color: var(--thread-level-6-hover-color); }
+
+.thread_level_7::before { background-color: var(--thread-level-7-color); }
+.thread_level_7:hover::before { background-color: var(--thread-level-7-hover-color); }
+
+.thread_level_8::before { background-color: var(--thread-level-8-color); }
+.thread_level_8:hover::before { background-color: var(--thread-level-8-hover-color); }
+
+.thread_level_9::before { background-color: var(--thread-level-9-color); }
+.thread_level_9:hover::before { background-color: var(--thread-level-9-hover-color); }
