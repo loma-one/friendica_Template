@@ -63,6 +63,22 @@ h1, h2, h3, h4, h5, h6 {
 	color: inherit;
 }
 
+.fa-pencil::before {
+  content: "\f044";
+}
+
+.fa-play::before {
+  content: "\f08e";
+}
+
+.fa-th::before {
+  content: "\f015";
+}
+
+.fa-home::before {
+  content: "\f00a";
+}
+
 #topbar-first .nav > li > a,
 #topbar-first .nav > li > button,
 nav.navbar .nav > li > a,
@@ -119,9 +135,10 @@ nav.navbar .nav > li > button:focus {
 	border-radius: 0px !important;
 }
 
-#topbar-first .nav > li > a.selected {
-	border-bottom: 3px solid var(--link-color) !important;
+#topbar-first .nav > li > a.selected i {
 	color: var(--link-color) !important;
+	border-bottom: 3px solid var(--link-color) !important;
+  	padding-bottom: 17px;
 }
 
 #topbar-first .nav > li > a.selected:hover,
@@ -330,7 +347,7 @@ body #topbar-first #search-box .btn {
 
 .form-control {
 	border-radius: 10px;
-	resize: vertical;
+	/*resize: vertical;*/
 	background-color: #ffffff8a;
 }
 
@@ -356,6 +373,17 @@ body #topbar-first #search-box .btn {
 .btn-group-xs > .btn,
 .btn-xs {
 	font-size: 17px;
+}
+
+.btn-toolbar > .btn,
+.btn-toolbar > .btn-group,
+.btn-toolbar > .input-group,
+.btn-toolbar .btn,
+.btn-toolbar .btn-group,
+.btn-toolbar .input-group,
+.btn-group,
+.btn-group-vertical {
+	bottom: 2px;
 }
 
 .nav-pills .dropdown-menu li a,
@@ -401,6 +429,10 @@ body #topbar-first #search-box .btn {
 .account .dropdown-menu li.divider,
 .contact-photo-wrapper .dropdown-menu li.divider {
 	background-color: #ffffff !important;
+}
+
+.nav-tabs > li > a {
+	border-radius: 10px 10px 0 0;
 }
 
 #topbar-second {
@@ -457,7 +489,7 @@ body #topbar-first #search-box .btn {
 }
 
 #jotOpen {
-	border-radius: 25px !important;
+	border-radius: 20px !important;
 	background-color: var(--link-color) !important;
 	color: #ffffff !important;
 }
@@ -667,33 +699,108 @@ p.wall-item-announce,
 	overflow: visible !important;
 }
 
+/* Standard (z. B. Englisch) */
 .button-comments::after {
-	content: "Comment";
+  content: "Comment";
 }
 
 .button-announces::after {
-	content: "Share";
-}
-
-.share-links .dropdown-toggle::after {
-	content: "Share";
+  content: "Share";
 }
 
 .button-votes::after {
-	content: "Quote";
+  content: "Quote";
 }
 
 .button-likes::after {
-	content: "Like";
+  content: "Like";
 }
 
 [id^="dislike-"]::after {
-	content: "Dislike";
+  content: "Dislike";
 }
 
 .wall-item-actions-right .dropdown-toggle::after,
 .more-links .dropdown-toggle::after {
-	content: "More";
+  content: "More";
+}
+
+/* ===== DEUTSCH ===== */
+[lang="de"] .button-comments::after {
+  content: "Kommentar";
+}
+
+[lang="de"] .button-announces::after {
+  content: "Teilen";
+}
+
+[lang="de"] .button-votes::after {
+  content: "Zitieren";
+}
+
+[lang="de"] .button-likes::after {
+  content: "Mögen";
+}
+
+[lang="de"] [id^="dislike-"]::after {
+  content: "Nicht mögen";
+}
+
+[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="de"] .more-links .dropdown-toggle::after {
+  content: "Mehr";
+}
+
+/* ===== FRANZÖSISCH ===== */
+[lang="fr"] .button-comments::after {
+  content: "Commentaire";
+}
+
+[lang="fr"] .button-announces::after {
+  content: "Partager";
+}
+
+[lang="fr"] .button-votes::after {
+  content: "Citer";
+}
+
+[lang="fr"] .button-likes::after {
+  content: "Aimer";
+}
+
+[lang="fr"] [id^="dislike-"]::after {
+  content: "Ne pas aimer";
+}
+
+[lang="fr"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="fr"] .more-links .dropdown-toggle::after {
+  content: "Plus";
+}
+
+/* ===== SPANISCH ===== */
+[lang="es"] .button-comments::after {
+  content: "Comentario";
+}
+
+[lang="es"] .button-announces::after {
+  content: "Compartir";
+}
+
+[lang="es"] .button-votes::after {
+  content: "Citar";
+}
+
+[lang="es"] .button-likes::after {
+  content: "Me gusta";
+}
+
+[lang="es"] [id^="dislike-"]::after {
+  content: "No me gusta";
+}
+
+[lang="es"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="es"] .more-links .dropdown-toggle::after {
+  content: "Más";
 }
 
 .wall-item-actions-row > button span,
@@ -799,6 +906,10 @@ p.wall-item-announce,
 #jot-location,
 .wall-item-comment-wrapper textarea {
 	background-color: var(--nav-bg) !important;
+}
+
+textarea.text-autosize {
+	resize: vertical !important;
 }
 
 #jot-text-wrap,
@@ -998,7 +1109,9 @@ aside .widget li:hover {
 
 .wall-item-actions-row .wall-item-emoji {
 	font-size: 18px;
-	line-height: 40px;
+	color: #65686c;
+	margin-top: 3px;
+	margin-left: 10px;
 }
 
 /* WALL ITEM RESPONSES */
