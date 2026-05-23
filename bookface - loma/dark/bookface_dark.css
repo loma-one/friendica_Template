@@ -62,6 +62,22 @@ h1, h2, h3, h4, h5, h6 {
 	color: inherit;
 }
 
+.fa-pencil::before {
+  content: "\f044";
+}
+
+.fa-play::before {
+  content: "\f08e";
+}
+
+.fa-th::before {
+  content: "\f015";
+}
+
+.fa-home::before {
+  content: "\f00a";
+}
+
 #topbar-first .nav > li > a,
 #topbar-first .nav > li > button,
 nav.navbar .nav > li > a,
@@ -109,9 +125,10 @@ nav.navbar .nav > li > button:focus {
 	border-radius: 0px !important;
 }
 
-#topbar-first .nav > li > a.selected {
-	border-bottom: 3px solid var(--link-color) !important;
+#topbar-first .nav > li > a.selected i {
 	color: var(--link-color) !important;
+	border-bottom: 3px solid var(--link-color) !important;
+  	padding-bottom: 17px;
 }
 
 #topbar-first .nav > li > a.selected:hover,
@@ -411,6 +428,10 @@ body #topbar-first #search-box .btn {
 	background-color: var(--nav-bg) !important;
 }
 
+.nav-tabs > li > a {
+	border-radius: 10px 10px 0 0;
+}
+
 .account .dropdown-menu li a i {
 	margin-right: 10px;
 	font-size: 18px;
@@ -425,6 +446,17 @@ body #topbar-first #search-box .btn {
 .btn {
 	border-radius: 25px;
 	background-color: #575757;
+}
+
+.btn-toolbar > .btn,
+.btn-toolbar > .btn-group,
+.btn-toolbar > .input-group,
+.btn-toolbar .btn,
+.btn-toolbar .btn-group,
+.btn-toolbar .input-group,
+.btn-group,
+.btn-group-vertical {
+	bottom: 2px;
 }
 
 .template-icon {
@@ -508,7 +540,7 @@ body #topbar-first #search-box .btn {
 }
 
 #jotOpen {
-	border-radius: 25px !important;
+	border-radius: 20px !important;
 	background-color: var(--link-color) !important;
 	color: #ffffff !important;
 	border-color: #000 !important;
@@ -772,40 +804,109 @@ p.wall-item-announce,
 	padding-top: 4px;
 }
 
+
+/* Standard (z. B. Englisch) */
 .button-comments::after {
-	content: "Comment";
-	text-decoration: none;
+  content: "Comment";
 }
 
 .button-announces::after {
-	content: "Share";
-	text-decoration: none;
-}
-
-.share-links .dropdown-toggle::after {
-	content: "Share";
-	text-decoration: none;
+  content: "Share";
 }
 
 .button-votes::after {
-	content: "Quote";
-	text-decoration: none;
+  content: "Quote";
 }
 
 .button-likes::after {
-	content: "Like";
-	text-decoration: none;
+  content: "Like";
 }
 
 [id^="dislike-"]::after {
-	content: "Dislike";
-	text-decoration: none;
+  content: "Dislike";
 }
 
 .wall-item-actions-right .dropdown-toggle::after,
 .more-links .dropdown-toggle::after {
-	content: "More";
-	text-decoration: none;
+  content: "More";
+}
+
+/* ===== DEUTSCH ===== */
+[lang="de"] .button-comments::after {
+  content: "Kommentar";
+}
+
+[lang="de"] .button-announces::after {
+  content: "Teilen";
+}
+
+[lang="de"] .button-votes::after {
+  content: "Zitieren";
+}
+
+[lang="de"] .button-likes::after {
+  content: "Mögen";
+}
+
+[lang="de"] [id^="dislike-"]::after {
+  content: "Nicht mögen";
+}
+
+[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="de"] .more-links .dropdown-toggle::after {
+  content: "Mehr";
+}
+
+/* ===== FRANZÖSISCH ===== */
+[lang="fr"] .button-comments::after {
+  content: "Commentaire";
+}
+
+[lang="fr"] .button-announces::after {
+  content: "Partager";
+}
+
+[lang="fr"] .button-votes::after {
+  content: "Citer";
+}
+
+[lang="fr"] .button-likes::after {
+  content: "Aimer";
+}
+
+[lang="fr"] [id^="dislike-"]::after {
+  content: "Ne pas aimer";
+}
+
+[lang="fr"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="fr"] .more-links .dropdown-toggle::after {
+  content: "Plus";
+}
+
+/* ===== SPANISCH ===== */
+[lang="es"] .button-comments::after {
+  content: "Comentario";
+}
+
+[lang="es"] .button-announces::after {
+  content: "Compartir";
+}
+
+[lang="es"] .button-votes::after {
+  content: "Citar";
+}
+
+[lang="es"] .button-likes::after {
+  content: "Me gusta";
+}
+
+[lang="es"] [id^="dislike-"]::after {
+  content: "No me gusta";
+}
+
+[lang="es"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="es"] .more-links .dropdown-toggle::after {
+  content: "Más";
 }
 
 .wall-item-actions-row > button span,
@@ -919,6 +1020,10 @@ p.wall-item-announce,
 #jot-location,
 .wall-item-comment-wrapper textarea {
 	background-color: rgb(51, 51, 52) !important;
+}
+
+textarea.text-autosize {
+	resize: vertical !important;
 }
 
 #jot-text-wrap,
@@ -1108,7 +1213,9 @@ aside .widget li:hover {
 
 .wall-item-actions-row .wall-item-emoji {
 	font-size: 18px;
-	line-height: 40px;
+	color: #b0b3b8;
+	margin-top: 6px;
+	margin-left: 10px;
 }
 
 .table > tbody > tr > td {
