@@ -1,0 +1,2852 @@
+/*
+	Name	   : Bookface Dark
+	Version    : 1.3
+	Licence    : AGPL
+	Created on : 31.01.26
+	Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
+*/
+
+:root {
+	--global-font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+	--nav-bg: $nav_bg;
+	--link-color: $link_color;
+	--nav-icon-color: $nav_icon_color;
+	--background-color: $background_color;
+	--contentbg-transp: $contentbg_transp;
+	--font-color: $font_color;
+	--font-color-darker: $font_color_darker;
+	--background-image: $background_image;
+	--menu-background-hover-color: $menu_background_hover_color;
+	--border-color: $border_color;
+	--thread-level-1-color: #1a1a1a; /* Fast schwarz, für maximale Lesbarkeit */
+	--thread-level-1-hover-color: #2a2a2a; /* Etwas heller beim Hover */
+	--thread-level-2-color: #333333; /* Basis: Dunkelgrau */
+	--thread-level-2-hover-color: #3c3131; /* Deine Basis */
+	--thread-level-3-color: #4a4a4a; /* Grau, etwas heller als Ebene 2 */
+	--thread-level-3-hover-color: #5a5a5a; /* Hover: noch etwas heller */
+	--thread-level-4-color: #3a3a5a; /* Dunkelblau, dezent */
+	--thread-level-4-hover-color: #4a4a6a; /* Hover: leicht gesättigter */
+	--thread-level-5-color: #3a4a3a; /* Dunkelgrün, dezent */
+	--thread-level-5-hover-color: #4a5a4a; /* Hover: leicht gesättigter */
+	--thread-level-6-color: #4a3a4a; /* Dunkelviolett, dezent */
+	--thread-level-6-hover-color: #5a4a5a; /* Hover: leicht gesättigter */
+	--thread-level-7-color: #3a4a4a; /* Dunkelblaugrün, dezent */
+	--thread-level-7-hover-color: #4a5a5a; /* Hover: leicht gesättigter */
+	--thread-level-8-color: #2a3a5a; /* Dunkelblau, etwas gesättigter */
+	--thread-level-8-hover-color: #3a4a6a; /* Hover: noch etwas gesättigter */
+	--thread-level-9-color: #2a2a5a; /* Dunkelblau, Akzent */
+	--thread-level-9-hover-color: #3a3a6a; /* Hover: leicht gesättigter */
+	letter-spacing: 0.01em; /* Lesbarkeit von Text erhöhen */
+	font-weight: 450; /* Lesbarkeit von Text erhöhen */
+}
+
+body {
+	background-color: var(--background-color) !important;
+	font-size: 15px !important;
+	padding-top: 125px !important;
+	font-family: var(--global-font-family);
+}
+
+@media (min-width: 1200px) {
+	.container {
+	width: 1200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-7 {
+    width: 63.33333333%;
+  }
+}
+
+#topbar-second {
+	height: 60px !important;
+	top: var(--topbar-first-size);
+	background-color: var(--nav-bg) !important;
+	border-bottom: 1px solid #333;
+}
+
+/* ===============
+ * Suchen Bereich
+ * ===============*/
+
+/* Suche angepasst */
+
+#search-box {
+	left: 20px;
+	margin-top: 10px;
+	top: 5px;
+}
+
+#search-box .btn,
+.form-group-search .form-button-search {
+	background-color: #4a4a4a;
+}
+
+.form-group-search {
+	width: 100%;
+}
+
+/* ===============
+ * Toolbar
+ * ===============*/
+
+/* Iconfarbe Topbar*/
+:is(#topbar-first .nav > li, nav.navbar .nav > li) :is(a, button) {
+	color: var(--nav-icon-color);
+}
+
+#topbar-first .nav > li > a.selected i {
+	color: var(--link-color) !important;
+	position: relative;
+	padding-bottom: 13px;
+}
+
+#topbar-first .nav > li > a.selected i::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: -10px;
+	right: -10px;
+	height: 3px;
+	background-color: var(--link-color);
+}
+
+/* Icongröße Topbar Mitte */
+.ri-xl {
+	font-size: 1.875em;
+}
+
+#topbar-first .topbar-nav i {
+	font-size: 30px;
+}
+
+.ri-pencil-line::before,
+.ri-grid-fill::before {
+	content: "\EDDE";
+	content: "\EC82";
+}
+
+#topbar-first .nav > .account img {
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+}
+
+/* Profil-Usericon rechts beim Überscrollen der Timeline */
+#vcard-short-info, #nav-short-info .contact-wrapper {
+	margin-top: 15px;
+}
+
+/*================================
+ * Benachrichtigung Termine/Geburtstage
+ * ===============================*/
+
+#birthday-notice, #birthday-wrapper, #rfic-desc, #remote-friends-in-common, #event-notice, #event-wrapper {
+	background-color: var(--nav-bg) !important;
+	box-shadow: 0 0 2px #828282;
+	-webkit-box-shadow: 0 0 2px #828282;
+	-moz-box-shadow: 0 0 2px #828282;
+	border-radius: 12px;
+}
+
+/*=======================
+ * Benachrichtigung Nachrichten
+ * =====================*/
+
+/* Schriftfarne Benachrichtigung Übersicht */
+.notif-item a {
+	color: #b0b3b8;
+	font-size: 14px;
+}
+
+/* Benachrichtigung und alle darin liegenden Elemente */
+#topbar-first #nav-notifications-menu {
+	border: 1px solid var(--background-color) !important;
+
+	a {
+		color: #b0b3b8;
+	}
+
+	li {
+		border-color: transparent !important;
+		box-sizing: border-box;
+		margin: 10px;
+		border-radius: 10px !important;
+		width: 94% !important;
+
+		/* Hover-Effekt für Listenelemente */
+		&.notif-entry:hover {
+			background-color: rgba(128, 128, 128, 0.2) !important;
+			border-color: transparent !important;
+		}
+	}
+}
+
+#topbar-first .notification-unseen {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+#topbar-first #nav-notifications-menu li.notif-entry .media-object a img,
+.notif-item img.notif-image {
+    border-radius: 50%;
+}
+
+/*===================
+ * Tabellenfarbe
+ * =================*/
+
+.table td,
+.table th {
+	border-top: 1px solid #5b5b5b;
+	border: thin solid #424445 !important;
+}
+
+.table tr.info td,
+.table tr.info th,
+.table tr td.info,
+.table tr th.info {
+	background-color: #464649;
+}
+
+/* ================
+ * Reaction Hashtags
+ * ================*/
+
+/* Icons in Hashtags und Mentions ausblenden */
+.wall-item-tags .tag .ri-flashlight-line,
+span.mention .ri-user-line,
+a.tag .ri-flashlight-line {
+	display: none !important;
+}
+
+/* Farbe und Größe der Reaktions-Icons anpassen */
+.wall-item-actions button {
+	font-size: 20px !important;
+	color: #b0b3b8 !important;
+}
+
+/* Unterstrich unter Reaktionen vermeiden */
+.wall-item-actions .active,
+.wall-item-actions button:focus,
+.wall-item-actions button:hover {
+	text-decoration: none;
+}
+
+/* Hover-Effekt: Fett entfernen und Farbe ändern */
+.wall-item-actions .btn-link:hover,
+.wall-item-actions .btn-link:hover i,
+.wall-item-actions .wall-item-response:hover,
+.wall-item-actions .wall-item-response:hover i {
+	font-weight: normal !important;
+	color: var(--link-color) !important;
+}
+
+/* Deaktivierte Buttons: Farbe und Cursor anpassen */
+.wall-item-actions button:disabled,
+.wall-item-actions button[disabled] {
+	color: #aaa !important;
+	cursor: default !important;
+	opacity: 0.6 !important;
+}
+
+/* =================================
+ * Beschriftung der Reaction in 4 Sprachen
+ * =================================*/
+
+/* Standard (Englisch) */
+.button-comments::after { content: "Comment"; }
+.button-announces::after { content: "Share"; }
+.button-votes::after { content: "Quote"; }
+.button-likes::after { content: "Like"; }
+[id^="dislike-"]::after { content: "Dislike"; }
+.wall-item-actions-right .dropdown-toggle::after,
+.more-links .dropdown-toggle::after { content: "More"; }
+
+.wall-item-emoji::after {
+	content: "Reaction";
+	font-size: 13px;
+}
+
+/* Deutsch */
+[lang="de"] .button-comments::after,
+[lang="de"] .button-announces::after,
+[lang="de"] .button-votes::after,
+[lang="de"] .button-likes::after,
+[lang="de"] [id^="dislike-"]::after,
+[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="de"] .more-links .dropdown-toggle::after {
+	content: "";
+}
+[lang="de"] .button-comments::after { content: "Kommentar"; }
+[lang="de"] .button-announces::after { content: "Teilen"; }
+[lang="de"] .button-votes::after { content: "Zitieren"; }
+[lang="de"] .button-likes::after { content: "Mögen"; }
+[lang="de"] [id^="dislike-"]::after { content: "Nicht mögen"; }
+[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="de"] .more-links .dropdown-toggle::after { content: "Mehr"; }
+
+/* Französisch */
+[lang="fr"] .button-comments::after { content: "Commentaire"; }
+[lang="fr"] .button-announces::after { content: "Partager"; }
+[lang="fr"] .button-votes::after { content: "Citer"; }
+[lang="fr"] .button-likes::after { content: "Aimer"; }
+[lang="fr"] [id^="dislike-"]::after { content: "Ne pas aimer"; }
+[lang="fr"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="fr"] .more-links .dropdown-toggle::after { content: "Plus"; }
+
+/* Spanisch */
+[lang="es"] .button-comments::after { content: "Comentario"; }
+[lang="es"] .button-announces::after { content: "Compartir"; }
+[lang="es"] .button-votes::after { content: "Citar"; }
+[lang="es"] .button-likes::after { content: "Me gusta"; }
+[lang="es"] [id^="dislike-"]::after { content: "No me gusta"; }
+[lang="es"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="es"] .more-links .dropdown-toggle::after { content: "Más"; }
+
+/* Dänisch */
+[lang="da"] .button-comments::after { content: "Kommentar"; }
+[lang="da"] .button-announces::after { content: "Del"; }
+[lang="da"] .button-votes::after { content: "Citer"; }
+[lang="da"] .button-likes::after { content: "Synes om"; }
+[lang="da"] [id^="dislike-"]::after { content: "Synes ikke om"; }
+[lang="da"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="da"] .more-links .dropdown-toggle::after { content: "Mere"; }
+
+/* Italienisch */
+[lang="it"] .button-comments::after { content: "Commento"; }
+[lang="it"] .button-announces::after { content: "Condividi"; }
+[lang="it"] .button-votes::after { content: "Cita"; }
+[lang="it"] .button-likes::after { content: "Mi piace"; }
+[lang="it"] [id^="dislike-"]::after { content: "Non mi piace"; }
+[lang="it"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="it"] .more-links .dropdown-toggle::after { content: "Altro"; }
+
+/* ===================
+ * Banner und Bannerbild
+ * ===================*/
+
+header #banner #logo-img, .navbar-brand #logo-img {
+    -webkit-mask-image: url("img/friendica-32.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    background-color: currentColor;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+
+/* Beispiel: Eltern-Element ist ein Link */
+a.navbar-brand {
+    color: var(--color-link); /* Farbe des Links */
+}
+
+/* Verhindert, dass das Logo beim Drüberfahren abdunkelt */
+header #banner a:hover #logo-img,
+.navbar-brand a:hover #logo-img,
+header #banner #logo-img:hover {
+	background-color: #0066ff !important;
+}
+
+/*=======================
+ * Profilinformationen
+ *  ======================*/
+
+#aprofile-homepage span::after, .homepage-url span::after {
+	content: '\F100';
+	font-family: remixicon;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+
+#aprofile-homepage span, .homepage-url span {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: transparent;
+	border-radius: 100%;
+	background-color: var(--link-color);
+}
+
+/* Expandieren von Eingabefeldern */
+
+textarea.text-autosize {
+  resize: vertical !important;
+}
+
+/* ===========
+ *Hovercard
+ ===========*/
+
+.hovercard,
+.dropdown-menu {
+	background-color: var(--nav-bg) !important;
+	border: 1px solid var(--background-color) !important;
+	border-radius: 10px;
+}
+
+.hover-card-pic img.thumbnail {
+	border-radius: 100% !important;
+	background-color: var(--background-color) !important;
+	border-color: black !important;
+}
+
+/* Dropdown-Menü */
+.dropdown-menu {
+	padding-bottom: 15px !important;
+}
+
+.dropdown-menu li {
+	width: 92% !important;
+	border-radius: 10px;
+}
+
+.dropdown-menu li:hover {
+	border-color: transparent !important;
+}
+
+/* Deaktivierte Formularelemente */
+.form-control[readonly],
+.form-control[disabled],
+.fieldset[disabled] .form-control {
+	opacity: 0.5;
+}
+
+/* ==================
+ * Jot Editor / Button
+ *  =================*/
+
+#jotOpen {
+	border-radius: 20px !important;
+	background-color: var(--link-color) !important;
+	color: #ffffff !important;
+}
+
+#jotOpen:hover,
+#jotOpen:focus {
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1) !important;
+}
+
+.jot-nav {
+	border: none !important;
+}
+
+.jot-nav a {
+	border: none !important;
+	border-radius: 8px !important;
+	margin-right: 5px;
+}
+
+.jot-nav a:hover,
+.jot-nav a:focus {
+	background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.jot-nav .active a {
+	background-color: transparent !important;
+	border-radius: 0 !important;
+	border-bottom: 3px solid var(--link-color) !important;
+}
+
+.jot-nav .active a:hover,
+.jot-nav .active a:focus {
+	background-color: transparent !important;
+}
+
+/* Editiertbutton über Editor anheben */
+.btn-toolbar > .btn-group, .btn-toolbar .btn-group,.btn-group {
+  bottom: 2px;
+}
+
+/* Mention Button anpassen */
+.action-button {
+	padding-bottom: 14px;
+	padding-top: 14px;
+}
+
+.nav-tabs > li > a {
+	border-radius: 10px 10px 0 0;
+	border: 1px solid #575757;
+}
+
+/*==================
+ * Pannel Einstellungen
+ * =================*/
+
+section > .generic-page-wrapper,
+.videos-content-wrapper,
+.suggest-content-wrapper,
+.help-content-wrapper,
+.match-content-wrapper,
+.dirfind-content-wrapper,
+.delegation-content-wrapper,
+.notes-content-wrapper,
+.message-content-wrapper,
+.apps-content-wrapper,
+#adminpage,
+.delegate-content-wrapper,
+.uexport-content-wrapper,
+.dfrn_request-content-wrapper,
+.friendica-content-wrapper,
+.credits-content-wrapper,
+.nocircle-content-wrapper,
+.profperm-content-wrapper,
+.invite-content-wrapper,
+.tos-content-wrapper,
+.fsuggest-content-wrapper {
+	background-color: #252728;
+	color: #b0b3b8;
+	box-shadow: 0 0 3px #252728;
+	border-radius: 10px;
+}
+
+.alert-info {
+	background-image: linear-gradient(to bottom, #333 0, #333 100%);
+	color: #ddd;
+	border-color: #5b5b5b;
+	border-radius: 10px;
+}
+
+.form-control {
+	background: var(--nav-bg);
+	color: #fff;
+	border: 1px solid #5b5b5b;
+	border-radius: 4px;
+  	height: 35px;
+}
+
+.dropdown-menu .divider {
+	background-color: #5b5b5b;
+}
+
+.navicon {
+	font-size: 14px !Important;
+}
+
+/* Profil: Stapelverarbeitung */
+.nav .open > .btn-link {
+  background-color: var(--nav-bg);
+}
+
+/*======================
+ * Profil-/Icon vor Protokolle
+ *  ======================*/
+
+#profile-photo-wrapper {
+	overflow: visible !important;
+	padding: 5px;
+	border-radius: 50%;
+}
+
+/* ================
+ * Beitragsartikel
+ * =================*/
+
+.btn {
+	border-radius: 20px;
+	background-color: #575757;
+}
+
+.btn.btn-primary {
+	background: var(--link-color);
+	color: #fff;
+	border-radius: 25px;
+}
+
+/* Startseite: Verhindert Button Farbe */
+.nav.navbar-nav.navbar-right {
+    background-color: # !important;
+}
+
+.nav.navbar-nav.navbar-right .btn.btn-primary {
+    background: transparent;
+    color: #;
+    border-radius: 25px;
+}
+
+/* Linkunterstrich vermeiden */
+
+body a {
+	text-decoration: none !important;
+}
+
+/* Abstand Artikelüberschrift zu BIld erhöht */
+
+h4 {
+	margin: 10px 0px 0px 0px;
+}
+
+aside hr, section hr {
+	border-color: rgb(53, 53, 53);
+}
+
+/* Farbe BBCode und Markdown Tabellen */
+
+td,
+th {
+	border: thin solid #eaeaea;
+}
+
+/* Back to Button */
+
+#back-to-top {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	display: none;
+	cursor: pointer;
+	position: fixed;
+	z-index: 49;
+	right: 40px;
+	bottom: 40px;
+	opacity: 1;
+	padding: 0 12px 0 12px;
+	border-radius: 10px;
+	line-height: 1.5;
+	background-color: #fff0;
+	font-size: 0;
+}
+
+#back-to-top::before {
+	content: "\F4AF";
+	font-family: "remixicon";
+	font-size: 60px;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: rotate(180deg);
+	display: inline-block;
+	vertical-align: middle;
+	transition: transform 0.3s ease;
+}
+
+
+/* Abstand zwischen den Einstellungsmenues verringert */
+
+.side-link-link, aside .widget li a {
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+/* Seitennavigation Widgets */
+
+aside .widget,
+.nav-container .widget {
+	background-color: var(--background-color) !important;
+	box-shadow: none !important;
+	margin-bottom: 1px;
+}
+
+/*=======================
+ * Pannel-Einstellungen
+ * ======================*/
+
+.panel {
+	border-radius: 10px;
+	background-color: #333;
+	box-shadow: 0 0 0px #252728;
+	-webkit-box-shadow: 0 0 0px #252728;
+	-moz-box-shadow: 0 0 0px #252728;
+}
+
+.panel-heading {
+	color: #f2f2f2;
+}
+
+.panel-success > .panel-heading {
+	background: linear-gradient(to bottom, #2bb84a 0, #2bb84a 100%);
+	background-color: #2bb84a;
+	border-color: #2bb84a;
+}
+
+.panel-info > .panel-heading {
+	background: linear-gradient(to bottom, #1f91ca 0, #1f91ca 100%);
+}
+
+/* Panel-Fußzeile */
+.panel-footer {
+	padding: 10px 15px;
+	background-color: #252728;
+}
+
+/* Settings-Block */
+.settings-block {
+	box-shadow: 0 0 0px transparent;
+}
+
+/* Hilfe-Text */
+.help-block {
+	color: var(--font-color);
+}
+
+/*=======================
+ * Galerie
+ * =====================*/
+
+.breadcrumb {
+	background-color: #333;
+}
+
+button, input, select, textarea {
+	border-radius: 10px;
+	background-color: #333;
+	border-color: #333;
+}
+
+/*=====================
+ * Kalender Einstellungen
+ * ====================*/
+
+.fc .fc-event {
+  background-color: #abacac;
+  border: 1px solid #c1c1c1;
+  color: #181818;
+}
+
+.fc-unthemed td.fc-today {
+  background: #434344;
+}
+
+/*=======================
+ * Hover-Einstellungen
+ * ======================*/
+
+.hover-card-footer,
+.hovercard.top > .arrow::after,
+.hovercard.right > .arrow::after,
+.hovercard.bottom > .arrow::after {
+	border-color: var(--nav-bg);
+}
+
+.hover-card-footer {
+	background-color: var(--nav-bg);
+}
+
+.hover-card-pic img.thumbnail {
+	border-radius: 50% !important;
+}
+
+/* Hover-Farbe für die Event-Navigations-Buttons anpassen */
+#event-nav.nav-tabs > li > a:hover,
+#event-nav.nav-tabs > li > a:focus {
+    background-color: #252728 !important;
+    color: #b0b3b8;
+}
+
+/* ==================
+ * Beitragsthread
+ * ==================*/
+
+/* fügt eine farbige Linie für Kommentare ein*/
+Element {
+}
+
+/* Thread mit einem durchgehenden Faden, der die Profilbilder verbindet */
+.wall-item-container.thread_level_1,
+.wall-item-container.thread_level_2,
+.wall-item-container.thread_level_3,
+.wall-item-container.thread_level_4,
+.wall-item-container.thread_level_5,
+.wall-item-container.thread_level_6,
+.wall-item-container.thread_level_7,
+.wall-item-container.thread_level_8,
+.wall-item-container.thread_level_9 {
+    margin-left: 0;
+}
+
+[class*="thread_level_"]:not(.thread_level_1) {
+	position: relative !important;
+	border-left: 5px var(--nav-bg) !important;
+}
+
+.thread_level_1 {
+	position: relative;
+	border-left: 0;
+}
+
+[class*="thread_level_"]::before {
+	content: "";
+	position: absolute;
+	left: 20px;
+	top: 60px;
+	bottom: 15px;
+	width: 3px;
+	z-index: 1;
+	background-color: inherit;
+}
+
+.contact-photo-image-wrapper,
+.wwto .contact-photo {
+    z-index: 1;
+}
+
+[class*="thread_level_"]::after {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: -8px;
+    width: 26px;
+    height: 1px;
+    background-color: inherit;
+    z-index: 1;
+}
+
+.thread_level_1::before { background-color: transparent; }
+
+.thread_level_2::before { background-color: var(--thread-level-2-color); }
+.thread_level_2:hover::before { background-color: var(--thread-level-2-hover-color); }
+
+.thread_level_3::before { background-color: var(--thread-level-3-color); }
+.thread_level_3:hover::before { background-color: var(--thread-level-3-hover-color); }
+
+.thread_level_4::before { background-color: var(--thread-level-4-color); }
+.thread_level_4:hover::before { background-color: var(--thread-level-4-hover-color); }
+
+.thread_level_5::before { background-color: var(--thread-level-5-color); }
+.thread_level_5:hover::before { background-color: var(--thread-level-5-hover-color); }
+
+.thread_level_6::before { background-color: var(--thread-level-6-color); }
+.thread_level_6:hover::before { background-color: var(--thread-level-6-hover-color); }
+
+.thread_level_7::before { background-color: var(--thread-level-7-color); }
+.thread_level_7:hover::before { background-color: var(--thread-level-7-hover-color); }
+
+.thread_level_8::before { background-color: var(--thread-level-8-color); }
+.thread_level_8:hover::before { background-color: var(--thread-level-8-hover-color); }
+
+.thread_level_9::before { background-color: var(--thread-level-9-color); }
+.thread_level_9:hover::before { background-color: var(--thread-level-9-hover-color); }
+
+/* ===========================
+ * Emoji-Picker Theme anpassen
+ * =========================== */
+
+:root {
+  --emoji-bg-primary: #3e3e3e;
+  --emoji-bg-secondary: #333334;
+  --emoji-bg-tertiary: rgba(51, 51, 52, 0.4);
+  --emoji-bg-input: #848484;
+  --emoji-border-color: rgba(255, 255, 255, 0.15);
+  --emoji-border-subtle: #5b5b5b;
+  --emoji-text-primary: #ffffff;
+  --emoji-text-secondary: #94a3b8;
+  --emoji-text-active: #60a5fa;
+  --emoji-hover-bg: rgba(96, 165, 250, 0.25);
+  --emoji-active-bg: rgba(255, 255, 255, 0.05);
+  --emoji-shadow: 0 15px 45px rgba(0, 0, 0, 0.8);
+  --emoji-border-radius: 12px;
+  --emoji-border-radius-sm: 6px;
+  --emoji-border-radius-xs: 4px;
+}
+
+/* Emoji-Picker Container */
+.fg-emoji-container {
+	background-color: var(--emoji-bg-primary) !important;
+	backdrop-filter: blur(25px) !important;
+	border: 1px solid var(--emoji-border-color) !important;
+	border-radius: var(--emoji-border-radius) !important;
+	box-shadow: var(--emoji-shadow) !important;
+	overflow: visible !important;
+}
+
+/* Navigation */
+.fg-emoji-nav,
+.fg-emoji-nav ul {
+	background-color: var(--emoji-bg-secondary) !important;
+	border-bottom: 1px solid var(--emoji-border-subtle) !important;
+}
+
+.fg-emoji-nav {
+	height: 38px !important;
+	display: flex !important;
+	align-items: center !important;
+	padding: 0 5px !important;
+	position: relative !important;
+	z-index: 10 !important;
+}
+
+.fg-emoji-nav ul {
+	display: flex !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none !important;
+	align-items: center !important;
+}
+
+.fg-emoji-nav li a {
+	width: 32px !important;
+	height: 32px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	color: var(--emoji-text-secondary) !important;
+	opacity: 0.7;
+	font-size: 14px !important;
+}
+
+.fg-emoji-nav li.active a {
+	color: var(--emoji-text-active) !important;
+	opacity: 1;
+	background: var(--emoji-active-bg);
+	border-radius: var(--emoji-border-radius-sm);
+}
+
+.fg-emoji-nav-item {
+	height: 28px !important;
+	line-height: 28px !important;
+	padding: 0 10px !important;
+	margin-left: 4px !important;
+	font-size: 13px !important;
+	border-radius: var(--emoji-border-radius-xs) !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	position: relative !important;
+	z-index: 20 !important;
+}
+
+/* Search */
+.fg-emoji-picker-search {
+	background-color: var(--emoji-bg-tertiary) !important;
+	padding: 8px !important;
+	position: relative !important;
+}
+
+.fg-emoji-picker-search input {
+	background-color: var(--emoji-bg-input) !important;
+	color: var(--emoji-text-primary) !important;
+	border: 1px solid var(--emoji-border-color) !important;
+	border-radius: var(--emoji-border-radius-sm) !important;
+	height: 32px !important;
+	padding: 0 10px !important;
+}
+
+/* Category Title */
+.fg-emoji-picker-category-title {
+	color: var(--emoji-text-primary) !important;
+	background-color: var(--emoji-bg-secondary) !important;
+	font-weight: 700 !important;
+	padding: 6px 15px !important;
+	font-size: 13px !important;
+	border-bottom: 1px solid var(--emoji-border-subtle) !important;
+}
+
+/* Emoji List */
+.fg-emoji-list,
+.fg-emoji-picker-category-wrapper {
+	background-color: var(--emoji-bg-secondary) !important;
+}
+
+.fg-emoji-list {
+	border-radius: 0 0 var(--emoji-border-radius) var(--emoji-border-radius) !important;
+}
+
+.fg-emoji-list li a {
+	background-color: transparent !important;
+	transition: background 0.2s ease;
+}
+
+.fg-emoji-list li a:hover {
+	background-color: var(--emoji-hover-bg) !important;
+	border-radius: var(--emoji-border-radius-sm) !important;
+}
+
+/* Größe Profilbilder Thread */
+
+.contact-photo {
+	border-radius: 100% !important;
+	border: 1px solid #353535 !important
+}
+
+.contact-photo-xs {
+	border-radius: 50% !important;
+	object-position: left 50% top 50%;
+	height: 25px;
+	width: 25px;
+	object-fit: cover;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+.contact-photo-xs {
+	border-radius: 50% !important;
+	object-position: left 50% top 50%;
+	height: 25px;
+	width: 25px;
+	object-fit: cover;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+/* Zentriert alle Medienelemente (Bilder, Videos, iframes) */
+
+/* Zentrierung von Medieninhalten */
+a img,
+a video,
+a iframe,
+a object,
+a embed {
+	display: block;
+	margin-right: auto;
+}
+
+.video-top-wrapper {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}
+
+/* Ausnahme für .network-svg: Keine Zentrierung */
+a img.network-svg {
+	display: inline;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Größe Netzwerk-Icon */
+.network-svg {
+	width: 18px;
+	height: 18px;
+}
+
+
+/* Tag-Wolke */
+a.tag.label,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label {
+	border-radius: 4px !important;
+	display: inline-flex !important;
+	font-size: 11px !important;
+	font-weight: 500 !important;
+	padding: 4px 6px !important;
+	text-decoration: none !important;
+	margin: 1px !important;
+	background-image: none !important;
+	background-color: transparent !important;
+	box-shadow: none !important;
+	color: #ccc !important;
+	border: 1px solid #65686c;
+	text-shadow: none !important;
+}
+
+/* Dropdown-Menü-Stile */
+.nav-pills .dropdown-menu li a,
+.nav-pills .dropdown-menu li .btn-link,
+.nav-tabs .dropdown-menu li a,
+.nav-tabs .dropdown-menu li .btn-link,
+.account .dropdown-menu li a,
+.account .dropdown-menu li .btn-link,
+.contact-photo-wrapper .dropdown-menu li a,
+.contact-photo-wrapper .dropdown-menu li .btn-link {
+	color: #b0b3b8 !important;
+	border-color: var(--nav-bg) !important;
+	border-radius: 10px;
+	}
+
+.nav-pills .dropdown-menu li.divider,
+.nav-tabs .dropdown-menu li.divider,
+.account .dropdown-menu li.divider,
+.contact-photo-wrapper
+.dropdown-menu li.divider {
+	background-color: var(--background-color);
+}
+
+.nav-tabs {
+  border-bottom: 1px solid #575757 !Important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  border: 1px solid #575757 !Important;
+}
+
+/* Navbar-Formular */
+.navbar-form {
+	margin: 10px 0;
+}
+
+/* +Addon: LibreTranslate */
+
+.libretranslate-trigger {
+	padding: 0;
+	cursor: pointer;
+	border-radius: 4px !important;
+	display: inline-flex !important;
+	font-size: 10px !important;
+	font-weight: 500 !important;
+	padding: 2px 4px !important;
+	text-decoration: none !important;
+	margin: 1px !important;
+	background-image: none !important;
+	background-color: #b3b3b31f !important
+	box-shadow: none !important;
+	color: #999 !important;
+	text-shadow: none !important;
+}
+
+/* Position neue Nachrichten */
+
+#topbar-first .topbar-nav .nav-segment .nav-notification {
+	right: 15px;
+}
+
+ul.tabs li {
+	font-size: 15px !important;
+	margin-left: 10px !important;
+}
+
+ul.tabs li a {
+	margin-top: 8px;
+	color: var(--link-color) !important;
+}
+
+ul.tabs li:hover:not(.active) {
+	border-bottom-width: 0px !important;
+}
+
+ul.tabs li:hover:not(.active) a {
+	background-color: rgba(128, 128, 128, 0.1) !important;
+	border-radius: 8px !important;
+}
+
+/* Kommentare im dunklen Theme */
+
+.well {
+	background-image: linear-gradient(to bottom,#333 0,#333 100%);
+	filter: none;
+	border-color: #333;
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1);
+	box-shadow: inset 0 1px 3px rgb(51, 51, 51),0 1px 0 rgb(51, 51, 51);
+	background-color: var(--background-color);;
+	border: 1px solid #333;
+	border-top-color: rgb(51, 51, 51);
+	border-right-color: rgb(51, 51, 51);
+	border-bottom-color: rgb(51, 51, 51);
+	border-left-color: rgb(51, 51, 51);
+}
+
+.btn-default {
+	background: #575757;
+}
+
+#topbar-first #nav-notifications-menu li.notif-entry {
+	color: #acacac;
+	border-bottom: 1px solid var(--nav-bg) !important;
+	border-left: 3px solid var(--nav-bg) !important;
+	font-size: 15px;
+}
+
+/* Buttonfarbe Einstellungen speichern */
+.settings-submit, button[type="submit"] {
+  background-color: #4a4a4a !important;
+  color: var(--font-color) !important;
+  border-radius: 25px !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* =======================
+ * Ab hier aufräumen
+ * =======================*/
+
+#nav-login::before {
+	content: var(--sign-in-text);
+}
+
+.topbar ul.nav {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.media-list > li {
+	font-size: 15px;
+}
+
+#nav-user-menu {
+	background-color: var(--nav-bg) !important;
+	min-width: 250px !important;
+	border-radius: 10px;
+}
+
+.template-icon {
+	width: 30px;
+	height: 30px;
+}
+
+#mention-link {
+	background-color: var(--link-color) !important;
+	color: white !important;
+	border-radius: 25px !important;
+	padding: 8px 16px !important;
+	height: 40px !important;
+}
+
+#mention-link:hover,
+#mention-link:focus {
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1) !important;
+}
+
+#contact-edit-status-wrapper {
+	margin: 15px 0px !important;
+	border-radius: 10px;
+}
+
+#profile-extra-links .btn {
+	border-radius: 25px !important;
+	margin-bottom: 10px !important;
+}
+
+.tread-wrapper {
+	transition: box-shadow 0.2s ease;
+	box-shadow: 0 0px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+.wall-item-container .media {
+	background-color: rgb(37, 39, 40) !important;
+}
+
+.wall-item-container {
+	border-top: 1px solid rgb(28, 28, 29);
+}
+
+p.wall-item-announce,
+.media .time,
+.media .shared-time,
+.media .delivery,
+.media .location,
+.media .location a {
+	font-size: 13px !important;
+}
+
+.type-link,
+.type-video {
+	padding: 0 !important;
+	margin: 0 !important;
+	background-color: rgb(51, 51, 51) !important;
+	border: 1px solid rgb(51, 51, 51) !important;
+	border-radius: 10px;
+}
+
+.type-link h4,
+.type-link blockquote,
+.type-link sup,
+.type-video h4,
+.type-video blockquote,
+.type-video sup {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+.wall-item-actions-row button,
+.wall-item-actions-right button {
+	position: relative;
+	display: block;
+	white-space: normal !important;
+	margin: 0 auto !important;
+}
+
+.wall-item-actions-row button::after,
+.wall-item-actions-right button::after {
+	font-size: 12px;
+	font-family: sans-serif;
+	display: block;
+	margin-top: 2px;
+	box-shadow: -0px 0px 0px #65686c;
+}
+
+.wall-item-response {
+	position: relative;
+	overflow: visible !important;
+}
+
+.wall-item-actions-row > button span,
+.wall-item-response span {
+	position: absolute;
+	text-align: center;
+	display: block;
+	background-color: #65686c;
+	box-shadow: -1px 1px 1px #65686c;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	width: fit-content;
+	padding: 0px 7px;
+	left: 55%;
+	top: 0px;
+	z-index: 1;
+}
+
+.vote-event:not(:has(.wall-item-response:empty)) {
+	padding-bottom: 135px;
+}
+
+.vote-event .wall-item-response {
+	position: absolute;
+	top: 63px;
+}
+
+.vote-event .wall-item-response:empty {
+	display: none;
+}
+
+.vote-event .wall-item-response:nth-of-type(1) {
+	left: 15px;
+}
+
+.vote-event .wall-item-response:nth-of-type(1) .button-event::after,
+[id^="attendyes"]::after {
+	content: "Going";
+}
+
+.vote-event .wall-item-response:nth-of-type(2) {
+	left: 105px;
+}
+
+.vote-event .wall-item-response:nth-of-type(2) .button-event::after,
+[id^="attendno"]::after {
+	content: "Can't Go";
+	position: relative;
+	height: 20px;
+	overflow: hidden; /* or skews mobile button layout */
+}
+
+.vote-event .wall-item-response:nth-of-type(3) {
+	left: 204px;
+}
+
+.vote-event .wall-item-response:nth-of-type(3) .button-event::after,
+[id^="attendmaybe"]::after {
+	content: "Maybe";
+}
+
+#vcard-short-photo-wrapper img,
+#nav-short-info .contact-wrapper img {
+	border-radius: 50%;
+}
+
+.intro-photo-wrapper img.intro-photo {
+	border-radius: 100px;
+}
+
+aside .widget li {
+	margin-bottom: 8px;
+}
+
+body aside .vcard img.u-photo {
+	border-radius: 50%;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+	border: 3px solid var(--background-color);
+	aspect-ratio: 1 / 1;     /* Erzwingt ein quadratisches Verhältnis */
+	object-fit: cover;       /* Sorgt dafür, dass das Bild nicht verzerrt wird */
+	width: 100%;             /* Optional: Stellt sicher, dass es die Breite ausfüllt */
+}
+
+body aside img.vcard-photo {
+	border-radius: 50%;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+	border: 3px solid var(--background-color);
+}
+
+aside .widget h3.p-name {
+	font-size: 32px !important;
+	text-align: center;
+	word-break: break-word;
+}
+
+aside .vcard .p-addr {
+	font-weight: 600;
+	text-align: center;
+	white-space: break-spaces !important;
+}
+
+aside .widget li.selected {
+	background-color: rgba(128, 128, 128, 0.1) !important;
+	border-color: transparent !important;
+	border-radius: 8px;
+}
+
+aside .widget li.selected a {
+	font-weight: bold;
+}
+
+aside .widget li:hover {
+	background-color: rgba(51, 51, 52) !important;
+	border-color: transparent !important;
+	border-radius: 8px;
+}
+
+#widget-contacts {
+	background-color: var(--nav-bg) !important;
+	border-radius: 8px !important;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.contact-block-img {
+	height: 100px !important;
+	width: 100px !important;
+	border-radius: 8px !important;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+	margin: 5px;
+}
+
+.comment-fake-form {
+	border: none !important;
+	background-color: #252728 !important;
+}
+
+.comment-fake-form textarea {
+	border-radius: 50px !important;
+}
+
+.wall-item-comment-wrapper {
+	border-top: 1px solid rgb(37, 39, 40) !important;
+	background-color: #252728;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+
+
+/* Kommentare hervorgehoben */
+.comment .media-body {
+	padding: 10px;
+	background-color: #333;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.wall-item-actions-row .wall-item-emoji {
+	font-size: 18px;
+	color: #65686c;
+	margin-top: 3px;
+	margin-left: 10px;
+}
+
+/* WALL ITEM RESPONSES */
+.wall-item-responses > div {
+	position: relative;
+}
+.wall-item-responses > div > p:first-of-type::before,
+.hide-comments::before,
+.hide-comments-total::before {
+	display: inline-block;
+	margin-right: 3px;
+	font-family: remixicon;
+	font-weight: lighter;
+	font-size: 12px;
+	text-align: center;
+	color: white;
+	width: 20px;
+	height: 20px;
+	padding: 2px;
+	line-height: 16px;
+	border-radius: 50%;
+}
+.wall-item-responses .wall-item-like > p:first-of-type::before {
+	content: "\F206";
+	background-color: #0066ff;
+}
+.wall-item-responses .wall-item-dislike > p:first-of-type::before {
+	content: "\F204";
+	background-color: red;
+}
+.wall-item-responses .wall-item-announce > p:first-of-type::before {
+	content: "\f079";
+	background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendyes > p:first-of-type::before {
+	content: "\f00c";
+	background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendno > p:first-of-type::before {
+	content: "\f00d";
+	background-color: red;
+}
+.wall-item-responses .wall-item-attendmaybe > p:first-of-type::before {
+	content: "\f128";
+	background-color: orange;
+}
+.wall-item-responses div p[class*="-expanded"] {
+	background-color: rgb(255, 255, 255, 0.91);
+	position: absolute;
+	bottom: 100%;
+	padding: 10px;
+	margin-left: 23px;
+	border-radius: 8px;
+	width: 200px;
+	max-height: 415px;
+	font-size: 0px;
+	color: transparent;
+	overflow: hidden;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+.wall-item-responses div p[class*="-expanded"]:hover,
+.wall-item-responses div p[class*="-expanded"]:focus {
+	overflow-y: auto;
+}
+.wall-item-responses div p[class*="-expanded"] a {
+	color: var(--link-color) !important;
+	display: block;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	overflow: hidden;
+	text-decoration: none;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74) {
+	overflow: visible;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74)::after {
+	content: "and others...";
+	display: block;
+}
+
+.pagination .pager_next a,
+.pagination .pager_prev a {
+	border-radius: 10px;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+	background-color: #0866ff;
+	border-color: #0866ff;
+	border-radius: 10px;
+}
+
+.pagination li.pager_n a {
+	border-radius: 10px;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child,
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.mail-list-outside-wrapper .contact-photo-wrapper img {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+}
+
+.mail-conv-wrapper .media .contact-photo-wrapper img {
+	height: 48px;
+	width: 48px;
+	border-radius: 50%;
+}
+
+p.wall-item-announce,
+.media .time,
+.media .shared-time,
+.media .delivery,
+.media .location,
+.media .location a {
+	font-size: 13px !important;
+}
+
+.type-link h4,
+.type-link blockquote,
+.type-link sup,
+.type-video h4,
+.type-video blockquote,
+.type-video sup {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+.contact-block-img {
+	height: 45px !important;
+	width: 45px !important;
+	border-radius: 50% !important;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+	margin: 5px;
+}
+
+.img-allocated-max-width {
+	margin: 20px auto;
+	border-radius: 2px;
+}
+
+.wall-item-content img {
+	object-fit: contain;
+	border-radius: 2px;
+	position: relative;
+}
+
+.fancybox-image,
+.fancybox-spaceball {
+	border-radius: 5px;
+}
+
+#photo-photo {
+	margin: 20px auto;
+}
+
+.shared_header > .avatar > img {
+	border-radius: 50%;
+}
+
+#cboxWrapper {
+	border-radius: 10px;
+}
+
+.label-primary {
+	background-color: #1f91ca;
+}
+
+.form-group.field.input.color {
+	display: none;
+}
+
+audio,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+iframe,
+img,
+video {
+	border-radius: 2px;
+}
+
+iframe {
+	width: 100% !important;
+	height: auto !important;
+	aspect-ratio: 16/9 !important;
+	display: block; /* for positioning */
+	margin: 0 auto; /* centers block */
+	background-color: #000; /* optional fill */
+}
+
+/* Chance Picture */
+#change-profile-picture {
+	border-radius: 50%;
+}
+
+/* Verhindert Unterstriche Kommentare */
+.wall-item-actions-row button:hover,
+.wall-item-actions-row button:focus,
+.wall-item-actions-row button::after,
+.wall-item-actions-right button:hover,
+.wall-item-actions-right button::after {
+	text-decoration: none !important;
+}
+
+#circle-update-wrapper .viewcontact_wrapper .contact-circle-link {
+	opacity: 0.8;
+	font-size: 30px;
+}
+
+.modal-content {
+	border-radius: 15px;
+	background-color: #252728;
+}
+
+#conversejs .converse-chatboxes {
+	z-index: 9999 !important;
+	position: fixed !important;
+	bottom: 0;
+}
+
+/* Beiträge werden mit einen kleinen Schatten versehen */
+.tread-wrapper {
+	transition: box-shadow 0.2s ease;
+}
+
+.tread-wrapper:hover {
+	transform: none !important; /* Keine Bewegung */
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important; /* Nur sanftes Leuchten nach außen */
+}
+
+
+
+/* TAGS, CATEGORIES, MENTIONS BUTTONS
+   ==================================
+   Restyled to be less obnoxious and tiny
+   now sized and spaced like they are on Mastodon
+*/
+
+.wall-item-bottom .label {
+	color: inherit;
+}
+.wall-item-bottom .label a {
+	color: inherit;
+}
+/* hide lightning bolt and person icons
+		   pretty sure people know what "#" and "@" mean now
+		*/
+a.tag.label .fa-bolt::before,
+.wall-item-bottom .label .fa-bolt::before {
+	content: "";
+}
+.wall-item-bottom .label .fa-user::before {
+	content: "";
+}
+/* undo hover for entire container*/
+.wall-item-container:hover .wall-item-bottom .wall-item-tags span.label {
+	filter: grayscale(0.5);
+	opacity: 0.8;
+	transition: 0s;
+}
+/* replace with hover for individual tag */
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:hover,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus-within {
+	filter: grayscale(0) !important;
+	opacity: 1 !important;
+	/* probably don't need vendor prefixed anymore but whatever...*/
+	transition: all 0.25s ease-in-out !important;
+}
+/* Hashtag Buttons */
+a.tag.label.btn-info,
+.wall-item-bottom .wall-item-tags .tag.label.btn-info {
+	/* inherits everything from above */
+}
+a.tag.label.btn-info:hover,
+a.tag.label.btn-info:focus,
+.wall-item-bottom .wall-item-tags .tag.label.btn-info:hover,
+.wall-item-bottom .wall-item-tags .tag.label.btn-info:focus {
+	background-color: #65686c !important;
+	color: white !important;
+}
+/* Category Buttons */
+.wall-item-bottom .wall-item-tags .category.label.btn-success {
+	border-color: limegreen !important;
+	color: limegreen !important;
+	font-size: 12px;
+}
+/* replace (x) remove with icon button */
+.wall-item-bottom .wall-item-tags .category.label.btn-success a:first-of-type {
+	margin-right: 4px;
+}
+.wall-item-bottom .wall-item-tags .category.label.btn-success a:last-of-type {
+	font-size: 0px;
+}
+.wall-item-bottom
+	.wall-item-tags
+	.category.label.btn-success
+	a:last-of-type::after {
+	content: "\f00d";
+	font-family: ForkAwesome;
+	font-size: 12px;
+}
+.wall-item-bottom .wall-item-tags .category.label.btn-success:hover,
+.wall-item-bottom .wall-item-tags .category.label.btn-success:focus {
+	background-color: limegreen !important;
+	color: black !important;
+}
+
+/* when a category is removed need to visually indicate it */
+
+.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) {
+	border-color: #ccc !important;
+	color: #ccc !important;
+}
+
+.wall-item-bottom
+	.wall-item-tags
+	.category.label:not(.btn-success)
+	a:first-of-type {
+	font-size: 12px;
+	text-decoration: line-through;
+	margin-right: 4px;
+}
+
+.wall-item-bottom
+	.wall-item-tags
+	.category.label:not(.btn-success)
+	a:last-of-type {
+	font-size: 0px;
+}
+
+.wall-item-bottom
+	.wall-item-tags
+	.category.label:not(.btn-success)
+	a:last-of-type::after {
+	content: "\f00d";
+	font-family: ForkAwesome;
+	font-size: 12px;
+	text-decoration: line-through;
+}
+
+.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):hover,
+.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):focus {
+	background-color: red !important;
+	color: #ccc !important;
+}
+
+/* overrides for Saved File page where buttons structure is different */
+body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success {
+	font-size: 12px !important;
+}
+
+body.mod-filed .wall-item-bottom .wall-item-tags .category.label.btn-success a {
+	font-size: 0px !important;
+	margin: 0px;
+}
+
+body.mod-filed
+	.wall-item-bottom
+	.wall-item-tags
+	.category.label.btn-success
+	a::after {
+	margin-left: 0px;
+}
+
+body.mod-filed
+	.wall-item-bottom
+	.wall-item-tags
+	.category.label:not(.btn-success) {
+	font-size: 12px !important;
+	text-decoration: line-through !important;
+}
+
+body.mod-filed
+	.wall-item-bottom
+	.wall-item-tags
+	.category.label:not(.btn-success)
+	a {
+	font-size: 0px !important;
+}
+
+body.mod-filed
+	.wall-item-bottom
+	.wall-item-tags
+	.category.label:not(.btn-success)
+	a::after {
+	content: "\f00d";
+	font-family: ForkAwesome;
+	font-size: 12px;
+	text-decoration: line-through;
+}
+
+/* Folder Buttons */
+.wall-item-bottom .wall-item-tags .folder.label.btn-danger {
+	border-color: red !important;
+	color: red !important;
+}
+
+/* replace (x) remove with icon button */
+.wall-item-bottom .wall-item-tags .folder.label.btn-danger a:first-of-type {
+	font-size: 0px;
+}
+
+.wall-item-bottom
+	.wall-item-tags
+	.folder.label.btn-danger
+	a:last-of-type::after {
+	content: "\f00d";
+	font-family: ForkAwesome;
+	font-size: 12px;
+}
+
+.wall-item-bottom .wall-item-tags .folder.label.btn-danger:hover,
+.wall-item-bottom .wall-item-tags .folder.label.btn-danger:focus {
+	background-color: red !important;
+	color: white !important;
+}
+
+/* when a category is removed need to visually indicate it */
+.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger) {
+	border-color: #ccc !important;
+	color: #ccc !important;
+	text-decoration: line-through !important;
+}
+
+.wall-item-bottom
+	.wall-item-tags
+	.folder.label:not(.btn-danger)
+	a:first-of-type {
+	font-size: 0px;
+}
+
+.wall-item-bottom
+	.wall-item-tags
+	.folder.label:not(.btn-danger)
+	a:last-of-type::after {
+	content: "\f00d";
+	font-family: ForkAwesome;
+	font-size: 12px;
+}
+
+.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger):hover,
+.wall-item-bottom .wall-item-tags .folder.label:not(.btn-danger):focus {
+	background-color: black !important;
+	color: white !important;
+}
+
+/* @ Mention Buttons */
+
+.wall-item-bottom .wall-item-tags .mention.label.btn-warning {
+	border-color: darkgoldenrod !important;
+	color: darkgoldenrod !important;
+}
+
+.wall-item-bottom .wall-item-tags .mention.label.btn-warning:hover,
+.wall-item-bottom .wall-item-tags .mention.label.btn-warning:focus {
+	background-color: goldenrod !important;
+	border-color: goldenrod !important;
+	color: white !important;
+}
+
+/* Post published alert - toast notification style */
+#post-published-alert {
+	border-radius: 25px;
+}
+
+.shared-wrapper {
+	border-radius: 10px;
+}
+
+/*	Greater than Full-HD Width
+	===========================
+*/
+@media screen and (min-width: 1921px){
+	.coverphoto {
+		max-width: 1920px;
+		left: 50% !important;
+		margin-left: -960px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius:  10px;
+	}
+}
+/*	Small Laptop Screens
+	Some tablets in Landscape Orientation
+	=====================================
+*/
+@media screen and (max-width: 1280px) {
+	#search-box {
+		width: 18% !important;
+	}
+		#search-box:focus-within {
+			width: auto !important;
+		}
+	#search-save {
+		width: 140px !important;
+	}
+}
+/* Frio breakpoints for smaller profile pic */
+@media screen and (min-width:991px) and (max-width:1199px){
+	.contact-block-img {
+		height: 75px !important;
+		width: 75px !important;
+	}
+	/* Contact Notification Action Buttons */
+	.intro-actions {
+		position: relative;
+		float: none !important;
+	}
+	#nav-user-linkmenu.open .user-title {
+		display: block !important;
+	}
+}
+/*	Large Tablets in Portrait Orientation
+	=====================================
+*/
+@media screen and (max-width: 990px){
+	/* Friendica icon upper left */
+	#banner {
+		display: block !important;
+		padding: 0 !important;
+		margin: 8px 10px;
+	}
+	.contact-photo-xs {
+	border-radius: 100% !important;
+	border: 1px solid #eee !important;
+	height: 38px;
+	width: 38px;
+}
+		#friendica-logo-mask {
+			display: block !important;
+		}
+	/* hide search box - no room */
+    #search-box {
+        display: none;
+    }
+    	/* show mobile search toggle */
+    	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
+    		display: block !important;
+    		position: fixed !important;
+    		left: 115px;
+    		top:    0px;
+    		z-index: 10;
+    	}
+    	/* force display of mobile search box */
+    	#search-mobile {
+    		top: 115px !important;
+    		border-color: var(--border-color);
+    	}
+    		#search-mobile .navbar-form {
+    			padding: 10px;
+    		}
+    			#search-mobile input {
+    				width: 100%;
+    			}
+    			#search-mobile .form-button-search {
+    				border-radius: 50px !important;
+    			}
+    		#search-mobile .col-xs-12 {
+    			background-color: var(--nav-bg);
+    		}
+    			#search-mobile.collapse.in,
+    			#search-mobile.collapse.in * {
+    				display: block !important;
+    			}
+		#topbar-first .navbar-toggle[data-target="aside"] {
+			position: fixed;
+			top: 0px;
+			left: 55px;
+			z-index: 10;
+		}
+		/* change aside toggle icon */
+		.navbar-toggle .fa-ellipsis-v::before,
+		#topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+			content: "\f152";
+		}
+		body.aside-out .navbar-toggle .fa-ellipsis-v::before,
+		body.aside-out #topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+			content: "\f191";
+		}
+	#topbar-first .nav > .account {
+		right: 24px;
+	}
+	#nav-user-linkmenu.open .user-title {
+		display: block !important;
+	}
+	/* navbar labels will not fit for tablets in portrait */
+	#topbar-first .nav > li > a::after,
+	#topbar-first .topbar-nav #nav-notification::after{
+		display: none !important;
+	}
+    #jotOpen span,
+    #search-save span,
+    #mention-link span {
+        display: none;
+    }
+    	#jotOpen i,
+    	#search-save i,
+    	#mention-link i {
+    		width: 100%;
+    		text-align: center;
+    	}
+    #mention-link {
+    	padding: 0 8px !important;
+    }
+    #mention-link span:last-of-type {
+        display: none;
+    }
+    .offcanvas-right-overlay,
+    aside::before {
+    	background-color: rgba(255, 255, 255, 0.4);
+    }
+	/* Profile Aside Mobile */
+	body.mod-contact .row:has(.coverphoto) #content,
+	body.mod-profile .row:has(.coverphoto) #content,
+	body.mod-photos  .row:has(.coverphoto) #content {
+		margin-top: 350px;
+	}
+		/* This is for old browsers that do not understand either @supports or :has() */
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			position: absolute !important;
+		}
+		/* only seen on your own Contacts Page */
+		@supports not selector(:has(*)){
+			body.mod-contact #peoplefind-sidebar::before {
+				content: '\f0c0';
+				font-family: ForkAwesome;
+				font-size: 150px;
+				position: fixed;
+				top: 175px;
+				left: 0;
+				right: 0;
+				text-align: center;
+				color: var(--nav-icon-color);
+				opacity: .5;
+				z-index: -1;
+				transition-duration: .5s;
+				transition-property: left;
+			}
+				body.mod-contact aside.canvas-sliding #peoplefind-sidebar::before,
+				body.mod-contact aside.canvas-slid #peoplefind-sidebar::before {
+					left: 50%;
+				}
+		}
+		@supports selector(:has(*)){
+			/* for browsers that DO understand both @supports and :has() */
+			body.mod-contact aside,
+			body.mod-photos  aside,
+			body.mod-profile aside {
+				position: fixed !important;
+			}
+			body.mod-contact aside:has(#peoplefind-sidebar) + #content {
+				margin-top: 0;
+			}
+			/* Fix Scheduled Posts Page spacing
+				Note: aside not :empty because of whitespace,
+				:blank works but is poorly supported,
+				:not(has(*)) works but not in old browsers
+			*/
+			@supports not (background: -webkit-named-image(i)) {
+				body.mod-profile aside:not(:has(*)) + #content {
+					margin-top: 0;
+				}
+			}
+		}
+	body.mod-contact aside,
+	body.mod-photos  aside,
+	body.mod-profile aside {
+		margin-top: 0px !important;
+		left: -300px !important;
+		right: auto !important;
+		display: block !important;
+		padding-top: 120px;
+		transition-duration: .5s !important;
+		z-index: auto;
+	}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+			right: auto !important;
+			z-index: 20;
+		}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			position: fixed;
+			top: 150px;
+			left: 50%;
+			height: 150px;
+			width:  150px;
+			margin-left: -75px;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			position: fixed;
+			width: 100%;
+			top: 300px;
+			left: 50%;
+			margin-left: -50%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			position: fixed;
+			width: 50%;
+			top: 400px;
+			left: 50%;
+			margin-left: -25%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+			/* bounce effect */
+			body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+				margin-left: -150px;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+				margin-left: calc(-50% - 75px);
+			}
+			body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+			body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+			body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+				margin-left: -300px;
+			}
+			/* centered in right-hand side */
+			body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-slid #profile-photo-wrapper,
+			body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+				margin-left: -225px;
+			}
+			body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-slid .profile-header h3.p-name,
+			body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+				margin-left: calc(-50% - 150px);
+			}
+			body.mod-contact aside.canvas-slid .profile-header .p-addr,
+			body.mod-photos  aside.canvas-slid .profile-header .p-addr,
+			body.mod-profile aside.canvas-slid .profile-header .p-addr {
+				margin-left: calc(-25% - 150px);
+			}
+		/* Cover Photo Mobile */
+		.coverphoto.canvas-sliding,
+    	.coverphoto.canvas-slid{
+    		left: 0px !important;
+    		right: 0px !important;
+    		bottom: 0px;
+    		background-color: var(--background-color);
+    		overflow: visible;
+    	}
+    		.coverphoto.canvas-slid::after {
+    			content: '';
+    			position: absolute;
+    			top: 500px;
+    			left: 0px;
+    			width: 100%;
+    			height: 500%;
+    			display: block;
+    			background-color: var(--background-color);
+    		}
+		.wall-item-responses div p[class*="-expanded"] {
+			overflow-y: auto;
+		}
+}
+/*	Most Phones in Portrait Orientation
+	Large Screen Phones in Landscape Orientation
+	Some Small tablets in Portrait Orientation
+	======================================
+*/
+
+@media screen and (max-width: 768px), (max-height: 480px) and (max-width: 960px) and (orientation: landscape) {
+
+	/* ==========================================
+		1. Globale Layout-Anpassungen & Fixes
+		========================================== */
+	body {
+		padding-top: 65px !important;
+		/* Verhindert, dass die fixierte untere Navbar & der FAB echten Content verdecken */
+		padding-bottom: 300px !important;
+	}
+
+	/* Barrierefreiheit: sr-only visuell verstecken, aber für Screenreader lesbar lassen */
+	.topbar ul.nav li.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		border: 0;
+		display: block !important;
+	}
+
+	a.wall-item-name-link, span.fakelink {
+		font-weight: bold;
+	}
+
+	.wall-item-container iframe {
+		aspect-ratio: 5/4;
+	}
+
+	.justified-gallery > a,
+	.justified-gallery > div,
+	.justified-gallery > figure {
+		height: 25vw !important;
+		width:  25vw !important;
+	}
+
+	/*==========================================
+	 *  Ausblenden der Reaction Beschreibungen
+	 * =========================================*/
+	@media screen and (max-width: 768px), (max-height: 480px), (max-width: 960px) and (orientation: landscape) {
+	/* Deutsche und andere Sprachvarianten (z. B. de-DE, de-AT) */
+	[lang|="de"] .button-comments::after,
+	[lang|="de"] .button-announces::after,
+	[lang|="de"] .button-votes::after,
+	[lang|="de"] .button-likes::after,
+	[lang|="de"] [id^="dislike-"]::after,
+	[lang|="de"] .wall-item-actions-right .dropdown-toggle::after,
+	[lang|="de"] .more-links .dropdown-toggle::after,
+
+	/* Französische Sprachvarianten (z. B. fr, fr-FR, fr-CA) */
+	[lang|="fr"] .button-comments::after,
+	[lang|="fr"] .button-announces::after,
+	[lang|="fr"] .button-votes::after,
+	[lang|="fr"] .button-likes::after,
+	[lang|="fr"] [id^="dislike-"]::after,
+	[lang|="fr"] .wall-item-actions-right .dropdown-toggle::after,
+	[lang|="fr"] .more-links .dropdown-toggle::after,
+
+	/* Spanische Sprachvarianten (z. B. es, es-ES, es-MX) */
+	[lang|="es"] .button-comments::after,
+	[lang|="es"] .button-announces::after,
+	[lang|="es"] .button-votes::after,
+	[lang|="es"] .button-likes::after,
+	[lang|="es"] [id^="dislike-"]::after,
+	[lang|="es"] .wall-item-actions-right .dropdown-toggle::after,
+	[lang|="es"] .more-links .dropdown-toggle::after,
+
+	/* Fallback für .wall-item-emoji::after (kein lang-Attribut) */
+	.wall-item-emoji::after {
+		content: "";
+		/* oder: display: none; */
+	}
+
+/* ==========================================
+   2. DEV-FIX: Obere Headerzeile (Logo, Titel, Profil)
+   ========================================== */
+
+/* Zwingt das Friendica-Logo (großes blaues F) fest oben links in die Ecke */
+#banner,
+.navbar-brand,
+#friendica-logo-mask,
+#topbar-first .navbar-header a img:not(.avatar) {
+    position: fixed !important;
+    top: 8px !important;
+    left: 10px !important;
+    display: block !important;
+    visibility: visible !important;
+    height: 44px !important;
+    width: 44px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 1000 !important;
+}
+
+.modal {
+  z-index: 10001;
+}
+
+/* Stellt sicher, dass das Logo-Bild/die Maske die volle Box ausfüllt */
+#friendica-logo-mask,
+.navbar-brand img,
+#banner img {
+	display: block !important;
+	visibility: visible !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* Obere Menüleiste positionieren */
+#topbar-second {
+	top: 0;
+	padding: 0 65px;
+	height: 60px;
+	z-index: 100;
+	background-color: var(--nav-bg) !important;
+	border-bottom: 1px solid #333;
+}
+
+#topbar-second {
+  height: 40px;
+  top: none;
+  background-color: var(--nav-bg) !important;
+  z-index: 1029;
+  background-image: none;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #333;
+}
+
+#topbar-second div.container {
+	margin: 0 auto;
+	width: 100%;
+}
+
+#topbar-second #tabmenu {
+	width: 100%;
+}
+
+#topbar-second #tabmenu ul.tabbar.hidden-xs {
+	display: none !important;
+}
+
+#topbar-second #tabmenu ul.tabbar.visible-xs {
+	display: block !important;
+}
+
+#topbar-second ul.tabbar {
+	text-align: center;
+	max-width: 100%;
+}
+
+#topbar-second ul.tabbar > li:first-of-type {
+	max-width: 75%;
+	overflow: hidden;
+	margin-right: 50px;
+}
+
+#topbar-second ul.tabbar li:first-of-type ul.tabs,
+#topbar-second ul.tabbar li:first-of-type ul.tabs li {
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+#topbar-second ul.tabbar li:first-of-type ul.tabs li a {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#topbar-second ul.tabbar > li:last-of-type {
+	margin-left: -50px;
+	border-bottom: 4px solid var(--link-color);
+}
+
+#topbar-second ul.tabbar > li:last-of-type li.dropdown {
+	margin-left: 0 !important;
+}
+
+#dropdownMenuTools-xs {
+	height: 60px;
+}
+
+/* Avatar auf allen Geräten fest positionieren */
+#topbar-first .nav > .account,
+#topbar-first ul.nav li:has(img.avatar),
+#topbar-first .menu-avatar {
+	position: fixed !important;
+	display: block !important;
+	visibility: visible !important;
+	top: 10px !important;
+	right: 10px !important;
+	left: auto !important;
+	bottom: auto !important;
+	z-index: 100010 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+/* Avatar-Bild als Kreis erzwingen */
+#topbar-first .nav > .account img.avatar,
+#topbar-first ul.nav li img.avatar,
+#topbar-first .menu-avatar img.avatar {
+	border-radius: 50% !important;
+	width: 40px !important;
+	height: 40px !important;
+	object-fit: cover !important;
+	display: block !important;
+	margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+	/* Username im Dropdown-Menü ausblenden */
+	#topbar-first .nav > .account .dropdown-menu .user-title,
+	#topbar-first ul.nav li:has(img.avatar) .dropdown-menu .user-title,
+	#topbar-first .menu-avatar .dropdown-menu .user-title {
+		display: none !important;
+	}
+
+	/* E-Mail-Icon für Mobile-Ansicht (Bildschirmbreite < 768px) */
+	#message-new .btn span {
+		display: none;
+	}
+
+	/* Verhindert das Verschieben des Dropdowns (z. B. "Lokale Gemeinschaft") */
+	.tabbar-wrapper__link {
+		max-width: 100px;
+	}
+}
+
+/* Caret im Avatar-Bereich ausblenden */
+#topbar-first .nav > .account span.caret {
+	display: none !important;
+}
+
+	/* ==========================================
+		3. DEV-FIX: Untere Navbar (Saubere Icons für den Daumen)
+		========================================== */
+	#topbar-first {
+		top: auto;
+		bottom: 0;
+		position: fixed !important;
+		width: 100% !important;
+		height: 55px !important;
+		box-shadow: 2px 0px 5px var(--shadowglow);
+		z-index: 9999;
+	}
+
+	#topbar-first .topbar-nav .arrow {
+		display: none;
+	}
+
+	/* Versteckt die im HTML unten liegenden Original-Plätze von Logo und Profil,
+		da wir sie oben fest angepinnt haben */
+	#topbar-first .navbar-brand,
+	.topbar ul.nav > li:has(#banner),
+	.topbar ul.nav > li:has(.navbar-brand),
+	.topbar ul.nav > li.account,
+	.topbar ul.nav > li:has(img.avatar) {
+		display: none !important;
+	}
+
+	/* Zieht die echten Bedienelemente unten flüssig und ohne Überlagerung zusammen */
+	.topbar ul.nav {
+		position: relative !important;
+		left: 0 !important;
+		right: 0 !important;
+		display: flex !important;
+		justify-content: space-around !important;
+		margin: 0 auto !important;
+		padding: 0 10px !important;
+		width: 70% !important;
+		max-width: 480px !important;
+	}
+
+	/* Kompakte Breite pro Icon unten */
+	.topbar ul.nav > li {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+		flex: 1 1 auto !important;
+		height: 55px !important;
+		margin: 0 !important;
+		right: 20px;
+	}
+
+	#topbar-first .nav > li > a::after,
+	#topbar-first .topbar-nav #nav-notification::after {
+		display: var(--show-navbar-labels) !important;
+	}
+
+	#topbar-first .topbar-nav .nav-segment {
+		position: relative !important;
+		top: auto;
+		right: auto;
+		margin: 0px;
+	}
+
+	/* Unsichtbarer offcanvas-Toggle oben rechts */
+	#topbar-first .offcanvas-right-toggle {
+		position: fixed;
+		top: -3px;
+		right: 7px;
+		color: transparent;
+		z-index: 10000;
+	}
+
+	/* Sidebar-Toggle unten links platzieren */
+	#topbar-first .navbar-toggle[data-target="aside"] {
+		position: fixed;
+		top: auto;
+		left: auto;
+		bottom: 5px;
+	}
+
+	.navbar-toggle .fa-ellipsis-v::before,
+	#topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+		content: "\f152";
+	}
+
+	body.aside-out .navbar-toggle .fa-ellipsis-v::before,
+	body.aside-out #topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+		content: "\f191";
+	}
+
+	/* ==========================================
+		4. Suche & Floating Action Buttons (FAB)
+		========================================== */
+	#topbar-first .navbar-toggle[data-target="#search-mobile"] {
+		position: relative !important;
+		display: block !important;
+		top: 0;
+		left: 35px;
+		right: auto;
+		margin: 0;
+	}
+
+	#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) {
+		color: var(--link-color);
+		border-bottom: 3px solid var(--link-color);
+		background-color: transparent !important;
+		border-radius: 0 !important;
+		margin-top: 0px;
+	}
+
+	#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) .fa-search::before {
+		content: '\f00e';
+	}
+
+	#search-mobile { top: 60px !important; }
+	#search-mobile.collapse.in,
+	#search-mobile.collapse.in * {
+		display: block !important;
+	}
+
+	#search-box { display: none !important; }
+
+	#search-save { width: 100px !important; }
+	#search-save .fa-plus::after { content: var(--follow-button-text); }
+	#search-save .fa-floppy-o::after { content: var(--save-button-text); }
+
+	/* Floating Action Buttons (Jot, Save, Mention) */
+	#jotOpen, #search-save, #mention-link {
+		position: fixed;
+		bottom: 65px;
+		right: 10px;
+		border-radius: 100% !important;
+		height: 50px;
+		width: 50px !important;
+		line-height: 50px;
+		border: none !important;
+		box-shadow: none !important;
+	}
+
+	#mention-link span:last-of-type { display: none; }
+	#mention-link span:first-of-type {
+		float: none;
+		position: relative;
+		top: 2px;
+	}
+
+	#search-save .fa-plus::after,
+	#search-save .fa-floppy-o::after { display: none; }
+	#search-save .fa-plus::before,
+	#search-save .fa-floppy-o::before { content: '\f0c7' !important; }
+
+	.fa-edit::before,
+	.fa-pencil-square-o::before { content: "\f040"; }
+
+	#item-delete-selected {
+		top: 60px;
+		right: 10px;
+	}
+
+	/* ==========================================
+		5. Overlays, Menüs & Mod-spezifische Regeln
+		========================================== */
+	#nav-notifications-menu {
+		position: fixed;
+		top: 60px;
+		bottom: 51px;
+		left: 0;
+		right: 0;
+		width: 100% !important;
+		min-width: unset;
+		max-width: unset;
+		min-height: unset;
+		max-height: unset !important;
+		margin: 0 !important;
+		box-shadow: none;
+	}
+
+	#nav-notifications-menu::before {
+		content: '\EB98';
+		font-family: remixicon;
+		position: absolute;
+		top: 8px;
+		right: 12px;
+		height: 40px;
+		width:  40px;
+		background-color: var(--link-color);
+		color: white;
+		font-size: 24px;
+		border-radius: 100%;
+		line-height: 40px;
+		text-align: center;
+		display: block;
+	}
+
+	#offcanvasUsermenu { background-color: var(--nav-bg) !important; }
+	#offcanvasUsermenu ul.list-group { box-shadow: none !important; }
+	#offcanvasUsermenu ul.list-group li:first-of-type img {
+		max-width: unset  !important;
+		max-height: unset  !important;
+		height: 40px  !important;
+		width:  40px  !important;
+		border-radius: 100% !important;
+	}
+
+	#offcanvasUsermenu li.divider { display: none !important; }
+	#offcanvasUsermenu li.list-group-item,
+	#offcanvasUsermenu li.list-group-item a {
+		border: transparent !important;
+		background-color: transparent !important;
+		color: var(--nav-icon-color) !important;
+		margin: 0 auto;
+		padding: 5px 15px;
+	}
+
+	#offcanvasUsermenu li.list-group-item:hover {
+		background-color: #333 !important;
+		border-radius: 8px !important;
+	}
+	#offcanvasUsermenu li.list-group-item:hover a { color: #fff !important; }
+	#offcanvasUsermenu li.list-group-item:first-of-type:hover { background-color: revert !important; }
+
+	#topbar-second ul.dropdown-menu {
+		position: fixed;
+		top: 58px;
+		left: 0px;
+		right: 0px;
+		bottom: 50px;
+		width: 100% !important;
+		overflow: auto !important;
+		overflow-x: hidden !important;
+	}
+
+	#topbar-second ul.dropdown-menu li { height: auto !important; }
+	#topbar-second ul.dropdown-menu li a,
+	.tabs ul.dropdown-menu li a,
+	.topbar .dropdown-header,
+	.topbar .dropdown-header .dropdown-header-link .btn-link {
+		font-size: 18px !important;
+	}
+	.topbar .dropdown-header .dropdown-header-link .btn-link { margin-right: 40px; }
+
+	aside.offcanvas-xs {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	/* Mod-Anpassungen (Profile, Contacts, Jot) */
+	body.mod-community #jotOpen { line-height: 30px; }
+	body.mod-profile #sidebar-photos-albums::before { top: 125px; }
+
+	body.mod-contact aside #profile-photo-wrapper,
+	body.mod-photos  aside #profile-photo-wrapper,
+	body.mod-profile aside #profile-photo-wrapper { top: 100px; }
+
+	body.mod-contact .profile-header h3.p-name,
+	body.mod-photos  .profile-header h3.p-name,
+	body.mod-profile .profile-header h3.p-name { top: 255px; }
+
+	body.mod-contact .profile-header .p-addr,
+	body.mod-photos  .profile-header .p-addr,
+	body.mod-profile .profile-header .p-addr { top: 345px; }
+
+	.coverphoto,
+	.coverphoto.canvas-sliding,
+	.coverphoto.canvas-slid { top: 55px; }
+
+	#message-new a {
+		height: 50px;
+		width:  50px;
+		background-color: var(--link-color);
+		line-height: 50px;
+		font-size: 24px;
+		text-align: center;
+		border-radius: 100%;
+		display: block;
+		color: white;
+		padding: 0;
+	}
+	#message-new a::after { content: ''; }
+	#message-new:hover a,
+	#message-new:focus a {
+		box-shadow: inset 0 0 100px var(--dimbright);
+		border-radius: 100%;
+	}
+
+	.intro-actions {
+		position: relative;
+		float: none !important;
+	}
+
+	#profile-jot-plugin-wrapper { width: 100%; }
+
+	#photo-edit-link-wrap.pull-right a {
+		font-size: 0px;
+		border-radius: 100% !important;
+		height: 40px;
+		width:  40px;
+		text-align: center;
+		padding: 7px 0 0 0;
+		line-height: 40px;
+	}
+	#photo-edit-link-wrap.pull-right a i { font-size: 24px; }
+
+	.dropdown-mobile-jot > .dropdown-toggle.btn-primary {
+		background-color: transparent;
+		color: var(--link-color);
+		border-radius: 8px;
+	}
+	.dropdown-mobile-jot > .dropdown-toggle.btn-primary:hover,
+	.dropdown-mobile-jot > .dropdown-toggle.btn-primary:focus {
+		background-color: var(--dimbright);
+	}
+	.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
+		background-color: var(--link-color);
+		color: white;
+		border-radius: 8px;
+	}
+	.dropdown-mobile-jot ul.dropdown-menu li { margin: 3px auto; }
+	.dropdown-mobile-jot ul.dropdown-menu .btn-link { min-width: 90%; }
+	}
+
+/* LOGIN AND INFO SCREENS */
+body.mod-home {
+	padding-top: 10px !important;
+}
+
+.mod-home .navbar,
+.mod-home #topbar-second {
+	background-color: transparent !important;
+}
+
+.mod-home #nav-about {
+	background-color: var(--link-color);
+	height: 50px;
+	width: 50px;
+	color: white !important;
+	border-radius: 50% !important;
+	right: 15px;
+}
+
+.mod-home #nav-about:hover,
+.mod-home #nav-about:focus {
+	background-color: var(--link-color) !important;
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+.mod-home #nav-about .fa-info {
+	line-height: 24px;
+	width: auto;
+	display: block;
+}
+
+@media screen and (max-width: 768px) {
+	.mod-home #nav-about .fa-info {
+		line-height: 32px;
+	}
+}
+
+
+/* Problemumgehung iOS Sichtbarkeit Profilbild */
+body.mod-profile #profile-photo-wrapper {
+	top: 100px !important; /* Oder ein anderer sichtbarer Wert */
+	opacity: 1 !important;
+	visibility: visible !important;
+	/* Falls transform verwendet wird und stört */
+	transform: none !important;
+}
+
+/*=============
+ * Ende
+ * ===========*/
