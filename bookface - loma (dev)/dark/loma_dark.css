@@ -862,114 +862,114 @@ Element {
 
 /* Emoji-Picker Container */
 .fg-emoji-container {
-  background-color: var(--emoji-bg-primary) !important;
-  backdrop-filter: blur(25px) !important;
-  border: 1px solid var(--emoji-border-color) !important;
-  border-radius: var(--emoji-border-radius) !important;
-  box-shadow: var(--emoji-shadow) !important;
-  overflow: visible !important;
+	background-color: var(--emoji-bg-primary) !important;
+	backdrop-filter: blur(25px) !important;
+	border: 1px solid var(--emoji-border-color) !important;
+	border-radius: var(--emoji-border-radius) !important;
+	box-shadow: var(--emoji-shadow) !important;
+	overflow: visible !important;
 }
 
 /* Navigation */
 .fg-emoji-nav,
 .fg-emoji-nav ul {
-  background-color: var(--emoji-bg-secondary) !important;
-  border-bottom: 1px solid var(--emoji-border-subtle) !important;
+	background-color: var(--emoji-bg-secondary) !important;
+	border-bottom: 1px solid var(--emoji-border-subtle) !important;
 }
 
 .fg-emoji-nav {
-  height: 38px !important;
-  display: flex !important;
-  align-items: center !important;
-  padding: 0 5px !important;
-  position: relative !important;
-  z-index: 10 !important;
+	height: 38px !important;
+	display: flex !important;
+	align-items: center !important;
+	padding: 0 5px !important;
+	position: relative !important;
+	z-index: 10 !important;
 }
 
 .fg-emoji-nav ul {
-  display: flex !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-  align-items: center !important;
+	display: flex !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	list-style: none !important;
+	align-items: center !important;
 }
 
 .fg-emoji-nav li a {
-  width: 32px !important;
-  height: 32px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: var(--emoji-text-secondary) !important;
-  opacity: 0.7;
-  font-size: 14px !important;
+	width: 32px !important;
+	height: 32px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	color: var(--emoji-text-secondary) !important;
+	opacity: 0.7;
+	font-size: 14px !important;
 }
 
 .fg-emoji-nav li.active a {
-  color: var(--emoji-text-active) !important;
-  opacity: 1;
-  background: var(--emoji-active-bg);
-  border-radius: var(--emoji-border-radius-sm);
+	color: var(--emoji-text-active) !important;
+	opacity: 1;
+	background: var(--emoji-active-bg);
+	border-radius: var(--emoji-border-radius-sm);
 }
 
 .fg-emoji-nav-item {
-  height: 28px !important;
-  line-height: 28px !important;
-  padding: 0 10px !important;
-  margin-left: 4px !important;
-  font-size: 13px !important;
-  border-radius: var(--emoji-border-radius-xs) !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: relative !important;
-  z-index: 20 !important;
+	height: 28px !important;
+	line-height: 28px !important;
+	padding: 0 10px !important;
+	margin-left: 4px !important;
+	font-size: 13px !important;
+	border-radius: var(--emoji-border-radius-xs) !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	position: relative !important;
+	z-index: 20 !important;
 }
 
 /* Search */
 .fg-emoji-picker-search {
-  background-color: var(--emoji-bg-tertiary) !important;
-  padding: 8px !important;
-  position: relative !important;
+	background-color: var(--emoji-bg-tertiary) !important;
+	padding: 8px !important;
+	position: relative !important;
 }
 
 .fg-emoji-picker-search input {
-  background-color: var(--emoji-bg-input) !important;
-  color: var(--emoji-text-primary) !important;
-  border: 1px solid var(--emoji-border-color) !important;
-  border-radius: var(--emoji-border-radius-sm) !important;
-  height: 32px !important;
-  padding: 0 10px !important;
+	background-color: var(--emoji-bg-input) !important;
+	color: var(--emoji-text-primary) !important;
+	border: 1px solid var(--emoji-border-color) !important;
+	border-radius: var(--emoji-border-radius-sm) !important;
+	height: 32px !important;
+	padding: 0 10px !important;
 }
 
 /* Category Title */
 .fg-emoji-picker-category-title {
-  color: var(--emoji-text-primary) !important;
-  background-color: var(--emoji-bg-secondary) !important;
-  font-weight: 700 !important;
-  padding: 6px 15px !important;
-  font-size: 13px !important;
-  border-bottom: 1px solid var(--emoji-border-subtle) !important;
+	color: var(--emoji-text-primary) !important;
+	background-color: var(--emoji-bg-secondary) !important;
+	font-weight: 700 !important;
+	padding: 6px 15px !important;
+	font-size: 13px !important;
+	border-bottom: 1px solid var(--emoji-border-subtle) !important;
 }
 
 /* Emoji List */
 .fg-emoji-list,
 .fg-emoji-picker-category-wrapper {
-  background-color: var(--emoji-bg-secondary) !important;
+	background-color: var(--emoji-bg-secondary) !important;
 }
 
 .fg-emoji-list {
-  border-radius: 0 0 var(--emoji-border-radius) var(--emoji-border-radius) !important;
+	border-radius: 0 0 var(--emoji-border-radius) var(--emoji-border-radius) !important;
 }
 
 .fg-emoji-list li a {
-  background-color: transparent !important;
-  transition: background 0.2s ease;
+	background-color: transparent !important;
+	transition: background 0.2s ease;
 }
 
 .fg-emoji-list li a:hover {
-  background-color: var(--emoji-hover-bg) !important;
-  border-radius: var(--emoji-border-radius-sm) !important;
+	background-color: var(--emoji-hover-bg) !important;
+	border-radius: var(--emoji-border-radius-sm) !important;
 }
 
 /* Größe Profilbilder Thread */
