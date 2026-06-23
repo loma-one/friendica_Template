@@ -71,7 +71,11 @@ html body {
 /* Suche angepasst */
 .form-control {
 	height: 35px;
-	border-radius: 4px;
+	border-radius: 10px;
+}
+
+.dropzone.dz-clickable {
+	border-radius: 10px;
 }
 
 #search-box {
@@ -89,6 +93,14 @@ html body {
 	width: 100%;
 }
 
+/*===============
+ * Kontowechsel
+ * =============*/
+
+button img {
+	border-radius: 50px !important;
+}
+
 /* ===============
  * Toolbar
  * ===============*/
@@ -96,6 +108,7 @@ html body {
 /* Iconfarbe Topbar*/
 :is(#topbar-first .nav > li, nav.navbar .nav > li) :is(a, button) {
 	color: var(--nav-icon-color);
+	border-radius: 15px;
 }
 
 #topbar-first .nav > li > a.selected i {
@@ -138,12 +151,6 @@ html body {
 /* Profil-Usericon rechts beim Überscrollen der Timeline */
 #vcard-short-info, #nav-short-info .contact-wrapper {
 	margin-top: 15px;
-}
-
-/* Icons vor Login */
-:is(#topbar-first .nav > li, nav.navbar .nav > li) :is(a, button) {
-  color: var(--nav-icon-color);
-  border-radius: 25px;
 }
 
 /*================================
@@ -204,6 +211,57 @@ a.tag .ri-flashlight-line {
 	color: #aaa !important;
 	cursor: default !important;
 	opacity: 0.6 !important;
+}
+
+/* ==================
+ * Tags
+ * =================*/
+
+/* Standardzustand für alle Labels */
+a.tag.label,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label {
+    border-radius: 4px !important;
+    display: inline-flex !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    padding: 4px 6px !important;
+    text-decoration: none !important;
+    margin: 1px !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: #313131 !important;
+    border: 1px solid #65686c;
+    text-shadow: none !important;
+}
+
+/* Standardzustand für border-primary: Rahmen und Schriftzug in darkgoldenrod */
+.tags .tag.border-primary,
+.tags .tag.border-primary a {
+    border-color: darkgoldenrod !important;
+    color: darkgoldenrod !important;
+    text-decoration: none;
+}
+
+/* Styling für Links in Tags (Block-Darstellung und Padding) */
+.tags .tag.border-primary a,
+.tag bdi a,
+.tag:has(.filerm) a:first-child,
+a.tag {
+    display: inline-block;
+    padding: 2px 6px;
+}
+
+/* Hover-Zustand für border-primary: Hintergrund und Schriftzug in Weiß */
+.tags .tag.border-primary:hover,
+.tags .tag.border-primary:hover a {
+    color: white !important;
+    background-color: darkgoldenrod !important;
+    border-color: darkgoldenrod !important;
+}
+
+/* Standardfarbe für Links in wall-item-bottom */
+.wall-item-bottom .label a {
+    color: #666;
 }
 
 /* =================================
@@ -438,7 +496,7 @@ textarea.text-autosize {
 
 /* Startseite: Verhindert Button Farbe */
 .nav.navbar-nav.navbar-right {
-    background-color: #fff !important;
+    background-color: none;
 }
 
 .nav.navbar-nav.navbar-right .btn.btn-primary {
@@ -514,7 +572,7 @@ th {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
   background-repeat: repeat-x;
   border-color: #e9e9e9;
-  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.1);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.0);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0),0 1px 0 rgba(255, 255, 255, 0);
 }
 
@@ -721,26 +779,6 @@ a img.network-svg {
   height: 18px;
 }
 
-/* Tag Wolke auf passende Farbe umgestellt */
-
-a.tag.label,
-.wall-item-container .wall-item-bottom .wall-item-tags span.label {
-	border-radius: 4px !important;
-	display: inline-flex !important;
-	font-size: 11px !important;
-	font-weight: 500 !important;
-	padding: 4px 6px !important;
-	-webkit-text-decoration: none !important;
-	text-decoration: none !important;
-	margin: 1px !important;
-	background-image: none !important;
-	background-color: transparent !important;
-	box-shadow: none !important;
-	color: #313131 !important;
-	border: 1px solid #65686c;
-	text-shadow: none !important;
-}
-
 .nav-pills .dropdown-menu li a,
 .nav-pills .dropdown-menu li .btn-link,
 .nav-tabs .dropdown-menu li a,
@@ -856,7 +894,6 @@ ul.tabs li:hover:not(.active) a {
 	border-radius: 25px !important;
 	margin-bottom: 10px !important;
 }
-
 
 .tread-wrapper {
 	transition: box-shadow 0.2s ease;
@@ -1372,7 +1409,6 @@ iframe {
 }
 
 
-
 /* TAGS, CATEGORIES, MENTIONS BUTTONS
    ==================================
    Restyled to be less obnoxious and tiny
@@ -1383,7 +1419,7 @@ iframe {
 	color: inherit;
 }
 .wall-item-bottom .label a {
-	color: inherit;
+	color: #666;
 }
 /* hide lightning bolt and person icons
 		   pretty sure people know what "#" and "@" mean now
