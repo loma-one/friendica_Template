@@ -259,6 +259,67 @@ a.tag .ri-flashlight-line {
 	opacity: 0.6 !important;
 }
 
+/* ==================
+ * Tags
+ * =================*/
+
+/* Standardzustand für alle Labels */
+
+a.tag.label,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label {
+    border-radius: 4px !important;
+    display: inline-flex !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    padding: 4px 6px !important;
+    text-decoration: none !important;
+    margin: 1px !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: #ccc !important;
+    border: 1px solid #65686c;
+    text-shadow: none !important;
+}
+
+/* Standardzustand für border-primary: Rahmen und Schriftzug in darkgoldenrod */
+.tags .tag.border-primary,
+.tags .tag.border-primary a {
+    border-color: darkgoldenrod !important;
+    color: darkgoldenrod !important;
+}
+
+/* Styling für Links in Tags (Block-Darstellung und Padding) */
+.tags .tag.border-primary a,
+.tag bdi a,
+.tag:has(.filerm) a:first-child,
+a.tag {
+    display: inline-block;
+    padding: 2px 6px;
+}
+
+/* Hover-Zustand für border-primary: Hintergrund und Schriftzug in Weiß */
+.tags .tag.border-primary:hover,
+.tags .tag.border-primary:hover a {
+    color: white !important;
+    background-color: darkgoldenrod !important;
+    border-color: darkgoldenrod !important;
+}
+
+/* Hover-Zustand für andere Labels: Dunkleres Grau */
+a.tag.label:not(.border-primary):hover,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:not(.border-primary):hover,
+a.tag.label:not(.border-primary):hover bdi a,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:not(.border-primary):hover bdi a {
+    color: #333 !important;
+    background-color: #65686c !important;
+    border-color: #65686c !important;
+}
+
+/* Standardfarbe für Links in wall-item-bottom */
+.wall-item-bottom .label a {
+    color: #666;
+}
+
 /* =================================
  * Beschriftung der Reaction in 4 Sprachen
  * =================================*/
@@ -1029,25 +1090,6 @@ a img.network-svg {
 .network-svg {
 	width: 18px;
 	height: 18px;
-}
-
-
-/* Tag-Wolke */
-a.tag.label,
-.wall-item-container .wall-item-bottom .wall-item-tags span.label {
-	border-radius: 4px !important;
-	display: inline-flex !important;
-	font-size: 11px !important;
-	font-weight: 500 !important;
-	padding: 4px 6px !important;
-	text-decoration: none !important;
-	margin: 1px !important;
-	background-image: none !important;
-	background-color: transparent !important;
-	box-shadow: none !important;
-	color: #ccc !important;
-	border: 1px solid #65686c;
-	text-shadow: none !important;
 }
 
 /* Dropdown-Menü-Stile */
