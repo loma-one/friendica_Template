@@ -191,7 +191,7 @@ button img {
 
 .btn-link.fakelink::before {
 	font-family: remixicon;
-	content: "\EA6E";
+	content: "\EF3F";
 	font-size: 1em;
 }
 
@@ -217,7 +217,7 @@ button img {
 
 .loading-text::before {
 	font-family: remixicon;
-	content: "\EA6E";
+	content: "\EF3F";
 	font-size: 1em;
 }
 
