@@ -153,6 +153,78 @@ button img {
 	margin-top: 15px;
 }
 
+/*=============================
+ * Nachladen von Beiträgen, wenn
+ * "Compact view" aktiviert ist
+ * ===========================*/
+
+/* Container für die untere Leiste des Beitrags */
+.wall-item-bottom {
+    padding: 2px 0;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Links-Bereich (falls später Inhalte hinzugefügt werden) */
+.wall-item-links {
+    flex-grow: 1;
+}
+
+/* Button zum Nachladen von Kommentaren */
+.btn-link.fakelink {
+    background: none;
+    border: none;
+    color: var(--link_color)
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: inherit;
+    transition: background-color 0.2s, color 0.2s;
+    order: -1;
+}
+
+.btn-link.fakelink:hover {
+    background-color: var(--background_color);
+    color: #004499;
+    text-decoration: none;
+}
+
+.btn-link.fakelink:active {
+    background-color: var(background-color);
+}
+
+/* Lade-Animation und Text */
+.loading-text {
+    color: var(--link_color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+}
+
+/* Animation für den Lade-Indikator */
+.like-rotator {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 600px) {
+    .wall-item-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .wall-item-links {
+        width: 100%;
+    }
+}
+
 /*================================
  * Benachrichtigung Termine/Geburtstage
  * ===============================*/
@@ -224,7 +296,7 @@ a.tag.label,
     display: inline-flex !important;
     font-size: 11px !important;
     font-weight: 500 !important;
-    padding: 4px 6px !important;
+    padding: 2px 3px !important;
     text-decoration: none !important;
     margin: 1px !important;
     background-image: none !important;
