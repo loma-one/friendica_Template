@@ -160,69 +160,85 @@ button img {
 
 /* Container für die untere Leiste des Beitrags */
 .wall-item-bottom {
-    padding: 2px 0;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    justify-content: flex-start;
+	padding: 2px 0;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 /* Links-Bereich (falls später Inhalte hinzugefügt werden) */
 .wall-item-links {
-    flex-grow: 1;
+	flex-grow: 1;
 }
 
 /* Button zum Nachladen von Kommentaren */
 .btn-link.fakelink {
-    background: none;
-    border: none;
-    color: var(--link_color)
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: inherit;
-    transition: background-color 0.2s, color 0.2s;
-    order: -1;
+	background: none;
+	border: none;
+	color: var(--link_color);
+	cursor: pointer;
+	padding: 4px 15px;
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: inherit;
+	transition: background-color 0.2s, color 0.2s;
+	order: -1;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.btn-link.fakelink::before {
+	font-family: remixicon;
+	content: "\EA6E";
+	font-size: 1em;
 }
 
 .btn-link.fakelink:hover {
-    background-color: var(--background_color);
-    color: #004499;
-    text-decoration: none;
+	background-color: var(--background_color);
+	color: #004499;
+	text-decoration: none;
 }
 
 .btn-link.fakelink:active {
-    background-color: var(background-color);
+	background-color: var(--background_color);
 }
 
 /* Lade-Animation und Text */
 .loading-text {
-    color: var(--link_color);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 8px;
+	color: var(--link_color);
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 15px;
+	order: -1;
+}
+
+.loading-text::before {
+	font-family: remixicon;
+	content: "\EA6E";
+	font-size: 1em;
 }
 
 /* Animation für den Lade-Indikator */
 .like-rotator {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
 }
 
 /* Responsive Anpassungen */
 @media (max-width: 600px) {
-    .wall-item-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-    }
+	.wall-item-bottom {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 6px;
+	}
 
     .wall-item-links {
-        width: 100%;
-    }
+		width: 100%;
+	}
 }
 
 /*================================
