@@ -67,6 +67,37 @@ body {
 	border-bottom: 1px solid #333;
 }
 
+/*==================
+ * Addon: LibreTranslate
+ * ================*/
+
+.libretranslate-trigger::before {
+  content: "\F227";
+  font-family: "remixicon", sans-serif;
+  margin-right: 0.3em;
+  font-size: 1em;
+  vertical-align: middle;
+  speak: none;
+}
+
+.libretranslate-trigger {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3em;
+  padding: 2px 4px !important;
+  cursor: pointer;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin: 1px !important;
+  background-image: none !important;
+  background-color: #2b2b2b1f !important;
+  box-shadow: none !important;
+  color: #414141 !important;
+  text-shadow: none !important;
+}
+
 /* ===============
  * Suchen Bereich
  * ===============*/
@@ -353,7 +384,6 @@ a.tag .ri-flashlight-line {
 
 /* Standardzustand für alle Labels */
 
-a.tag.label,
 .wall-item-container .wall-item-bottom .wall-item-tags span.label {
     border-radius: 4px !important;
     display: inline-flex !important;
@@ -881,20 +911,19 @@ button, input, select, textarea {
  * Hover-Einstellungen
  * ======================*/
 
-.hover-card-footer,
-.hovercard.top > .arrow::after,
-.hovercard.right > .arrow::after,
-.hovercard.bottom > .arrow::after {
-	border-color: var(--nav-bg);
+.hover-card-pic img.thumbnail {
+    border-radius: 50% !important;
 }
 
 .hover-card-footer {
-	background-color: var(--nav-bg);
+    border-color: #333;
+    background-color: var(--nav-bg);
 }
 
-.hover-card-pic img.thumbnail {
-	border-radius: 50% !important;
-}
+.hovercard.top > .arrow::after    { border-top-color: var(--nav-bg); }
+.hovercard.right > .arrow::after  { border-right-color: var(--nav-bg); }
+.hovercard.bottom > .arrow::after { border-bottom-color: var(--nav-bg); }
+.hovercard.left > .arrow::after   { border-left-color: var(--nav-bg); }
 
 /* Hover-Farbe für die Event-Navigations-Buttons anpassen */
 #event-nav.nav-tabs > li > a:hover,
@@ -1215,25 +1244,6 @@ a img.network-svg {
 /* Navbar-Formular */
 .navbar-form {
 	margin: 10px 0;
-}
-
-/* +Addon: LibreTranslate */
-
-.libretranslate-trigger {
-	padding: 0;
-	cursor: pointer;
-	border-radius: 4px !important;
-	display: inline-flex !important;
-	font-size: 10px !important;
-	font-weight: 500 !important;
-	padding: 2px 4px !important;
-	text-decoration: none !important;
-	margin: 1px !important;
-	background-image: none !important;
-	background-color: #b3b3b31f !important
-	box-shadow: none !important;
-	color: #999 !important;
-	text-shadow: none !important;
 }
 
 /* Position neue Nachrichten */
