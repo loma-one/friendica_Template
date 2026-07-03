@@ -64,6 +64,37 @@ html body {
 	height: 60px !important;
 }
 
+/*==================
+ * Addon: LibreTranslate
+ * ================*/
+
+.libretranslate-trigger::before {
+  content: "\F227";
+  font-family: "remixicon", sans-serif;
+  margin-right: 0.3em;
+  font-size: 1em;
+  vertical-align: middle;
+  speak: none;
+}
+
+.libretranslate-trigger {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3em;
+  padding: 2px 4px !important;
+  cursor: pointer;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin: 1px !important;
+  background-image: none !important;
+  background-color: #2b2b2b1f !important;
+  box-shadow: none !important;
+  color: #414141 !important;
+  text-shadow: none !important;
+}
+
 /* ===============
  * Suchen Bereich
  * ===============*/
@@ -306,7 +337,7 @@ a.tag .ri-flashlight-line {
  * =================*/
 
 /* Standardzustand für alle Labels */
-a.tag.label,
+
 .wall-item-container .wall-item-bottom .wall-item-tags span.label {
     border-radius: 4px !important;
     display: inline-flex !important;
@@ -709,13 +740,6 @@ aside .widget,
  * Hover-Einstellungen
  * ======================*/
 
-.hover-card-footer,
-.hovercard.top > .arrow::after,
-.hovercard.right > .arrow::after,
-.hovercard.bottom > .arrow::after {
-	border-color: var(--nav-bg);
-}
-
 .hover-card-footer {
 	background-color: var(--nav-bg);
 }
@@ -883,25 +907,6 @@ a img.network-svg {
 .navbar-form {
 	margin-top: 10px;
 	margin-bottom: 10px;
-}
-
-/* +Addon: LibreTranslate */
-
-.libretranslate-trigger {
-	padding: 0;
-	cursor: pointer;
-	border-radius: 4px !important;
-	display: inline-flex !important;
-	font-size: 10px !important;
-	font-weight: 500 !important;
-	padding: 2px 4px !important;
-	text-decoration: none !important;
-	margin: 1px !important;
-	background-image: none !important;
-	background-color: #2b2b2b1f !important;
-	box-shadow: none !important;
-	color: #414141 !important;
-	text-shadow: none !important;
 }
 
 /* Position neue Nachrichten */
