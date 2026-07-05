@@ -64,37 +64,6 @@ html body {
 	height: 60px !important;
 }
 
-/*==================
- * Addon: LibreTranslate
- * ================*/
-
-.libretranslate-trigger::before {
-  content: "\F227";
-  font-family: "remixicon", sans-serif;
-  margin-right: 0.3em;
-  font-size: 1em;
-  vertical-align: middle;
-  speak: none;
-}
-
-.libretranslate-trigger {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 0.3em;
-  padding: 2px 4px !important;
-  cursor: pointer;
-  border-radius: 4px !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-  margin: 1px !important;
-  background-image: none !important;
-  background-color: #2b2b2b1f !important;
-  box-shadow: none !important;
-  color: #414141 !important;
-  text-shadow: none !important;
-}
-
 /* ===============
  * Suchen Bereich
  * ===============*/
@@ -132,6 +101,26 @@ button img {
 	border-radius: 50px !important;
 }
 
+/*======================
+ * Menue + Position Profilbild
+ * =====================*/
+
+.dropdown-menu li {
+	width: 95%;
+}
+
+.profile-link a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+}
+
+.profile-link img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
 /* ===============
  * Toolbar
  * ===============*/
@@ -159,8 +148,8 @@ button img {
 }
 
 /* ====================
- *Icongröße Topbar Mitte */
-=====================*/
+ * Icongröße Topbar Mitte
+ * =====================*/
 
 .ri-xl {
 	font-size: 1.875em;
@@ -532,7 +521,7 @@ textarea.text-autosize {
 	border: 1px solid var(--background-color) !important;
 
 	a {
-		color: var(--font-color)];
+		color: var(--font-color);
 	}
 
 	li {
@@ -616,9 +605,9 @@ textarea.text-autosize {
   padding-top: 14px;
 }
 
-/======================
+/*======================
  * Profil-/Icon vor Protokolle
- *  ======================
+ *  ====================*/
 
 #profile-photo-wrapper {
 	overflow: visible !important;
@@ -865,16 +854,6 @@ Element {
 .contact-photo {
 	border-radius: 100% !important;
 	border: 1px solid #eee !important;
-}
-
-.contact-photo-xs {
-	border-radius: 50% !important;
-	object-position: left 50% top 50%;
-	height: 25px;
-	width: 25px;
-	object-fit: cover;
-	transition-duration: 0ms;
-	transition-timing-function: linear;
 }
 
 .contact-photo-xs {
