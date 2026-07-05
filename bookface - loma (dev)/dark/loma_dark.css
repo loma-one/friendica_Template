@@ -178,7 +178,7 @@ button img {
 	margin-top: 15px;
 }
 
-/*=============================
+/* =============================
  * Nachladen von Beiträgen, wenn
  * "Compact view" aktiviert ist
  * ===========================*/
@@ -198,7 +198,7 @@ button img {
 }
 
 /* Button zum Nachladen von Kommentaren */
-.btn-link.fakelink {
+.wall-item-bottom .btn-link.fakelink {
 	background: none;
 	border: none;
 	color: var(--link_color);
@@ -214,24 +214,25 @@ button img {
 	gap: 6px;
 }
 
-.btn-link.fakelink::before {
+/* Icon nur für den "Load more comments"-Button */
+.wall-item-bottom .btn-link.fakelink::before {
 	font-family: remixicon;
 	content: "\EF3F";
 	font-size: 1em;
 }
 
-.btn-link.fakelink:hover {
+.wall-item-bottom .btn-link.fakelink:hover {
 	background-color: var(--background_color);
 	color: #004499;
 	text-decoration: none;
 }
 
-.btn-link.fakelink:active {
+.wall-item-bottom .btn-link.fakelink:active {
 	background-color: var(--background_color);
 }
 
 /* Lade-Animation und Text */
-.loading-text {
+.wall-item-bottom .loading-text {
 	color: var(--link_color);
 	display: flex;
 	align-items: center;
@@ -240,7 +241,8 @@ button img {
 	order: -1;
 }
 
-.loading-text::before {
+/* Icon nur für den Lade-Text im wall-item-bottom */
+.wall-item-bottom .loading-text::before {
 	font-family: remixicon;
 	content: "\EF3F";
 	font-size: 1em;
