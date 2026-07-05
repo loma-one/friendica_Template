@@ -127,6 +127,26 @@ button img {
 	border-radius: 50px !important;
 }
 
+/*======================
+ * Menue + Position Profilbild
+ * =====================*/
+
+.dropdown-menu li {
+	width: 95%;
+}
+
+.profile-link a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+}
+
+.profile-link img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
 /* ===============
  * Toolbar
  * ===============*/
@@ -1157,16 +1177,6 @@ Element {
 .contact-photo {
 	border-radius: 100% !important;
 	border: 1px solid #353535 !important
-}
-
-.contact-photo-xs {
-	border-radius: 50% !important;
-	object-position: left 50% top 50%;
-	height: 25px;
-	width: 25px;
-	object-fit: cover;
-	transition-duration: 0ms;
-	transition-timing-function: linear;
 }
 
 .contact-photo-xs {
