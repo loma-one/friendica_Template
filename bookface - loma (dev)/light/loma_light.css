@@ -290,10 +290,15 @@ button img {
 	font-size: 15px;
 }
 
+/*==================
+ * Gespeicherte Ordner
+ * =================*/
+
+/*???*/
+
 /* ================
  * Reaction Hashtags
  * ================*/
-
 
 /* Icons in Hashtags und Mentions ausblenden */
 .wall-item-tags .tag .ri-flashlight-line,
@@ -511,26 +516,43 @@ textarea.text-autosize {
  *  Benachrichtigungen
  * =======================*/
 
-.dropdown-menu {
-	padding-bottom: 15px !important;
-	background-color: var(--nav-bg) !important;
+/* Schriftfarne Benachrichtigung Übersicht */
+.notif-item a {
+	color: var(--font-color);
+	font-size: 14px;
+}
+
+/* Benachrichtigung und alle darin liegenden Elemente */
+#topbar-first #nav-notifications-menu {
 	border: 1px solid var(--background-color) !important;
-	border-radius: 10px;
+
+	a {
+		color: var(--font-color)];
+	}
+
+	li {
+		border-color: transparent !important;
+		box-sizing: border-box;
+		margin: 10px;
+		border-radius: 10px !important;
+		width: 94% !important;
+
+		/* Hover-Effekt für Listenelemente */
+		&.notif-entry:hover {
+			background-color: rgba(128, 128, 128, 0.2) !important;
+			border-color: transparent !important;
+		}
+	}
 }
 
-.dropdown-menu li {
-	width: 92% !important;
-	border-radius: 10px;
+#topbar-first .notification-unseen {
+	border-left: var(--background-color);
+	background-color: var(--background-color);
 }
 
-.dropdown-menu li:hover {
-	border-color: transparent !important;
-}
-
-.form-control[readonly],
-.form-control[disabled],
-.fieldset[disabled] .form-control {
-	opacity: 0.5;
+#topbar-first #nav-notifications-menu li.notif-entry .media-object a img,
+.notif-item img.notif-image {
+    border-radius: 50%;
 }
 
 /* ===============
