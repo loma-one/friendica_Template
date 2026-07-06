@@ -41,6 +41,37 @@
 	font-weight: 450; /* Lesbarkeit von Text erhöhen */
 }
 
+/*==================
+ * Addon: LibreTranslate
+ * ================*/
+
+.libretranslate-trigger::before {
+  content: "\F227";
+  font-family: "remixicon", sans-serif;
+  margin-right: 0.3em;
+  font-size: 1em;
+  vertical-align: middle;
+  speak: none;
+}
+
+.libretranslate-trigger {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3em;
+  padding: 2px 4px !important;
+  cursor: pointer;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin: 1px !important;
+  background-image: none !important;
+  background-color: #2b2b2b1f !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  text-shadow: none !important;
+}
+
 body {
 	background-color: var(--background-color) !important;
 	font-size: 15px !important;
@@ -300,6 +331,14 @@ button img {
 	border-radius: 12px;
 }
 
+/*======================
+ * Addon: quickphoto
+ * ====================*/
+
+.qp-alt-input {
+	color: #fff;
+}
+
 /*=======================
  * Benachrichtigung Nachrichten
  * =====================*/
@@ -537,13 +576,15 @@ a.tag.label:not(.border-primary):hover bdi a,
  * ===================*/
 
 header #banner #logo-img, .navbar-brand #logo-img {
-    -webkit-mask-image: url("img/friendica-32.png");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    background-color: currentColor;
-    height: 40px;
-    width: 40px;
-    display: inline-block;
+	-webkit-mask-image: url("img/friendica-32.png");
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	background-color: currentColor;
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	color: var(--link-color);
+	margin-top: 10px;
 }
 
 /* Beispiel: Eltern-Element ist ein Link */
