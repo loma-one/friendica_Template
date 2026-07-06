@@ -460,13 +460,15 @@ a.tag {
 
 /* Logo und Position */
 header #banner #logo-img, .navbar-brand #logo-img {
-    -webkit-mask-image: url("img/friendica-32.png");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: contain;
-    background-color: currentColor; /* Nimmt die Textfarbe des Eltern-Elements */
-    height: 40px;
-    width: 40px;
-    display: inline-block;
+	-webkit-mask-image: url("img/friendica-32.png");
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	background-color: currentColor; /* Nimmt die Textfarbe des Eltern-Elements */
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	color: var(--link-color);
+	margin-top: 10px;
 }
 
 a.navbar-brand {
