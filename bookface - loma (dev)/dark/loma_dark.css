@@ -19,26 +19,35 @@
 	--background-image: $background_image;
 	--menu-background-hover-color: $menu_background_hover_color;
 	--border-color: $border_color;
-	--thread-level-1-color: #1a1a1a; /* Fast schwarz, für maximale Lesbarkeit */
-	--thread-level-1-hover-color: #2a2a2a; /* Etwas heller beim Hover */
-	--thread-level-2-color: #333333; /* Basis: Dunkelgrau */
-	--thread-level-2-hover-color: #3c3131; /* Deine Basis */
-	--thread-level-3-color: #4a4a4a; /* Grau, etwas heller als Ebene 2 */
-	--thread-level-3-hover-color: #5a5a5a; /* Hover: noch etwas heller */
-	--thread-level-4-color: #3a3a5a; /* Dunkelblau, dezent */
-	--thread-level-4-hover-color: #4a4a6a; /* Hover: leicht gesättigter */
-	--thread-level-5-color: #3a4a3a; /* Dunkelgrün, dezent */
-	--thread-level-5-hover-color: #4a5a4a; /* Hover: leicht gesättigter */
-	--thread-level-6-color: #4a3a4a; /* Dunkelviolett, dezent */
-	--thread-level-6-hover-color: #5a4a5a; /* Hover: leicht gesättigter */
-	--thread-level-7-color: #3a4a4a; /* Dunkelblaugrün, dezent */
-	--thread-level-7-hover-color: #4a5a5a; /* Hover: leicht gesättigter */
-	--thread-level-8-color: #2a3a5a; /* Dunkelblau, etwas gesättigter */
-	--thread-level-8-hover-color: #3a4a6a; /* Hover: noch etwas gesättigter */
-	--thread-level-9-color: #2a2a5a; /* Dunkelblau, Akzent */
-	--thread-level-9-hover-color: #3a3a6a; /* Hover: leicht gesättigter */
-	letter-spacing: 0.01em; /* Lesbarkeit von Text erhöhen */
-	font-weight: 450; /* Lesbarkeit von Text erhöhen */
+	--thread-level-1-color: #4a4a4a;       /* Edles Hellgrau, klar sichtbar */
+	--thread-level-1-hover-color: #666666; /* Deutlich heller beim Hover */
+
+	--thread-level-2-color: #554d4d;       /* Dezenter Rot/Braun-Stich */
+	--thread-level-2-hover-color: #776666;
+
+	--thread-level-3-color: #5a5a5a;       /* Neutrales, helleres Grau */
+	--thread-level-3-hover-color: #7c7c7c;
+
+	--thread-level-4-color: #46466e;       /* Gedimmtes Blau */
+	--thread-level-4-hover-color: #5c5c99;
+
+	--thread-level-5-color: #435443;       /* Salbeigrün / Dunkelgrün */
+	--thread-level-5-hover-color: #597359;
+
+	--thread-level-6-color: #544354;       /* Gedämpftes Violett */
+	--thread-level-6-hover-color: #735973;
+
+	--thread-level-7-color: #435454;       /* Deep Teal / Blaugrün */
+	--thread-level-7-hover-color: #597373;
+
+	--thread-level-8-color: #3b4d75;       /* Satteres Dunkelblau */
+	--thread-level-8-hover-color: #4f679c;
+
+	--thread-level-9-color: #4c4c8a;       /* Akzent-Blauviolett */
+	--thread-level-9-hover-color: #6363b3;
+
+	letter-spacing: 0.01em;
+	font-weight: 450;
 }
 
 /*==================
@@ -835,7 +844,7 @@ h4 {
 }
 
 aside hr, section hr {
-	border-color: rgb(53, 53, 53);
+	border-color: rgb(61, 60, 60);
 }
 
 /* Farbe BBCode und Markdown Tabellen */
@@ -1013,24 +1022,25 @@ Element {
 .wall-item-container.thread_level_7,
 .wall-item-container.thread_level_8,
 .wall-item-container.thread_level_9 {
-    margin-left: 0;
+	margin-left: 0;
 }
 
+/* Anpassunf border-left von 5 auf 10 */
 [class*="thread_level_"]:not(.thread_level_1) {
-	position: relative !important;
-	border-left: 5px var(--nav-bg) !important;
+	position: relative;
+	border-left: 15px solid transparent; /* Abstand des Thead zur Innenlinie */
 }
 
 .thread_level_1 {
 	position: relative;
-	border-left: 0;
+	border-left: 0px;
 }
 
 [class*="thread_level_"]::before {
 	content: "";
 	position: absolute;
-	left: 20px;
-	top: 60px;
+	left: 27px;
+	top: 50px;
 	bottom: 15px;
 	width: 3px;
 	z-index: 1;
@@ -1039,18 +1049,18 @@ Element {
 
 .contact-photo-image-wrapper,
 .wwto .contact-photo {
-    z-index: 1;
+	z-index: 1;
 }
 
 [class*="thread_level_"]::after {
-    content: "";
-    position: absolute;
-    top: 45px;
-    left: -8px;
-    width: 26px;
-    height: 1px;
-    background-color: inherit;
-    z-index: 1;
+	content: "";
+	position: absolute;
+	top: 45px;
+	left: -8px;
+	width: 26px;
+	height: 1px;
+	background-color: inherit;
+	z-index: 1;
 }
 
 .thread_level_1::before { background-color: transparent; }
@@ -1419,7 +1429,8 @@ ul.tabs li:hover:not(.active) a {
 }
 
 .wall-item-container .media {
-	background-color: rgb(37, 39, 40) !important;
+	background-color: rgb(51, 51, 51) !important;
+	border-radius: 10px;
 }
 
 .wall-item-container {
@@ -1609,7 +1620,8 @@ aside .widget li:hover {
 
 .comment-fake-form {
 	border: none !important;
-	background-color: #252728 !important;
+	background-color: #333 !important;
+	border-radius: 10px;
 }
 
 .comment-fake-form textarea {
@@ -1628,7 +1640,7 @@ aside .widget li:hover {
 /* Kommentare hervorgehoben */
 .comment .media-body {
 	padding: 10px;
-	background-color: #333;
+	background-color: #3f3d3d;
 	border-top-left-radius: 0px;
 	border-bottom-right-radius: 0px;
 	border-top-right-radius: 20px;
