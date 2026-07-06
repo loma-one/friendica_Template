@@ -790,18 +790,18 @@ Element {
 /* Anpassunf border-left von 5 auf 10 */
 [class*="thread_level_"]:not(.thread_level_1) {
 	position: relative;
-	border-left: 10px solid transparent; /* Abstand des Thead zur Innenlinie */
+	border-left: 15px solid transparent; /* Abstand des Thead zur Innenlinie */
 }
 
 .thread_level_1 {
 	position: relative;
-	border-left: 0;
+	border-left: 0px;
 }
 
 [class*="thread_level_"]::before {
 	content: "";
 	position: absolute;
-	left: 20px;
+	left: 27px;
 	top: 50px;
 	bottom: 15px;
 	width: 3px;
