@@ -26,13 +26,15 @@
         width: 100vw !important;
         height: 100vh !important;
         z-index: 8000 !important;
-        background: var(--background-color);
+        background-color: var(--background-color, #fff) !important;
         padding: 40px 20px !important;
         overflow-y: auto !important;
         transform: none !important;
     }
 
-    body.dark .zen-active { background: #1a1a1a !important; }
+    body.dark .zen-active {
+        background-color: var(--background-color, #1a1a1a) !important;
+    }
 
     .zen-active h2,
     .zen-active p:first-of-type,
@@ -42,7 +44,8 @@
         margin-right: auto !important;
     }
 
-    .zen-active #comment-edit-text-{{$id}} {
+    .zen-active #comment-edit-text-{{$id}},
+    .zen-active #richtext-preview-{{$id}} {
         min-height: 55vh !important;
         max-height: 65vh !important;
     }
@@ -56,6 +59,39 @@
     body.zen-active-body .modal-backdrop { z-index: 10000 !important; }
     body.zen-active-body .modal { z-index: 10001 !important; }
     body.zen-active-body { overflow: hidden !important; }
+
+    /* Flexiblere Basis für die Vorschau */
+    .richtext-preview-container {
+        display: none;
+        min-height: 250px;
+        overflow-y: auto;
+        background: var(--background-color, window);
+        color: var(--text-color, windowtext);
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    /* QuickPhoto Design-Klassen für den externen Parser */
+    .quickphoto-preview-wrapper {
+        display: inline-block;
+        margin: 5px 0;
+    }
+    .quickphoto-preview-wrapper img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        border: 2px dashed #28a745 !important;
+    }
+    .quickphoto-preview-wrapper .qp-desc {
+        display: block;
+        font-size: 11px;
+        color: #28a745;
+        background: rgba(40,167,69,0.1);
+        padding: 2px 5px;
+        margin-top: 2px;
+        border-radius: 3px;
+    }
 </style>
 
 <div class="generic-page-wrapper" id="jot-page-wrapper-{{$id}}">
@@ -96,9 +132,11 @@
                     <button type="button" id="button_emojipicker" class="btn btn-default emojis" aria-label="{{$l10n.edemojis}}" title="{{$l10n.edemojis}}" tabindex="6">
                       <i class="ri ri-emotion-line"></i>
                     </button>
-                    <button type="button" class="btn btn-default bb-zen" aria-label="Zen-Modus" title="Zen-Modus" onclick="toggleZenMode({{$id}});" tabindex="21">
+                    <button type="button" class="btn btn-default bb-zen" aria-label="{{$l10n.zen_mode}}" title="{{$l10n.zen_mode}}" onclick="toggleZenMode({{$id}});" tabindex="21">
                         <i class="ri ri-expand-diagonal-2-line"></i>
                     </button>
+                    <button type="button" class="btn btn-default bb-richtext" id="btn-richtext-toggle-{{$id}}" aria-label="{{$l10n.preview}}" title="{{$l10n.preview}}" onclick="toggleRichTextMode({{$id}});" tabindex="22">
+                        <i class="ri ri-text-wrap"></i> <span style="font-size: 11px;">{{$l10n.preview}}</span>
                     </button>
                 </div>
 
@@ -138,6 +176,7 @@
                 <p>
                     <textarea id="comment-edit-text-{{$id}}" class="comment-edit-text form-control text-autosize expandable-textarea" name="body" placeholder="{{$l10n.default}}" rows="12" tabindex="3" dir="auto" onkeydown="sendOnCtrlEnter(event, 'comment-edit-submit-{{$id}}')">{{$body}}</textarea>
                 </p>
+                <div id="richtext-preview-{{$id}}" class="form-control richtext-preview-container"></div>
             </div>
 
             <div class="comment-edit-submit-wrapper clearfix">
@@ -199,109 +238,181 @@
 </div>
 
 <script>
-    dzFactory.setupDropzone('#dropzone-{{$id}}', 'comment-edit-text-{{$id}}');
+$.getScript('/view/templates/item/bbcode_parser.js');
 
-    function resizeTextarea(el) {
-        if (!el) return;
-        el.style.height = "auto";
-        if (el.id === 'jot-summary') {
-            el.style.height = Math.max(38, el.scrollHeight) + "px";
+function updateLivePreview(id) {
+    const textarea = document.getElementById('comment-edit-text-' + id);
+    const previewDiv = document.getElementById('richtext-preview-' + id);
+    if (previewDiv && previewDiv.style.display === 'block' && typeof parseBBCodeToHTML === 'function') {
+        previewDiv.innerHTML = parseBBCodeToHTML(textarea.value);
+    }
+}
+
+function toggleRichTextMode(id) {
+    const textarea = document.getElementById('comment-edit-text-' + id);
+    const previewDiv = document.getElementById('richtext-preview-' + id);
+    const btn = document.getElementById('btn-richtext-toggle-' + id);
+
+    if (previewDiv.style.display === 'none' || previewDiv.style.display === '') {
+        textarea.style.display = 'none';
+        previewDiv.style.display = 'block';
+        btn.classList.add('active');
+
+        if (typeof parseBBCodeToHTML === 'function') {
+            previewDiv.innerHTML = parseBBCodeToHTML(textarea.value);
         } else {
-            el.style.height = el.scrollHeight + "px";
+            previewDiv.innerHTML = textarea.value;
+            setTimeout(function() {
+                if (typeof parseBBCodeToHTML === 'function') {
+                    previewDiv.innerHTML = parseBBCodeToHTML(textarea.value);
+                }
+            }, 200);
         }
+
+        if (document.getElementById('jot-page-wrapper-' + id).classList.contains('zen-active')) {
+            previewDiv.style.minHeight = "55vh";
+            previewDiv.style.height = "65vh";
+        } else {
+            const rect = previewDiv.getBoundingClientRect();
+            const spaceToBottom = window.innerHeight - rect.top - 90;
+            previewDiv.style.height = Math.max(300, spaceToBottom) + "px";
+        }
+    } else {
+        textarea.style.display = 'block';
+        previewDiv.style.display = 'none';
+        btn.classList.remove('active');
+        previewDiv.style.height = "auto";
+        resizeTextarea(textarea);
+    }
+}
+
+$(document).ready(function() {
+    $('.comment-edit-bb-{{$id}} button').on('click', function() {
+        setTimeout(function() { updateLivePreview({{$id}}); }, 50);
+    });
+});
+
+dzFactory.setupDropzone('#dropzone-{{$id}}', 'comment-edit-text-{{$id}}');
+
+function resizeTextarea(el) {
+    if (!el) return;
+    el.style.height = "auto";
+    if (el.id === 'jot-summary') {
+        el.style.height = Math.max(38, el.scrollHeight) + "px";
+    } else {
+        el.style.height = el.scrollHeight + "px";
+    }
+}
+
+function toggleZenMode(id) {
+    const wrapper = document.getElementById('jot-page-wrapper-' + id);
+    const isZen = wrapper.classList.toggle('zen-active');
+    document.body.classList.toggle('zen-active-body');
+
+    if (isZen) {
+        window.dispatchEvent(new Event('resize'));
+        const escHandler = (e) => {
+            if (e.key === "Escape") {
+                if (document.querySelector('.modal.in, .modal.show')) return;
+                if (wrapper.classList.contains('zen-active')) {
+                    toggleZenMode(id);
+                    document.removeEventListener('keydown', escHandler);
+                }
+            }
+        };
+        document.addEventListener('keydown', escHandler);
     }
 
-    function toggleZenMode(id) {
-        const wrapper = document.getElementById('jot-page-wrapper-' + id);
-        const isZen = wrapper.classList.toggle('zen-active');
-        document.body.classList.toggle('zen-active-body');
+    resizeTextarea(document.getElementById('jot-summary'));
+    resizeTextarea(document.getElementById('comment-edit-text-' + id));
 
+    const previewDiv = document.getElementById('richtext-preview-' + id);
+    if (previewDiv) {
         if (isZen) {
-            window.dispatchEvent(new Event('resize'));
-            const escHandler = (e) => {
-                if (e.key === "Escape") {
-                    if (document.querySelector('.modal.in, .modal.show')) return;
-                    if (wrapper.classList.contains('zen-active')) {
-                        toggleZenMode(id);
-                        document.removeEventListener('keydown', escHandler);
-                    }
-                }
-            };
-            document.addEventListener('keydown', escHandler);
-        }
-
-        resizeTextarea(document.getElementById('jot-summary'));
-        resizeTextarea(document.getElementById('comment-edit-text-' + id));
-    }
-
-    function togglePermissions() {
-        const modal = $('#permissions-modal-{{$id}}');
-        modal.appendTo('body').modal('show');
-    }
-
-    $(document).on('hidden.bs.modal', '#permissions-modal-{{$id}}', function () {
-        $(this).appendTo('#comment-edit-form-{{$id}}');
-    });
-
-    function preview_comment_toggle(id, originalText) {
-        var previewPane = document.getElementById('comment-edit-preview-' + id);
-        var btnTextSpan = document.getElementById('preview-btn-text-' + id);
-        var mainTextarea = document.getElementById('comment-edit-text-' + id);
-        var summaryField = document.getElementById('jot-summary');
-
-        if (previewPane.style.display === 'block') {
-            previewPane.style.display = 'none';
-            btnTextSpan.textContent = originalText;
+            previewDiv.style.minHeight = "55vh";
+            previewDiv.style.height = "65vh";
         } else {
-            var originalBody = mainTextarea.value;
-            if (summaryField && summaryField.value.trim() !== "") {
-                mainTextarea.value = "[b][i]" + summaryField.value.trim() + "[/i][/b]\n\n" + originalBody;
-            }
-            preview_comment(id);
-            mainTextarea.value = originalBody;
-            btnTextSpan.textContent = "Close preview";
-            previewPane.style.display = 'block';
+            previewDiv.style.minHeight = "250px";
+            const rect = previewDiv.getBoundingClientRect();
+            const spaceToBottom = window.innerHeight - rect.top - 90;
+            previewDiv.style.height = Math.max(300, spaceToBottom) + "px";
         }
     }
+}
 
-    var formSubmitting = false;
+function togglePermissions() {
+    const modal = $('#permissions-modal-{{$id}}');
+    modal.appendTo('body').modal('show');
+}
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const textareas = document.querySelectorAll(".expandable-textarea");
+$(document).on('hidden.bs.modal', '#permissions-modal-{{$id}}', function () {
+    $(this).appendTo('#comment-edit-form-{{$id}}');
+});
 
-        textareas.forEach(function(textarea) {
-            const savedContent = localStorage.getItem(`comment-edit-text-${textarea.id}`);
-            const lastSaved = localStorage.getItem(`last-saved-${textarea.id}`);
-            if (savedContent && lastSaved && (new Date().getTime() - parseInt(lastSaved, 10) <= 600000)) {
-                textarea.value = savedContent;
-            }
+function preview_comment_toggle(id, originalText) {
+    var previewPane = document.getElementById('comment-edit-preview-' + id);
+    var btnTextSpan = document.getElementById('preview-btn-text-' + id);
+    var mainTextarea = document.getElementById('comment-edit-text-' + id);
+    var summaryField = document.getElementById('jot-summary');
 
-            textarea.addEventListener("input", function() { resizeTextarea(this); });
-            resizeTextarea(textarea);
-        });
-
-        setInterval(() => {
-            if (formSubmitting) return;
-            textareas.forEach(textarea => {
-                if (textarea.value.trim() !== "") {
-                    localStorage.setItem(`comment-edit-text-${textarea.id}`, textarea.value);
-                    localStorage.setItem(`last-saved-${textarea.id}`, new Date().getTime().toString());
-                }
-            });
-        }, 5000);
-    });
-
-    document.getElementById('comment-edit-form-{{$id}}').addEventListener('submit', function() {
-        formSubmitting = true;
-        document.querySelectorAll(".expandable-textarea").forEach(textarea => {
-            localStorage.removeItem(`comment-edit-text-${textarea.id}`);
-            localStorage.removeItem(`last-saved-${textarea.id}`);
-        });
-    });
-
-    window.addEventListener("beforeunload", function (event) {
-        if (!formSubmitting && document.getElementById('comment-edit-text-{{$id}}').value.trim().length > 0) {
-            event.returnValue = 'Discard changes?';
+    if (previewPane.style.display === 'block') {
+        previewPane.style.display = 'none';
+        btnTextSpan.textContent = originalText;
+    } else {
+        var originalBody = mainTextarea.value;
+        if (summaryField && summaryField.value.trim() !== "") {
+            mainTextarea.value = "[b][i]" + summaryField.value.trim() + "[/i][/b]\n\n" + originalBody;
         }
+        preview_comment(id);
+        mainTextarea.value = originalBody;
+        btnTextSpan.textContent = "Close preview";
+        previewPane.style.display = 'block';
+    }
+}
+
+var formSubmitting = false;
+
+document.addEventListener("DOMContentLoaded", function() {
+    const textareas = document.querySelectorAll(".expandable-textarea");
+
+    textareas.forEach(function(textarea) {
+        const savedContent = localStorage.getItem(`comment-edit-text-${textarea.id}`);
+        const lastSaved = localStorage.getItem(`last-saved-${textarea.id}`);
+        if (savedContent && lastSaved && (new Date().getTime() - parseInt(lastSaved, 10) <= 600000)) {
+            textarea.value = savedContent;
+        }
+
+         textarea.addEventListener("input", function() {
+            resizeTextarea(this);
+            if (this.id === 'comment-edit-text-{{$id}}') {
+                updateLivePreview({{$id}});
+            }
+        });
+        resizeTextarea(textarea);
     });
+
+    setInterval(() => {
+        if (formSubmitting) return;
+        textareas.forEach(textarea => {
+            if (textarea.value.trim() !== "") {
+                localStorage.setItem(`comment-edit-text-${textarea.id}`, textarea.value);
+                localStorage.setItem(`last-saved-${textarea.id}`, new Date().getTime().toString());
+            }
+        });
+    }, 5000);
+});
+
+document.getElementById('comment-edit-form-{{$id}}').addEventListener('submit', function() {
+    formSubmitting = true;
+    document.querySelectorAll(".expandable-textarea").forEach(textarea => {
+        localStorage.removeItem(`comment-edit-text-${textarea.id}`);
+        localStorage.removeItem(`last-saved-${textarea.id}`);
+    });
+});
+
+window.addEventListener("beforeunload", function (event) {
+    if (!formSubmitting && document.getElementById('comment-edit-text-{{$id}}').value.trim().length > 0) {
+        event.returnValue = 'Discard changes?';
+    }
+});
 </script>
