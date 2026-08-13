@@ -7,6 +7,10 @@
 */
 
 :root {
+	color-scheme: light;
+}
+
+:root {
 	--global-font-family:
 		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
 	--nav-bg: $nav_bg;
@@ -74,6 +78,10 @@ html body {
 	border-radius: 10px;
 }
 
+.navbar-fixed-top {
+	border-width: 0 0 3px;
+}
+
 .dropzone.dz-clickable {
 	border-radius: 10px;
 }
@@ -81,7 +89,6 @@ html body {
 #search-box {
 	left: 20px;
 	margin-top: 10px;
-	top: 5px;
 }
 
 #search-box .btn,
@@ -119,6 +126,13 @@ button img {
 .profile-link img {
 	display: inline-block;
 	vertical-align: middle;
+}
+
+/* Verschiebt das Menue leicht nach Rechts
+    um das Seitenwidget nicht überdeckt wird */
+
+.dropdown-menu.pull-right {
+  right: 40px;
 }
 
 /* ===============
@@ -282,6 +296,14 @@ button img {
 
 #topbar-first #nav-notifications-menu li.notif-entry {
 	font-size: 15px;
+}
+
+/*=====================
+ * Editor Modal
+ * ====================*/
+
+#jot-modal #jot-sections, #jot-modal #jot-modal-body, #jot-modal #profile-jot-form, #jot-modal #profile-jot-wrapper, #jot-modal #jot-text-wrap, #jot-modal #jot-preview-content, #jot-modal #tread-wrapper--1, #jot-modal #item-Q0, #jot-modal #profile-jot-acl-wrapper, #jot-modal #acl-wrapper {
+	border-radius: 10px;
 }
 
 /*==================
@@ -468,7 +490,6 @@ header #banner #logo-img, .navbar-brand #logo-img {
 	width: 40px;
 	display: inline-block;
 	color: var(--link-color);
-	margin-top: 10px;
 }
 
 a.navbar-brand {
@@ -478,6 +499,10 @@ a.navbar-brand {
 /*=======================
  * Profilinformationen
  *  ======================*/
+
+aside .vcard .panel-body {
+	text-align: left !important;
+}
 
 #aprofile-homepage span::after, .homepage-url span::after {
 	content: '\F100';
@@ -598,13 +623,13 @@ textarea.text-autosize {
 
 /* Editiertbutton über Editor anheben */
 .btn-toolbar > .btn-group, .btn-toolbar .btn-group,.btn-group {
-  bottom: 2px;
+	bottom: 2px;
 }
 
 /* Mention Button anpassen */
 .action-button {
-  padding-bottom: 14px;
-  padding-top: 14px;
+	padding-bottom: 14px;
+	padding-top: 14px;
 }
 
 /*======================
@@ -623,12 +648,13 @@ textarea.text-autosize {
 
 .btn {
 	border-radius: 20px;
+	background-color: transparent
 }
 
 .btn.btn-primary {
-	background: var(--link-color);
-	color: #fff;
+	background: #ededed;
 	border-radius: 25px;
+	color: #444;
 }
 
 /* Startseite: Verhindert Button Farbe */
@@ -850,6 +876,90 @@ Element {
 
 .thread_level_9::before { background-color: var(--thread-level-9-color); }
 .thread_level_9:hover::before { background-color: var(--thread-level-9-hover-color); }
+
+
+/*==================================
+ * NEU: Berücksichtigt Änderungen in der Threasstruktur
+ * ================================
+
+.comment-container {
+    position: relative;
+}
+
+.wall-item-container[class*="thread_level_"] {
+    margin-left: 0;
+}
+
+.contact-photo-image-wrapper,
+.wwto .contact-photo {
+    z-index: 1;
+}*/
+
+/* =========================================================
+ * Smart-Threading (Hierarchische Linienführung)
+ * Greift nur, wenn die Klasse .smart-threaded am Container anliegt
+ * =========================================================
+
+.smart-threaded [class*="thread_level_"]:not(.thread_level_1) {
+    position: relative;
+    border-left: 15px solid transparent;
+}
+
+.thread_level_1 {
+    position: relative;
+    border-left: 0px;
+}
+
+.smart-threaded [class*="thread_level_"]::before,
+.smart-threaded [class*="thread_level_"]::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: inherit;
+}
+
+.smart-threaded [class*="thread_level_"]::before {
+    left: 27px;
+    top: 50px;
+    bottom: 15px;
+    width: 3px;
+}
+
+.smart-threaded [class*="thread_level_"]::after {
+    top: 45px;
+    left: -8px;
+    width: 26px;
+    height: 1px;
+}
+
+.thread_level_1::before {
+    background-color: transparent !important;
+}
+
+.smart-threaded .thread_level_2::before { background-color: var(--thread-level-2-color); }
+.smart-threaded .thread_level_2:hover::before { background-color: var(--thread-level-2-hover-color); }
+
+.smart-threaded .thread_level_3::before { background-color: var(--thread-level-3-color); }
+.smart-threaded .thread_level_3:hover::before { background-color: var(--thread-level-3-hover-color); }
+
+.smart-threaded .thread_level_4::before { background-color: var(--thread-level-4-color); }
+.smart-threaded .thread_level_4:hover::before { background-color: var(--thread-level-4-hover-color); }
+
+.smart-threaded .thread_level_5::before { background-color: var(--thread-level-5-color); }
+.smart-threaded .thread_level_5:hover::before { background-color: var(--thread-level-5-hover-color); }
+
+.smart-threaded .thread_level_6::before { background-color: var(--thread-level-6-color); }
+.smart-threaded .thread_level_6:hover::before { background-color: var(--thread-level-6-hover-color); }
+
+.smart-threaded .thread_level_7::before { background-color: var(--thread-level-7-color); }
+.smart-threaded .thread_level_7:hover::before { background-color: var(--thread-level-7-hover-color); }
+
+.smart-threaded .thread_level_8::before { background-color: var(--thread-level-8-color); }
+.smart-threaded .thread_level_8:hover::before { background-color: var(--thread-level-8-hover-color); }
+
+.smart-threaded .thread_level_9::before { background-color: var(--thread-level-9-color); }
+.smart-threaded .thread_level_9:hover::before { background-color: var(--thread-level-9-hover-color); }
+*/
 
 /* Größe Profilbilder Thread */
 
