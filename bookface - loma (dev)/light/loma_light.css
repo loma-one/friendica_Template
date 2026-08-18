@@ -108,6 +108,27 @@ button img {
 	border-radius: 50px !important;
 }
 
+/* Verhindert den Umbruch zwischen Profilbild und Handle */
+#nav-profile-link {
+  white-space: nowrap;
+}
+
+#nav-profile-link img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*======================
+ * Einstellungen Frio
+ * ====================*/
+#div_id_frio_enable_advancedcomposer {
+	display: none !important;
+}
+
+#div_id_frio_show_action_labels {
+	display: none !important;
+}
+
 /*======================
  * Menue + Position Profilbild
  * =====================*/
@@ -151,14 +172,17 @@ button img {
 	padding-bottom: 13px;
 }
 
-#topbar-first .nav > li > a.selected i::after {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: -10px;
-	right: -10px;
-	height: 3px;
-	background-color: var(--link-color);
+#topbar-first .nav > li > a.selected {
+	border-bottom: 2px solid var(--link-color);
+}
+
+/* Bagde Position */
+#topbar-first .nav-segment .nav-notification {
+	position: relative;
+	top: -30px;
+	left: 15px;
+	border-radius: 5px;
+	max-width: 40px;
 }
 
 /* ====================
@@ -183,6 +207,7 @@ button img {
 	border-radius: 50%;
 	height: 40px;
 	width: 40px;
+	max-width: 40px;
 }
 
 /* Profil-Usericon rechts beim Überscrollen der Timeline */
@@ -293,7 +318,6 @@ button img {
 }
 
 /* Benachrichtigung Textgröße */
-
 #topbar-first #nav-notifications-menu li.notif-entry {
 	font-size: 15px;
 }
@@ -325,7 +349,7 @@ a.tag .ri-flashlight-line {
 
 /* Farbe und Größe der Reaktions-Icons anpassen */
 .wall-item-actions button {
-	font-size: 20px !important;
+	font-size: 14px !important;
 	color: var(--nav-icon-color);
 }
 
@@ -351,6 +375,25 @@ a.tag .ri-flashlight-line {
 	color: #aaa !important;
 	cursor: default !important;
 	opacity: 0.6 !important;
+}
+
+/*=========================
+ * Youtube Videoanzeige
+ * =======================*/
+
+.wall-item-container
+.wall-item-content
+.type-link img,
+.type-link img,
+.type-video img,
+img.attachment-preview {
+	float: none;
+	margin-right: 0;
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	max-height: initial;
+	object-fit: cover;
 }
 
 /* ==================
@@ -410,71 +453,74 @@ a.tag {
 
 /* Standard (Englisch) */
 .button-comments::after { content: "Comment"; }
-.button-announces::after { content: "Share"; }
-.button-votes::after { content: "Quote"; }
 .button-likes::after { content: "Like"; }
 [id^="dislike-"]::after { content: "Dislike"; }
 .wall-item-actions-right .dropdown-toggle::after,
 .more-links .dropdown-toggle::after { content: "More"; }
 
+/* Teilen-Button über ID-Anfang ansprechen */
+[id^="shareMenuOptions-"]::after {
+  content: "Share";
+}
+
 .wall-item-emoji::after {
-	content: "Reaction";
-	font-size: 13px;
+    content: "Reaction";
+    font-size: 13px;
 }
 
 /* Deutsch */
 [lang="de"] .button-comments::after,
-[lang="de"] .button-announces::after,
-[lang="de"] .button-votes::after,
 [lang="de"] .button-likes::after,
 [lang="de"] [id^="dislike-"]::after,
-[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
-[lang="de"] .more-links .dropdown-toggle::after {
-	content: "";
+[lang="de"] [id^="shareMenuOptions-"]::after,
+[lang="de"] .wall-item-emoji::after {
+    content: "";
 }
+
 [lang="de"] .button-comments::after { content: "Kommentar"; }
-[lang="de"] .button-announces::after { content: "Teilen"; }
-[lang="de"] .button-votes::after { content: "Zitieren"; }
 [lang="de"] .button-likes::after { content: "Mögen"; }
 [lang="de"] [id^="dislike-"]::after { content: "Nicht mögen"; }
-[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
-[lang="de"] .more-links .dropdown-toggle::after { content: "Mehr"; }
+[lang="de"] [id^="shareMenuOptions-"]::after { content: "Teilen"; }
+[lang="de"] .wall-item-emoji::after { content: "Reaktion"; }
 
 /* Französisch */
 [lang="fr"] .button-comments::after { content: "Commentaire"; }
-[lang="fr"] .button-announces::after { content: "Partager"; }
-[lang="fr"] .button-votes::after { content: "Citer"; }
 [lang="fr"] .button-likes::after { content: "Aimer"; }
 [lang="fr"] [id^="dislike-"]::after { content: "Ne pas aimer"; }
-[lang="fr"] .wall-item-actions-right .dropdown-toggle::after,
-[lang="fr"] .more-links .dropdown-toggle::after { content: "Plus"; }
+[lang="fr"] [id^="shareMenuOptions-"]::after { content: "Partager"; }
+[lang="fr"] .wall-item-emoji::after { content: "Réaction"; }
 
 /* Spanisch */
 [lang="es"] .button-comments::after { content: "Comentario"; }
-[lang="es"] .button-announces::after { content: "Compartir"; }
-[lang="es"] .button-votes::after { content: "Citar"; }
 [lang="es"] .button-likes::after { content: "Me gusta"; }
 [lang="es"] [id^="dislike-"]::after { content: "No me gusta"; }
-[lang="es"] .wall-item-actions-right .dropdown-toggle::after,
-[lang="es"] .more-links .dropdown-toggle::after { content: "Más"; }
+[lang="es"] [id^="shareMenuOptions-"]::after { content: "Compartir"; }
+[lang="es"] .wall-item-emoji::after { content: "Reacción"; }
 
 /* Dänisch */
 [lang="da"] .button-comments::after { content: "Kommentar"; }
-[lang="da"] .button-announces::after { content: "Del"; }
-[lang="da"] .button-votes::after { content: "Citer"; }
 [lang="da"] .button-likes::after { content: "Synes om"; }
 [lang="da"] [id^="dislike-"]::after { content: "Synes ikke om"; }
-[lang="da"] .wall-item-actions-right .dropdown-toggle::after,
-[lang="da"] .more-links .dropdown-toggle::after { content: "Mere"; }
+[lang="da"] [id^="shareMenuOptions-"]::after { content: "Del"; }
+[lang="da"] .wall-item-emoji::after { content: "Reaktion"; }
 
 /* Italienisch */
 [lang="it"] .button-comments::after { content: "Commento"; }
-[lang="it"] .button-announces::after { content: "Condividi"; }
-[lang="it"] .button-votes::after { content: "Cita"; }
 [lang="it"] .button-likes::after { content: "Mi piace"; }
 [lang="it"] [id^="dislike-"]::after { content: "Non mi piace"; }
-[lang="it"] .wall-item-actions-right .dropdown-toggle::after,
-[lang="it"] .more-links .dropdown-toggle::after { content: "Altro"; }
+[lang="it"] [id^="shareMenuOptions-"]::after { content: "Condividi"; }
+[lang="it"] .wall-item-emoji::after { content: "Reazione"; }
+
+/* Verhindert Texturen am more Button */
+.btn-group.open .dropdown-toggle {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Farbgebung der Reaktion */
+.wall-item-actions .btn, .wall-item-actions a, .wall-item-actions button {
+	color: #333333a3;
+}
 
 /* ===================
  * Banner und Bannerbild
@@ -646,6 +692,11 @@ textarea.text-autosize {
  * Beitragsartikel
  * =================*/
 
+/* Verhindert eine zusätzliche Beschriftung*/
+body.show-action-labels .action-label {
+	display: none;
+}
+
 .btn {
 	border-radius: 20px;
 	background-color: transparent
@@ -740,21 +791,22 @@ th {
 }
 
 /* Abstand zwischen den Einstellungsmenues verringert */
-
 .side-link-link, aside .widget li a {
-	/* padding-top: 6px; */
-	/* padding-bottom: 6px; */
 	padding-top: 2px;
 	padding-bottom: 2px;
 }
 
 /* Seitennavigation Widgets */
-
 aside .widget,
 .nav-container .widget {
 	background-color: var(--background-color) !important;
 	box-shadow: none !important;
 	margin-bottom: 1px;
+}
+
+/* Saubere Navigation beim überfahren der Menüs */
+ul#nav-user-menu {
+	padding-block: 10px;
 }
 
 /*=======================
@@ -978,8 +1030,11 @@ Element {
 	transition-timing-function: linear;
 }
 
-/* Zentriert alle Medienelemente (Bilder, Videos, iframes) */
+/* ========================================
+ *Zentriert alle Medienelemente (Bilder, Videos, iframes)
+ ========================================*/
 
+/* Zentrierung von Medieninhalten */
 a img,
 a video,
 a iframe,
@@ -995,7 +1050,6 @@ a embed,
 }
 
 /* Ausnahme für .network-svg: Keine Zentrierung */
-
 a img.network-svg {
 	display: inline;
 	margin-left: 0;
@@ -1003,12 +1057,12 @@ a img.network-svg {
 }
 
 /* Größe Netzwerk Icon */
-
 .network-svg {
   width: 18px;
   height: 18px;
 }
 
+/* Dropdown-Menü-Stile */
 .nav-pills .dropdown-menu li a,
 .nav-pills .dropdown-menu li .btn-link,
 .nav-tabs .dropdown-menu li a,
@@ -1022,15 +1076,21 @@ a img.network-svg {
 	border-radius: 10px;
 }
 
+/* Navbar-Formular */
 .navbar-form {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
 /* Position neue Nachrichten */
-
 #topbar-first .topbar-nav .nav-segment .nav-notification {
 	right: 15px;
+}
+
+/* Regelt den Abstand zwischen den Munü-Icons */
+.nav.navbar-left {
+	display: flex;
+	gap: 2rem;
 }
 
 ul.tabs li {
@@ -1175,10 +1235,10 @@ p.wall-item-announce,
 	position: absolute;
 	text-align: center;
 	display: block;
-	background-color: #65686c;
-	box-shadow: -1px 1px 1px #fff;
+	background-color: none;
+	box-shadow: -1px 1px 1px #fff0;
 	border-radius: 4px;
-	color: #fff;
+	color: #fff0;
 	font-size: 12px;
 	font-weight: 700;
 	width: fit-content;
@@ -2180,19 +2240,6 @@ body.mod-filed
 		padding-top: 65px !important;
 		/* Verhindert, dass die fixierte untere Navbar & der FAB echten Content verdecken */
 		padding-bottom: 300px !important;
-	}
-
-	/* Barrierefreiheit: sr-only visuell verstecken, aber für Screenreader lesbar lassen */
-	.topbar ul.nav li.sr-only {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		padding: 0;
-		margin: -1px;
-		overflow: hidden;
-		clip: rect(0, 0, 0, 0);
-		border: 0;
-		display: block !important;
 	}
 
 	a.wall-item-name-link, span.fakelink {
