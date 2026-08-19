@@ -517,6 +517,15 @@ a.tag {
   box-shadow: none;
 }
 
+/* Verhindert das Einblenden des Firefox Teilen Button */
+.button-browser-share {
+	display: none !important;
+}
+
+li:has(.button-browser-share) {
+	display: none !important;
+}
+
 /* Farbgebung der Reaktion */
 .wall-item-actions .btn, .wall-item-actions a, .wall-item-actions button {
 	color: #333333a3;
