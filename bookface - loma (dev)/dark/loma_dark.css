@@ -347,14 +347,12 @@ button img {
 	vertical-align: middle;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 600px) {
-	.wall-item-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 6px;
+/* Regelt den Abstand zwischen den Munü-Icons */
+@media (min-width: 768px) {
+	.nav.navbar-left {
+		display: flex;
+		gap: 2rem;
 	}
-
     .wall-item-links {
 		width: 100%;
 	}
@@ -887,7 +885,7 @@ body.show-action-labels .action-label {
 
 .btn.btn-primary {
 	background: var(--link-color);
-	color: #fff;
+	color: #ffffff5c;
 	border-radius: 25px;
 }
 
@@ -1473,12 +1471,6 @@ a img.network-svg {
 /* Position neue Nachrichten */
 #topbar-first .topbar-nav .nav-segment .nav-notification {
 	right: 15px;
-}
-
-/* Regelt den Abstand zwischen den Munü-Icons */
-.nav.navbar-left {
-	display: flex;
-	gap: 2rem;
 }
 
 ul.tabs li {
