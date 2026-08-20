@@ -1094,14 +1094,6 @@ a img.network-svg {
 	right: 15px;
 }
 
-/* Regelt den Abstand zwischen den Munü-Icons */
-@media (min-width: 768px) {
-    .nav.navbar-left {
-        display: flex;
-        gap: 2rem;
-    }
-}
-
 ul.tabs li {
 	font-size: 15px !important;
 	margin-left: 10px !important;
