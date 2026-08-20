@@ -292,14 +292,12 @@ button img {
 	vertical-align: middle;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 600px) {
-	.wall-item-bottom {
-		flex-direction: column;
-		align-items: flex-start;
-		gap: 6px;
+/* Regelt den Abstand zwischen den Munü-Icons */
+@media (min-width: 768px) {
+	.nav.navbar-left {
+		display: flex;
+		gap: 2rem;
 	}
-
     .wall-item-links {
 		width: 100%;
 	}
@@ -513,8 +511,8 @@ a.tag {
 
 /* Verhindert Texturen am more Button */
 .btn-group.open .dropdown-toggle {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 
 /* Verhindert das Einblenden des Firefox Teilen Button */
@@ -708,13 +706,13 @@ body.show-action-labels .action-label {
 
 .btn {
 	border-radius: 20px;
-	background-color: transparent
+	background-color: #f6f6f6;
 }
 
 .btn.btn-primary {
 	background: #ededed;
 	border-radius: 25px;
-	color: #444;
+	color: #888888c4;
 }
 
 /* Startseite: Verhindert Button Farbe */
@@ -1097,9 +1095,11 @@ a img.network-svg {
 }
 
 /* Regelt den Abstand zwischen den Munü-Icons */
-.nav.navbar-left {
-	display: flex;
-	gap: 2rem;
+@media (min-width: 768px) {
+    .nav.navbar-left {
+        display: flex;
+        gap: 2rem;
+    }
 }
 
 ul.tabs li {
