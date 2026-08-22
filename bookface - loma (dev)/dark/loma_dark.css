@@ -151,7 +151,7 @@ body {
 
 #search-box .btn,
 .form-group-search .form-button-search {
-	background-color: #4a4a4a;
+	background-color: var(--default);
 }
 
 .form-group-search {
@@ -359,6 +359,47 @@ button img {
 }
 
 /*================================
+ * Button Einstellungen speichern & Position
+ * =============================*/
+
+/* Allgemeine Basis-Regeln  */
+#adminpage a.btn:not(#back-to-top),
+.settings-submit,
+input[type="submit"]:not(.form-button-search),
+button[type="submit"]:not(#back-to-top):not(.form-button-search),
+#photos-upload-submit {
+    background-color: var(--link-color) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 50px !important;
+    margin-left: 5px;
+}
+
+/* Spezifische Primär-Buttons */
+.btn.btn-primary:not(#back-to-top):not(.form-button-search) {
+    background-color: var(--link-color) !important;
+    color: #fff !important;
+    border-radius: 25px;
+}
+
+/* Interaktionen für Primary-Buttons */
+a.btn.btn-primary:not(#back-to-top):not(.form-button-search):hover,
+a.btn.btn-primary:not(#back-to-top):not(.form-button-search):focus,
+.btn.btn-primary:not(#back-to-top):not(.form-button-search):active,
+.btn.btn-primary:not(#back-to-top):not(.form-button-search).active {
+    color: #fff !important;
+    background-color: var(--link-color) !important;
+}
+
+/* 4. Layout für den Panel-Footer */
+.panel-footer {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--background-image) !important;
+}
+
+/*================================
  * Benachrichtigung Termine/Geburtstage
  * ===============================*/
 
@@ -418,23 +459,6 @@ button img {
 #topbar-first #nav-notifications-menu li.notif-entry .media-object a img,
 .notif-item img.notif-image {
     border-radius: 50%;
-}
-
-/*===================
- * Tabellenfarbe
- * =================*/
-
-.table td,
-.table th {
-	border-top: 1px solid #5b5b5b;
-	border: thin solid #424445 !important;
-}
-
-.table tr.info td,
-.table tr.info th,
-.table tr td.info,
-.table tr th.info {
-	background-color: #464649;
 }
 
 /* ================
@@ -923,50 +947,11 @@ th {
 	border: thin solid #eaeaea;
 }
 
-/* Back to Button */
-
-#back-to-top {
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	display: none;
-	cursor: pointer;
-	position: fixed;
-	z-index: 49;
-	right: 40px;
-	bottom: 40px;
-	opacity: 1;
-	padding: 0 12px 0 12px;
-	border-radius: 10px;
-	line-height: 1.5;
-	background-color: #fff0;
-	font-size: 0;
-}
-
-#back-to-top::before {
-	content: "\F4AF";
-	font-family: "remixicon";
-	font-size: 60px;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: rotate(180deg);
-	display: inline-block;
-	vertical-align: middle;
-	transition: transform 0.3s ease;
-}
-
-
 /* Abstand zwischen den Einstellungsmenues verringert */
 
 .side-link-link, aside .widget li a {
-	padding-top: 6px;
-	padding-bottom: 6px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 
 /* Seitennavigation Widgets */
