@@ -46,26 +46,24 @@
 }
 
 html body {
-	background-color: var(--background-color);
-	font-size: 15px;
-	padding-top: 125px;
-	font-family: var(--global-font-family);
+    background-color: var(--background-color);
+    font-size: 15px;
+    padding-top: 125px;
+    font-family: var(--global-font-family);
 }
 
 @media (min-width: 1200px) {
-	.container {
-	width: 1200px;
-  }
-}
+    .container {
+        width: 1200px;
+    }
 
-@media (min-width: 1200px) {
-  .col-lg-7 {
-    width: 63.33333333%;
-  }
+    .col-lg-7 {
+        width: 63.33333333%;
+    }
 }
 
 #topbar-second {
-	height: 60px !important;
+    height: 60px !important;
 }
 
 /* ===============
@@ -93,7 +91,7 @@ html body {
 
 #search-box .btn,
 .form-group-search .form-button-search {
-	background-color: #c8c8c9;
+	background-color: var(--default);
 }
 
 .form-group-search {
@@ -304,6 +302,47 @@ button img {
 }
 
 /*================================
+ * Button Einstellungen speichern & Position
+ * =============================*/
+
+/* Allgemeine Basis-Regeln  */
+#adminpage a.btn:not(#back-to-top),
+.settings-submit,
+input[type="submit"]:not(.form-button-search),
+button[type="submit"]:not(#back-to-top):not(.form-button-search),
+#photos-upload-submit {
+    background-color: var(--link-color) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 50px !important;
+    margin-left: 5px;
+}
+
+/* Spezifische Primär-Buttons */
+.btn.btn-primary:not(#back-to-top):not(.form-button-search) {
+    background-color: var(--link-color) !important;
+    color: #fff !important;
+    border-radius: 25px;
+}
+
+/* Interaktionen für Primary-Buttons */
+a.btn.btn-primary:not(#back-to-top):not(.form-button-search):hover,
+a.btn.btn-primary:not(#back-to-top):not(.form-button-search):focus,
+.btn.btn-primary:not(#back-to-top):not(.form-button-search):active,
+.btn.btn-primary:not(#back-to-top):not(.form-button-search).active {
+    color: #fff !important;
+    background-color: var(--link-color) !important;
+}
+
+/* 4. Layout für den Panel-Footer */
+.panel-footer {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--background-image) !important;
+}
+
+/*================================
  * Benachrichtigung Termine/Geburtstage
  * ===============================*/
 
@@ -327,12 +366,6 @@ button img {
 #jot-modal #jot-sections, #jot-modal #jot-modal-body, #jot-modal #profile-jot-form, #jot-modal #profile-jot-wrapper, #jot-modal #jot-text-wrap, #jot-modal #jot-preview-content, #jot-modal #tread-wrapper--1, #jot-modal #item-Q0, #jot-modal #profile-jot-acl-wrapper, #jot-modal #acl-wrapper {
 	border-radius: 10px;
 }
-
-/*==================
- * Gespeicherte Ordner
- * =================*/
-
-/*???*/
 
 /* ================
  * Reaction Hashtags
@@ -705,14 +738,12 @@ body.show-action-labels .action-label {
 }
 
 .btn {
-	border-radius: 20px;
-	background-color: #f6f6f6;
+	border-radius: 15px;
 }
 
 .btn.btn-primary {
 	background: #ededed;
 	border-radius: 25px;
-	color: #888888c4;
 }
 
 /* Startseite: Verhindert Button Farbe */
@@ -727,64 +758,22 @@ body.show-action-labels .action-label {
 }
 
 /* Linkunterstrich vermeiden */
-
 body a {
 	text-decoration: none !important;
 }
 
 /* Abstand Artikelüberschrift zu BIld erhöht */
-
 h4 {
 	margin: 10px 0px 0px 0px;
 }
 
 /* Farbe BBCode und Markdown Tabellen */
-
 td,
 th {
 	border: thin solid #eaeaea;
 }
 
-/* Back to Button */
-
-#back-to-top {
-	width: 40px;
-	height: 40px;
-	text-align: center;
-	display: none;
-	cursor: pointer;
-	position: fixed;
-	z-index: 49;
-	right: 40px;
-	bottom: 40px;
-	opacity: 1;
-	padding: 0 12px 0 12px;
-	border-radius: 10px;
-	line-height: 1.5;
-	background-color: #fff0;
-	font-size: 0;
-}
-
-#back-to-top::before {
-	content: "\F4AF";
-	font-family: "remixicon";
-	font-size: 60px;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: rotate(180deg);
-	display: inline-block;
-	vertical-align: middle;
-	transition: transform 0.3s ease;
-}
-
 /* Hintergrund Eingebettete Beiträge */
-
 .well {
   background-image: -webkit-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);
   background-image: -o-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);
