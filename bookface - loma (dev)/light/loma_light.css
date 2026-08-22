@@ -174,15 +174,6 @@ button img {
 	border-bottom: 2px solid var(--link-color);
 }
 
-/* Bagde Position */
-#topbar-first .nav-segment .nav-notification {
-	position: relative;
-	top: -30px;
-	left: 15px;
-	border-radius: 5px;
-	max-width: 40px;
-}
-
 /* ====================
  * Icongröße Topbar Mitte
  * =====================*/
@@ -211,6 +202,15 @@ button img {
 /* Profil-Usericon rechts beim Überscrollen der Timeline */
 #vcard-short-info, #nav-short-info .contact-wrapper {
 	margin-top: 15px;
+}
+
+/* Position neue Nachrichten Badges */
+#topbar-first .nav-segment .nav-notification {
+    right: 0.3em;
+}
+
+#topbar-first .topbar-nav .nav-segment .nav-notification {
+    right: 5px;
 }
 
 /* =============================
@@ -1076,11 +1076,6 @@ a img.network-svg {
 .navbar-form {
 	margin-top: 10px;
 	margin-bottom: 10px;
-}
-
-/* Position neue Nachrichten */
-#topbar-first .topbar-nav .nav-segment .nav-notification {
-	right: 15px;
 }
 
 ul.tabs li {
