@@ -98,6 +98,32 @@ html body {
 	width: 100%;
 }
 
+/* =============================
+ * Textfahne zur Erläuterung der Suche
+ =============================*/
+
+#search-box .form-group-search {
+    position: relative;
+}
+
+#search-box .form-group-search:focus-within::after {
+    content: "Suchparameter:\A @name = Benutzer\A !group = Gruppe\A #tags = Schlagwort\A content = Textsuche\A server:friendica.social = Server\A source:person = Person, Gruppe, Organisation";
+    white-space: pre-line; /* Zeilenumbrüche (\A) */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #fff;
+    color: var(--font_color);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    z-index: 1000;
+}
+
 /*===============
  * Kontowechsel
  * =============*/
@@ -500,19 +526,13 @@ a.tag {
 }
 
 /* Deutsch */
-[lang="de"] .button-comments::after,
-[lang="de"] .button-likes::after,
-[lang="de"] [id^="dislike-"]::after,
-[lang="de"] [id^="shareMenuOptions-"]::after,
-[lang="de"] .wall-item-emoji::after {
-    content: "";
-}
-
 [lang="de"] .button-comments::after { content: "Kommentar"; }
 [lang="de"] .button-likes::after { content: "Mögen"; }
 [lang="de"] [id^="dislike-"]::after { content: "Nicht mögen"; }
 [lang="de"] [id^="shareMenuOptions-"]::after { content: "Teilen"; }
 [lang="de"] .wall-item-emoji::after { content: "Reaktion"; }
+[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="de"] .more-links .dropdown-toggle::after { content: "Mehr"; }
 
 /* Französisch */
 [lang="fr"] .button-comments::after { content: "Commentaire"; }
@@ -520,6 +540,8 @@ a.tag {
 [lang="fr"] [id^="dislike-"]::after { content: "Ne pas aimer"; }
 [lang="fr"] [id^="shareMenuOptions-"]::after { content: "Partager"; }
 [lang="fr"] .wall-item-emoji::after { content: "Réaction"; }
+[lang="fr"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="fr"] .more-links .dropdown-toggle::after { content: "Plus"; }
 
 /* Spanisch */
 [lang="es"] .button-comments::after { content: "Comentario"; }
@@ -527,6 +549,8 @@ a.tag {
 [lang="es"] [id^="dislike-"]::after { content: "No me gusta"; }
 [lang="es"] [id^="shareMenuOptions-"]::after { content: "Compartir"; }
 [lang="es"] .wall-item-emoji::after { content: "Reacción"; }
+[lang="es"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="es"] .more-links .dropdown-toggle::after { content: "Más"; }
 
 /* Dänisch */
 [lang="da"] .button-comments::after { content: "Kommentar"; }
@@ -534,6 +558,8 @@ a.tag {
 [lang="da"] [id^="dislike-"]::after { content: "Synes ikke om"; }
 [lang="da"] [id^="shareMenuOptions-"]::after { content: "Del"; }
 [lang="da"] .wall-item-emoji::after { content: "Reaktion"; }
+[lang="da"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="da"] .more-links .dropdown-toggle::after { content: "Mere"; }
 
 /* Italienisch */
 [lang="it"] .button-comments::after { content: "Commento"; }
@@ -541,6 +567,8 @@ a.tag {
 [lang="it"] [id^="dislike-"]::after { content: "Non mi piace"; }
 [lang="it"] [id^="shareMenuOptions-"]::after { content: "Condividi"; }
 [lang="it"] .wall-item-emoji::after { content: "Reazione"; }
+[lang="it"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="it"] .more-links .dropdown-toggle::after { content: "Altro"; }
 
 /* Verhindert Texturen am more Button */
 .btn-group.open .dropdown-toggle {
@@ -1637,6 +1665,7 @@ iframe {
 .alert {
 	border-color: #ccc;
 	border-radius: 10px;
+	border-width: 3px;
 }
 
 #circle-update-wrapper .viewcontact_wrapper .contact-circle-link {
