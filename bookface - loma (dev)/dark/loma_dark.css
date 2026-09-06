@@ -46,37 +46,6 @@
 	font-weight: 450;
 }
 
-/*==================
- * Addon: LibreTranslate
- * ================*/
-
-.libretranslate-trigger::before {
-  content: "\F227";
-  font-family: "remixicon", sans-serif;
-  margin-right: 0.3em;
-  font-size: 1em;
-  vertical-align: middle;
-  speak: none;
-}
-
-.libretranslate-trigger {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 0.3em;
-  padding: 2px 4px !important;
-  cursor: pointer;
-  border-radius: 4px !important;
-  font-size: 10px !important;
-  font-weight: 500 !important;
-  text-decoration: none !important;
-  margin: 1px !important;
-  background-image: none !important;
-  background-color: #2b2b2b1f !important;
-  box-shadow: none !important;
-  color: #fff !important;
-  text-shadow: none !important;
-}
-
 body {
 	background-color: var(--background-color) !important;
 	font-size: 15px !important;
@@ -128,9 +97,9 @@ body {
   text-decoration: none !important;
   margin: 1px !important;
   background-image: none !important;
-  background-color: #2b2b2b1f !important;
+  background-color: #333 !important;
   box-shadow: none !important;
-  color: #414141 !important;
+  color: #b1b1b1 !important;
   text-shadow: none !important;
 }
 
@@ -205,9 +174,9 @@ button img {
 /*======================
  * Einstellungen Frio
  * ====================*/
-#div_id_frio_enable_advancedcomposer {
+/*#div_id_frio_enable_advancedcomposer {
 	display: none !important;
-}
+}*/
 
 #div_id_frio_show_action_labels {
 	display: none !important;
@@ -257,7 +226,26 @@ button img {
 }
 
 #topbar-first .nav > li > a.selected {
-	border-bottom: 2px solid var(--link-color);
+	border-bottom: 0px;
+}
+
+.nav-menu {
+	position: relative;
+	display: inline-order; /* Fallback */
+	display: inline-block;
+	padding-bottom: 5px;
+}
+
+.nav-menu.selected::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 55px;
+	height: 3px;
+	background-color: var(--link-color);
+	border-radius: 2px;
 }
 
 /* Icongröße Topbar Mitte */
@@ -285,15 +273,6 @@ button img {
 /* Profil-Usericon rechts beim Überscrollen der Timeline */
 #vcard-short-info, #nav-short-info .contact-wrapper {
 	margin-top: 15px;
-}
-
-/* Position neue Nachrichten Badges */
-#topbar-first .nav-segment .nav-notification {
-    right: 0.3em;
-}
-
-#topbar-first .topbar-nav .nav-segment .nav-notification {
-    right: 5px;
 }
 
 /* =============================
@@ -371,17 +350,6 @@ button img {
 	width: 16px;
 	height: 16px;
 	vertical-align: middle;
-}
-
-/* Regelt den Abstand zwischen den Munü-Icons */
-@media (min-width: 768px) {
-	.nav.navbar-left {
-		display: flex;
-		gap: 2rem;
-	}
-    .wall-item-links {
-		width: 100%;
-	}
 }
 
 /*================================
@@ -793,6 +761,7 @@ textarea.text-autosize {
 .form-control[disabled],
 .fieldset[disabled] .form-control {
 	opacity: 0.5;
+	background-color: #252728;
 }
 
 /* ==================
@@ -924,6 +893,16 @@ section > .generic-page-wrapper,
 /* ================
  * Beitragsartikel
  * =================*/
+
+/* Kontext Autocomplete Handle */
+.acpopup {
+	background-color: #1c1c1d;
+	border-radius: 5px;
+}
+
+.textcomplete-item.active > a {
+  background-color: rgb(69, 69, 69) !important;
+}
 
 /* Verhindert eine zusätzliche Beschriftung*/
 body.show-action-labels .action-label {
@@ -1137,6 +1116,7 @@ Element {
 .contact-photo-image-wrapper,
 .wwto .contact-photo {
 	z-index: 1;
+	border-radius: 50px;
 }
 
 [class*="thread_level_"]::after {
@@ -1396,8 +1376,9 @@ Element {
 /* Größe Profilbilder Thread */
 
 .contact-photo {
-	border-radius: 100% !important;
-	border: 1px solid #353535 !important
+	border-radius: 50%;
+	border: 1px solid #353535 !important;
+	color: #353535 !important;
 }
 
 .contact-photo-xs {
@@ -1534,6 +1515,14 @@ ul.tabs li:hover:not(.active) a {
   border-radius: 25px !important;
   border: none !important;
   box-shadow: none !important;
+}
+
+/* =======================
+ * Moderation
+ * ======================*/
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+	background-color: #252728;
 }
 
 /* =======================
