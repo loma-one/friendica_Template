@@ -2,7 +2,7 @@
 	Name	   : Bookface Light
 	Version    : 1.3
 	Licence    : AGPL
-	Created on : 31.01.26
+	Created on : 27.09.26
 	Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
 */
 
@@ -361,25 +361,11 @@ button img {
  * Button Einstellungen speichern & Position
  * =============================*/
 
-/* Allgemeine Basis-Regeln  */
-#adminpage a.btn:not(#back-to-top),
-.settings-submit,
-input[type="submit"]:not(.form-button-search),
-button[type="submit"]:not(#back-to-top):not(.form-button-search),
-#photos-upload-submit {
-    background-color: var(--link-color) !important;
-    color: #fff !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 50px !important;
-    margin-left: 5px;
-}
-
 /* Spezifische Primär-Buttons */
 .btn.btn-primary:not(#back-to-top):not(.form-button-search) {
-    background-color: var(--link-color) !important;
-    color: #fff !important;
-    border-radius: 25px;
+	background-color: var(--link-color) !important;
+	color: #fff !important;
+	border-radius: 15px;
 }
 
 /* Interaktionen für Primary-Buttons */
@@ -799,6 +785,10 @@ body.show-action-labels .action-label {
 	border-radius: 15px;
 }
 
+.btn.btn-link.fakelink {
+	background-color: transparent !important;
+}
+
 .btn.btn-primary {
 	background: #ededed;
 	border-radius: 25px;
@@ -825,12 +815,6 @@ h4 {
 	margin: 10px 0px 0px 0px;
 }
 
-/* Farbe BBCode und Markdown Tabellen */
-td,
-th {
-	border: thin solid #eaeaea;
-}
-
 /* Hintergrund Eingebettete Beiträge */
 .well {
   background-image: -webkit-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);
@@ -842,6 +826,10 @@ th {
   border-color: #e9e9e9;
   -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.0);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0),0 1px 0 rgba(255, 255, 255, 0);
+}
+
+sup {
+  top: auto !important;
 }
 
 /* Abstand zwischen den Einstellungsmenues verringert */
@@ -901,6 +889,11 @@ ul#nav-user-menu {
 /* ==================
  * Beitragsthread
  * ==================*/
+
+/* Dropdown More */
+.dropdown-menu > li > a {
+	--link-color: #252728;
+}
 
 /* fügt eine farbige Linie für Kommentare ein*/
 Element {
@@ -1157,6 +1150,23 @@ ul.tabs li:hover:not(.active) a {
 	border-radius: 8px !important;
 }
 
+.wall-item-response span {
+	position: absolute;
+	text-align: center;
+	display: block;
+	background-color: none;
+	box-shadow: -1px 1px 1px #fff0;
+	border-radius: 4px;
+	color: #fff0;
+	font-size: 12px;
+	font-weight: 700;
+	width: fit-content;
+	padding: 0px 7px;
+	left: 55%;
+	top: 0px;
+	z-index: 1;
+}
+
 
 /* =======================
  * Ab hier aufräumen
@@ -1244,7 +1254,7 @@ p.wall-item-announce,
 	border-radius: 10px;
 }
 
-.type-link h4,
+/*.type-link h4,
 .type-link blockquote,
 .type-link sup,
 .type-video h4,
@@ -1252,7 +1262,7 @@ p.wall-item-announce,
 .type-video sup {
 	padding-left: 10px !important;
 	padding-right: 10px !important;
-}
+}*/
 
 .wall-item-actions-row button,
 .wall-item-actions-right button {
@@ -1273,24 +1283,6 @@ p.wall-item-announce,
 .wall-item-response {
 	position: relative;
 	overflow: visible !important;
-}
-
-.wall-item-actions-row > button span,
-.wall-item-response span {
-	position: absolute;
-	text-align: center;
-	display: block;
-	background-color: none;
-	box-shadow: -1px 1px 1px #fff0;
-	border-radius: 4px;
-	color: #fff0;
-	font-size: 12px;
-	font-weight: 700;
-	width: fit-content;
-	padding: 0px 7px;
-	left: 55%;
-	top: 0px;
-	z-index: 1;
 }
 
 .vote-event:not(:has(.wall-item-response:empty)) {
@@ -1697,7 +1689,7 @@ iframe {
 .alert {
 	border-color: #ccc;
 	border-radius: 10px;
-	border-width: 3px;
+	border-width: 1px;
 }
 
 #circle-update-wrapper .viewcontact_wrapper .contact-circle-link {
