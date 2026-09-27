@@ -2,7 +2,7 @@
 	Name	   : Bookface Dark
 	Version    : 1.3
 	Licence    : AGPL
-	Created on : 31.01.26
+	Created on : 27.09.26
 	Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
 */
 
@@ -182,7 +182,6 @@ button img {
 	display: none !important;
 }
 
-
 /*======================
  * Menue + Position Profilbild
  * =====================*/
@@ -357,24 +356,24 @@ button img {
  * =============================*/
 
 /* Allgemeine Basis-Regeln  */
-#adminpage a.btn:not(#back-to-top),
+/*#adminpage a.btn:not(#back-to-top),
 .settings-submit,
 input[type="submit"]:not(.form-button-search),
 button[type="submit"]:not(#back-to-top):not(.form-button-search),
 #photos-upload-submit {
-    background-color: var(--link-color) !important;
-    color: #fff !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 50px !important;
-    margin-left: 5px;
-}
+	background-color: var(--link-color) !important;
+	color: #fff !important;
+	border: none !important;
+	box-shadow: none !important;
+	border-radius: 10px !important;
+	margin-left: 5px;
+}*/
 
 /* Spezifische Primär-Buttons */
 .btn.btn-primary:not(#back-to-top):not(.form-button-search) {
-    background-color: var(--link-color) !important;
-    color: #fff !important;
-    border-radius: 25px;
+	background-color: var(--link-color) !important;
+	color: #fff !important;
+	border-radius: 15px;
 }
 
 /* Interaktionen für Primary-Buttons */
@@ -464,12 +463,6 @@ a.btn.btn-primary:not(#back-to-top):not(.form-button-search):focus,
 span.mention .ri-user-line,
 a.tag .ri-flashlight-line {
 	display: none !important;
-}
-
-/* Farbe und Größe der Reaktions-Icons anpassen */
-.wall-item-actions button {
-	font-size: 14px !important;
-	color: #b0b3b8 !important;
 }
 
 /* Unterstrich unter Reaktionen vermeiden */
@@ -642,10 +635,10 @@ a.tag.label:not(.border-primary):hover bdi a,
 [lang="it"] .more-links .dropdown-toggle::after { content: "Altro"; }
 
 /* Verhindert Texturen am more Button */
-.btn-group.open .dropdown-toggle {
+/*.btn-group.open .dropdown-toggle {
   -webkit-box-shadow: none;
   box-shadow: none;
-}
+}*/
 
 /* Verhindert das Einblenden des Firefox Teilen Button */
 .button-browser-share {
@@ -658,7 +651,7 @@ li:has(.button-browser-share) {
 
 /* Farbgebung der Reaktion */
 .wall-item-actions .btn, .wall-item-actions a, .wall-item-actions button {
-	color: #333333a3;
+	color: #c1c1c1;
 }
 
 /* ===================
@@ -914,10 +907,8 @@ body.show-action-labels .action-label {
 	background-color: transparent
 }
 
-.btn.btn-primary {
-	background: var(--link-color);
-	color: #ffffff5c;
-	border-radius: 25px;
+ul.notif-network-list li.unseen {
+  background-color: transparent;
 }
 
 /* Startseite: Verhindert Button Farbe */
@@ -937,7 +928,7 @@ body a {
 	text-decoration: none !important;
 }
 
-/* Abstand Artikelüberschrift zu BIld erhöht */
+/* Abstand Artikelüberschrift zu Bild erhöht */
 
 h4 {
 	margin: 10px 0px 0px 0px;
@@ -947,11 +938,8 @@ aside hr, section hr {
 	border-color: rgb(61, 60, 60);
 }
 
-/* Farbe BBCode und Markdown Tabellen */
-
-td,
-th {
-	border: thin solid #eaeaea;
+sup {
+  top: auto !important;
 }
 
 /* Abstand zwischen den Einstellungsmenues verringert */
@@ -973,6 +961,11 @@ aside .widget,
 /* Saubere Navigation beim überfahren der Menüs */
 ul#nav-user-menu {
 	padding-block: 10px;
+}
+
+/* Bildbeschreibung */
+.dropzone:not(textarea) {
+  color: var(--default);
 }
 
 /*=======================
@@ -1015,6 +1008,12 @@ ul#nav-user-menu {
 /* Hilfe-Text */
 .help-block {
 	color: var(--font-color);
+}
+
+#preview_profile-jot-text,
+.comment-edit-form .preview {
+	border: 1px solid #575757 !Important;
+	background: #252728 !Important;
 }
 
 /*=======================
@@ -1073,6 +1072,11 @@ button, input, select, textarea {
 /* ==================
  * Beitragsthread
  * ==================*/
+
+/* Dropdown More */
+.dropdown-menu > li > a {
+	--link-color: #252728;
+}
 
 /* fügt eine farbige Linie für Kommentare ein*/
 Element {
@@ -1155,89 +1159,6 @@ Element {
 
 .thread_level_9::before { background-color: var(--thread-level-9-color); }
 .thread_level_9:hover::before { background-color: var(--thread-level-9-hover-color); }
-
-/*==================================
- * NEU: Berücksichtigt Änderungen in der Threasstruktur
- * ================================
-
-.comment-container {
-    position: relative;
-}
-
-.wall-item-container[class*="thread_level_"] {
-    margin-left: 0;
-}
-
-.contact-photo-image-wrapper,
-.wwto .contact-photo {
-    z-index: 1;
-}*/
-
-/* =========================================================
- * Smart-Threading (Hierarchische Linienführung)
- * Greift nur, wenn die Klasse .smart-threaded am Container anliegt
- * =========================================================
-
-.smart-threaded [class*="thread_level_"]:not(.thread_level_1) {
-    position: relative;
-    border-left: 15px solid transparent;
-}
-
-.thread_level_1 {
-    position: relative;
-    border-left: 0px;
-}
-
-.smart-threaded [class*="thread_level_"]::before,
-.smart-threaded [class*="thread_level_"]::after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    background-color: inherit;
-}
-
-.smart-threaded [class*="thread_level_"]::before {
-    left: 27px;
-    top: 50px;
-    bottom: 15px;
-    width: 3px;
-}
-
-.smart-threaded [class*="thread_level_"]::after {
-    top: 45px;
-    left: -8px;
-    width: 26px;
-    height: 1px;
-}
-
-.thread_level_1::before {
-    background-color: transparent !important;
-}
-
-.smart-threaded .thread_level_2::before { background-color: var(--thread-level-2-color); }
-.smart-threaded .thread_level_2:hover::before { background-color: var(--thread-level-2-hover-color); }
-
-.smart-threaded .thread_level_3::before { background-color: var(--thread-level-3-color); }
-.smart-threaded .thread_level_3:hover::before { background-color: var(--thread-level-3-hover-color); }
-
-.smart-threaded .thread_level_4::before { background-color: var(--thread-level-4-color); }
-.smart-threaded .thread_level_4:hover::before { background-color: var(--thread-level-4-hover-color); }
-
-.smart-threaded .thread_level_5::before { background-color: var(--thread-level-5-color); }
-.smart-threaded .thread_level_5:hover::before { background-color: var(--thread-level-5-hover-color); }
-
-.smart-threaded .thread_level_6::before { background-color: var(--thread-level-6-color); }
-.smart-threaded .thread_level_6:hover::before { background-color: var(--thread-level-6-hover-color); }
-
-.smart-threaded .thread_level_7::before { background-color: var(--thread-level-7-color); }
-.smart-threaded .thread_level_7:hover::before { background-color: var(--thread-level-7-hover-color); }
-
-.smart-threaded .thread_level_8::before { background-color: var(--thread-level-8-color); }
-.smart-threaded .thread_level_8:hover::before { background-color: var(--thread-level-8-hover-color); }
-
-.smart-threaded .thread_level_9::before { background-color: var(--thread-level-9-color); }
-.smart-threaded .thread_level_9:hover::before { background-color: var(--thread-level-9-hover-color); }
-*/
 
 /* ===========================
  * Emoji-Picker Theme anpassen
@@ -1352,6 +1273,7 @@ Element {
 	font-size: 13px !important;
 	border-bottom: 1px solid var(--emoji-border-subtle) !important;
 }
+
 
 /* Emoji List */
 .fg-emoji-list,
@@ -1479,6 +1401,23 @@ ul.tabs li:hover:not(.active) {
 ul.tabs li:hover:not(.active) a {
 	background-color: rgba(128, 128, 128, 0.1) !important;
 	border-radius: 8px !important;
+}
+
+.wall-item-response span {
+	position: absolute;
+	text-align: center;
+	display: block;
+	background-color: none;
+	box-shadow: -1px 1px 1px #fff0;
+	border-radius: 4px;
+	color: #fff0;
+	font-size: 12px;
+	font-weight: 700;
+	width: fit-content;
+	padding: 0px 7px;
+	left: 55%;
+	top: 0px;
+	z-index: 1;
 }
 
 /* Kommentare im dunklen Theme */
@@ -1640,24 +1579,6 @@ p.wall-item-announce,
 .wall-item-response {
 	position: relative;
 	overflow: visible !important;
-}
-
-.wall-item-actions-row > button span,
-.wall-item-response span {
-	position: absolute;
-	text-align: center;
-	display: block;
-	background-color: none;
-	box-shadow: -1px 1px 1px #fff0;
-	border-radius: 4px;
-	color: #fff0;
-	font-size: 12px;
-	font-weight: 700;
-	width: fit-content;
-	padding: 0px 7px;
-	left: 55%;
-	top: 0px;
-	z-index: 1;
 }
 
 .vote-event:not(:has(.wall-item-response:empty)) {
@@ -2039,7 +1960,7 @@ iframe {
 .alert {
   border-color: #5b5b5b;
   border-radius: 10px;
-  border-width: 3px;
+  border-width: 1px;
 }
 
 #circle-update-wrapper .viewcontact_wrapper .contact-circle-link {
