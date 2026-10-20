@@ -1,0 +1,2538 @@
+/*
+	Name	   : Bookface Light
+	Version    : 1.4-rc
+	Licence    : AGPL
+	Created on : 27.09.26
+	Updated on : 20.10.26 – Kompatibilität Friendica 2026.08-rc
+	Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
+*/
+
+:root {
+	color-scheme: light;
+}
+
+:root {
+	--global-font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+	--nav-bg: $nav_bg;
+	--link-color: $link_color;
+	--nav-icon-color: $nav_icon_color;
+	--background-color: $background_color;
+	--contentbg-transp: $contentbg_transp;
+	--font-color: $font_color;
+	--font-color-darker: $font_color_darker;
+	--background-image: $background_image;
+	--menu-background-hover-color: $menu_background_hover_color;
+	--border-color: $border_color;
+	--thread-level-1-color: #fff; /* Sehr, sehr helles Grau */
+	--thread-level-1-hover-color: #e0e0e0; /* Sehr helles Grau */
+	--thread-level-2-color: #fafafb; /* Sehr helles Grau */
+	--thread-level-2-hover-color: #f0f0f0; /* Helles Grau */
+	--thread-level-3-color: #e6f7ff; /* Hellblau */
+	--thread-level-3-hover-color: #b3efff; /* Helles Blau */
+	--thread-level-4-color: #e6ffed; /* Hellgrün */
+	--thread-level-4-hover-color: #b3ffd9; /* Helles Grün */
+	--thread-level-5-color: #fff2e6; /* Hellorange */
+	--thread-level-5-hover-color: #ffd9b3; /* Helles Orange */
+	--thread-level-6-color: #f9e6ff; /* Hellviolett */
+	--thread-level-6-hover-color: #e6b3ff; /* Helles Violett */
+	--thread-level-7-color: #ffe6e6; /* Hellrot */
+	--thread-level-7-hover-color: #ffb3b3; /* Helles Rot */
+	--thread-level-8-color: #f5f5f5; /* Helles Grau */
+	--thread-level-8-hover-color: #d5d5d5; /* Mittleres Grau */
+	--thread-level-9-color: #e5e5e5; /* Mittleres Grau */
+	--thread-level-9-hover-color: #c9c9c9; /* Dunkelgrau */
+	letter-spacing: 0.01em; /* Lesbarkeit von Text erhöhen */
+	font-weight: 450; /* Lesbarkeit von Text erhöhen */
+}
+
+html body {
+    background-color: var(--background-color);
+    font-size: 15px;
+    padding-top: 125px;
+    font-family: var(--global-font-family);
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+
+    .col-lg-7 {
+        width: 63.33333333%;
+    }
+}
+
+#topbar-second {
+    height: 60px !important;
+    top: var(--topbar-first-size); /* 2026.08-rc: Core positioniert die zweite Topbar an der ersten */
+    background-color: var(--nav-bg) !important;
+}
+
+/*======================
+ * Translate Button
+ * ====================*/
+
+.libretranslate-trigger::before {
+  content: "\F227";
+  font-family: "remixicon", sans-serif;
+  margin-right: 0.3em;
+  font-size: 1em;
+  vertical-align: middle;
+  speak: none;
+}
+
+.libretranslate-trigger {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.3em;
+  padding: 2px 4px !important;
+  cursor: pointer;
+  border-radius: 4px !important;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  margin: 1px !important;
+  background-image: none !important;
+  background-color: #2b2b2b1f !important;
+  box-shadow: none !important;
+  color: #414141 !important;
+  text-shadow: none !important;
+}
+
+/* ===============
+ * Suchen Bereich
+ * ===============*/
+
+/* Suche angepasst */
+.form-control {
+	height: 35px;
+	border-radius: 10px;
+}
+
+.navbar-fixed-top {
+	border-width: 0 0 3px;
+}
+
+.dropzone.dz-clickable {
+	border-radius: 10px;
+}
+
+#search-box {
+	left: 20px;
+	margin-top: 10px;
+}
+
+#search-box .btn,
+.form-group-search .form-button-search {
+	background-color: var(--default);
+}
+
+.form-group-search {
+	width: 100%;
+}
+
+/* =============================
+ * Textfahne zur Erläuterung der Suche
+ =============================*/
+
+#search-box .form-group-search {
+    position: relative;
+}
+
+#search-box .form-group-search:focus-within::after {
+    content: "Suchparameter:\A @name = Benutzer\A !group = Gruppe\A #tags = Schlagwort\A content = Textsuche\A server:friendica.social = Server\A source:person = Person, Gruppe, Organisation";
+    white-space: pre-line; /* Zeilenumbrüche (\A) */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #fff;
+    color: var(--font_color);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    z-index: 1000;
+}
+
+/*===============
+ * Kontowechsel
+ * =============*/
+
+button img {
+	border-radius: 50px !important;
+}
+
+/* Verhindert den Umbruch zwischen Profilbild und Handle */
+#nav-profile-link {
+  white-space: nowrap;
+}
+
+#nav-profile-link img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*======================
+ * Einstellungen Frio
+ * ====================*/
+/*#div_id_frio_enable_advancedcomposer {
+	display: none !important;
+}*/
+
+#div_id_frio_show_action_labels {
+	display: none !important;
+}
+
+/*======================
+ * Menue + Position Profilbild
+ * =====================*/
+
+.dropdown-menu li {
+	width: 95%;
+}
+
+.profile-link a {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	white-space: nowrap;
+}
+
+.profile-link img {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* Verschiebt das Menue leicht nach Rechts
+    um das Seitenwidget nicht überdeckt wird */
+
+.dropdown-menu.pull-right {
+  right: 40px;
+}
+
+.fakelink > h3::before {
+  padding-right: 1px;
+}
+
+/* ===============
+ * Toolbar
+ * ===============*/
+
+/* Iconfarbe Topbar*/
+:is(#topbar-first .nav > li, nav.navbar .nav > li) :is(a, button) {
+	color: var(--nav-icon-color);
+	border-radius: 15px;
+}
+
+#topbar-first .nav > li > a.selected i {
+	color: var(--link-color) !important;
+	position: relative;
+	padding-bottom: 13px;
+}
+
+#topbar-first .nav > li > a.selected {
+	border-bottom: 0px;
+}
+
+.nav-menu {
+	position: relative;
+	/* display: inline-order; ungültiger Wert entfernt – Fallback unnötig */
+	display: inline-block;
+	padding-bottom: 5px;
+}
+
+.nav-menu.selected::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 55px;
+	height: 3px;
+	background-color: var(--link-color);
+	border-radius: 2px;
+}
+
+/* ====================
+ * Icongröße Topbar Mitte
+ * =====================*/
+
+.ri-xl {
+	font-size: 1.875em;
+}
+
+#topbar-first .topbar-nav i {
+	font-size: 30px;
+}
+
+.ri-pencil-line::before,
+.ri-grid-fill::before {
+	content: "\EDDE";
+	content: "\EC82";
+}
+
+#topbar-first .nav > .account img {
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	max-width: 40px;
+}
+
+/* Profil-Usericon rechts beim Überscrollen der Timeline */
+#vcard-short-info, #nav-short-info .contact-wrapper {
+	margin-top: 15px;
+}
+
+/* =============================
+ * Nachladen von Beiträgen, wenn
+ * "Compact view" aktiviert ist
+ * ===========================*/
+
+/* Container für die untere Leiste des Beitrags */
+.wall-item-bottom {
+	padding: 2px 0;
+	flex-wrap: wrap;
+	gap: 12px;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+/* Links-Bereich (falls später Inhalte hinzugefügt werden) */
+.wall-item-links {
+	flex-grow: 1;
+}
+
+/* Button zum Nachladen von Kommentaren */
+.wall-item-bottom .btn-link.fakelink {
+	background: none;
+	border: none;
+	color: var(--link_color);
+	cursor: pointer;
+	padding: 4px 15px;
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: inherit;
+	transition: background-color 0.2s, color 0.2s;
+	order: -1;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+/* Icon nur für den "Load more comments"-Button */
+.wall-item-bottom .btn-link.fakelink::before {
+	font-family: remixicon;
+	content: "\EF3F";
+	font-size: 1em;
+}
+
+.wall-item-bottom .btn-link.fakelink:hover {
+	background-color: var(--background_color);
+	color: #004499;
+	text-decoration: none;
+}
+
+.wall-item-bottom .btn-link.fakelink:active {
+	background-color: var(--background_color);
+}
+
+/* Lade-Animation und Text */
+.wall-item-bottom .loading-text {
+	color: var(--link_color);
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 4px 15px;
+	order: -1;
+}
+
+/* Icon nur für den Lade-Text im wall-item-bottom */
+.wall-item-bottom .loading-text::before {
+	font-family: remixicon;
+	content: "\EF3F";
+	font-size: 1em;
+}
+
+/* Animation für den Lade-Indikator */
+.like-rotator {
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+
+/*================================
+ * Button Einstellungen speichern & Position
+ * =============================*/
+
+/* Spezifische Primär-Buttons */
+.btn.btn-primary:not(#back-to-top):not(.form-button-search):not(#nav-login):not(#nav-about) {
+	background-color: var(--link-color) !important;
+	color: #fff !important;
+	border-radius: 15px;
+}
+
+/* Interaktionen für Primary-Buttons */
+
+a.btn.btn-primary:not(#back-to-top):not(.form-button-search):hover,
+a.btn.btn-primary:not(#back-to-top):not(.form-button-search):focus,
+.btn.btn-primary:not(#back-to-top):not(.form-button-search):active,
+.btn.btn-primary:not(#back-to-top):not(.form-button-search).active {
+	color: #fff !important;
+	background-color: var(--link-color) !important;
+}
+
+/* 4. Layout für den Panel-Footer */
+.panel-footer {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fff !important;
+}
+
+/*================================
+ * Benachrichtigung Termine/Geburtstage
+ * ===============================*/
+
+#birthday-notice, #birthday-wrapper, #rfic-desc, #remote-friends-in-common, #event-notice, #event-wrapper {
+  background-color: var(--nav-bg) !important;
+  box-shadow: 0 0 2px #828282;
+  -webkit-box-shadow: 0 0 2px #828282;
+  -moz-box-shadow: 0 0 2px #828282;
+  border-radius: 12px;
+}
+
+/* Benachrichtigung Textgröße */
+#topbar-first #nav-notifications-menu li.notif-entry {
+	font-size: 15px;
+}
+
+/*=====================
+ * Editor Modal
+ * ====================*/
+
+#jot-modal #jot-sections, #jot-modal #jot-modal-body, #jot-modal #profile-jot-form, #jot-modal #profile-jot-wrapper, #jot-modal #jot-text-wrap, #jot-modal #jot-preview-content, #jot-modal #tread-wrapper--1, #jot-modal #item-Q0, #jot-modal #profile-jot-acl-wrapper, #jot-modal #acl-wrapper {
+	border-radius: 10px;
+}
+
+/* ================
+ * Reaction Hashtags
+ * ================*/
+
+/* Icons in Hashtags und Mentions ausblenden */
+.wall-item-tags .tag .ri-flashlight-line,
+span.mention .ri-user-line,
+a.tag .ri-flashlight-line {
+	display: none !important;
+}
+
+/* Farbe und Größe der Reaktions-Icons anpassen */
+.wall-item-actions button {
+	font-size: 14px !important;
+	color: var(--nav-icon-color);
+}
+
+/* Unterstrich unter Reaktionen vermeiden */
+.wall-item-actions .active,
+.wall-item-actions button:focus,
+.wall-item-actions button:hover {
+	text-decoration: none;
+}
+
+/* Hover-Effekt: Fett entfernen und Farbe ändern */
+.wall-item-actions .btn-link:hover,
+.wall-item-actions .btn-link:hover i,
+.wall-item-actions .wall-item-response:hover,
+.wall-item-actions .wall-item-response:hover i {
+	font-weight: normal !important;
+	color: var(--link-color) !important;
+}
+
+/* Deaktivierte Buttons: Farbe und Cursor anpassen */
+.wall-item-actions button:disabled,
+.wall-item-actions button[disabled] {
+	color: #aaa !important;
+	cursor: default !important;
+	opacity: 0.6 !important;
+}
+
+/*=========================
+ * Youtube Videoanzeige
+ * =======================*/
+
+.wall-item-container
+.wall-item-content
+.type-link img,
+.type-link img,
+.type-video img,
+img.attachment-preview {
+	float: none;
+	margin-right: 0;
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+	max-height: initial;
+	object-fit: cover;
+}
+
+/* ==================
+ * Tags
+ * =================*/
+
+/* Standardzustand für Labels */
+
+.wall-item-container .wall-item-bottom .wall-item-tags span.label {
+    border-radius: 4px !important;
+    display: inline-flex !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    padding: 2px 3px !important;
+    text-decoration: none !important;
+    margin: 1px !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: #313131 !important;
+    border: 1px solid #65686c;
+    text-shadow: none !important;
+}
+
+/* Standardzustand für border-primary: Rahmen und Schriftzug in darkgoldenrod */
+.tags .tag.border-primary,
+.tags .tag.border-primary a {
+    border-color: darkgoldenrod !important;
+    color: darkgoldenrod !important;
+    text-decoration: none;
+}
+
+/* Styling für Links in Tags (Block-Darstellung und Padding) */
+.tags .tag.border-primary a,
+.tag bdi a,
+.tag:has(.filerm) a:first-child,
+a.tag {
+    display: inline-block;
+    padding: 2px 6px;
+}
+
+/* Hover-Zustand für border-primary: Hintergrund und Schriftzug in Weiß */
+.tags .tag.border-primary:hover,
+.tags .tag.border-primary:hover a {
+    color: white !important;
+    background-color: darkgoldenrod !important;
+    border-color: darkgoldenrod !important;
+}
+
+/* Standardfarbe für Links in wall-item-bottom */
+.wall-item-bottom .label a {
+    color: #666;
+}
+
+/* =================================
+ * Beschriftung der Reaction in 4 Sprachen
+ * =================================*/
+
+/* Standard (Englisch) */
+.button-comments::after { content: "Comment"; }
+.button-likes::after { content: "Like"; }
+[id^="dislike-"]::after { content: "Dislike"; }
+.wall-item-actions-right .dropdown-toggle::after,
+.more-links .dropdown-toggle::after { content: "More"; }
+
+/* Teilen-Button über ID-Anfang ansprechen */
+[id^="shareMenuOptions-"]::after {
+  content: "Share";
+}
+
+.wall-item-emoji::after {
+    content: "Reaction";
+    font-size: 13px;
+}
+
+/* Deutsch */
+[lang="de"] .button-comments::after { content: "Kommentar"; }
+[lang="de"] .button-likes::after { content: "Mögen"; }
+[lang="de"] [id^="dislike-"]::after { content: "Nicht mögen"; }
+[lang="de"] [id^="shareMenuOptions-"]::after { content: "Teilen"; }
+[lang="de"] .wall-item-emoji::after { content: "Reaktion"; }
+[lang="de"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="de"] .more-links .dropdown-toggle::after { content: "Mehr"; }
+
+/* Französisch */
+[lang="fr"] .button-comments::after { content: "Commentaire"; }
+[lang="fr"] .button-likes::after { content: "Aimer"; }
+[lang="fr"] [id^="dislike-"]::after { content: "Ne pas aimer"; }
+[lang="fr"] [id^="shareMenuOptions-"]::after { content: "Partager"; }
+[lang="fr"] .wall-item-emoji::after { content: "Réaction"; }
+[lang="fr"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="fr"] .more-links .dropdown-toggle::after { content: "Plus"; }
+
+/* Spanisch */
+[lang="es"] .button-comments::after { content: "Comentario"; }
+[lang="es"] .button-likes::after { content: "Me gusta"; }
+[lang="es"] [id^="dislike-"]::after { content: "No me gusta"; }
+[lang="es"] [id^="shareMenuOptions-"]::after { content: "Compartir"; }
+[lang="es"] .wall-item-emoji::after { content: "Reacción"; }
+[lang="es"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="es"] .more-links .dropdown-toggle::after { content: "Más"; }
+
+/* Dänisch */
+[lang="da"] .button-comments::after { content: "Kommentar"; }
+[lang="da"] .button-likes::after { content: "Synes om"; }
+[lang="da"] [id^="dislike-"]::after { content: "Synes ikke om"; }
+[lang="da"] [id^="shareMenuOptions-"]::after { content: "Del"; }
+[lang="da"] .wall-item-emoji::after { content: "Reaktion"; }
+[lang="da"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="da"] .more-links .dropdown-toggle::after { content: "Mere"; }
+
+/* Italienisch */
+[lang="it"] .button-comments::after { content: "Commento"; }
+[lang="it"] .button-likes::after { content: "Mi piace"; }
+[lang="it"] [id^="dislike-"]::after { content: "Non mi piace"; }
+[lang="it"] [id^="shareMenuOptions-"]::after { content: "Condividi"; }
+[lang="it"] .wall-item-emoji::after { content: "Reazione"; }
+[lang="it"] .wall-item-actions-right .dropdown-toggle::after,
+[lang="it"] .more-links .dropdown-toggle::after { content: "Altro"; }
+
+/* Verhindert Texturen am more Button */
+.btn-group.open .dropdown-toggle {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/* Verhindert das Einblenden des Firefox Teilen Button */
+.button-browser-share {
+	display: none !important;
+}
+
+li:has(.button-browser-share) {
+	display: none !important;
+}
+
+/* Farbgebung der Reaktion */
+.wall-item-actions .btn, .wall-item-actions a, .wall-item-actions button {
+	color: #333333a3;
+}
+
+/* ===================
+ * Banner und Bannerbild
+ * ===================*/
+
+/* Logo und Position */
+header #banner #logo-img, .navbar-brand #logo-img {
+	-webkit-mask-image: url("img/friendica-32.png");
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: contain;
+	background-color: currentColor; /* Nimmt die Textfarbe des Eltern-Elements */
+	height: 40px;
+	width: 40px;
+	display: inline-block;
+	color: var(--link-color);
+}
+
+a.navbar-brand {
+    color: var(--color-link);
+}
+
+/*=======================
+ * Profilinformationen
+ *  ======================*/
+
+aside .vcard .panel-body {
+	text-align: left !important;
+}
+
+#aprofile-homepage span::after, .homepage-url span::after {
+	content: '\F100';
+	font-family: remixicon;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: white;
+}
+
+#aprofile-homepage span, .homepage-url span {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: transparent;
+	border-radius: 100%;
+	background-color: var(--link-color);
+}
+
+/* Expandieren von Eingabefeldern */
+
+textarea.text-autosize {
+  resize: vertical !important;
+}
+
+/* =======================
+ *  Benachrichtigungen
+ * =======================*/
+
+/* Schriftfarne Benachrichtigung Übersicht */
+.notif-item a {
+	color: var(--font-color);
+	font-size: 14px;
+}
+
+/* Benachrichtigung und alle darin liegenden Elemente */
+#topbar-first #nav-notifications-menu {
+	border: 1px solid var(--background-color) !important;
+
+	a {
+		color: var(--font-color);
+	}
+
+	li {
+		border-color: transparent !important;
+		box-sizing: border-box;
+		margin: 10px;
+		border-radius: 10px !important;
+		width: 94% !important;
+
+		/* Hover-Effekt für Listenelemente */
+		&.notif-entry:hover {
+			background-color: rgba(128, 128, 128, 0.2) !important;
+			border-color: transparent !important;
+		}
+	}
+}
+
+#topbar-first .notification-unseen {
+	border-left: var(--background-color);
+	background-color: var(--background-color);
+}
+
+#topbar-first #nav-notifications-menu li.notif-entry .media-object a img,
+.notif-item img.notif-image {
+    border-radius: 50%;
+}
+
+/* ===============
+ * Jot Editor / Button
+ *  ==============*/
+
+#jotOpen {
+	border-radius: 20px !important;
+	background-color: var(--link-color) !important;
+	color: #ffffff !important;
+}
+
+#jotOpen:hover,
+#jotOpen:focus {
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1) !important;
+}
+
+.jot-nav {
+	border: none !important;
+}
+
+.jot-nav a {
+	border: none !important;
+	border-radius: 8px !important;
+	margin-right: 5px;
+}
+
+.jot-nav a:hover,
+.jot-nav a:focus {
+	background-color: rgba(93, 93, 93, 0.2) !important;
+}
+
+.jot-nav .active a {
+	background-color: transparent !important;
+	border-radius: 0 !important;
+	border-bottom: 3px solid var(--link-color) !important;
+}
+
+.jot-nav .active a:hover,
+.jot-nav .active a:focus {
+	background-color: transparent !important;
+}
+
+.nav-tabs > li > a {
+	border-radius: 10px 10px 0 0;
+}
+
+/* Editiertbutton über Editor anheben */
+.btn-toolbar > .btn-group, .btn-toolbar .btn-group,.btn-group {
+	bottom: 2px;
+}
+
+/* Mention Button anpassen */
+.action-button {
+	padding-bottom: 14px;
+	padding-top: 14px;
+}
+
+/*======================
+ * Profil-/Icon vor Protokolle
+ *  ====================*/
+
+#profile-photo-wrapper {
+	overflow: visible !important;
+	padding: 5px;
+	border-radius: 50%;
+}
+
+/* ================
+ * Beitragsartikel
+ * =================*/
+
+/* Verhindert eine zusätzliche Beschriftung*/
+body.show-action-labels .action-label {
+	display: none;
+}
+
+.btn {
+	border-radius: 15px;
+}
+
+.btn.btn-link.fakelink {
+	background-color: transparent !important;
+}
+
+.btn.btn-primary {
+	background: #ededed;
+	border-radius: 25px;
+}
+
+/* Startseite: Verhindert Button Farbe */
+.nav.navbar-nav.navbar-right {
+    background: transparent; /* ungültiger Wert "none" korrigiert */
+}
+
+.nav.navbar-nav.navbar-right .btn.btn-primary {
+    background: transparent;
+    color: #fff;
+    border-radius: 25px;
+}
+
+/* Linkunterstrich vermeiden */
+body a {
+	text-decoration: none !important;
+}
+
+/* Abstand Artikelüberschrift zu BIld erhöht */
+h4 {
+	margin: 10px 0px 0px 0px;
+}
+
+/* Hintergrund Eingebettete Beiträge */
+.well {
+  background-image: -webkit-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);
+  background-image: -o-linear-gradient(top,#e8e8e8 0,#f5f5f5 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#e8e8e8),to(#f5f5f5));
+  background-image: linear-gradient(to bottom,#fff 0,#fff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe8e8e8', endColorstr='#fff5f5f5', GradientType=0);
+  background-repeat: repeat-x;
+  border-color: #e9e9e9;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,.05),0 1px 0 rgba(255,255,255,.0);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0),0 1px 0 rgba(255, 255, 255, 0);
+}
+
+sup {
+  top: auto !important;
+}
+
+/* Abstand zwischen den Einstellungsmenues verringert */
+.side-link-link, aside .widget li a {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 3px;
+}
+
+/* Seitennavigation Widgets */
+aside .widget,
+.nav-container .widget {
+	background-color: var(--background-color) !important;
+	box-shadow: none !important;
+	margin-bottom: 1px;
+}
+
+/* Saubere Navigation beim überfahren der Menüs */
+ul#nav-user-menu {
+	padding-block: 10px;
+}
+
+/*=======================
+ * Pannel-Einstellungen
+ * ======================*/
+
+.panel {
+	border-radius: 10px;
+}
+
+.panel-success > .panel-heading,
+.panel-info > .panel-heading {
+	color: #f2f2f2;
+}
+
+.panel-success > .panel-heading {
+	background-image: linear-gradient(to bottom, #2bb84a 0, #2bb84a 100%);
+	background-color: #2bb84a;
+	border-color: #2bb84a;
+}
+
+.panel-info > .panel-heading {
+	background-image: linear-gradient(to bottom, #1f91ca 0, #1f91ca 100%);
+}
+
+/*=======================
+ * Hover-Einstellungen
+ * ======================*/
+
+.hover-card-footer {
+	background-color: var(--nav-bg);
+}
+
+.hover-card-pic img.thumbnail {
+	border-radius: 50% !important;
+}
+
+/* ==================
+ * Beitragsthread
+ * ==================*/
+
+/* Dropdown More */
+.dropdown-menu > li > a {
+	--link-color: #252728;
+}
+
+/* Thread mit einem durchgehenden Faden, der die Profilbilder verbindet */
+.wall-item-container.thread_level_1,
+.wall-item-container.thread_level_2,
+.wall-item-container.thread_level_3,
+.wall-item-container.thread_level_4,
+.wall-item-container.thread_level_5,
+.wall-item-container.thread_level_6,
+.wall-item-container.thread_level_7,
+.wall-item-container.thread_level_8,
+.wall-item-container.thread_level_9 {
+	margin-left: 0;
+}
+
+/* Anpassunf border-left von 5 auf 10 */
+[class*="thread_level_"]:not(.thread_level_1) {
+	position: relative;
+	border-left: 15px solid transparent; /* Abstand des Thead zur Innenlinie */
+}
+
+.thread_level_1 {
+	position: relative;
+	border-left: 0px;
+}
+
+[class*="thread_level_"]::before {
+	content: "";
+	position: absolute;
+	left: 27px;
+	top: 50px;
+	bottom: 15px;
+	width: 3px;
+	z-index: 1;
+	background-color: inherit;
+}
+
+.contact-photo-image-wrapper,
+.wwto .contact-photo {
+	z-index: 1;
+	border-radius: 50px;
+}
+
+[class*="thread_level_"]::after {
+	content: "";
+	position: absolute;
+	top: 45px;
+	left: -8px;
+	width: 26px;
+	height: 1px;
+	background-color: inherit;
+	z-index: 1;
+}
+
+.thread_level_1::before { background-color: transparent; }
+
+.thread_level_2::before { background-color: var(--thread-level-2-color); }
+.thread_level_2:hover::before { background-color: var(--thread-level-2-hover-color); }
+
+.thread_level_3::before { background-color: var(--thread-level-3-color); }
+.thread_level_3:hover::before { background-color: var(--thread-level-3-hover-color); }
+
+.thread_level_4::before { background-color: var(--thread-level-4-color); }
+.thread_level_4:hover::before { background-color: var(--thread-level-4-hover-color); }
+
+.thread_level_5::before { background-color: var(--thread-level-5-color); }
+.thread_level_5:hover::before { background-color: var(--thread-level-5-hover-color); }
+
+.thread_level_6::before { background-color: var(--thread-level-6-color); }
+.thread_level_6:hover::before { background-color: var(--thread-level-6-hover-color); }
+
+.thread_level_7::before { background-color: var(--thread-level-7-color); }
+.thread_level_7:hover::before { background-color: var(--thread-level-7-hover-color); }
+
+.thread_level_8::before { background-color: var(--thread-level-8-color); }
+.thread_level_8:hover::before { background-color: var(--thread-level-8-hover-color); }
+
+.thread_level_9::before { background-color: var(--thread-level-9-color); }
+.thread_level_9:hover::before { background-color: var(--thread-level-9-hover-color); }
+
+/* Größe Profilbilder Thread */
+
+.contact-photo {
+	border-radius: 50%;
+	border: 1px solid #eee !important;
+	color: #eee !important;
+}
+
+.contact-photo-xs {
+	border-radius: 50% !important;
+	object-position: left 50% top 50%;
+	height: 25px;
+	width: 25px;
+	object-fit: cover;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+/* ========================================
+ *Zentriert alle Medienelemente (Bilder, Videos, iframes)
+ ========================================*/
+
+/* Zentrierung von Medieninhalten */
+a img,
+a video,
+a iframe,
+a object,
+a embed,
+.video-top-wrapper {
+	display: block;
+	margin-right: auto;
+}
+
+.video-top-wrapper {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
+}
+
+/* Ausnahme für .network-svg: Keine Zentrierung */
+a img.network-svg {
+	display: inline;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* Größe Netzwerk Icon */
+.network-svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Dropdown-Menü-Stile */
+.nav-pills .dropdown-menu li a,
+.nav-pills .dropdown-menu li .btn-link,
+.nav-tabs .dropdown-menu li a,
+.nav-tabs .dropdown-menu li .btn-link,
+.account .dropdown-menu li a,
+.account .dropdown-menu li .btn-link,
+.contact-photo-wrapper .dropdown-menu li a,
+.contact-photo-wrapper .dropdown-menu li .btn-link {
+	color: var(--nav-icon-color) !important;
+	border-color: white !important;
+	border-radius: 10px;
+}
+
+/* Navbar-Formular */
+.navbar-form {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+ul.tabs li {
+	font-size: 15px !important;
+	margin-left: 10px !important;
+}
+
+ul.tabs li a {
+	margin-top: 8px;
+	color: var(--link-color) !important;
+}
+
+ul.tabs li:hover:not(.active) {
+	border-bottom-width: 0px !important;
+}
+
+ul.tabs li:hover:not(.active) a {
+	background-color: rgba(128, 128, 128, 0.1) !important;
+	border-radius: 8px !important;
+}
+
+.wall-item-response span {
+	position: absolute;
+	text-align: center;
+	display: block;
+	background-color: none;
+	box-shadow: -1px 1px 1px #fff0;
+	border-radius: 4px;
+	color: #fff0;
+	font-size: 12px;
+	font-weight: 700;
+	width: fit-content;
+	padding: 0px 7px;
+	left: 55%;
+	top: 0px;
+	z-index: 1;
+}
+
+
+/* =======================
+ * Ab hier aufräumen
+ * =======================*/
+
+#nav-login::before {
+	content: var(--sign-in-text);
+}
+
+.topbar ul.nav {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.media-list > li {
+	font-size: 15px;
+}
+
+/* 2026.08-rc: #nav-user-menu ist mobil ein Slide-In-Offcanvas-Panel.
+   Diese Regel nur noch auf Desktop anwenden. */
+@media (min-width: 991px) {
+	#nav-user-menu {
+		background-color: #ffffff !important;
+		min-width: 250px !important;
+		border-radius: 10px;
+	}
+}
+
+.template-icon {
+	width: 30px;
+	height: 30px;
+}
+
+#mention-link {
+	background-color: var(--link-color) !important;
+	color: white !important;
+	border-radius: 25px !important;
+	padding: 8px 16px !important;
+	height: 40px !important;
+}
+
+#mention-link:hover,
+#mention-link:focus {
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1) !important;
+}
+
+#contact-edit-status-wrapper {
+	margin: 15px 0px !important;
+	border-radius: 10px;
+}
+
+#profile-extra-links .btn {
+	border-radius: 25px !important;
+	margin-bottom: 10px !important;
+}
+
+.tread-wrapper {
+	transition: box-shadow 0.2s ease;
+	box-shadow: 0 0px 4px rgba(201, 201, 201, 0.5) !important;
+}
+
+.wall-item-container .media {
+	background-color: var(--nav-bg) !important;
+	border-radius: 10px !important;
+}
+
+.wall-item-container {
+	/*border-top: 1px solid rgb(240, 240, 240, 0.8);*/
+	border-top: 0px solid rgba(255, 255, 255, 0.8);
+}
+
+p.wall-item-announce,
+.media .time,
+.media .shared-time,
+.media .delivery,
+.media .location,
+.media .location a {
+	font-size: 13px !important;
+}
+
+.type-link,
+.type-video {
+	padding: 0 !important;
+	margin: 0 !important;
+	background-color: rgb(255, 255, 255) !important;
+	border: 1px solid rgb(234, 235, 237) !important;
+	border-radius: 10px;
+}
+
+/*.type-link h4,
+.type-link blockquote,
+.type-link sup,
+.type-video h4,
+.type-video blockquote,
+.type-video sup {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}*/
+
+.wall-item-actions-row button,
+.wall-item-actions-right button {
+	position: relative;
+	display: block;
+	white-space: normal !important;
+	margin: 0 auto !important;
+}
+
+.wall-item-actions-row button::after,
+.wall-item-actions-right button::after {
+	font-size: 12px;
+	font-family: sans-serif;
+	display: block;
+	margin-top: 2px;
+}
+
+.wall-item-response {
+	position: relative;
+	overflow: visible !important;
+}
+
+.vote-event:not(:has(.wall-item-response:empty)) {
+	padding-bottom: 135px;
+}
+
+.vote-event .wall-item-response {
+	position: absolute;
+	top: 63px;
+}
+
+.vote-event .wall-item-response:empty {
+	display: none;
+}
+
+.vote-event .wall-item-response:nth-of-type(1) {
+	left: 15px;
+}
+
+.vote-event .wall-item-response:nth-of-type(1) .button-event::after,
+[id^="attendyes"]::after {
+	content: "Going";
+}
+
+.vote-event .wall-item-response:nth-of-type(2) {
+	left: 105px;
+}
+
+.vote-event .wall-item-response:nth-of-type(2) .button-event::after,
+[id^="attendno"]::after {
+	content: "Can't Go";
+	position: relative;
+	height: 20px;
+	overflow: hidden; /* or skews mobile button layout */
+}
+
+.vote-event .wall-item-response:nth-of-type(3) {
+	left: 204px;
+}
+
+.vote-event .wall-item-response:nth-of-type(3) .button-event::after,
+[id^="attendmaybe"]::after {
+	content: "Maybe";
+}
+
+#vcard-short-photo-wrapper img,
+#nav-short-info .contact-wrapper img {
+	border-radius: 50%;
+}
+
+.intro-photo-wrapper img.intro-photo {
+	border-radius: 100px;
+}
+
+aside .widget li {
+	margin-bottom: 8px;
+}
+
+body aside .vcard img.u-photo {
+	border-radius: 50%;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+	border: 3px solid var(--background-color);
+	aspect-ratio: 1 / 1;     /* Erzwingt ein quadratisches Verhältnis */
+	object-fit: cover;       /* Sorgt dafür, dass das Bild nicht verzerrt wird */
+	width: 100%;             /* Optional: Stellt sicher, dass es die Breite ausfüllt */
+}
+
+body aside img.vcard-photo {
+	border-radius: 50%;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+	border: 3px solid var(--background-color);
+}
+
+aside .widget h3.p-name {
+	font-size: 32px !important;
+	text-align: center;
+	word-break: break-word;
+}
+
+aside .vcard .p-addr {
+	font-weight: 600;
+	text-align: center;
+	white-space: break-spaces !important;
+}
+
+aside .widget li.selected {
+	background-color: rgba(128, 128, 128, 0.1) !important;
+	border-color: transparent !important;
+	border-radius: 8px;
+}
+
+aside .widget li.selected a {
+	font-weight: bold;
+}
+
+aside .widget li:hover {
+	background-color: rgba(255, 255, 255, 1) !important;
+	border-color: transparent !important;
+	border-radius: 8px;
+}
+
+#widget-contacts {
+	background-color: var(--nav-bg) !important;
+	border-radius: 8px !important;
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+.contact-block-img {
+	height: 100px !important;
+	width: 100px !important;
+	border-radius: 8px !important;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+	margin: 5px;
+}
+
+.comment-fake-form {
+	border: none !important;
+	background-color: transparent !important;
+}
+
+.comment-fake-form textarea {
+	border-radius: 50px !important;
+}
+
+/* Kommentare hervorgehoben */
+.comment .media-body {
+	padding: 10px;
+	background-color: #f6f6f6;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+
+.wall-item-actions-row .wall-item-emoji {
+	font-size: 18px;
+	color: #65686c;
+	margin-top: 3px;
+	margin-left: 10px;
+}
+
+/* WALL ITEM RESPONSES */
+.wall-item-responses > div {
+	position: relative;
+}
+.wall-item-responses > div > p:first-of-type::before,
+.hide-comments::before,
+.hide-comments-total::before {
+	display: inline-block;
+	margin-right: 3px;
+	font-family: remixicon;
+	font-weight: lighter;
+	font-size: 12px;
+	text-align: center;
+	color: white;
+	width: 20px;
+	height: 20px;
+	padding: 2px;
+	line-height: 16px;
+	border-radius: 50%;
+}
+.wall-item-responses .wall-item-like > p:first-of-type::before {
+	content: "\F206";
+	background-color: #0066ff;
+}
+.wall-item-responses .wall-item-dislike > p:first-of-type::before {
+	content: "\F204";
+	background-color: red;
+}
+.wall-item-responses .wall-item-announce > p:first-of-type::before {
+	content: "\f079";
+	background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendyes > p:first-of-type::before {
+	content: "\f00c";
+	background-color: #00c100;
+}
+.wall-item-responses .wall-item-attendno > p:first-of-type::before {
+	content: "\f00d";
+	background-color: red;
+}
+.wall-item-responses .wall-item-attendmaybe > p:first-of-type::before {
+	content: "\f128";
+	background-color: orange;
+}
+.wall-item-responses div p[class*="-expanded"] {
+	background-color: rgb(255, 255, 255, 0.91);
+	position: absolute;
+	bottom: 100%;
+	padding: 10px;
+	margin-left: 23px;
+	border-radius: 8px;
+	width: 200px;
+	max-height: 415px;
+	font-size: 0px;
+	color: transparent;
+	overflow: hidden;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+.wall-item-responses div p[class*="-expanded"]:hover,
+.wall-item-responses div p[class*="-expanded"]:focus {
+	overflow-y: auto;
+}
+.wall-item-responses div p[class*="-expanded"] a {
+	color: var(--link-color) !important;
+	display: block;
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 14px;
+	overflow: hidden;
+	text-decoration: none;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74) {
+	overflow: visible;
+}
+.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74)::after {
+	content: "and others...";
+	display: block;
+}
+
+.pagination .pager_next a,
+.pagination .pager_prev a {
+	border-radius: 10px;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+	background-color: #0866ff;
+	border-color: #0866ff;
+	border-radius: 10px;
+}
+
+.pagination li.pager_n a {
+	border-radius: 10px;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child,
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+section > .generic-page-wrapper,
+.videos-content-wrapper,
+.suggest-content-wrapper,
+.help-content-wrapper,
+.match-content-wrapper,
+.dirfind-content-wrapper,
+.delegation-content-wrapper,
+.notes-content-wrapper,
+.message-content-wrapper,
+.apps-content-wrapper,
+#adminpage,
+.delegate-content-wrapper,
+.uexport-content-wrapper,
+.dfrn_request-content-wrapper,
+.friendica-content-wrapper,
+.credits-content-wrapper,
+.nocircle-content-wrapper,
+.profperm-content-wrapper,
+.invite-content-wrapper,
+.tos-content-wrapper,
+.fsuggest-content-wrapper {
+	border-radius: 10px;
+	box-shadow: 0 0px 1px rgba(201, 201, 201, 0.5) !important;
+}
+
+.mail-list-outside-wrapper .contact-photo-wrapper img {
+	height: 70px;
+	width: 70px;
+	border-radius: 50%;
+}
+
+.mail-conv-wrapper .media .contact-photo-wrapper img {
+	height: 48px;
+	width: 48px;
+	border-radius: 50%;
+}
+
+p.wall-item-announce,
+.media .time,
+.media .shared-time,
+.media .delivery,
+.media .location,
+.media .location a {
+	font-size: 13px !important;
+}
+
+.type-link h4,
+.type-link blockquote,
+.type-link sup,
+.type-video h4,
+.type-video blockquote,
+.type-video sup {
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+
+.contact-block-img {
+	height: 45px !important;
+	width: 45px !important;
+	border-radius: 50% !important;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+	margin: 5px;
+}
+
+.img-allocated-max-width {
+	margin: 20px auto;
+	border-radius: 2px;
+}
+
+.wall-item-content img {
+	object-fit: contain;
+	border-radius: 2px;
+	position: relative;
+}
+
+.fc .fc-month-view .fc-content .fc-title .item-desc {
+	font-size: 11px;
+}
+
+.fc .fc-event {
+	background-color: #65686c26;
+	border: 1px solid #65686c1f;
+	color: #333;
+}
+
+.fancybox-image,
+.fancybox-spaceball {
+	border-radius: 5px;
+}
+
+#photo-photo {
+	margin: 20px auto;
+}
+
+.shared_header > .avatar > img {
+	border-radius: 50%;
+}
+
+/* #cboxWrapper entfernt: Colorbox wurde in Friendica durch fancybox ersetzt */
+
+.label-primary {
+	background-color: #1f91ca;
+}
+
+.form-group.field.input.color {
+	display: none;
+}
+
+audio,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+iframe,
+img,
+video {
+	border-radius: 2px;
+}
+
+iframe {
+	width: 100% !important;
+	height: auto !important;
+	aspect-ratio: 16/9 !important;
+	display: block; /* for positioning */
+	margin: 0 auto; /* centers block */
+	background-color: #000; /* optional fill */
+}
+
+/* Chance Picture */
+#change-profile-picture {
+	border-radius: 50%;
+}
+
+/* Verhindert Unterstriche Kommentare */
+.wall-item-actions-row button:hover,
+.wall-item-actions-row button:focus,
+.wall-item-actions-row button::after,
+.wall-item-actions-right button:hover,
+.wall-item-actions-right button::after {
+	text-decoration: none !important;
+}
+
+.alert-info {
+	background-image: linear-gradient(to bottom, #fff 0, #fff 100%);
+	background-color: var(--background-color);
+	border-color: var(--border-color);
+	color: #65686c;
+}
+
+.alert {
+	border-color: #ccc;
+	border-radius: 10px;
+	border-width: 1px;
+}
+
+#circle-update-wrapper .viewcontact_wrapper .contact-circle-link {
+	opacity: 0.8;
+	font-size: 30px;
+}
+
+.modal-content {
+	border-radius: 15px;
+}
+
+#conversejs .converse-chatboxes {
+	z-index: 9999 !important;
+	position: fixed !important;
+	bottom: 0;
+}
+
+/* Beiträge werden mit einen kleinen Schatten versehen */
+.tread-wrapper {
+	transition: box-shadow 0.2s ease;
+}
+
+.tread-wrapper:hover {
+	transform: none !important; /* Keine Bewegung */
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1) !important; /* Nur sanftes Leuchten nach außen */
+}
+
+
+/* TAGS, CATEGORIES, MENTIONS BUTTONS
+   ==================================
+   Restyled to be less obnoxious and tiny
+   now sized and spaced like they are on Mastodon
+*/
+
+.wall-item-bottom .label {
+	color: inherit;
+}
+.wall-item-bottom .label a {
+	color: #666;
+}
+/* hide lightning bolt and person icons
+		   pretty sure people know what "#" and "@" mean now
+		*/
+a.tag.label .fa-bolt::before,
+.wall-item-bottom .label .fa-bolt::before {
+	content: "";
+}
+.wall-item-bottom .label .fa-user::before {
+	content: "";
+}
+/* undo hover for entire container*/
+.wall-item-container:hover .wall-item-bottom .wall-item-tags span.label {
+	filter: grayscale(0.5);
+	opacity: 0.8;
+	transition: 0s;
+}
+/* replace with hover for individual tag */
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:hover,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus-within {
+	filter: grayscale(0) !important;
+	opacity: 1 !important;
+	/* probably don't need vendor prefixed anymore but whatever...*/
+	transition: all 0.25s ease-in-out !important;
+}
+/* Hashtag Buttons */
+a.tag.label.btn-info,
+.wall-item-bottom .wall-item-tags .tag.label.btn-info {
+	/* inherits everything from above */
+}
+a.tag.label.btn-info:hover,
+a.tag.label.btn-info:focus,
+.wall-item-bottom .wall-item-tags .tag.label.btn-info:hover,
+.wall-item-bottom .wall-item-tags .tag.label.btn-info:focus {
+	background-color: #65686c !important;
+	color: white !important;
+}
+/* Category Buttons */
+.wall-item-bottom .wall-item-tags .category.label.btn-success {
+	border-color: limegreen !important;
+	color: limegreen !important;
+	font-size: 12px;
+}
+
+/* @ Mention Buttons */
+
+.wall-item-bottom .wall-item-tags .mention.label.btn-warning {
+	border-color: darkgoldenrod !important;
+	color: darkgoldenrod !important;
+}
+
+.wall-item-bottom .wall-item-tags .mention.label.btn-warning:hover,
+.wall-item-bottom .wall-item-tags .mention.label.btn-warning:focus {
+	background-color: goldenrod !important;
+	border-color: goldenrod !important;
+	color: white !important;
+}
+
+/* Post published alert - toast notification style */
+#post-published-alert {
+	border-radius: 25px;
+}
+
+.shared-wrapper {
+	border-radius: 10px;
+}
+
+/*	Greater than Full-HD Width
+	===========================
+*/
+@media screen and (min-width: 1921px){
+	.coverphoto {
+		max-width: 1920px;
+		left: 50% !important;
+		margin-left: -960px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius:  10px;
+	}
+}
+
+/*	Small Laptop Screens
+	Some tablets in Landscape Orientation
+	=====================================
+*/
+@media screen and (max-width: 1280px) {
+	#search-box {
+		width: 18% !important;
+	}
+		#search-box:focus-within {
+			width: auto !important;
+		}
+	#search-save {
+		width: 140px !important;
+	}
+}
+
+/* Frio breakpoints for smaller profile pic */
+@media screen and (min-width:991px) and (max-width:1199px){
+	.contact-block-img {
+		height: 75px !important;
+		width: 75px !important;
+	}
+	/* Contact Notification Action Buttons */
+	.intro-actions {
+		position: relative;
+		float: none !important;
+	}
+	#nav-user-linkmenu.open .user-title {
+		display: block !important;
+	}
+}
+
+/*	Large Tablets in Portrait Orientation
+	=====================================
+*/
+@media screen and (max-width: 990px){
+	/* Friendica icon upper left */
+	#banner {
+		display: block !important;
+		padding: 0 !important;
+		margin: 8px 10px;
+	}
+
+	.contact-photo-xs {
+		border-radius: 100% !important;
+		border: 1px solid #eee !important;
+		height: 38px;
+		width: 38px;
+	}
+
+	/* hide search box - no room */
+	#search-box {
+		display: none;
+	}
+
+	/* show mobile search toggle (2026.08-rc: eigene ID #search-mobile-btn) */
+	#search-mobile-btn {
+		display: block !important;
+		position: fixed !important;
+		left: 115px;
+		top: 0px;
+		z-index: 10;
+	}
+
+	/* force display of mobile search box */
+	#search-mobile {
+		top: 115px !important;
+		border-color: var(--border-color);
+	}
+		#search-mobile .navbar-form {
+			padding: 10px;
+		}
+			#search-mobile input {
+				width: 100%;
+			}
+			#search-mobile .form-button-search {
+				border-radius: 50px !important;
+			}
+		#search-mobile .col-xs-12 {
+			background-color: var(--nav-bg);
+		}
+			#search-mobile.collapse.in,
+			#search-mobile.collapse.in * {
+				display: block !important;
+			}
+
+	/* Aside-Toggle unten links (2026.08-rc: #mobile-left-menu mit remixicon) */
+	#mobile-left-menu {
+		position: fixed;
+		top: 0px;
+		left: 55px;
+		z-index: 10;
+	}
+
+	/* Pfeil spiegelnd, wenn das Offcanvas offen ist (neuer Hook body.aside-out) */
+	body.aside-out #mobile-left-menu i {
+		transform: scaleX(-1);
+	}
+
+	#topbar-first .nav > .account {
+		right: 24px;
+	}
+
+	#nav-user-linkmenu.open .user-title {
+		display: block !important;
+	}
+
+	/* navbar labels will not fit for tablets in portrait */
+	#topbar-first .nav > li > a::after,
+	#topbar-first .topbar-nav #nav-notification::after {
+		display: none !important;
+	}
+
+	#jotOpen span,
+	#search-save span,
+	#mention-link span {
+		display: none;
+	}
+
+	#jotOpen i,
+	#search-save i,
+	#mention-link i {
+		width: 100%;
+		text-align: center;
+	}
+
+	#mention-link {
+		padding: 0 8px !important;
+	}
+
+	#mention-link span:last-of-type {
+		display: none;
+	}
+
+	.offcanvas-right-overlay,
+	aside::before {
+		background-color: rgba(255, 255, 255, 0.4);
+	}
+
+	/* Profile Aside Mobile */
+	body.mod-contact .row:has(.coverphoto) #content,
+	body.mod-profile .row:has(.coverphoto) #content,
+	body.mod-photos  .row:has(.coverphoto) #content {
+		margin-top: 350px;
+	}
+
+	@supports selector(:has(*)){
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			position: fixed !important;
+		}
+		body.mod-contact aside:has(#peoplefind-sidebar) + #content {
+			margin-top: 0;
+		}
+		@supports not (background: -webkit-named-image(i)) {
+			body.mod-profile aside:not(:has(*)) + #content {
+				margin-top: 0;
+			}
+		}
+	}
+
+	body.mod-contact aside,
+	body.mod-photos  aside,
+	body.mod-profile aside {
+		margin-top: 0px !important;
+		left: -300px !important;
+		right: auto !important;
+		display: block !important;
+		padding-top: 120px;
+		transition-duration: .5s !important;
+		z-index: auto;
+	}
+
+	/* Offcanvas offen: Jasny-Klasse .canvas-slid UND neuer Hook body.aside-out */
+	body.aside-out.mod-contact aside,
+	body.aside-out.mod-photos  aside,
+	body.aside-out.mod-profile aside,
+	body.mod-contact aside.canvas-slid,
+	body.mod-photos  aside.canvas-slid,
+	body.mod-profile aside.canvas-slid {
+		left: 0px !important;
+		right: auto !important;
+		z-index: 20;
+	}
+
+	body.mod-contact aside #profile-photo-wrapper,
+	body.mod-photos  aside #profile-photo-wrapper,
+	body.mod-profile aside #profile-photo-wrapper {
+		position: fixed;
+		top: 150px;
+		left: 50%;
+		height: 150px;
+		width:  150px;
+		margin-left: -75px;
+		transition-timing-function: ease-in-out;
+		transition-duration: .3s;
+		transition-property: all;
+	}
+
+	body.mod-contact .profile-header h3.p-name,
+	body.mod-photos  .profile-header h3.p-name,
+	body.mod-profile .profile-header h3.p-name {
+		position: fixed;
+		width: 100%;
+		top: 300px;
+		left: 50%;
+		margin-left: -50%;
+		transition-timing-function: ease-in-out;
+		transition-duration: .3s;
+		transition-property: all;
+	}
+
+	body.mod-contact .profile-header .p-addr,
+	body.mod-photos  .profile-header .p-addr,
+	body.mod-profile .profile-header .p-addr {
+		position: fixed;
+		width: 50%;
+		top: 400px;
+		left: 50%;
+		margin-left: -25%;
+		transition-timing-function: ease-in-out;
+		transition-duration: .3s;
+		transition-property: all;
+	}
+
+	/* centered in right-hand side (offenes Offcanvas) */
+	body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+	body.mod-photos  aside.canvas-slid #profile-photo-wrapper,
+	body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+		margin-left: -225px;
+	}
+	body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+	body.mod-photos  aside.canvas-slid .profile-header h3.p-name,
+	body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+		margin-left: calc(-50% - 150px);
+	}
+	body.mod-contact aside.canvas-slid .profile-header .p-addr,
+	body.mod-photos  aside.canvas-slid .profile-header .p-addr,
+	body.mod-profile aside.canvas-slid .profile-header .p-addr {
+		margin-left: calc(-25% - 150px);
+	}
+
+	/* bounce effect (während des Slidings) */
+	body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+	body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+	body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+		margin-left: -150px;
+	}
+	body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+	body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+	body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+		margin-left: calc(-50% - 75px);
+	}
+	body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+	body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+	body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+		margin-left: -300px;
+	}
+
+	/* Cover Photo Mobile */
+	.coverphoto.canvas-sliding,
+	.coverphoto.canvas-slid {
+		left: 0px !important;
+		right: 0px !important;
+		bottom: 0px;
+		background-color: var(--background-color);
+		overflow: visible;
+	}
+		.coverphoto.canvas-slid::after {
+			content: '';
+			position: absolute;
+			top: 500px;
+			left: 0px;
+			width: 100%;
+			height: 500%;
+			display: block;
+			background-color: var(--background-color);
+		}
+
+	.wall-item-responses div p[class*="-expanded"] {
+		overflow-y: auto;
+	}
+}
+
+/*	Most Phones in Portrait Orientation
+	Large Screen Phones in Landscape Orientation
+	Some Small tablets in Portrait Orientation
+	======================================
+*/
+@media screen and (max-width: 768px), (max-height: 480px) and (max-width: 960px) and (orientation: landscape) {
+
+	/* ==========================================
+		1. Globale Layout-Anpassungen & Fixes
+		========================================== */
+	body {
+		padding-top: 65px !important;
+		/* Verhindert, dass die fixierte untere Navbar & der FAB echten Content verdecken */
+		padding-bottom: 300px !important;
+	}
+
+	a.wall-item-name-link, span.fakelink {
+		font-weight: bold;
+	}
+
+	.wall-item-container iframe {
+		aspect-ratio: 5/4;
+	}
+
+	.justified-gallery > a,
+	.justified-gallery > div,
+	.justified-gallery > figure {
+		height: 25vw !important;
+		width:  25vw !important;
+	}
+
+	/*==========================================
+	 *  Ausblenden der Reaction Beschreibungen
+	 * (Syntaxfix: kein verschachteltes @media mehr)
+	 * =========================================*/
+	/* Deutsche und andere Sprachvarianten (z. B. de-DE, de-AT) */
+	[lang|="de"] .button-comments::after,
+	[lang|="de"] .button-announces::after,
+	[lang|="de"] .button-votes::after,
+	[lang|="de"] .button-likes::after,
+	[lang|="de"] [id^="dislike-"]::after,
+	[lang|="de"] .wall-item-actions-right .dropdown-toggle::after,
+	[lang|="de"] .more-links .dropdown-toggle::after,
+
+	/* Französische Sprachvarianten (z. B. fr, fr-FR, fr-CA) */
+	[lang|="fr"] .button-comments::after,
+	[lang|="fr"] .button-announces::after,
+	[lang|="fr"] .button-votes::after,
+	[lang|="fr"] .button-likes::after,
+	[lang|="fr"] [id^="dislike-"]::after,
+	[lang|="fr"] .wall-item-actions-right .dropdown-toggle::after,
+	[lang|="fr"] .more-links .dropdown-toggle::after,
+
+	/* Spanische Sprachvarianten (z. B. es, es-ES, es-MX) */
+	[lang|="es"] .button-comments::after,
+	[lang|="es"] .button-announces::after,
+	[lang|="es"] .button-votes::after,
+	[lang|="es"] .button-likes::after,
+	[lang|="es"] [id^="dislike-"]::after,
+	[lang|="es"] .wall-item-actions-right .dropdown-toggle::after,
+	[lang|="es"] .more-links .dropdown-toggle::after,
+
+	/* Fallback für .wall-item-emoji::after (kein lang-Attribut) */
+	.wall-item-emoji::after {
+		content: "";
+	}
+
+	/* ==========================================
+	   2. DEV-FIX: Obere Headerzeile (Logo, Titel, Profil)
+	   ========================================== */
+
+	/* Friendica-Logo (jetzt <i id="logo-img">, kein #friendica-logo-mask mehr)
+	   fest oben links in die Ecke */
+	#banner,
+	.navbar-brand {
+		position: fixed !important;
+		top: 8px !important;
+		left: 10px !important;
+		display: block !important;
+		visibility: visible !important;
+		height: 44px !important;
+		width: 44px !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		z-index: 1000 !important;
+	}
+
+	.modal {
+		z-index: 10001;
+	}
+
+	/* Stellt sicher, dass das Logo-Icon die volle Box ausfüllt */
+	#logo-img,
+	.navbar-brand #logo-img,
+	#banner #logo-img {
+		display: block !important;
+		visibility: visible !important;
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+	/* Obere Menüleiste positionieren */
+	#topbar-second {
+		top: 0;
+		padding: 0 65px;
+		height: 60px;
+		z-index: 100;
+		background-color: var(--nav-bg) !important;
+	}
+
+	#topbar-second div.container {
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	/* 2026.08-rc: #tabmenu wird per JS mit section .tabbar-wrapper befüllt */
+	#topbar-second #tabmenu {
+		width: 100%;
+	}
+
+	#topbar-second .tabbar-wrapper ul.tabs li a {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.tabbar-wrapper__link {
+		max-width: 100px;
+	}
+
+	/* Avatar (2026.08-rc: #nav-user-linkmenu > #avatar) auf allen Geräten fest positionieren */
+	#topbar-first #nav-user-linkmenu,
+	#topbar-first .nav > li:has(img.avatar) {
+		position: fixed !important;
+		display: block !important;
+		visibility: visible !important;
+		top: 10px !important;
+		right: 10px !important;
+		left: auto !important;
+		bottom: auto !important;
+		z-index: 100010 !important;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	/* Avatar-Bild als Kreis erzwingen */
+	#topbar-first #nav-user-linkmenu img.avatar,
+	#topbar-first .nav > li img.avatar {
+		border-radius: 50% !important;
+		width: 40px !important;
+		height: 40px !important;
+		object-fit: cover !important;
+		display: block !important;
+		margin: 0 !important;
+	}
+
+	/* Username im Dropdown-Menü ausblenden */
+	#topbar-first .nav > .account .dropdown-menu .user-title,
+	#topbar-first ul.nav li:has(img.avatar) .dropdown-menu .user-title {
+		display: none !important;
+	}
+
+	/* E-Mail-Icon für Mobile-Ansicht (Bildschirmbreite < 768px) */
+	#message-new .btn span {
+		display: none;
+	}
+
+	/* Caret im Avatar-Bereich ausblenden */
+	#topbar-first .nav > .account span.caret {
+		display: none !important;
+	}
+
+	/* ==========================================
+		3. DEV-FIX: Untere Navbar (Saubere Icons für den Daumen)
+		========================================== */
+	#topbar-first {
+		top: auto;
+		bottom: 0;
+		position: fixed !important;
+		width: 100% !important;
+		height: var(--topbar-first-size, 55px) !important;
+		box-shadow: 2px 0px 5px var(--shadowglow);
+		z-index: 9999;
+	}
+
+	#topbar-first .topbar-nav .arrow {
+		display: none;
+	}
+
+	/* Versteckt die im HTML unten liegenden Original-Plätze von Logo und Profil,
+		da wir sie oben fest angepinnt haben */
+	#topbar-first .navbar-brand,
+	.topbar ul.nav > li:has(#banner),
+	.topbar ul.nav > li:has(.navbar-brand),
+	.topbar ul.nav > li.account,
+	.topbar ul.nav > li:has(img.avatar) {
+		display: none !important;
+	}
+
+	/* Zieht die echten Bedienelemente unten flüssig und ohne Überlagerung zusammen */
+	.topbar ul.nav {
+		position: relative !important;
+		left: 0 !important;
+		right: 0 !important;
+		display: flex !important;
+		justify-content: space-around !important;
+		margin: 0 auto !important;
+		padding: 0 10px !important;
+		width: 70% !important;
+		max-width: 480px !important;
+	}
+
+	/* Kompakte Breite pro Icon unten */
+	.topbar ul.nav > li {
+		display: flex !important;
+		justify-content: center !important;
+		align-items: center !important;
+		flex: 1 1 auto !important;
+		height: var(--topbar-first-size, 55px) !important;
+		margin: 0 !important;
+		right: 20px;
+	}
+
+	/* 2026.08-rc: Labels steuern sich über body.show-nav-labels statt
+	   der entfernten Variable --show-navbar-labels */
+	#topbar-first .nav-label {
+		display: none;
+	}
+	body.show-nav-labels #topbar-first .nav-label {
+		display: block;
+	}
+
+	#topbar-first .topbar-nav .nav-segment {
+		position: relative !important;
+		top: auto;
+		right: auto;
+		margin: 0px;
+	}
+
+	/* Unsichtbarer offcanvas-Toggle oben rechts */
+	#topbar-first .offcanvas-right-toggle {
+		position: fixed;
+		top: -3px;
+		right: 7px;
+		color: transparent;
+		z-index: 10000;
+	}
+
+	/* Sidebar-Toggle unten links platzieren (2026.08-rc: #mobile-left-menu) */
+	#mobile-left-menu {
+		position: fixed;
+		top: auto;
+		left: auto;
+		bottom: 5px;
+	}
+
+	/* ==========================================
+		4. Suche & Floating Action Buttons (FAB)
+		========================================== */
+	#search-mobile-btn {
+		position: relative !important;
+		display: block !important;
+		top: 0;
+		left: 35px;
+		right: auto;
+		margin: 0;
+	}
+
+	#search-mobile-btn:not(.collapsed) {
+		color: var(--link-color);
+		border-bottom: 3px solid var(--link-color);
+		background-color: transparent !important;
+		border-radius: 0 !important;
+		margin-top: 0px;
+	}
+
+	#search-mobile { top: 60px !important; }
+	#search-mobile.collapse.in,
+	#search-mobile.collapse.in * {
+		display: block !important;
+	}
+
+	#search-box { display: none !important; }
+
+	#search-save { width: 100px !important; }
+
+	/* Floating Action Buttons (Jot, Save, Mention) */
+	#jotOpen, #search-save, #mention-link {
+		position: fixed;
+		bottom: calc(var(--topbar-first-size, 55px) + 10px);
+		right: 10px;
+		border-radius: 100% !important;
+		height: 50px;
+		width: 50px !important;
+		line-height: 50px;
+		border: none !important;
+		box-shadow: none !important;
+	}
+
+	#mention-link span:last-of-type { display: none; }
+	#mention-link span:first-of-type {
+		float: none;
+		position: relative;
+		top: 2px;
+	}
+
+	/* "Delete selected items"-FAB jetzt an der Bottom-Nav ausrichten,
+	   statt am alten Topbar-Offset (Core nutzt --topbar-first-size) */
+	#item-delete-selected {
+		top: auto;
+		right: 10px;
+		bottom: calc(var(--topbar-first-size, 55px) + 70px);
+	}
+
+	/* ==========================================
+		5. Overlays, Menüs & Mod-spezifische Regeln
+		========================================== */
+	#nav-notifications-menu {
+		position: fixed;
+		top: 60px;
+		bottom: calc(var(--topbar-first-size, 55px) - 4px);
+		left: 0;
+		right: 0;
+		width: 100% !important;
+		min-width: unset;
+		max-width: unset;
+		min-height: unset;
+		max-height: unset !important;
+		margin: 0 !important;
+		box-shadow: none;
+	}
+
+	#nav-notifications-menu::before {
+		content: '\EB98';
+		font-family: remixicon;
+		position: absolute;
+		top: 8px;
+		right: 12px;
+		height: 40px;
+		width:  40px;
+		background-color: var(--link-color);
+		color: white;
+		font-size: 24px;
+		border-radius: 100%;
+		line-height: 40px;
+		text-align: center;
+		display: block;
+	}
+
+	#offcanvasUsermenu { background-color: var(--nav-bg) !important; }
+	#offcanvasUsermenu ul.list-group { box-shadow: none !important; }
+	#offcanvasUsermenu ul.list-group li:first-of-type img {
+		max-width: unset  !important;
+		max-height: unset  !important;
+		height: 40px  !important;
+		width:  40px  !important;
+		border-radius: 100% !important;
+	}
+
+	#offcanvasUsermenu li.divider { display: none !important; }
+	#offcanvasUsermenu li.list-group-item,
+	#offcanvasUsermenu li.list-group-item a {
+		border: transparent !important;
+		background-color: transparent !important;
+		color: var(--nav-icon-color) !important;
+		margin: 0 auto;
+		padding: 5px 15px;
+	}
+
+	#offcanvasUsermenu li.list-group-item:hover {
+		background-color: #333 !important;
+		border-radius: 8px !important;
+	}
+	#offcanvasUsermenu li.list-group-item:hover a { color: #fff !important; }
+	#offcanvasUsermenu li.list-group-item:first-of-type:hover { background-color: revert !important; }
+
+	#topbar-second ul.dropdown-menu {
+		position: fixed;
+		top: 58px;
+		left: 0px;
+		right: 0px;
+		bottom: calc(var(--topbar-first-size, 55px) - 5px);
+		width: 100% !important;
+		overflow: auto !important;
+		overflow-x: hidden !important;
+	}
+
+	#topbar-second ul.dropdown-menu li { height: auto !important; }
+	#topbar-second ul.dropdown-menu li a,
+	.tabs ul.dropdown-menu li a,
+	.topbar .dropdown-header,
+	.topbar .dropdown-header .dropdown-header-link .btn-link {
+		font-size: 18px !important;
+	}
+	.topbar .dropdown-header .dropdown-header-link .btn-link { margin-right: 40px; }
+
+	aside.offcanvas-xs {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	/* Mod-Anpassungen (Profile, Contacts, Jot) */
+	body.mod-community #jotOpen { line-height: 30px; }
+	body.mod-profile #sidebar-photos-albums::before { top: 125px; }
+
+	body.mod-contact aside #profile-photo-wrapper,
+	body.mod-photos  aside #profile-photo-wrapper,
+	body.mod-profile aside #profile-photo-wrapper { top: 100px; }
+
+	body.mod-contact .profile-header h3.p-name,
+	body.mod-photos  .profile-header h3.p-name,
+	body.mod-profile .profile-header h3.p-name { top: 255px; }
+
+	body.mod-contact .profile-header .p-addr,
+	body.mod-photos  .profile-header .p-addr,
+	body.mod-profile .profile-header .p-addr { top: 345px; }
+
+	.coverphoto,
+	.coverphoto.canvas-sliding,
+	.coverphoto.canvas-slid { top: 55px; }
+
+	#message-new a {
+		height: 50px;
+		width:  50px;
+		background-color: var(--link-color);
+		line-height: 50px;
+		font-size: 24px;
+		text-align: center;
+		border-radius: 100%;
+		display: block;
+		color: white;
+		padding: 0;
+	}
+	#message-new a::after { content: ''; }
+	#message-new:hover a,
+	#message-new:focus a {
+		box-shadow: inset 0 0 100px var(--dimbright);
+		border-radius: 100%;
+	}
+
+	.intro-actions {
+		position: relative;
+		float: none !important;
+	}
+
+	#profile-jot-plugin-wrapper { width: 100%; }
+
+	#photo-edit-link-wrap.pull-right a {
+		font-size: 0px;
+		border-radius: 100% !important;
+		height: 40px;
+		width:  40px;
+		text-align: center;
+		padding: 7px 0 0 0;
+		line-height: 40px;
+	}
+	#photo-edit-link-wrap.pull-right a i { font-size: 24px; }
+
+	.dropdown-mobile-jot > .dropdown-toggle.btn-primary {
+		background-color: transparent;
+		color: var(--link-color);
+		border-radius: 8px;
+	}
+	.dropdown-mobile-jot > .dropdown-toggle.btn-primary:hover,
+	.dropdown-mobile-jot > .dropdown-toggle.btn-primary:focus {
+		background-color: var(--dimbright);
+	}
+	.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
+		background-color: var(--link-color);
+		color: white;
+		border-radius: 8px;
+	}
+	.dropdown-mobile-jot ul.dropdown-menu li { margin: 3px auto; }
+	.dropdown-mobile-jot ul.dropdown-menu .btn-link { min-width: 90%; }
+}
+
+/* LOGIN AND INFO SCREENS */
+body.mod-home {
+	padding-top: 10px !important;
+}
+
+.mod-home .navbar,
+.mod-home #topbar-second {
+	background-color: transparent !important;
+}
+
+.mod-home #nav-about {
+	background-color: var(--link-color);
+	height: 50px;
+	width: 50px;
+	color: white !important;
+	border-radius: 50% !important;
+	right: 15px;
+}
+
+.mod-home #nav-about:hover,
+.mod-home #nav-about:focus {
+	background-color: var(--link-color) !important;
+	box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+	.mod-home #nav-about i {
+		line-height: 32px;
+	}
+}
+
+/* Problemumgehung iOS Sichtbarkeit Profilbild */
+body.mod-profile #profile-photo-wrapper {
+	top: 100px !important; /* Oder ein anderer sichtbarer Wert */
+	opacity: 1 !important;
+	visibility: visible !important;
+	/* Falls transform verwendet wird und stört */
+	transform: none !important;
+}
